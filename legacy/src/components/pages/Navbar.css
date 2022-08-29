@@ -1,0 +1,23 @@
+.nav{
+    top:0px;
+    left:0px;
+    width: 100%;
+}
+
+.nav-container{
+  margin:5px;
+
+}
+
+.home{
+    margin-right: 950px;
+}
+
+
+.about{
+color: white;
+}
+
+.contact{
+    color: white;
+}

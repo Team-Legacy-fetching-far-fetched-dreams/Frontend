@@ -1,0 +1,77 @@
+.ver{
+    background-color: #f6f6f9;
+    background-size: 100%;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+    justify-content: center;
+align-items: center;
+  }
+
+
+.AppGlass{
+    position: relative;
+    height: 93vh;
+    width: 95vw;
+    border-radius: 2rem;
+    background-color: var(--glass);
+    margin-top: 15px;
+    margin-bottom: 20px;
+    margin-left: 5px;
+    backdrop-filter: blur(7px);
+    
+  }
+
+.container h1{
+  display: inline-block;
+  font-weight:bold;
+  padding-top:  150px;
+  padding-left: 50px;
+}
+  
+
+
+  .container .Vlogo{
+    position: absolute;
+    top: 50px;
+    left: 48.5%;
+    height: 70px;
+    margin: 5px;
+   
+    }
+
+.Secure{
+ /* look for a display or position to make the picture constant irrespective the items on the page*/
+ position: absolute;
+ left: 100px;
+ top: 200px;
+   height: 300px;   
+   margin: 50px;   
+}    
+
+
+
+.form{
+  position: absolute;
+  left: 500px;
+
+}
+
+
+#btn{
+  position :absolute;
+  top: 200px;
+  left: 40%;
+  border-radius: 100px;
+  width: 50px;
+  height: 50px;
+}
+
+
+#password{
+  width:300px;
+}
+#confirmPassword{
+  width:300px;
+}
