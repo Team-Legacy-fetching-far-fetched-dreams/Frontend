@@ -1,19 +1,25 @@
 import React from 'react'
 import './Loading.css'
-import 'react-loader-spinner/dist/loader/ThreeDots'
-import { Circles } from  'react-loader-spinner'
-import Logo from '../../imgs/logo2.png'
+
+import Logo from '../../imgs/Log.png'
+import LogoTitle from '../../imgs/title.png'
+import {motion} from 'framer-motion/dist/framer-motion'
 
 const Loading = () => {
   return (
-    <div className = "head">
+    <motion.div className = "head"
+    initial={{opacity: 0}}
+    animate={{opacity: 1}}
+    exit={{opacity: 0}}
+    
+    >
       <div>
         <img src={Logo} alt="" className = "logo"></img>
        </div>
        <div>
-       <Circles color="var(--gray)" height={30} width={30}/>
+        <img src={LogoTitle} alt="" className = "title"></img>
        </div>
-    </div>
+    </motion.div>
   )
 }
 

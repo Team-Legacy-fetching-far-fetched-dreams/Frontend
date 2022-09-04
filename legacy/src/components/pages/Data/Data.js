@@ -10,25 +10,27 @@ export const SidebarData = [
         {
             icon: UilEstate,
             heading: 'Dashboard',
-            link: '/Verfication'
+            link: 'Verfication'
         },
         {
             icon: UilClipboardAlt,
             heading: 'Doctor',
-            link: '/'
+            link: 'AdminPage'
         },
         {
             icon: UilUsersAlt,
             heading: 'Patients',
-            link: '/'
+            link: 'AdminLogin'
         },
         {
             icon: UilPackage,
-            heading: 'Products'
+            heading: 'Products',
+            link: 'DoctorLogin'
         },
         {
             icon: UilChart,
-            heading: 'Analytics'
+            heading: 'Analytics',
+            link: 'DoctorSignUp'
         },
 
 

@@ -7,7 +7,7 @@ const Demo = () => {
   useEffect (()=> {
     setTimeout (()=>{
       setIsLoading(false)
-    }, 2500);
+    }, 6000);
   })
   return (
     <div>

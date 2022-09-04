@@ -2,10 +2,19 @@
 
 
 .logo{
-    height: 50vh;
+    height: 40vh;
     margin: auto;
+   animation: spin 4s forwards;
     }
       
+
+    .title{
+        height: 10vh;
+        margin: auto;
+        animation: title 5s;
+        animation-delay: 5s;
+        }
+
 .head{
     background-color: #f6f6f9;
     background-size: 100%;
@@ -17,4 +26,18 @@
 align-items: center;
 
 }    
-  
+ 
+
+
+ 
+@keyframes spin{
+    0%{transform: none;}
+    50%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);} 
+ }
+
+ @keyframes title{
+    0%{opacity:0;}
+    50%{opacity: 50;}
+    100%{opacity: 100;} 
+ }

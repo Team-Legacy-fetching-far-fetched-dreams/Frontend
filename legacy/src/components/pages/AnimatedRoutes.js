@@ -1,0 +1,59 @@
+import React from 'react'
+import Demo from './Demo';
+import Verfication from './Verfication';
+import LandingPage from '../../components/pages/LandingPage/LandingPage';
+import Home from '../../components/pages/LandingPage/Home';
+import AboutUs from '../../components/pages/LandingPage/AboutUs';
+import ContactUs from '../../components/pages/LandingPage/ContactUs';
+
+import DoctorPage from '../../components/pages/Doctor/DoctorPage';
+import NursePage from '../../components/pages/Nurse/NursePage';
+import AdminPage from '../../components/pages/Admin/AdminPage';
+import AdminLogin from '../../components/pages/Admin/AdminLogin';
+import DoctorSignUp from '../../components/pages/Doctor/DoctorSignUp'
+import DoctorLogin from '../../components/pages/Doctor/DoctorLogin';
+import NurseSignUp from '../../components/pages/Nurse/NurseSignUp'
+import NurseLogin from '../../components/pages/Nurse/NurseLogin'
+import {Routes, Route, useLocation} from 'react-router-dom'
+
+import InnerContent from './InnerContent'
+import AdminDashboard from '../../components/pages/Admin/AdminDashboard';
+import DoctorDashboard from '../../components/pages/Doctor/DoctorDashboard';
+import NurseDashboard from '../../components/pages/Nurse/NurseDashboard';
+import {AnimatePresence} from 'framer-motion/dist/framer-motion'
+
+const AnimatedRoutes = () => {
+    const location = useLocation(); 
+  return (
+<AnimatePresence>
+    <Routes location={location} key={location.pathname}>
+             <Route path ="/" element={<Demo/>} />
+             <Route path ="/Verfication" element={<Verfication/>} />
+              <Route path ="/LandingPage" element={<LandingPage/>} />
+              <Route path ="/Home" element={<Home/>} />
+              <Route path ="/ContactUs" element={<ContactUs/>} />
+              <Route path ="/AboutUs" element={<AboutUs/>} />
+           
+              <Route path ="/DoctorPage" element={<DoctorPage/>} />
+              <Route path ="/NursePage" element={<NursePage/>} />
+              <Route path ="/AdminPage" element={<AdminPage/>} />
+              
+              <Route path ="/AdminLogin" element={<AdminLogin/>} />
+              <Route path ="/DoctorSignUp" element={<DoctorSignUp/>} />
+              <Route path ="/DoctorLogin" element={<DoctorLogin/>} />
+              <Route path ="/NurseSignUp" element={<NurseSignUp/>} />
+              <Route path ="/NurseLogin" element={<NurseLogin/>} />
+              <Route path = '/AdminDashboard' element={<AdminDashboard/>} />
+
+              <Route path ="/AdminDashboard" element={<InnerContent/>} >
+                <Route path = '/AdminDashboard/Patient' element={<AdminPage/>} />
+                <Route path = '/AdminDashboard/Products' element={<NursePage/>} />
+              </Route>
+              <Route path ="/DoctorDashboard" element={<DoctorDashboard/>} />
+              <Route path ="/NurseDashboard" element={<NurseDashboard/>} />
+         </Routes>
+     </AnimatePresence>
+  )
+}
+
+export default AnimatedRoutes

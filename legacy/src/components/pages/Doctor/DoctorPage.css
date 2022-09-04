@@ -1,0 +1,109 @@
+.d-m{
+    background-color: #f6f6f9;
+    background-size: 100%;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+align-items: center;
+ }
+
+ .d-g{
+ position: relative;
+ height: 93vh;
+ width: 95vw;
+ border-radius: 2rem;
+ background-color: var(--glass);
+ backdrop-filter: blur(7px);
+ overflow: hidden;
+}
+
+.D-logo{
+    height: 70px;
+    margin: 5px;
+}
+
+
+.d-h{
+    display: flex;
+    width: 100%;
+    height: 150px;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+
+.d-content{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.d-content h1{
+    font-weight: bold;
+}
+
+.d-content .D-image1{
+    position: absolute;
+ left: 150px;
+ top: 150px;
+   height: 350px;   
+   margin: 50px; 
+}
+
+.d-content .D-image2{
+    position: absolute;
+ left: 250px;
+ top: 80px;
+ height: 350px;  
+   margin: 50px; 
+}
+
+.d-content .D-image3{
+    position: absolute;
+ left: 100px;
+ top: 80px;
+   height: 400px;   
+   margin: 50px; 
+}
+
+.d-content .D-image4{
+    position: absolute;
+ right: 150px;
+ top: 80px;
+
+}
+
+.d-p{
+    position: absolute;
+    top: 250px;
+    width: 400px;
+}
+
+.d-content .sl-btn{
+    display: flex;
+    width: 300px;
+    height: 100px;
+    position: absolute;
+    bottom: 100px;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+.sl-btn .d-signup{
+ background-color: #128A16;
+ border: none;
+ padding-left:6px;
+}
+
+
+.sl-btn .d-login{
+    background-color: #151E73;
+    border: none;
+    padding-left:6px;
+}
+

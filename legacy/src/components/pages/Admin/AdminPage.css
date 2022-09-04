@@ -1,0 +1,90 @@
+.A-m{
+    background-color: #f6f6f9;
+    background-size: 100%;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+align-items: center;
+ }
+
+
+ .A-g{
+    position: relative;
+    height: 93vh;
+    width: 95vw;
+    border-radius: 2rem;
+    background-color: var(--glass);
+    backdrop-filter: blur(7px);
+    overflow: hidden;
+
+   }
+
+   .A-logo{
+    height: 70px;
+    margin: 5px;
+}
+
+
+.A-h{
+    display: flex;
+    width: 100%;
+    height: 150px;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+
+.A-content{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.A-content h1{
+    font-weight: bold;
+}
+
+.A-p{
+    position: absolute;
+    top: 250px;
+    width: 400px;
+    left: 450px;
+}
+
+.A-content .sl-btn{
+    display: flex;
+    position: absolute;
+    bottom: 100px;
+    left: 600px;
+    width: 300px;
+    height: 100px;
+    
+}
+
+.sl-btn .A-login{
+    padding-left:6px;
+}
+
+
+.A-content .A-image2{
+    position: absolute;
+ left: 250px;
+ top: 80px;
+ height: 350px;  
+   margin: 50px; 
+}
+
+.A-content .A-image3{
+    position: absolute;
+ left: 100px;
+ top: 80px;
+}
+
+.A-content .A-image4{
+    position: absolute;
+ right: 150px;
+ top: 80px;
+
+}

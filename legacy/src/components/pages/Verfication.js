@@ -4,7 +4,7 @@ import Logo from '../../imgs/logo2.png'
 import Security from '../../imgs/security.png'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import {Link} from 'react-router-dom'
-
+import {motion} from 'framer-motion/dist/framer-motion'
  
   
 const Verfication = () => {
@@ -33,7 +33,13 @@ const Verfication = () => {
   }
 
   return (
-    <div className = "ver">
+    <motion.div className = "ver"
+    initial={{opacity: 0}}
+    animate={{opacity: 1}}
+    exit={{opacity: 0}}
+    
+    
+    >
     <div className="AppGlass">
       <div align="center" className = "container">
          <img src={Logo} alt="" className = "Vlogo"></img>
@@ -61,7 +67,7 @@ const Verfication = () => {
          <img align = "left" src= {Security} alt="" className ="Secure"></img>
       </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
