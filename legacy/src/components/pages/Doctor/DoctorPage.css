@@ -16,6 +16,7 @@ align-items: center;
  background-color: var(--glass);
  backdrop-filter: blur(7px);
  overflow: hidden;
+ text-align: center;
 }
 
 .D-logo{

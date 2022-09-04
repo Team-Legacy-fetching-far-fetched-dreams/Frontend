@@ -5,8 +5,6 @@ import AnimatedRoutes from './components/pages/AnimatedRoutes'
 import ScrollToTop from './components/pages/ScrollToTop';
 
 
-
-
  
 function App() {
   return (
