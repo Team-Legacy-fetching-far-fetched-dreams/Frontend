@@ -5,7 +5,7 @@
     width: 100vw;
     display: flex;
     justify-content: center;
-align-items: center;
+    align-items: center;
  }
 
 
@@ -17,12 +17,14 @@ align-items: center;
     background-color: var(--glass);
     backdrop-filter: blur(7px);
     overflow: hidden;
+    text-align: center;
+    
 
    }
 
-   .A-logo{
-    height: 70px;
-    margin: 5px;
+ .A-logo{
+    height: 120px;
+    margin: 10px;
 }
 
 
@@ -39,18 +41,81 @@ align-items: center;
 .A-content{
     display: flex;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-top: 200%;
+    border-radius: 3em;
+    flex-direction: column;
     
 }
 
+input{
+    border: none;
+    background-color: aliceblue;
+    height: 5em;
+    width: 30%;
+    border-radius: 2em;
+    border-top: 2px;
+    border-color: rgb(13, 20, 20);
+    text-align: center;
+}
+
+input:focus{
+    outline-color:rgb(22, 132, 236);
+}
+
+.login-btn{
+    width: 150%;
+    height:3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    border-radius: 4em;
+    cursor: pointer;
+    background-color: rgb(45, 45, 194);
+    color: white;
+    padding-bottom: 10px 5px;
+
+}
 .A-content h1{
     font-weight: bold;
+    text-decoration: underline;
+    display: inline-block;
+    padding-top:  20px;
+    padding-left: 30px;
     
 }
 
-.A-p{
+.login-btn:hover{transform:scale(1.25);}
+
+.text{
+    position: relative;
+    bottom: -2em;
+}
+.Secure{
+    /* look for a display or position to make the picture constant irrespective the items on the page*/
     position: absolute;
-    top: 250px;
+    left: 100px;
+    top: 200px;
+      height: 300px;   
+      margin: 50px;   
+   }    
+
+/* .A-content h1{
+    font-weight: bold;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.A-content h3{
+    position: absolute;
+    text-align: justify ;
+    top: 200px;
     width: 400px;
+    
 }
 
 .A-content .sl-btn{
@@ -58,5 +123,41 @@ align-items: center;
     bottom: 150px;
     width: 300px;
     height: 100px;
+    display: flex; 
    
+} */
+
+/* .form{
+    border: none;
+    border: 1px solid#dbdbdbdb;
+    background-color: rgb(229, 226, 226);
+    border-radius: 0.25em;
+    text-align: center;
+    padding: 5px;
+    margin: 2px 0;
+
 }
+
+input{
+    border: none;
+    border: 1px solid#dbdbdbdb;
+    background-color: rgb(229, 226, 226);
+    text-align: justify;
+}
+
+input focus{
+    outline-color: aquamarine;
+}
+
+
+
+button{
+    width: 50%;
+    margin: 5px 0;
+    background-color: rgb(6, 104, 22);
+    color: white;
+    padding: 5px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+} */

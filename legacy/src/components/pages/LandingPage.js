@@ -21,7 +21,7 @@ const LandingPage = () => {
           <NavBar/>
           <div className='body'>
           <h1>Take good care of <br/> your <span>health</span></h1>
-          <img src={Comp} alt='Laptop image' className="image"></img>
+          <img src={Comp} alt='Laptop' className="image"></img>
           <div className='back'>
             <img src={Back} alt="" className='back-image'></img>
           </div>

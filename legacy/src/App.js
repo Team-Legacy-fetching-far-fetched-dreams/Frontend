@@ -14,7 +14,7 @@ import DoctorSignUp from './components/pages/DoctorSignUp'
 import DoctorLogin from './components/pages/DoctorLogin';
 import NurseSignUp from './components/pages/NurseSignUp'
 import NurseLogin from './components/pages/NurseLogin'
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import {Routes, Route} from 'react-router-dom'
 import AdminDashboard from './components/pages/AdminDashboard';
 import DoctorDashboard from './components/pages/DoctorDashboard';
 import NurseDashboard from './components/pages/NurseDashboard';
