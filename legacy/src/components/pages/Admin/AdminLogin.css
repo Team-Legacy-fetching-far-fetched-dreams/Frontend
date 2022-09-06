@@ -3,15 +3,65 @@
     width: 100%;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     
 }
 
-.Al-content h1{
+
+
+input{
+    border: none;
+    border: 0px;
+    border-radius: 15px;
+    background-color: aliceblue;
+    height:65px;
+    width: 300px;
+    margin-left: 10px;
+    text-align: center;
+}
+.A-content .login-btn hover{transform: scale(1.25);}
+
+.Al-content  h1{
+    text-align: center;
     font-weight: bold;
+    text-decoration: underline;
+    display: inline-block;
+    padding-top:  1px;
+    padding-left: 50px;
+    
+
 }
 
-.Al-content .a-login{
-    background-color: #151E73;
-    border: none;
-    padding-left:6px;
+.Al-content h2{
+    text-align: center;
+    padding-left: 60px;
+    height: 30px;
+    font-size: 25px;
+    font-style: normal;
+}
+.form-container{
+    position: absolute;
+    left: 518px;
+    display: block;
+    margin-top: 26em;
+    margin-right: 2em;
+}
+
+input:focus{
+    outline-color: rgb(13, 20, 20);
+}
+.login-btn{
+    width: 35%;
+    color: white;
+    background-color: blue;
+    border-radius: 15px;
+   
+}
+
+.text{
+    color:black;
+    text-align: center;
+    text-decoration: underline;
+    top: 80px;
+    
 }
