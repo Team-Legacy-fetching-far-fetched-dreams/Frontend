@@ -5,7 +5,7 @@
     width: 100vw;
     display: flex;
     justify-content: center;
-align-items: center;
+    align-items: center;
  }
 
 
@@ -17,5 +17,32 @@ align-items: center;
     background-color: var(--glass);
     backdrop-filter: blur(7px);
     overflow: hidden;
+    
 
-   }
+ }
+
+ .abtus, .leg, .farf {
+             text-align: center;
+ }
+
+ .abtus{
+    font-weight: 1000;
+    padding-bottom: 15px;
+ }
+
+ .leg, .farf{
+    font-size: larger;
+ }
+
+ .farf{
+    font-weight: Bold;
+ }
+
+
+ .cnt{
+    padding-left: 20px;
+ }
+
+ 
+
+   
