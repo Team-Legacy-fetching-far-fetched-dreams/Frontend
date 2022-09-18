@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import './DoctorSignUp.css'
 import Logo from '../../../imgs/logo2.png'
-import registerImg from '../../../imgs/415.jpg'
+// import registerImg from '../../../imgs/415.jpg'
 import Button from 'react-bootstrap/Button';
 import {Link} from 'react-router-dom'
 import {useForm} from 'react-hook-form'
@@ -11,8 +11,24 @@ const DoctorSignUp = () => {
 
   const {register, handleSubmit} = useForm();
   const signUp=(data)=>{
+    data["qualification"] = "Doctor"
     //e.preventDefault();
     console.log(data)
+
+    const requestOptions ={
+      method : "POST",
+      headers : {
+        'content-type' : 'application/json'
+      },
+        body:JSON.stringify(data)
+    }
+
+    fetch("/user/signup", requestOptions)
+      .then((res)=>res.json())
+      .then(data=>{
+        console.log(data)
+      })
+
   }
 
   // const [email,setemail]=useState('');
@@ -32,7 +48,7 @@ const DoctorSignUp = () => {
             <img src={Logo} id='logo-png' alt='' srcSet='' />
           </div>
           <div className='shoulders'>
-            <img src={registerImg} id='reg-gng' alt='' srcSet='' />
+            {/* <img src={registerImg} id='reg-gng' alt='' srcSet='' /> */}
           </div>
           <h1 className='p1'>Legacy Healthcare</h1>
           <p className='p1'>Legacy Health’s mission is to positively impact the well-being of every individual in

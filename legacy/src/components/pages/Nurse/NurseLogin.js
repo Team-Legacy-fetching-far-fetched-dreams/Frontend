@@ -3,8 +3,8 @@ import './NurseLogin.css'
 import Logo from '../../../imgs/logo2.png'
 import Button from 'react-bootstrap/Button';
 import {Link} from 'react-router-dom'
-import wwelcomeImg from '../../../imgs/hellonurse.jpg'
-import Nip from '../../../imgs/nipp.png'
+// import wwelcomeImg from '../../../imgs/hellonurse.jpg'
+// import Nip from '../../../imgs/nipp.png'
 
 
 const NurseLogin = () => {
@@ -25,7 +25,7 @@ const handleSubmit = (event) => {
             <div className='login-coverpage'>
                <div className='left-side'>
                   <div className='img-class'>
-                     <img src={Nip} id='img-id' alt='' srcSet='' />
+                     {/* <img src={Nip} id='img-id' alt='' srcSet='' /> */}
 
                   </div>
                   <form onSubmit={handleSubmit}>
@@ -49,7 +49,7 @@ const handleSubmit = (event) => {
                   
                </div>
                <div className='wwelcomeImg'>
-                <img src={wwelcomeImg} id='wel-img-id' alt='' srcSet='' />
+                {/* <img src={wwelcomeImg} id='wel-img-id' alt='' srcSet='' /> */}
                </div>
                </div>
                </div> 

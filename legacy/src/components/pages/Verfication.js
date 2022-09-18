@@ -14,13 +14,8 @@ import {useForm} from 'react-hook-form'
     
 const Verfication = () => {
 
-    const [password, setPassword] = useState('');
-    const [cPassword, setCPassword] = useState('');
-    const [showErrorMessage, setShowErrorMessage] = useState(false);
-    const [cPasswordClass, setCPasswordClass] = useState('form-control');
-    const [isCPasswordDirty, setIsCPasswordDirty] = useState(false);
 
-    const {handleSubmit, register, reset}   = useForm();
+    const {handleSubmit, register, reset , formState:{errors}}   = useForm();
     const navigate = useNavigate()
     const verify = (data) => {
     
@@ -35,7 +30,7 @@ const Verfication = () => {
     }
     console.log(data)
 
-    fetch('http://127.0.0.1:5000/hms/verification', requestOptions)
+    fetch('/hms/verification', requestOptions)
         .then((res)=>res.json())
         .then(data=>{
             console.log(data)
@@ -46,24 +41,7 @@ const Verfication = () => {
         reset()
 
     }
-  useEffect(() => {  
-    
-      if (isCPasswordDirty) {
-          if (password === cPassword) {
-              setShowErrorMessage(false);
-              setCPasswordClass('form-control is-valid')
-          } else {
-              setShowErrorMessage(true)
-              setCPasswordClass('form-control is-invalid')
-          }
-      }
-  }, [cPassword])
-
-  const handleCPassword = (e) => {
-      setCPassword(e.target.value);
-      setIsCPasswordDirty(true);
-  }
-
+ 
  
 
   return (
@@ -84,14 +62,18 @@ const Verfication = () => {
                 <div className="mb-3">
                     <label htmlFor="password" className="form-label">Code</label>
                     <input type="password" className="form-control" id="password" pattern="[0-9]{4}"
-                        {...register('pin') } />
+                        {...register('pin', {
+                            valueAsNumber: true,
+                            required: true,
+
+
+                        })
+                    } 
+                        
+                        />
                 </div>
-                <div className="mb-3">
-                    <label htmlFor="confirmPassword" className="form-label">Confirm Code</label>
-                    <input type="password" className={cPasswordClass} id="confirmPassword" 
-                         {...register("confirm_pin")}/>
-                </div>
-                {showErrorMessage && isCPasswordDirty ? <div> Passwords did not match </div> : ''}
+    {errors.pin && <p style={{color: "red"}}><small>A 4 digit code is required</small></p>}
+               
 
             <Link to ="/LandingPage">
                 <button type="submit" className="btn btn-primary" id = 'btn' onClick ={handleSubmit(verify)} >OK</button>

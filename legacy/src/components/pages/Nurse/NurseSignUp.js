@@ -3,7 +3,7 @@ import './NurseSignUp.css'
 import Logo from '../../../imgs/logo2.png'
 import Button from 'react-bootstrap/Button';
 import {Link} from 'react-router-dom'
-import registerImgs from '../../../imgs/nursesignup.jpg'
+// import registerImgs from '../../../imgs/nursesignup.jpg'
 
 const NurseSignUp = () => {
 
@@ -27,7 +27,7 @@ const NurseSignUp = () => {
            <img src={Logo} id='logo-png' alt='' srcSet='' ></img>
        </div>
        <div className='chest'>
-            <img src={registerImgs} id='reg-svg' alt='' srcSet='' />
+            {/* <img src={registerImgs} id='reg-svg' alt='' srcSet='' /> */}
             </div>
 
             <h1 className='p1'>Legacy Healthcare</h1>

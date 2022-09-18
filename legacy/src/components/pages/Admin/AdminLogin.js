@@ -4,8 +4,8 @@ import Logo from '../../../imgs/logo2.png'
 import Button from 'react-bootstrap/Button';
 import {Link} from 'react-router-dom'
 import {motion} from 'framer-motion/dist/framer-motion'
-import welcomes from '../../../imgs/loginPic.png' 
-import Nip from '../../../imgs/nipp.png'
+// import welcomes from '../../../imgs/loginPic.png' 
+// import Nip from '../../../imgs/nipp.png'
 
 
 const AdminLogin = () => {
@@ -35,7 +35,7 @@ const AdminLogin = () => {
 
            <div className='left-side'>
               <div className='img-class'>
-              <img src={Nip} id='img-id'  alt='' srcSet=''/>
+              {/* <img src={Nip} id='img-id'  alt='' srcSet=''/> */}
               </div>
               <form onSubmit={handlesubmit}>
                 <label for= 'emil1'>Username</label>
@@ -57,7 +57,7 @@ const AdminLogin = () => {
              
               </div>
               <div className='welcomeImg'>
-                <img src={welcomes} id='wel-img-id' alt='' srcSet='' />
+                {/* <img src={welcomes} id='wel-img-id' alt='' srcSet='' /> */}
               </div>
             </div>
 

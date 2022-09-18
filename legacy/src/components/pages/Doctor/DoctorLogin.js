@@ -1,10 +1,10 @@
 import React, {useState} from 'react'
 import './DoctorLogin.css'
 import Logo from '../../../imgs/logo2.png'
-import Nip from '../../../imgs/nipp.png'
+// import Nip from '../../../imgs/nipp.png'
 import Button from 'react-bootstrap/Button';
 import {Link} from 'react-router-dom'
-import welcomeimg from '../../../imgs/wel2.jpg' 
+// import welcomeimg from '../../../imgs/wel2.jpg' 
 import {useForm} from 'react-hook-form'
 
   
@@ -34,7 +34,7 @@ const DoctorLogin = () => {
       <div className='login-encase'>
             <div className='left-side'>
               <div className='img-class'>
-              <img src={Nip} id='img-id'  alt='' srcSet=''/>
+              {/* <img src={Nip} id='img-id'  alt='' srcSet=''/> */}
               </div>
               <form onSubmit={handleSubmit}>
                 <label for= 'emil1'>Username</label>
@@ -63,7 +63,7 @@ const DoctorLogin = () => {
              
               </div>
               <div className='welcomeImg'>
-                <img src={welcomeimg} id='wel-img-id' alt='' srcSet='' />
+                {/* <img src={welcomeimg} id='wel-img-id' alt='' srcSet='' /> */}
               </div>
             </div>
         </div>
