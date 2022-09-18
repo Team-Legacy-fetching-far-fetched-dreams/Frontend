@@ -6,6 +6,7 @@ import Home from '../../components/pages/LandingPage/Home';
 import AboutUs from '../../components/pages/LandingPage/AboutUs';
 import ContactUs from '../../components/pages/LandingPage/ContactUs';
 
+import Hello from '../../Hello';
 import DoctorPage from '../../components/pages/Doctor/DoctorPage';
 import NursePage from '../../components/pages/Nurse/NursePage';
 import AdminPage from '../../components/pages/Admin/AdminPage';
@@ -34,6 +35,8 @@ const AnimatedRoutes = () => {
               <Route path ="/ContactUs" element={<ContactUs/>} />
               <Route path ="/AboutUs" element={<AboutUs/>} />
            
+              <Route path ="/Hello" element={<Hello/>} />
+
               <Route path ="/DoctorPage" element={<DoctorPage/>} />
               <Route path ="/NursePage" element={<NursePage/>} />
               <Route path ="/AdminPage" element={<AdminPage/>} />
