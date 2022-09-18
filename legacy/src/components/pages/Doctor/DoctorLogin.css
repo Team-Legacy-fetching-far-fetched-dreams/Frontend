@@ -1,17 +1,159 @@
-.dl-content{
-    display: flex;
+
+
+.dl-contents{
+  /* display: flex;
     width: 100%;
     align-items: center;
     justify-content: center;
+    */
+
+    min-height:100vh;
+    min-width: 100vh;
+    overflow-x: hidden;
+    background: linear-gradient(to right, rgb(223, 221, 221) 50%, #273294 50%);
+    
     
 }
 
-.dl-content h1{
+
+.login-encase{
+    height: 75vh;
+    width: 70%;
+    border-radius: 1rem;
+    margin: 2rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0.5rem 0.5rem 2rem -1rem rgba(58, 57, 57);
+    background: linear-gradient(to right bottom, rgba(255,255,255,0.7), rgba(236,236,236,0.4));
+
+}
+
+.link{
+    text-decoration: none;
+    color:#151E73;
+}
+
+.linkss{
+    text-decoration: none;
+    color: white;
+}
+
+.left-side, .right-side{
+    margin: 2rem 2rem;
+    box-shadow: 0.5rem 0.5rem 2rem -1rem rgb(58, 57, 57);
+    height: 80%;
+    width: 100%;
+
+}
+
+.img-class{
+    height: 6rem;
+   
+}
+
+ #img-id{
+        height: 100%;
+        object-fit: cover;
+
+}
+
+.left-side{
+    display: flex;
+   
+    flex-direction: column;
+    justify-content: center;
+   
+}
+
+.ll{
+    margin-bottom: 40px;
+}
+
+.dd{
+    font-size: 1.1rem;
+    font-weight: bolder;
+}
+
+.ii{
+    display: block;
+    border: none;
+    height: 2.5rem;
+    width: 70%;
+    margin: auto;
+    margin-bottom: 1.5rem;
+    padding: 0.2rem 1rem;
+    font-size: small;
+    color: gray;
+    transition: all 0.1s ease-in-out;
+   
+}
+.ii:focus{
+        outline: none;
+        border: none;
+    }
+
+    .ii:hover{
+        box-shadow: 4px 3px 9px -1px #151E73;
+    }
+
+    label{
+        display: block;
+        margin: auto;
+        text-align: left;
+        width: 70%;
+        font-size:large;
+        color: gray;
+        margin-bottom: 0.5rem;
+    }
+
+    #sub_butt{
+        width: 80%;
+        background: #151E73;
+        color: white;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem 1rem;
+        transition: all 0.2s ease ;
+    }
+    #sub_butt:hover{
+        box-shadow: 0.3rem 0.3rem 6px -1px black;
+        transform: translateY(-5px)
+        }
+
+.dl-contents h1{
     font-weight: bold;
 }
 
-.dl-content .d-login{
+.dl-contents .d-login{
     background-color: #151E73;
     border: none;
     padding-left:6px;
 }
+
+
+
+.welcomeImg{
+    height: 100%;
+    width: 95%;
+    margin: 0rem auto;
+
+   
+}
+
+#wel-img-id{
+    width: 100%;
+    object-fit: cover;
+   margin-top: 30px;
+    border-radius: 50px;
+
+}
+
+
+    h3{
+        margin-left: 1rem;
+        color: black;
+        float: left;
+        font-weight: bolder;
+    }
+  
