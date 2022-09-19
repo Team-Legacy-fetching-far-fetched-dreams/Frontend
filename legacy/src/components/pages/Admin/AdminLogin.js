@@ -45,7 +45,13 @@ const AdminLogin = () => {
                 <button className='ll' type='submit' id='sub_butt'> <Link className='linkss' to ="/DoctorDashboard"> Login </Link></button>
               </form>
 
-             
+              <div className='footers'>
+                <h4 className='dd'>Don't have an Account ? <Link className='link' to ="/AdminSignUp">Register Now</Link>
+
+                </h4>
+
+              </div>
+               
             
      
 
