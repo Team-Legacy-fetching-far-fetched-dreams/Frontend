@@ -14,7 +14,7 @@ const AdminSignUp = () => {
       <div className='ds-content'>
       <h1>Admin SignUp</h1> 
 
-      <Link to ="/DoctorLogin">
+      <Link to ="/AdminLogin">
              <Button className='d-submit' active>Submit</Button>
           </Link>
     

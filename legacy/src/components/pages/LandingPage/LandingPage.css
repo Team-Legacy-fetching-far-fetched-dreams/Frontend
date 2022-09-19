@@ -89,11 +89,18 @@ align-items: center;
     color:white;
   }
 
-  .arrow{
+  /* .arrow{
     position: absolute;
     left: 90px;
     width:120px;
     height:200px;
+  } */
+
+  .arrow{
+    position: absolute;
+    left: 50px;
+
+    height:150px;
   }
 
 

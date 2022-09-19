@@ -3,7 +3,7 @@ import './NurseLogin.css'
 import Logo from '../../../imgs/logo2.png'
 import Button from 'react-bootstrap/Button';
 import {Link} from 'react-router-dom'
-import wwelcomeImg from '../../../imgs/hellonurse.jpg'
+import wwelcomeImg from '../../../imgs/login1.png'
 import Nip from '../../../imgs/nipp.png'
 
 

@@ -4,7 +4,7 @@ import Logo from '../../../imgs/logo2.png'
 import Button from 'react-bootstrap/Button';
 import {Link} from 'react-router-dom'
 import {motion} from 'framer-motion/dist/framer-motion'
-import welcomes from '../../../imgs/loginPic.png' 
+import welcomes from '../../../imgs/loginpin.png' 
 import Nip from '../../../imgs/nipp.png'
 
 
