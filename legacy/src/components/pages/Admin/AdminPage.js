@@ -46,6 +46,9 @@ const AdminPage = () => {
           
   
       <div className='sl-btn'>
+         <Link to ="/AdminSignUp">
+             <Button className='A-signup' active>SignUp</Button>
+          </Link>
           <Link to ="/AdminLogin">
              <Button className='A-login' active>Login</Button>
           </Link>

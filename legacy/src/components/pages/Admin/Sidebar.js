@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
 import './Sidebar.css'
 import Logo from '../../../imgs/logo2.png'
-import {SidebarData} from "../Data/Data";
-import {UilSignOutAlt} from '@iconscout/react-unicons'
+// import {SidebarData} from "../Data/Data";
+import {UilSignOutAlt, UilEstate} from '@iconscout/react-unicons'
 import {Link} from 'react-router-dom'
 
 const Sidebar = () => {
@@ -16,22 +16,22 @@ const [selected, setSelected] = useState(0)
         <img src={Logo} alt=''></img>
       </div>
       <div className='menu'>
-        {SidebarData.map((item, index) =>{
-           return(
-          <div className={selected===index?'menu-item active': 'menu-item'}
-          key={index}
-          onClick={()=> setSelected(index)}
-          >
-            
-            <item.icon/>
-            <span>
-              {item.heading}
-            </span>
-            
+      <div className='menu-item'>
+       
+          <div>
+          <UilEstate/>
           </div>
-          
-          )
-        })}
+          <span>Dashboard</span>
+        </div>
+
+        <div className='menu-item'>
+        <Link to ="/">
+          <div>
+          <UilSignOutAlt/>
+          </div>
+          <span></span>
+         </Link>
+        </div>
 
         <div className='menu-item'>
         <Link to ="/">

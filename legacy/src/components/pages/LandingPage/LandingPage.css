@@ -229,4 +229,15 @@ background-color: #128A16;
     margin-top: 100px;
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgb(144, 144, 145) 0px -5px 30px;
   }
+
+  .social{
+    display: flex;
+      color:white;
+      gap: 1rem;
+      
+  }
+  

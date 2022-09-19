@@ -16,6 +16,8 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import {Link} from 'react-router-dom'
 import {motion} from 'framer-motion/dist/framer-motion'
+import { UilFacebookF , UilInstagram, UilWhatsapp, UilSnapchatGhost,  UilLinkedin } from '@iconscout/react-unicons'
+
 
 const Home = () => {
 const hero = useRef(null);
@@ -115,7 +117,16 @@ behavior: "smooth",
             </div>
           </div>
           <div className='footer'>
-            
+            <div className='social'>
+             <UilFacebookF/>
+             <UilInstagram/>
+             <UilWhatsapp/>
+             <UilSnapchatGhost/>
+             <UilLinkedin/>
+           </div>
+           <div>
+          
+           </div>
           </div>
         </div>
   )
