@@ -9,6 +9,7 @@ import ContactUs from '../../components/pages/LandingPage/ContactUs';
 import DoctorPage from '../../components/pages/Doctor/DoctorPage';
 import NursePage from '../../components/pages/Nurse/NursePage';
 import AdminPage from '../../components/pages/Admin/AdminPage';
+import AdminSignUp from '../../components/pages/Admin/AdminSignUp';
 import AdminLogin from '../../components/pages/Admin/AdminLogin';
 import DoctorSignUp from '../../components/pages/Doctor/DoctorSignUp'
 import DoctorLogin from '../../components/pages/Doctor/DoctorLogin';
@@ -38,6 +39,7 @@ const AnimatedRoutes = () => {
               <Route path ="/NursePage" element={<NursePage/>} />
               <Route path ="/AdminPage" element={<AdminPage/>} />
               
+              <Route path ="/AdminSignUp" element={<AdminSignUp/>} />
               <Route path ="/AdminLogin" element={<AdminLogin/>} />
               <Route path ="/DoctorSignUp" element={<DoctorSignUp/>} />
               <Route path ="/DoctorLogin" element={<DoctorLogin/>} />
