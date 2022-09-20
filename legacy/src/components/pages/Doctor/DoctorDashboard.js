@@ -8,19 +8,21 @@ import MainDash from '../../../components/pages/Admin/MainDash'
 const DoctorDashboard = () => {
 
   const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY');
-  // const {data} = localStorage.getItem('DATA');
+  const {data} = localStorage.getItem('DATA');
   useEffect(() => {
     const requestOptions = {
     method: "GET",
     headers : {
       'content-type': 'application/json',
-      'Authorization' :`Bearer ${token}`
+      'Authorization': `Bearer ${JSON.parse(token)}`
     },
     
   }
-  console.log(requestOptions.Authorization)
 
-  fetch('/patients/appoint', requestOptions)
+
+  console.log(token)
+
+  fetch('/user/users', requestOptions)
     .then(res => res.json())
     .then(data=>{
       console.log(data)
@@ -36,7 +38,7 @@ const DoctorDashboard = () => {
     <div className='D-d-g'>
     <Sidebar/>
         <MainDash/>
-        <h1>WELCOME</h1>
+        <h1>WELCOME {data}</h1>
         {/* <p>Your email is {email}</p> */}
     </div> 
 </motion.div>
