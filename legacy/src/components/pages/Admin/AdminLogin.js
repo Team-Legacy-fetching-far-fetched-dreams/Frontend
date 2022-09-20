@@ -11,6 +11,32 @@ import {login} from '../../../auth'
 
 
 const AdminLogin = () => {
+  const [values,setValues] = useState({
+    userName:"",
+    password:"",
+
+  });
+  
+  
+
+  const [submit,setSubmit]=useState(false);
+  // const [valid,setValid]= useState(false);
+
+  const handleuserName = (event) =>{
+    setValues({...values,userName: event.target.value})
+  }
+
+  const handlepassword = (event) =>{
+    setValues({...values,password: event.target.value})
+  }
+
+  const handleSubmit = (event) =>{
+    event.preventDefault();
+    // if(values.userName&&values.password){
+    //   setValid(true);
+    // }
+    setSubmit(true);
+  }
 
   
   // const [emailval, setemailval]= useState("");
@@ -90,6 +116,7 @@ const validate = (values) => {
        <div  className = "A-h">
            <img src={Logo} alt="" className = "A-logo"></img>  
        </div>
+
        <div className='Al-content'>
            <div  className='login-encase'>
 
@@ -134,7 +161,8 @@ const validate = (values) => {
 
 
       </div>
-       </div>
+      </div>
+       
     </motion.div>
 
   )

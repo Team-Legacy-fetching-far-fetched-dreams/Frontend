@@ -25,6 +25,7 @@ import AdminDashboard from '../../components/pages/Admin/AdminDashboard';
 import DoctorDashboard from '../../components/pages/Doctor/DoctorDashboard';
 import NurseDashboard from '../../components/pages/Nurse/NurseDashboard';
 import {AnimatePresence} from 'framer-motion/dist/framer-motion'
+// import ListOfRegPatients from './ListOfRegPatients';
 
 
 const AnimatedRoutes = () => {
@@ -44,6 +45,7 @@ const AnimatedRoutes = () => {
 
               <Route path ="/DoctorPage" element={<DoctorPage/>} />
               <Route path ="/NursePage" element={<NursePage/>} />
+              {/* <Route path ="/ListOfRegPatients" element={<ListOfRegPatients/>} /> */}
               <Route path ="/AdminPage" element={<AdminPage/>} />
               
               <Route path ="/AdminSignUp" element={<AdminSignUp/>} />
