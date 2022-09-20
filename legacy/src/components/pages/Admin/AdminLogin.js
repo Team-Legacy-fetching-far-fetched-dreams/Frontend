@@ -3,7 +3,7 @@ import './AdminLogin.css'
 import Logo from '../../../imgs/logo2.png'
 import {Link} from 'react-router-dom'
 import {motion} from 'framer-motion/dist/framer-motion'
-
+import Adlogin from '../../../imgs/adlogin.png'
 
 
 const AdminLogin = () => {
@@ -12,9 +12,11 @@ const AdminLogin = () => {
     password:"",
 
   });
+  
+  
 
   const [submit,setSubmit]=useState(false);
-  const [valid,setValid]= useState(false);
+  // const [valid,setValid]= useState(false);
 
   const handleuserName = (event) =>{
     setValues({...values,userName: event.target.value})
@@ -26,9 +28,9 @@ const AdminLogin = () => {
 
   const handleSubmit = (event) =>{
     event.preventDefault();
-    if(values.userName&&values.password){
-      setValid(true);
-    }
+    // if(values.userName&&values.password){
+    //   setValid(true);
+    // }
     setSubmit(true);
   }
 
@@ -49,7 +51,7 @@ const AdminLogin = () => {
             <h2>Please Enter  Username And Password To Login</h2>
            
             <form className='form-container' onSubmit={handleSubmit}>
-              {submit && valid ? <div className='success-message'>You're Logged In</div> : null}
+              {/* {submit && valid ? <div className='success-message'>You're Logged In</div> : null} */}
               <input 
               onChange={handleuserName}
               value={values.userName}
@@ -60,7 +62,7 @@ const AdminLogin = () => {
               required
               />
               <br></br>
-             {submit && !values.userName?<span>Please enter your username</span>:null}
+             {submit && !values.userName?<span style={{color:"red"}}>Username is required!</span>:null}
              <br></br>
               <input 
               onChange={handlepassword}
@@ -71,7 +73,7 @@ const AdminLogin = () => {
               required
               />
               <br></br>
-              {submit && !values.password ? <span>Please enter your password</span> : null}
+              {submit && !values.password ? <span style={{color:"red"}}>Password is required!</span> : null}
               
               <br></br>
                 <button className='login-btn' >Login</button>
@@ -79,8 +81,10 @@ const AdminLogin = () => {
 
 
          {/* <div className='text'>forgot password?</div> */}
+        <img src= {Adlogin} alt="" className ="Ad-img"></img>
+
       </div>
-       </div>
+      </div>
        
     </motion.div>
 

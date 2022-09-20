@@ -14,8 +14,8 @@ input{
     border: 0px;
     border-radius: 15px;
     background-color: aliceblue;
-    height:65px;
-    width: 300px;
+    height:70px;
+    width: 270px;
     margin-left: 10px;
     text-align: center;
 }
@@ -24,7 +24,6 @@ input{
 .Al-content  h1{
     text-align: center;
     font-weight: bold;
-    text-decoration: underline;
     display: inline-block;
     padding-top:  1px;
     padding-left: 50px;
@@ -55,7 +54,7 @@ input:focus{
     color: white;
     background-color: blue;
     border-radius: 15px;
-   
+    border: none;
 }
 
 .text{
@@ -64,4 +63,11 @@ input:focus{
     text-decoration: underline;
     top: 80px;
     
+}
+.Ad-img{
+    position: absolute;
+  left: 100px;
+  top: 200px;
+   height: 300px;   
+   margin: 50px;   
 }
