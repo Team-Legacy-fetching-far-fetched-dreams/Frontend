@@ -18,7 +18,6 @@ const DoctorLogin = () => {
       <Link to ="/DoctorDashboard">
              <Button className='d-login' active>Login</Button>
       </Link>
-
      </div>
     </div> 
 </div>
