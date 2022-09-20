@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react'
 import './AdminLogin.css'
 import Logo from '../../../imgs/logo2.png'
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 import {Link, useNavigate} from 'react-router-dom'
 import {motion} from 'framer-motion/dist/framer-motion'
-import {useForm} from 'react-hook-form'
-import {login, useAuth} from '../../../auth'
+// import {useForm} from 'react-hook-form'
+import {login} from '../../../auth'
 // import welcomes from '../../../imgs/loginPic.png' 
 // import Nip from '../../../imgs/nipp.png'
 
@@ -20,7 +20,7 @@ const AdminLogin = () => {
   const [formValues,setFormValues] = useState( initialValues);
   const [formErrors,setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
-  const [islogged, setislogged] = useState(false);
+  // const [islogged, setislogged] = useState(false);
   
   const handleChange = (e) => {
     const {name, value} = e.target;
@@ -57,7 +57,7 @@ const AdminLogin = () => {
         
 
         if(data.access_token){
-          setislogged(true)
+          // setislogged(true)
           navigate('/AdminDashboard') 
         }
     })

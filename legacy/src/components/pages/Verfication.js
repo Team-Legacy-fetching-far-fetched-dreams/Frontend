@@ -1,4 +1,4 @@
-import React , {useState , useEffect} from 'react'
+import React from 'react'
 import './Verification.css'
 import Logo from '../../imgs/logo2.png'
 import Security from '../../imgs/security.png'
@@ -17,6 +17,7 @@ const Verfication = () => {
 
     const {handleSubmit, register, reset , formState:{errors}}   = useForm();
     const navigate = useNavigate()
+    const name = 'Essuman'
     const verify = (data) => {
     
     console.log(data)
@@ -35,7 +36,13 @@ const Verfication = () => {
         .then(data=>{
             console.log(data)
 
-            {(data.access=='granted')?navigate('/LandingPage') :navigate('/')}
+            if(data.access==='granted')
+            {
+                navigate('/LandingPage') 
+            }
+            else{
+                    navigate('/')
+                }
         })
 
         reset()
@@ -77,6 +84,9 @@ const Verfication = () => {
 
             <Link to ="/LandingPage">
                 <button type="submit" className="btn btn-primary" id = 'btn' onClick ={handleSubmit(verify)} >OK</button>
+            </Link>
+            <Link to = {{pathname: `/TrialPage/:${name}`, state : {age:12}}} >
+                <button type="submit" className="btn btn-primary" >Go Trial Page</button>
             </Link>
             </div>
             </form>

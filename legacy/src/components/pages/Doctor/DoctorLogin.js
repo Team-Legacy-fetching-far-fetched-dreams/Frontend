@@ -40,7 +40,31 @@ const handleSubmit = (e) => {
   setFormErrors(validate(formValues));
   setIsSubmit(true);
   console.log(formValues)
-  setFormValues(initialValues)
+
+  const requestOptions={
+    method : "POST",
+    headers: {
+        'content-type':'application/json'
+    },
+    body:JSON.stringify(formValues)
+}
+
+fetch('http://127.0.0.1:5000/user/login', requestOptions)
+.then((res)=>res.json())
+.then(data=>{
+    console.log(data)
+    login(data.access_token)
+    
+
+    if(data.access_token){
+      setislogged(true)
+      // localStorage.setItem('REACT_TOKEN_AUTH_KEY', data.access_token)
+      localStorage.setItem('DATA', data)
+      navigate('/DoctorDashboard') 
+     
+    }
+})
+  // setFormValues(initialValues)
 };
 
 useEffect(() => {
@@ -49,26 +73,7 @@ useEffect(() => {
       console.log(formValues);
 
 
-      const requestOptions={
-        method : "POST",
-        headers: {
-            'content-type':'application/json'
-        },
-        body:JSON.stringify(formValues)
-    }
-
-    fetch('http://127.0.0.1:5000/user/login', requestOptions)
-    .then((res)=>res.json())
-    .then(data=>{
-        console.log(data)
-        login(data.access_token)
-        
-
-        if(data.access_token){
-          setislogged(true)
-          navigate('/DoctorDashboard') 
-        }
-    })
+    
      }
 },[formErrors])
 

@@ -2,9 +2,9 @@ import React, {useState, useEffect} from 'react'
 import './AdminSignUp.css'
 import Logo from '../../../imgs/logo2.png'
 import registerImg from '../../../imgs/415.jpg'
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 import {Link} from 'react-router-dom'
-import {useForm} from 'react-hook-form'
+// import {useForm} from 'react-hook-form'
 
 const AdminSignUp = () => {
   const initialValues = {surname: "", other_name: "", email: "", birth_date: "", address: "", contact1: "", contact2: "", gender: ""};
@@ -13,10 +13,9 @@ const AdminSignUp = () => {
   const [isSubmit, setIsSubmit] = useState(false);
 
   const handleChange = (e) => {
-    console.log(e.target);
     const {name, value} = e.target;
     setFormValues({...formValues, [name]: value});
-    console.log(formValues);
+    // console.log(formValues);
 };
 
 
@@ -24,12 +23,30 @@ const handleSubmit = (e) => {
   e.preventDefault();
   setFormErrors(validate(formValues));
   setIsSubmit(true);
+  formValues["qualification"] = "Admin"
+  console.log(formValues)
 };
 
 useEffect(() => {
-     console.log(formErrors);
+     //console.log(formErrors);
      if (Object.keys(formErrors).length === 0 && isSubmit){
       console.log(formValues);
+
+      const requestOptions ={
+        method : "POST",
+        headers : {
+          'content-type' : 'application/json'
+        },
+          body: JSON.stringify(formValues)
+      }
+
+      if (Object.values(formErrors).length === 0){
+        fetch("http://127.0.0.1:5000/user/signup", requestOptions)
+        .then((res)=>res.json())
+        .then(data=>{
+          console.log(data)
+        })
+      }
      }
 },[formErrors])
 
