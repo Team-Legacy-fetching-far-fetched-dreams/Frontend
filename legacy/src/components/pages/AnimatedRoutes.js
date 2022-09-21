@@ -9,6 +9,7 @@ import ContactUs from '../../components/pages/LandingPage/ContactUs';
 import Hello from '../../Hello';
 import TrialPage from '../../components/pages/Doctor/trialpage.js';
 
+import Modal from '../../components/pages/Admin/Model/Modal';
 import DoctorPage from '../../components/pages/Doctor/DoctorPage';
 import NursePage from '../../components/pages/Nurse/NursePage';
 import AdminPage from '../../components/pages/Admin/AdminPage';
@@ -47,7 +48,8 @@ const AnimatedRoutes = () => {
               <Route path ="/NursePage" element={<NursePage/>} />
               {/* <Route path ="/ListOfRegPatients" element={<ListOfRegPatients/>} /> */}
               <Route path ="/AdminPage" element={<AdminPage/>} />
-              
+              <Route path ="/Modal" element={<Modal/>} />
+
               <Route path ="/AdminSignUp" element={<AdminSignUp/>} />
               <Route path ="/AdminLogin" element={<AdminLogin/>} />
               <Route path ="/DoctorSignUp" element={<DoctorSignUp/>} />
