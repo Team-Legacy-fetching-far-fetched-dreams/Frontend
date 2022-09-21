@@ -19,3 +19,44 @@ align-items: center;
     overflow: hidden;
 
    }
+
+   .C-h{
+    display: flex;
+    width: 100%;
+    height: 150px;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+   .chester{
+    display: grid;
+    grid-template-columns: 500px auto;
+    padding: 50px;
+
+   }
+
+   div .boxy{
+    font-weight: bold;
+   }
+
+   
+ .cback-image{
+    position: absolute;
+    top:150px;
+left:80px;
+    height: 100%;
+  }
+ 
+
+  .hospital{
+    display: relative;
+    margin-left: 20px;
+  }
+  .hospital-image{
+    position: absolute;
+ right: 100px;
+    top: 120px;
+    width: 80vh;
+    height: 80vh;
+  }

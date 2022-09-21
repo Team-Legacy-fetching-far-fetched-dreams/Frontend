@@ -2,21 +2,17 @@ import React, {useState, useEffect} from 'react'
 import './DoctorLogin.css'
 import Logo from '../../../imgs/logo2.png'
 import Nip from '../../../imgs/nipp.png'
-import Button from 'react-bootstrap/Button';
-import {Link, useNavigate} from 'react-router-dom'
+
+import {Link} from 'react-router-dom'
 import welcomeimg from '../../../imgs/wel2.jpg' 
-import {useForm} from 'react-hook-form'
-import {login, useAuth} from '../../../auth'
 
   
 const DoctorLogin = () => {
-  const navigate = useNavigate()
+  
   const initialValues = {username: "", password: ""};
   const [formValues,setFormValues] = useState( initialValues);
   const [formErrors,setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
-  const [islogged, setislogged] = useState(false);
-
  // const {register, handleSubmit} = useForm();
  // const signUp=(data)=>{
     //e.preventDefault();
@@ -30,8 +26,10 @@ const DoctorLogin = () => {
   // const handlesubmit =(event)=>{
   //   event.preventDefault();
   const handleChange = (e) => {
+    console.log(e.target);
     const {name, value} = e.target;
     setFormValues({...formValues, [name]: value});
+    console.log(formValues);
 };
 
 
@@ -39,41 +37,12 @@ const handleSubmit = (e) => {
   e.preventDefault();
   setFormErrors(validate(formValues));
   setIsSubmit(true);
-  console.log(formValues)
-
-  const requestOptions={
-    method : "POST",
-    headers: {
-        'content-type':'application/json'
-    },
-    body:JSON.stringify(formValues)
-}
-
-fetch('http://127.0.0.1:5000/user/login', requestOptions)
-.then((res)=>res.json())
-.then(data=>{
-    console.log(data)
-    login(data.access_token)
-    
-
-    if(data.access_token){
-      setislogged(true)
-      // localStorage.setItem('REACT_TOKEN_AUTH_KEY', data.access_token)
-      localStorage.setItem('DATA', data)
-      navigate('/DoctorDashboard') 
-     
-    }
-})
-  // setFormValues(initialValues)
 };
 
 useEffect(() => {
-    //  console.log(formErrors);
+     console.log(formErrors);
      if (Object.keys(formErrors).length === 0 && isSubmit){
       console.log(formValues);
-
-
-    
      }
 },[formErrors])
 
@@ -109,13 +78,13 @@ const validate = (values) => {
               <form onSubmit={handleSubmit}>
                 <label for= 'emil1'>Username</label>
                 <p className='err'>{formErrors.username}</p>
-                <input className='ii' placeholder='Enter your username...' type='text'  name='username' onChange={handleChange} value= {formValues.username} id='emil1'  ></input>
+                <input className='ii' placeholder='Enter your username...' type='text'  name='username'onChange={handleChange} value= {formValues.username} id='emil1'  ></input>
                  
                 <label for='pwd1'>Password</label>
                 <p className='err'>{formErrors.password}</p>
-                <input className='ii' placeholder='Enter your password...'  name='password' onChange={handleChange} value= {formValues.password} type='password'  id='pwd1' ></input>
+                <input className='ii' placeholder='Enter your password...'  name='password' onChange={handleChange} value= {formValues.passwordname} type='password'  id='pwd1' ></input>
                 <button value='Submit' className='ll' type='submit' id='sub_butt'> 
-                  Login </button>
+                 <Link className='linkss' to ="/DoctorDashboard" > Login </Link></button>
                 
               </form>
 

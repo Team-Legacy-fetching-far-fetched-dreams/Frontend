@@ -21,7 +21,7 @@ const PatientForm = () => {
     e.preventDefault();
     setFormErrors(validate(formValues));
     setIsSubmit(true);
-    formValues["qualification"] = "Patient"
+   
     console.log(formValues)
   }
 
@@ -40,7 +40,7 @@ const PatientForm = () => {
       }
 
       if (Object.values(formErrors).length === 0){
-        fetch("http://127.0.0.1:5000/user/signup", requestOptions)
+        fetch("http://127.0.0.1:5000/patients", requestOptions)
         .then((res)=>res.json())
         .then(data=>{
           console.log(data)
@@ -144,44 +144,54 @@ simply better.</p>
         <div className='body-rights'>
           <div className='containers'>
             <h1 className='cr'>Create Account!</h1>
-            <form >
+            
+            <form onSubmit={handleSubmit}>
              <div className='inner-group'>
-              <h5>Surname</h5>
-             <input type='text' className='inputs' name='Fname' {...register("surname")} id='fname'></input>
+              <h5 className='hac'>Surname</h5>
+             <input type='text' className='inputs' onChange={handleChange} value= {formValues.surname} name='surname' id='fname'></input>
+              </div>
+              <p className='err'>{formErrors.surname}</p>
+              <div className='inner-group'>
+              <h5 className='hac'>Other Names</h5>
+              <input className='inputs' type='text' name='other_name' onChange={handleChange} value= {formValues.other_name}   id='oname'/>
+              </div>
+              <p className='err'>{formErrors.other_name}</p>
+              <div className='inner-group'>
+              <h5 className='hac'>Date Of Birth</h5>
+              <input className='inputs'  type='date' id='birthday' name='birth_date' onChange={handleChange} value= {formValues.birth_date} />
+              </div>
+              <p className='err'>{formErrors.birth_date}</p>
+              <div className='inner-group'>
+              <h5 className='hac'>Email</h5>
+              <input className='inputs'  type='email' name='email' id='email1' onChange={handleChange} value= {formValues.email} />
+              </div>
+              <p className='err'>{formErrors.email}</p>
+              <div className='inner-group'>
+              <h5 className='hac'>Address</h5>
+              <input className='inputs'  type='text' name='address' id='address' onChange={handleChange} value= {formValues.address} />
+              </div>
+              <p className='err'>{formErrors.address}</p>
+              <div className='inner-group'>
+              <h5 className='hac'>Phone</h5>
+              <input className='inputs' type="tel"   id="phone" name="contact1" onChange={handleChange} value= {formValues.contact1} />
+              </div>
+              <p className='err'>{formErrors.contact1}</p>
+              <div className='inner-group'>
+              <h5 className='hac'>Other Phone</h5>
+              <input className='inputs' type="tel"  id="phone" name="contact2" onChange={handleChange} value= {formValues.contact2} />
               </div>
               <div className='inner-group'>
-              <h5>Other Names</h5>
-              <input className='inputs' type='text' name='Oname' {...register("other_name")}  id='oname'/>
+              <h5 className='hac'>Gender</h5>
+              <input className='inputs'  type='text'  name='gender' placeholder='Male/Female' id='gender' onChange={handleChange} value= {formValues.gender} />
               </div>
-              <div className='inner-group'>
-              <h5>Date Of Birth</h5>
-              <input className='inputs'  type='date' id='birthday' name='birthday'  {...register("birth_date")}/>
-              </div>
-              <div className='inner-group'>
-              <h5>Email</h5>
-              <input className='inputs'  type='email' name='Email' id='email1' {...register("email")}/>
-              </div>
-              <div className='inner-group'>
-              <h5>Address</h5>
-              <input className='inputs'  type='text' name='Address' id='address' {...register("address")}/>
-              </div>
-              <div className='inner-group'>
-              <h5>Phone</h5>
-              <input className='inputs' type="tel"   id="phone" name="phone" pattern="[0-9]{10}" {...register("contact1")}/>
-              </div>
-              <div className='inner-group'>
-              <h5>Other Phone</h5>
-              <input className='inputs' type="tel"  id="phone" name="phone" pattern="[0-9]{10}" {...register("contact2")}/>
-              </div>
-              <div className='inner-group'>
-              <h5>Gender</h5>
-              <input className='inputs'  type='text'  name='Gender' placeholder='Male/Female/Undefined' id='gender'  {...register("gender")}/>
-              </div>
+              <p className='err'>{formErrors.gender}</p>
 
              
-             <input type='submit' id='sbtn' value='Submit' onClick={handleSubmit(signUp)}/>
+             <input type='submit' id='sbtn' className='subway' value='Submit' />
              </form>
-          </div>
+            
+
+                    </div>
 
         </div>
         </div>

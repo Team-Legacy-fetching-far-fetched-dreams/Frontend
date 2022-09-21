@@ -1,12 +1,13 @@
-import React from 'react'
-import './Sidebar.css'
+import React, {useState} from 'react'
+import './DcSidebar.css'
 import Logo from '../../../imgs/logo2.png'
 // import {SidebarData} from "../Data/Data";
 import {UilSignOutAlt, UilEstate, UilUserNurse, UilUserMd , UilAccessibleIconAlt } from '@iconscout/react-unicons'
 import {Link} from 'react-router-dom'
 
-const Sidebar = () => {
+const DcSidebar = () => {
 
+const [selected, setSelected] = useState(0)
 
 
   return (
@@ -18,25 +19,25 @@ const Sidebar = () => {
       
           <ul>
             <li>
-            <Link to ='/AdminDashBoard'>
+            <Link to ='/DoctorDashBoard'>
               <UilEstate className="icon"/>
               <span>Dashboard</span>
               </Link>
             </li>
             <li>
-              <Link to ='/AdminDashboard/Doctor'>
+              <Link to ='/DoctorDashboard/Doctor'>
             <UilUserMd className="icon"/>
               <span>Doctor</span>
               </Link>
             </li>
             <li>
-            <Link to ='/AdminDashboard/Nurse'>
+            <Link to ='/DoctorDashboard/Nurse'>
             <UilUserNurse className="icon"/>
               <span>Nurse</span>
               </Link>
             </li>
             <li>
-            <Link to ='/AdminDashboard/Patient'>
+            <Link to ='/DoctorDashboard/Patient'>
             <UilAccessibleIconAlt className="icon"/>
               <span>Patient</span>
             </Link>
@@ -59,4 +60,4 @@ const Sidebar = () => {
   )
 }
 
-export default Sidebar
+export default DcSidebar

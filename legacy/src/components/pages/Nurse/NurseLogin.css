@@ -103,7 +103,7 @@ ii:focus{
     box-shadow: 4px 3px 9px -1px #128A16;
 }
 
-label{
+.left-side label{
     display: block;
     margin: auto;
     text-align: left;
@@ -144,7 +144,7 @@ width: 95%;
 margin: 0rem auto;
 }
 #wel-img-id{
-    width: 100%;
+    width: 80%;
     object-fit: cover;
     margin-top: 30px;
     border-radius: 50px;

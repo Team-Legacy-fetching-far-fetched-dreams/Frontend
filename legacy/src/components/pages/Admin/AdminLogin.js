@@ -1,82 +1,21 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import './AdminLogin.css'
 import Logo from '../../../imgs/logo2.png'
-// import Button from 'react-bootstrap/Button';
-import {Link, useNavigate} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import {motion} from 'framer-motion/dist/framer-motion'
-// import {useForm} from 'react-hook-form'
-import {login} from '../../../auth'
-// import welcomes from '../../../imgs/loginPic.png' 
-// import Nip from '../../../imgs/nipp.png'
+import welcomes from '../../../imgs/loginpin.png' 
+import Nip from '../../../imgs/nipp.png'
 
 
 const AdminLogin = () => {
 
   
-  // const [emailval, setemailval]= useState("");
-  // const [passval, setpassval] = useState("");
-  const navigate = useNavigate()
-  const initialValues = {username: "", password: ""};
-  const [formValues,setFormValues] = useState( initialValues);
-  const [formErrors,setFormErrors] = useState({});
-  const [isSubmit, setIsSubmit] = useState(false);
-  // const [islogged, setislogged] = useState(false);
-  
-  const handleChange = (e) => {
-    const {name, value} = e.target;
-    setFormValues({...formValues, [name]: value});
-};
- 
+  const [emailval, setemailval]= useState("");
+  const [passval, setpassval] = useState("");
+
   const handlesubmit =(event)=>{
     event.preventDefault();
-    setFormErrors(validate(formValues));
-    setIsSubmit(true);
-    console.log(formValues)
-    setFormValues(initialValues)
   }
-
-  useEffect(() => {
-    //  console.log(formErrors);
-     if (Object.keys(formErrors).length === 0 && isSubmit){
-      console.log(formValues);
-
-
-      const requestOptions={
-        method : "POST",
-        headers: {
-            'content-type':'application/json'
-        },
-        body:JSON.stringify(formValues)
-    }
-
-    fetch('http://127.0.0.1:5000/user/login', requestOptions)
-    .then((res)=>res.json())
-    .then(data=>{
-        console.log(data)
-        login(data.access_token)
-        
-
-        if(data.access_token){
-          // setislogged(true)
-          navigate('/AdminDashboard') 
-        }
-    })
-     }
-},[formErrors])
-
-
-const validate = (values) => {
-  const errors = {};
-  
-  if (!values.username){
-   errors.username = "Username is required!";
-  }
-  if (!values.password){
-   errors.password = "Password is required!";
-  }
-  
-  return errors;
-};
 
 
   return (
@@ -95,16 +34,14 @@ const validate = (values) => {
 
            <div className='left-side'>
               <div className='img-class'>
-              {/* <img src={Nip} id='img-id'  alt='' srcSet=''/> */}
+              <img src={Nip} id='img-id'  alt='' srcSet=''/>
               </div>
               <form onSubmit={handlesubmit}>
                 <label for= 'emil1'>Username</label>
-                <p className='err'>{formErrors.username}</p>
-                <input className='ii' placeholder='Enter your username...' type='text' value={formValues.username} name='username' onChange={handleChange} id='emil1'></input>
+                <input className='ii' placeholder='Enter your username...' type='text' value={emailval} onChange={(e)=>{setemailval(e.target.value)}} id='emil1'></input>
                 <label for='pwd1'>Password</label>
-                <p className='err'>{formErrors.username}</p>
-                <input className='ii' placeholder='Enter your password...' type='password'  name='pasword' value={formValues.password} onChange={handleChange} id='pwd1'></input>
-                <button className='ll' type='submit' id='sub_butt'> Login </button>
+                <input className='ii' placeholder='Enter your password...' type='password'  value={passval} onChange={(e)=>{setpassval(e.target.value)}} id='pwd1'></input>
+                <button className='ll' type='submit' id='sub_butt'> <Link className='linkss' to ="/AdminDashboard"> Login </Link></button>
               </form>
 
               <div className='footers'>
@@ -125,7 +62,7 @@ const validate = (values) => {
              
               </div>
               <div className='welcomeImg'>
-                {/* <img src={welcomes} id='wel-img-id' alt='' srcSet='' /> */}
+                <img src={welcomes} id='wel-img-id' alt='' srcSet='' />
               </div>
             </div>
 
@@ -136,6 +73,8 @@ const validate = (values) => {
       </div>
        </div>
     </motion.div>
+
+    
 
   )
 }
