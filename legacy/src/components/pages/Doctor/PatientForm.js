@@ -5,7 +5,7 @@ import registerImg from '../../../imgs/415.jpg'
 import Button from 'react-bootstrap/Button';
 import {Link} from 'react-router-dom'
 import {useForm} from 'react-hook-form'
-import imgs from '../../../imgs/patientimage.png'
+import imgs from '../../../imgs/patient image.png'
 const PatientForm = () => {
 
 
@@ -32,7 +32,7 @@ const PatientForm = () => {
             <img src={Logo} id='logo-png' alt='' srcSet='' />
           </div>
           <div className='shoulders'>
-            <img src={registerImg} id='reg-gng' alt='' srcSet='' />
+            <img src={imgs} id='reg-gng' alt='' srcSet='' />
           </div>
           <h1 className='p1'>Legacy Healthcare</h1>
           <p className='p1'>Legacy Health’s mission is to positively impact the well-being of every individual in
