@@ -20,13 +20,9 @@
     "react-token-auth": "^2.3.8",
     "web-vitals": "^2.1.4"
   },
-<<<<<<< HEAD
   "proxy": "http://localhost:5000/",
-=======
-  "proxy": "http://localhost:5000",
->>>>>>> 9acb7af85670a3facb347fefa3d7caf177699ab9
   "scripts": {
-    "start": "react-scripts --openssl-legacy-provider start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

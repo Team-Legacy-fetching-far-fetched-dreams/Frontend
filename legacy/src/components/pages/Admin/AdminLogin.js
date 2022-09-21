@@ -51,21 +51,26 @@ const AdminLogin = () => {
   const handleChange = (e) => {
     const {name, value} = e.target;
     setFormValues({...formValues, [name]: value});
+    setFormErrors(validate(formValues));
 };
  
   const handlesubmit =(event)=>{
     event.preventDefault();
     setFormErrors(validate(formValues));
     setIsSubmit(true);
+    formValues["qualification"] = "Admin"
     console.log(formValues)
-    setFormValues(initialValues)
-  }
+    // setFormValues(initialValues)
+
+    
+
+}
 
   useEffect(() => {
     //  console.log(formErrors);
+    setFormErrors(validate(formValues));
      if (Object.keys(formErrors).length === 0 && isSubmit){
       console.log(formValues);
-
 
       const requestOptions={
         method : "POST",
@@ -74,19 +79,22 @@ const AdminLogin = () => {
         },
         body:JSON.stringify(formValues)
     }
-
+  
+    if (Object.keys(formErrors).length === 0){
     fetch('http://127.0.0.1:5000/user/login', requestOptions)
     .then((res)=>res.json())
     .then(data=>{
         console.log(data)
         login(data.access_token)
-        
-
+     
+  
         if(data.access_token){
           // setislogged(true)
           navigate('/AdminDashboard') 
         }
     })
+    }
+      
      }
 },[formErrors])
 
@@ -130,7 +138,7 @@ const validate = (values) => {
                 <input className='ii' placeholder='Enter your username...' type='text' value={formValues.username} name='username' onChange={handleChange} id='emil1'></input>
                 <label for='pwd1'>Password</label>
                 <p className='err'>{formErrors.username}</p>
-                <input className='ii' placeholder='Enter your password...' type='password'  name='pasword' value={formValues.password} onChange={handleChange} id='pwd1'></input>
+                <input className='ii' placeholder='Enter your password...' type='password'  name='password' value={formValues.password} onChange={handleChange} id='pwd1'></input>
                 <button className='ll' type='submit' id='sub_butt'> Login </button>
               </form>
 

@@ -32,6 +32,7 @@ const DoctorLogin = () => {
   const handleChange = (e) => {
     const {name, value} = e.target;
     setFormValues({...formValues, [name]: value});
+    // setFormErrors(validate(formValues));
 };
 
 
@@ -39,42 +40,47 @@ const handleSubmit = (e) => {
   e.preventDefault();
   setFormErrors(validate(formValues));
   setIsSubmit(true);
+  formValues["qualification"] = "Doctor"
   console.log(formValues)
 
-  const requestOptions={
-    method : "POST",
-    headers: {
-        'content-type':'application/json'
-    },
-    body:JSON.stringify(formValues)
-}
 
-fetch('http://127.0.0.1:5000/user/login', requestOptions)
-.then((res)=>res.json())
-.then(data=>{
-    console.log(data)
-    login(data.access_token)
-    
 
-    if(data.access_token){
-      setislogged(true)
-      // localStorage.setItem('REACT_TOKEN_AUTH_KEY', data.access_token)
-      localStorage.setItem('DATA', data)
-      navigate('/DoctorDashboard') 
-     
-    }
-})
   // setFormValues(initialValues)
 };
 
 useEffect(() => {
     //  console.log(formErrors);
-     if (Object.keys(formErrors).length === 0 && isSubmit){
+      // setFormErrors(validate(formValues));
+      if (Object.keys(formErrors).length === 0 && isSubmit){
+      // setFormErrors(validate(formValues));
       console.log(formValues);
 
+      const requestOptions={
+        method : "POST",
+        headers: {
+            'content-type':'application/json'
+        },
+        body:JSON.stringify(formValues)
+    }
 
-    
-     }
+      if (Object.keys(formErrors).length === 0){
+        fetch('http://127.0.0.1:5000/user/login', requestOptions)
+        .then((res)=>res.json())
+        .then(data=>{
+            console.log(data)
+            login(data.access_token)
+            
+      
+            if(data.access_token){
+              setislogged(true)
+              // localStorage.setItem('REACT_TOKEN_AUTH_KEY', data.access_token)
+              localStorage.setItem('DATA', data)
+              navigate('/DoctorDashboard') 
+            
+            }
+        })
+      }
+    }
 },[formErrors])
 
 

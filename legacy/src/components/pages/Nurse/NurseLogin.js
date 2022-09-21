@@ -28,8 +28,11 @@ const NurseLogin = () => {
       event.preventDefault();
       setFormErrors(validate(formValues));
       setIsSubmit(true);
+      formValues["qualification"] = "Nurse"
       console.log(formValues)
-      setFormValues(initialValues)
+      // setFormValues(initialValues)
+
+      
    }
 
    const handleChange = (e) => {
@@ -39,30 +42,32 @@ const NurseLogin = () => {
 
    useEffect(() => {
       //  console.log(formErrors);
+      setFormErrors(validate(formValues));
        if (Object.keys(formErrors).length === 0 && isSubmit){
         console.log(formValues);
   
-  
         const requestOptions={
-          method : "POST",
-          headers: {
-              'content-type':'application/json'
-          },
-          body:JSON.stringify(formValues)
-      }
-  
+         method : "POST",
+         headers: {
+             'content-type':'application/json'
+         },
+         body:JSON.stringify(formValues)
+     }
+     if (Object.keys(formErrors).length === 0){
       fetch('http://127.0.0.1:5000/user/login', requestOptions)
       .then((res)=>res.json())
       .then(data=>{
-          console.log(data)
-          login(data.access_token)
-          
-  
-          if(data.access_token){
+            console.log(data)
+            login(data.access_token)
+            
+   
+            if(data.access_token){
             setislogged(true)
             navigate('/NurseDashboard') 
-          }
+            }
       })
+   }
+
        }
   },[formErrors])
 
