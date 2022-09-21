@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, {useState, useEffect} from 'react'
+=======
+import React, {useState} from 'react'
+>>>>>>> 78cfa8ca27d9b3071fed96a0a26619d6fb467d77
 import './DoctorSignUp.css'
 import Logo from '../../../imgs/logo2.png'
 import registerImg from '../../../imgs/415.jpg'
