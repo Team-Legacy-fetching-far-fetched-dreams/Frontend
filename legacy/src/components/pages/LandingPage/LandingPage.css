@@ -89,19 +89,19 @@ align-items: center;
     color:white;
   }
 
-  /* .arrow{
+  .arrow{
     position: absolute;
     left: 90px;
     width:120px;
     height:200px;
-  } */
+  }
 
-  .arrow{
+  /* .arrow{
     position: absolute;
     left: 50px;
 
     height:150px;
-  }
+  } */
 
 
   .p{
@@ -248,3 +248,8 @@ background-color: #128A16;
       
   }
   
+
+  .social a {
+    color: white;
+    text-decoration: none;
+  }

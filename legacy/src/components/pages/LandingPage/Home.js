@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import './LandingPage.css'
 import Comp from '../../../imgs/comp.png'
 import Back from '../../../imgs/Doc.png'
-import Arrow from '../../../imgs/arrow1.png'
+import Arrow from '../../../imgs/arrow.png'
 import Admin from '../../../imgs/Admin1.png'
 import Doc from '../../../imgs/doc5.png'
 import Nurse from '../../../imgs/Nurse1.png'
@@ -16,7 +16,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import {Link} from 'react-router-dom'
 import {motion} from 'framer-motion/dist/framer-motion'
-import { UilFacebookF , UilInstagram, UilWhatsapp, UilSnapchatGhost,  UilLinkedin } from '@iconscout/react-unicons'
+import { UilFacebookF , UilInstagram, UilLinkedin, UilYoutube, UilTwitter  } from '@iconscout/react-unicons'
 
 
 const Home = () => {
@@ -118,11 +118,21 @@ behavior: "smooth",
           </div>
           <div className='footer'>
             <div className='social'>
-             <UilFacebookF/>
+              <a href = 'https://www.facebook.com/profile.php?id=100086105886864'>
+              <UilFacebookF/>
+              </a>
+              <a href= 'https://instagram.com/lega.cyhealthcare?igshid=NDRkN2NkYzU='>
              <UilInstagram/>
-             <UilWhatsapp/>
-             <UilSnapchatGhost/>
-             <UilLinkedin/>
+              </a>
+             <a href = 'https://twitter.com/legacyhealthca2/status/1572236819491868674?s=46&t=M5aKCeFLNwB21SFljCsdHw'>
+             <UilTwitter />
+             </a>
+            <a href='/'>
+            <UilLinkedin/>
+            </a>
+              <a href='https://youtube.com/channel/UC9HoilrWwiE8DxHoQOCmKjA'>
+              <UilYoutube/>
+              </a> 
            </div>
            <div>
           

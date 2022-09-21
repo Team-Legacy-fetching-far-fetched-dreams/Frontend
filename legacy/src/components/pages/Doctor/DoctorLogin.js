@@ -2,10 +2,9 @@ import React, {useState, useEffect} from 'react'
 import './DoctorLogin.css'
 import Logo from '../../../imgs/logo2.png'
 import Nip from '../../../imgs/nipp.png'
-import Button from 'react-bootstrap/Button';
+
 import {Link} from 'react-router-dom'
 import welcomeimg from '../../../imgs/wel2.jpg' 
-import {useForm} from 'react-hook-form'
 
   
 const DoctorLogin = () => {

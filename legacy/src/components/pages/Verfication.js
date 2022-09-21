@@ -1,9 +1,9 @@
-import React , {useState , useEffect} from 'react'
+import React  from 'react'
 import './Verification.css'
 import Logo from '../../imgs/logo2.png'
 import Security from '../../imgs/security.png'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import {Link, useNavigate} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 import {motion} from 'framer-motion/dist/framer-motion'
 import {Button,Form} from 'react-bootstrap'
 import {useForm} from 'react-hook-form'
@@ -11,7 +11,7 @@ import {useForm} from 'react-hook-form'
 const Verfication = () => {
 
 
-const {register, watch, reset, handleSubmit, formState:{errors}} = useForm();
+const {register, reset, handleSubmit, formState:{errors}} = useForm();
 const navigate = useNavigate()
 
   const submitForm=(data)=>{

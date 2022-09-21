@@ -2,9 +2,8 @@ import React, {useState, useEffect} from 'react'
 import './AdminSignUp.css'
 import Logo from '../../../imgs/logo2.png'
 import registerImg from '../../../imgs/415.jpg'
-import Button from 'react-bootstrap/Button';
 import {Link} from 'react-router-dom'
-import {useForm} from 'react-hook-form'
+
 
 const AdminSignUp = () => {
   const initialValues = {surname: "", other_name: "", email: "", birth_date: "", address: "", contact1: "", contact2: "", gender: ""};

@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import './AdminLogin.css'
 import Logo from '../../../imgs/logo2.png'
-import Button from 'react-bootstrap/Button';
 import {Link} from 'react-router-dom'
 import {motion} from 'framer-motion/dist/framer-motion'
 import welcomes from '../../../imgs/loginpin.png' 
@@ -42,7 +41,7 @@ const AdminLogin = () => {
                 <input className='ii' placeholder='Enter your username...' type='text' value={emailval} onChange={(e)=>{setemailval(e.target.value)}} id='emil1'></input>
                 <label for='pwd1'>Password</label>
                 <input className='ii' placeholder='Enter your password...' type='password'  value={passval} onChange={(e)=>{setpassval(e.target.value)}} id='pwd1'></input>
-                <button className='ll' type='submit' id='sub_butt'> <Link className='linkss' to ="/DoctorDashboard"> Login </Link></button>
+                <button className='ll' type='submit' id='sub_butt'> <Link className='linkss' to ="/AdminDashboard"> Login </Link></button>
               </form>
 
               <div className='footers'>
