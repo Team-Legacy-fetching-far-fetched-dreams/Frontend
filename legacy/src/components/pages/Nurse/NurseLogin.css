@@ -23,12 +23,12 @@
   min-height: 100vh;
   min-width: 100vh;
   overflow-x: hidden;
-  background: linear-gradient(to right, rgb(223, 221, 221)s 50%, #273294 50%);
+  background: linear-gradient(to right, rgb(223, 221, 221), 50% #273294 50%);
 
 }
 
 .login-coverpage{
-    height: 65vh;
+    height: 75vh;
     width: 70%;
     border-radius: 1rem;
     margin: 2rem auto;
@@ -138,7 +138,7 @@ sub_butt:hover{
     padding-left: 6px;
 
 }
-.wwelcomeImg{
+.wwelcomeImgP{
 height: 100%;
 width: 95%;
 margin: 0rem auto;
@@ -158,6 +158,3 @@ font-weight: bolder;
 padding-left: 5rem;
 }
 
-.right-side{
-   color: rgb(223, 221, 221);
-}

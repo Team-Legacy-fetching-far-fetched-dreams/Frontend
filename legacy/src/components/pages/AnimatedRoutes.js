@@ -6,9 +6,13 @@ import Home from '../../components/pages/LandingPage/Home';
 import AboutUs from '../../components/pages/LandingPage/AboutUs';
 import ContactUs from '../../components/pages/LandingPage/ContactUs';
 
+import Hello from '../../Hello';
+// import TrialPage from '../../components/pages/Doctor/trialpage.js';
+
 import DoctorPage from '../../components/pages/Doctor/DoctorPage';
 import NursePage from '../../components/pages/Nurse/NursePage';
 import AdminPage from '../../components/pages/Admin/AdminPage';
+import AdminSignUp from '../../components/pages/Admin/AdminSignUp';
 import AdminLogin from '../../components/pages/Admin/AdminLogin';
 import DoctorSignUp from '../../components/pages/Doctor/DoctorSignUp'
 import DoctorLogin from '../../components/pages/Doctor/DoctorLogin';
@@ -22,6 +26,7 @@ import DoctorDashboard from '../../components/pages/Doctor/DoctorDashboard';
 import NurseDashboard from '../../components/pages/Nurse/NurseDashboard';
 import {AnimatePresence} from 'framer-motion/dist/framer-motion'
 
+
 const AnimatedRoutes = () => {
     const location = useLocation(); 
   return (
@@ -34,10 +39,14 @@ const AnimatedRoutes = () => {
               <Route path ="/ContactUs" element={<ContactUs/>} />
               <Route path ="/AboutUs" element={<AboutUs/>} />
            
+              <Route path ="/Hello" element={<Hello/>} />
+              {/* <Route path = "/TrialPage/:name" element={<TrialPage/>} /> */}
+
               <Route path ="/DoctorPage" element={<DoctorPage/>} />
               <Route path ="/NursePage" element={<NursePage/>} />
               <Route path ="/AdminPage" element={<AdminPage/>} />
               
+              <Route path ="/AdminSignUp" element={<AdminSignUp/>} />
               <Route path ="/AdminLogin" element={<AdminLogin/>} />
               <Route path ="/DoctorSignUp" element={<DoctorSignUp/>} />
               <Route path ="/DoctorLogin" element={<DoctorLogin/>} />

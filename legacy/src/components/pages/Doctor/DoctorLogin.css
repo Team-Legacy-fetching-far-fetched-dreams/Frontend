@@ -1,8 +1,11 @@
+
+
 .dl-contents{
-  /*  display: flex;
+  /* display: flex;
     width: 100%;
     align-items: center;
-    justify-content: center;*/
+    justify-content: center;
+    */
 
     min-height:100vh;
     min-width: 100vh;
@@ -153,3 +156,6 @@
         font-weight: bolder;
     }
   
+    .hh{
+        margin-top: 2rem;
+    }

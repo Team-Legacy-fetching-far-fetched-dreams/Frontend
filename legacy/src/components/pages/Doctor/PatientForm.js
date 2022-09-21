@@ -8,12 +8,69 @@ import {useForm} from 'react-hook-form'
 import imgs from '../../../imgs/patientimage.png'
 const PatientForm = () => {
 
+  const initialValues = {surname: "", other_name: "", email: "", birth_date: "", address: "", contact1: "", contact2: "", gender: ""};
+  const [formValues,setFormValues] = useState( initialValues);
+  const [formErrors,setFormErrors] = useState({});
+  const [isSubmit, setIsSubmit] = useState(false);
 
-  const {register, handleSubmit} = useForm();
-  const signUp=(data)=>{
-    //e.preventDefault();
-    console.log(data)
+  const handleChange = (e) => {
+    const {name, value} = e.target;
+    setFormValues({...formValues, [name]: value})
   }
+    const handlesubmit=(e)=>{
+    e.preventDefault();
+    setFormErrors(validate(formValues));
+    setIsSubmit(true);
+    formValues["qualification"] = "Patient"
+    console.log(formValues)
+  }
+
+  useEffect(() => {
+    //  console.log(formErrors);
+     if (Object.keys(formErrors).length === 0 && isSubmit){
+      console.log(formValues);
+
+
+      const requestOptions ={
+        method : "POST",
+        headers : {
+          'content-type' : 'application/json'
+        },
+          body: JSON.stringify(formValues)
+      }
+
+      if (Object.values(formErrors).length === 0){
+        fetch("http://127.0.0.1:5000/user/signup", requestOptions)
+        .then((res)=>res.json())
+        .then(data=>{
+          console.log(data)
+        })
+      }
+     }
+},[formErrors])
+
+
+  // const {register, handleSubmit} = useForm();
+  // const signUp=(data)=>{
+  //   data["qualification"] = "Patient"
+  //   //e.preventDefault();
+  //   console.log(data)
+
+  //   const requestOptions ={
+  //     method : "POST",
+  //     headers : {
+  //       'content-type' : 'application/json'
+  //     },
+  //       body:JSON.stringify(data)
+  //   }
+
+  //   fetch("http://127.0.0.1:5000/user/signup", requestOptions)
+  //     .then((res)=>res.json())
+  //     .then(data=>{
+  //       console.log(data)
+  //     })
+
+  // }
 
   // const [email,setemail]=useState('');
   // const[Fusername, setFusername]=useState('');
@@ -23,7 +80,45 @@ const PatientForm = () => {
   // const [address,setaddress]=useState('');
   // const [phone,setphone]=useState('');
   // const [gender,setgender]=useState('');
+  
 
+  const validate = (values) => {
+    const errors = {};
+    const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (!values.surname){
+     errors.surname = "Surname is required!";
+    }
+    if (!values.other_name){
+     errors.other_name = "Another name other than Surname is required!";
+    }
+    if (!values.birth_date){
+     errors.birth_date = "Date of birth is required!";
+    }
+    if (!values.email){
+     errors.email = "Email is required!";
+    } else if (!regex.test(values.email)){
+     errors.email = "Invalid email!";
+    }
+    if (!values.contact1){
+     errors.contact1 = "Contacts is required!";
+    }
+    if (!values.gender){
+     errors.gender = "Please state your gender!";
+    }
+    if (!values.address){
+     errors.address = "Please state your address!";
+    }
+    return errors;
+};
+
+
+  const {register, handleSubmit} = useForm();
+  const signUp=(data)=>{
+    //e.preventDefault();
+    console.log(data)
+  }
+
+   
   return (
    
       <div className='dss-contents'>
@@ -43,7 +138,7 @@ simply better.</p>
         <div className='right-sides'>
         <div className='top-rights'>
         <p>Already have an Account?
-        <Link id='Links-signin' to ="/DoctorLogin">Sign In</Link>
+        <Link id='Links-signin' to ="/PatientForm">Sign In</Link>
         </p>
         </div>
         <div className='body-rights'>
