@@ -33,6 +33,7 @@ const DoctorDashboard = () => {
     
     
     console.log(state)
+    
 
 }, []);
   return (
@@ -44,7 +45,7 @@ const DoctorDashboard = () => {
     <div className='D-d-g'>
     <Sidebar/>
         <MainDash/>
-        <h1>WELCOME {(state[0].public_id)}</h1>
+        <h1>WELCOME {data}</h1>
         {/* <p>Your email is {email}</p> */}
     </div> 
 </motion.div>

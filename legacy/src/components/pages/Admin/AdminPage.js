@@ -14,6 +14,14 @@ import Modal from '../../../components/pages/Admin/Model/Modal'
 
 const AdminPage = () => {
 
+  const diaa = () => {
+    fetch("http://127.0.0.1:5000/patients/vital/1")
+    .then((res)=>res.json())
+    .then(data=>{
+      console.log(data)
+    })
+  }
+
   return (
     <motion.div className='A-m'
     initial={{opacity: 0}}
@@ -57,8 +65,8 @@ const AdminPage = () => {
           <Link to ="/AdminLogin">
              <Button className='A-login' active>Login</Button>
           </Link>
-          <Link to ="/Modal">
-             <Button className='A-login' active>Dia</Button>
+          <Link to ="/Mafu">
+             <button className='A-login' active onClick={diaa}>Dia</button>
           </Link>
           <Link to ="/Mafu">
              <Button className='A-login' active>PopUp</Button>

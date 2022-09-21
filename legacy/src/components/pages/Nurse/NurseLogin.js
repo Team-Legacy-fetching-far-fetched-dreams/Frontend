@@ -33,6 +33,8 @@ const NurseLogin = () => {
       // setFormValues(initialValues)
 
       
+      console.log(formValues)
+      setFormValues(initialValues)
    }
 
    const handleChange = (e) => {

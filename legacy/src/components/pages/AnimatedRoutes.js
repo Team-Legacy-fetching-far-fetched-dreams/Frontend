@@ -29,6 +29,7 @@ import {AnimatePresence} from 'framer-motion/dist/framer-motion'
 // import ListOfRegPatients from './ListOfRegPatients';
 
 
+
 const AnimatedRoutes = () => {
     const location = useLocation(); 
   return (

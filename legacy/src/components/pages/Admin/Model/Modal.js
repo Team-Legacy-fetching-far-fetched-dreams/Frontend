@@ -1,4 +1,4 @@
-import React, {useState,} from 'react'
+import React from 'react'
 import './Modal.css'
 import registerIm from '../../../../imgs/415.jpg'
 import Button from 'react-bootstrap/Button';
@@ -8,20 +8,32 @@ import Logo from '../../../../imgs/logo2.png'
 
 
 
-const Modal = () => {
+const Modal = ({data={
+  patient_id:0,
+  temperature:0,
+  height:0,
+  weight:0,
+  bloodpressure_mm:0,
+  bloodpressure_Hg:0,
+  keeper_id:0,
+  date:"0000-00-00"
+
+
+}}) => {
+
 
 return (
     <div className='dss-contents'>
     <div className='left-sides'>
     <h1 className='cryy'>Vitals</h1>
     <ul className='op'>
-  <li className='opp'>ID: 1234445</li>
-  <li className='opp'>Temperature: 10F</li>
-  <li className='opp'>Height: 150cm</li>
-  <li className='opp'>Weight: 60kg</li>
-  <li className='opp'>BP: 100</li>
-  <li className='opp'>Keeper ID: 2333333</li>
-  <li className='opp'>Date Recorded: 12-12-1222</li>
+  <li className='opp'>ID: {data.patient_id}</li>
+  <li className='opp'>Temperature: {data.temperature}F</li>
+  <li className='opp'>Height: {data.height}cm</li>
+  <li className='opp'>Weight:{data.weight}kg</li>
+  <li className='opp'>BP: {data.bloodpressure_mm}/{data.bloodpressure_Hg} mmHg</li>
+  <li className='opp'>Keeper ID: {data.keeper_id}</li>
+  <li className='opp'>Date Recorded: {data.date}</li>
 </ul>
     </div>
     <div className='right-sides'>
