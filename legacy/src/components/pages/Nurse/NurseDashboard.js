@@ -1,7 +1,7 @@
 import React from 'react'
 import './NurseDashboard.css'
 import {motion} from 'framer-motion/dist/framer-motion'
-import Sidebar from '../../../components/pages/Admin/Sidebar'
+import NSidebar from '../../../components/pages/Nurse/NSidebar'
 import NDashNav from "./NDashNav"
 import NWidget from './NWidget'
 import {Link} from 'react-router-dom'
@@ -14,15 +14,15 @@ const NurseDashboard = () => {
     exit={{opacity: 0}}
     >
     <div className='N-d-g'>
-    <Sidebar/>
+    <NSidebar/>
         <div className='Dashboardcontainer'>
         <NDashNav/>
         <div className='widgets'>
-        <Link to="/AdminDashboard/Patient">
+        <Link to="/NurseDashboard/Patient">
           <NWidget type = "patient"/>
           </Link>
-          <Link to="/AdminDashboard/Nurse">
-          <NWidget type="nurse"/>
+          <Link to="/NurseDashboard/Doctor">
+          <NWidget type="doctor"/>
           </Link>
         </div>
         </div>

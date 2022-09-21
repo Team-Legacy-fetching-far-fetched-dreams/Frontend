@@ -1,7 +1,7 @@
 import React from 'react'
 import './DoctorDashboard.css'
 import {motion} from 'framer-motion/dist/framer-motion'
-import Sidebar from '../../../components/pages/Admin/Sidebar'
+import DcSidebar from '../../../components/pages/Doctor/DcSidebar'
 import DcDashNav from "./DcDashNav"
 import DcWidget from './DcWidget'
 import {Link} from 'react-router-dom'
@@ -14,15 +14,12 @@ const DoctorDashboard = () => {
     exit={{opacity: 0}}
     >
     <div className='D-d-g'>
-    <Sidebar/>
+    <DcSidebar/>
         <div className='Dashboardcontainer'>
         <DcDashNav/>
         <div className='widgets'>
-        <Link to="/AdminDashboard/Patient">
+        <Link to="/DoctorDashboard/Patient">
           <DcWidget type = "patient"/>
-          </Link>
-          <Link to="/AdminDashboard/Nurse">
-          <DcWidget type="nurse"/>
           </Link>
         </div>
         </div>

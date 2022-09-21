@@ -1,22 +1,21 @@
 import React from 'react'
-import './AdminDashboard.css'
-import Sidebar from './Sidebar'
-import AdDashNav from "./AdDashNav"
-
+import './DPatient.css'
+import DcSidebar from './DcSidebar'
+import DcDashNav from "./DcDashNav"
 import {motion} from 'framer-motion/dist/framer-motion'
 
-const Doctor = () => {
+const DPatient = () => {
   return (
-    <motion.div className='A-d-m'
+    <motion.div className='D-d-m'
     initial={{opacity: 0}}
     animate={{opacity: 1}}
     exit={{opacity: 0}}
     
     >
-      <div className='A-d-g'>
-        <Sidebar/>
+      <div className='D-d-g'>
+        <DcSidebar/>
         <div className='Dashboardcontainer'>
-        <AdDashNav/>
+        <DcDashNav/>
         <div className=''>
          
         </div>
@@ -27,4 +26,4 @@ const Doctor = () => {
   )
 }
 
-export default Doctor
+export default DPatient
