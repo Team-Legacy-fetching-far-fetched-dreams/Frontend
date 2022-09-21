@@ -1,54 +1,54 @@
 import React, {useEffect, useState} from 'react'
-import Logo from '../../../imgs/logo2.png'
+// import Logo from '../../../imgs/logo2.png'
 import {Link} from 'react-router-dom'
 
-const datum = [
-  {
-  public_id:'1',
-  username: "Essuman",
-  other_names:'Godsaves',
-  gender: "Male",
-  surname: "kofi",
-  qualification: "nurse"
-  },
-  {
-    public_id:'2',
-    username: "Ess",
-    other_names:'God',
-    gender: "Male",
-    surname: "Kobby",
-    qualification: "doctor"
-    },
+// const datum = [
+//   {
+//   public_id:'1',
+//   username: "Essuman",
+//   other_names:'Godsaves',
+//   gender: "Male",
+//   surname: "kofi",
+//   qualification: "nurse"
+//   },
+//   {
+//     public_id:'2',
+//     username: "Ess",
+//     other_names:'God',
+//     gender: "Male",
+//     surname: "Kobby",
+//     qualification: "doctor"
+//     },
     
-    {
-      public_id:'3',
-      username: "Ess",
-      other_names:'Godsaves',
-      gender: "Female",
-      surname: "Kobby",
-      qualification: "nurse"
-      } ,
-      {
-         public_id:'4',
-         username: "Ess",
-         other_names:'God',
-         gender: "Male",
-         surname: "Kofi",
-         qualification: "admin"
-         }
+//     {
+//       public_id:'3',
+//       username: "Ess",
+//       other_names:'Godsaves',
+//       gender: "Female",
+//       surname: "Kobby",
+//       qualification: "nurse"
+//       } ,
+//       {
+//          public_id:'4',
+//          username: "Ess",
+//          other_names:'God',
+//          gender: "Male",
+//          surname: "Kofi",
+//          qualification: "admin"
+//          }
    
-]
+// ]
 
 
 
-const ListOfAllEmployees = ({public_id, username, other_names, gender,qualification}) => {
+const ListOfAllEmployees = ({data}) => {
   
-  const [listOfAllEmp,setlistOfAllEmp] = useState([]);
+//   const [listOfAllEmp,setlistOfAllEmp] = useState([]);
 
  useEffect(
     ()=>{
-       console.log(datum)
-       setlistOfAllEmp(datum)
+       console.log(data)
+      //  setlistOfAllEmp(data)
 
        
  },[]
@@ -58,7 +58,7 @@ const ListOfAllEmployees = ({public_id, username, other_names, gender,qualificat
     // <div className='d-g'>
     <div className='N-g'>
     <div className = "N-h">
-        <img src={Logo} alt="" className = "N-logo"></img>  
+        {/* <img src={Logo} alt="" className = "N-logo"></img>   */}
     </div>
     <div className='N2-content'>
       <div className='ListOfAllEmp'>
@@ -75,7 +75,7 @@ const ListOfAllEmployees = ({public_id, username, other_names, gender,qualificat
          <th>Gender</th>
          <th>Qualification</th>
          <th>Surname</th>
-         {listOfAllEmp.map((ofAll,key) =>{
+         {data.map((ofAll,key) =>{
 
            return( 
             <tr>

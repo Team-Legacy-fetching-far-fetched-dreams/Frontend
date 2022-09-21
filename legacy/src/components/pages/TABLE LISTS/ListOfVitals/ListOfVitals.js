@@ -1,39 +1,39 @@
 import React, {useEffect, useState} from 'react'
-import Logo from '../../../imgs/logo2.png'
+// import Logo from '../../../imgs/logo2.png'
 import {Link} from 'react-router-dom'
 
-const datum = [
-  {
-  patient_id:'1',
-  temperature: "27F",
-  height:'30m',
-  blood_pressure: "271/93",
-  weight: "54kg",
-  keeper_id: "10",
-  date_recorded: "20-09-22"
-  },
-  {
-   patient_id:'2',
-   temperature: "25F",
-   height:'20m',
-   blood_pressure: "271/93",
-   weight: "54kg",
-   keeper_id: "20",
-   date_recorded: "20-09-22"
-    }
+// const datum = [
+//   {
+//   patient_id:'1',
+//   temperature: "27F",
+//   height:'30m',
+//   blood_pressure: "271/93",
+//   weight: "54kg",
+//   keeper_id: "10",
+//   date_recorded: "20-09-22"
+//   },
+//   {
+//    patient_id:'2',
+//    temperature: "25F",
+//    height:'20m',
+//    blood_pressure: "271/93",
+//    weight: "54kg",
+//    keeper_id: "20",
+//    date_recorded: "20-09-22"
+//     }
    
-]
+// ]
 
 
 
-const ListOfVitals = ({patient_id, temperature, height, blood_pressure,keeper_id,date_recorded}) => {
+const ListOfVitals = ({data}) => {
   
-  const [listOfVi,setlistOfVi] = useState([]);
+//   const [listOfVi,setlistOfVi] = useState([]);
 
  useEffect(
     ()=>{
-       console.log(datum)
-       setlistOfVi(datum)
+       console.log(data)
+      //  setlistOfVi(datum)
 
        
  },[]
@@ -43,7 +43,7 @@ const ListOfVitals = ({patient_id, temperature, height, blood_pressure,keeper_id
     // <div className='d-g'>
     <div className='N-g'>
     <div className = "N-h">
-        <img src={Logo} alt="" className = "N-logo"></img>  
+        {/* <img src={Logo} alt="" className = "N-logo"></img>   */}
     </div>
     <div className='N2-content'>
       <div className='ListOfVi'>
@@ -60,7 +60,7 @@ const ListOfVitals = ({patient_id, temperature, height, blood_pressure,keeper_id
          <th>Height</th>
          <th>Keeper_id</th>
          <th>Date_recorded</th>
-         {listOfVi.map((vital,key) =>{
+         {data.map((vital,key) =>{
 
            return( 
             <tr>
@@ -78,6 +78,16 @@ const ListOfVitals = ({patient_id, temperature, height, blood_pressure,keeper_id
 
             }
              </td>
+
+            <td key={key}>
+            {
+
+                  vital.weight
+
+            }
+
+               
+            </td> 
 
              <td key={key}>
             {
