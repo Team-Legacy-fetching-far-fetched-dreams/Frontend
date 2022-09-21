@@ -58,6 +58,9 @@ const AdminPage = () => {
              <Button className='A-login' active>Login</Button>
           </Link>
           <Link to ="/Modal">
+             <Button className='A-login' active>Dia</Button>
+          </Link>
+          <Link to ="/Mafu">
              <Button className='A-login' active>PopUp</Button>
           </Link>
         
