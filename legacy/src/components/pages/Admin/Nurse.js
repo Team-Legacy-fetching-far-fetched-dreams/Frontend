@@ -2,7 +2,7 @@ import React from 'react'
 import './AdminDashboard.css'
 import Sidebar from './Sidebar'
 import AdDashNav from "./AdDashNav"
-
+import Clock from '../Clock'
 import {motion} from 'framer-motion/dist/framer-motion'
 
 const Nurse = () => {
@@ -20,6 +20,9 @@ const Nurse = () => {
         <div className=''>
           
         </div>
+        </div>
+        <div>
+          <Clock />
         </div>
         {/* <MainDash/> */}
       </div>

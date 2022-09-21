@@ -37,8 +37,7 @@ behavior: "smooth",
             <img src={Back} alt="" className='back-image'></img>
           </div>
           <p className="body-p">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquam scelerisque tortor nec aliquam. Quisque maximus posuere purus sit amet gravida. Fusce nisi ex, pharetra sit amet eros vel, venenatis eleifend nibh. 
-            
+          Health is the most important asset in our life. There is a saying that “healthy mind stays in healthy body”. So we have to take care of both physical and mental health.            
           </p>
           <Button variant="success" className='main-btn' onclick={()=> scrollToSection(hero)} active>Get Started</Button>
           <div className='scroll'>

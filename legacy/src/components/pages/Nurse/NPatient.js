@@ -1,6 +1,7 @@
 import React from 'react'
 import './NurseDashboard.css'
 import {motion} from 'framer-motion/dist/framer-motion'
+import Clock from '../Clock'
 import NSidebar from '../../../components/pages/Nurse/NSidebar'
 import NDashNav from "./NDashNav"
 
@@ -17,6 +18,9 @@ const NPatient = () => {
         <NDashNav/>
         <div className=''>
         
+        </div>
+        <div>
+          <Clock />
         </div>
         </div>
     </div> 

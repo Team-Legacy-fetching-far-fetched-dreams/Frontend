@@ -2,6 +2,7 @@ import React from 'react'
 import './DPatient.css'
 import DcSidebar from './DcSidebar'
 import DcDashNav from "./DcDashNav"
+import Clock from '../Clock'
 import {motion} from 'framer-motion/dist/framer-motion'
 
 const DPatient = () => {
@@ -10,7 +11,7 @@ const DPatient = () => {
     initial={{opacity: 0}}
     animate={{opacity: 1}}
     exit={{opacity: 0}}
-    
+
     >
       <div className='D-d-g'>
         <DcSidebar/>
@@ -19,6 +20,9 @@ const DPatient = () => {
         <div className=''>
          
         </div>
+        </div>
+        <div>
+          <Clock />
         </div>
         {/* <MainDash/> */}
       </div>
