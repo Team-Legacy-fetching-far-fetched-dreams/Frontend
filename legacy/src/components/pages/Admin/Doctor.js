@@ -54,6 +54,7 @@ class Doctor extends Component {
         <div className=''>
           {this.state.data ? <ListOfSpecEmployee data={this.state.data}/>:<div>loading</div>}
         </div>
+
         </div>
         <div>
           <Clock />

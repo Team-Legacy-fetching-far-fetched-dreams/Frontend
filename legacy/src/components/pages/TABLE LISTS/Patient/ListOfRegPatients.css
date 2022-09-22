@@ -3,26 +3,40 @@
     padding: 0;
     box-sizing: border-box;
 } */
-.List_O_P{
+/* .List_O_P{
   justify-content: center;
-  /* flex-direction:column-reverse; */
+   flex-direction:column-reverse; 
   margin-top: 0px;
-}
+} */
 
-tr{
+/* tr{
     border: 1px;
+} */
+.ListOfRegP{
+    /* max-height: 500px;
+    overflow-y: scroll; */
+    /* position: relative; */
+    max-height: 500px;
+    overflow-x: scroll;
+    /* width: 1200px; */
+    
+
+
 }
 table{
-    font-family: arial,sans-serif;
+    font-family: 'poppins';
     border-collapse: collapse;
-    width: 100%; 
+    min-width: max-content;
+     width: 75%;  
+    
     border: 1px solid blue;
     margin: 25px 0;
     border-radius: 8px 8px 0 0;
    /* position: relative; */
     font-size: 0.9em; 
-    overflow:hidden; 
-
+    /* overflow-x:scroll;  */
+    max-height: 400px;
+    overflow-x: scroll;
     box-shadow: 0 0 20px rgba(0, 0 ,0.15);
     /* flex-direction: column; */
 }
@@ -47,27 +61,36 @@ td button{
 
 td {
  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 3px 6px 4px ;
+  text-align: center;
+  padding: 5px 5px 5px ;
   border: 1px solid #dddddd;
-  font-size:15px;
+  font-size:14px;
   
 
 }
 
 th{
-    background-color: #009879;
+    background-color: #3977eb;
     border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-    color: white;
-    font-weight:bold;
-    font-size:25px;
+    text-align: center;
+    padding: 1px 1px 20px 2px;
+    color: rgb(15, 14, 14);
+    font-weight:2px;
+    font-size:20px;
+   
+  
 
 }
+
+/* .th{
+    position: fixed;
+} */
 
  tr :nth-of-type(even){
       background-color: #f3f3f3;
 } 
 
+ h1{
+    text-align: left;
+}
  

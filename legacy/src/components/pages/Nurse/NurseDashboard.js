@@ -39,6 +39,7 @@ const NurseDashboard = () => {
         </div>
     </div> 
 </motion.div>
+
   )
 }
 

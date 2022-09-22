@@ -45,6 +45,25 @@ input:focus{
     background-color: blue;
     border-radius: 15px;
     border: none;
+<<<<<<< HEAD
+=======
+}
+
+.text{
+    color:black;
+    text-align: center;
+    text-decoration: underline;
+    top: 80px;
+    
+}
+.Ad-img{
+    position: absolute;
+  left: 100px;
+  top: 200px;
+   height: 300px;   
+   margin: 50px;   
+}
+>>>>>>> db48f9d1dda4cd47bc0230329bd6c981106cb2e7
     padding-left:6px;
 }
 */
@@ -191,3 +210,4 @@ input:focus{
     }
   
   
+

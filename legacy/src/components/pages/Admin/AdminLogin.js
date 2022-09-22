@@ -11,7 +11,11 @@ import {login} from '../../../auth'
 // import {Link} from 'react-router-dom'
 // import {motion} from 'framer-motion/dist/framer-motion'
 // import welcomes from '../../../imgs/loginpin.png' 
+// import Nip from '../../../imgs/nipp.png'
+
+import welcomes from '../../../imgs/loginpin.png' 
 import Nip from '../../../imgs/nipp.png'
+
 
 
 const AdminLogin = () => {

@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import './ListOfRegPatients.css'
-//import Logo from '../../../imgs/logo2.png'
+// import Logo from '../../../imgs/logo2.png'
 import {Link} from 'react-router-dom'
 
 // const data = [
@@ -165,6 +165,72 @@ const ListOfRegPatients = ({data}) => {
   
   
     )
+//   return (
+//    //  <div className='N-g'>
+    
+//     <div className='N2-content'>
+      
+//          <h1>List of Registered Patients</h1>
+//          <div className='ListOfRegP'>
+//       <table>
+
+       
+//           <th>Patient_id</th>
+//          <th>Surname</th>
+//          <th>Other Names</th>
+//          <th>Gender</th>
+      
+        
+//          {data.map((ListOf,key) =>{
+
+// return( 
+//  <tr>
+//  <td key={key}>
+//  {
+//     ListOf.patient_id
+
+//  }
+  
+//  </td>
+
+//  <td key={key}>
+//  {
+//     ListOf.surname
+
+//  }
+//   </td>
+
+//   <td key={key}>
+//  {
+//     ListOf.other_names
+
+//  }
+//   </td>
+//  <td key={key}>
+//     {
+//        ListOf.gender
+//     }
+
+//  </td>
+//    </tr>
+//             )
+//          }
+//          )
+      
+//       }
+//       </table> 
+       
+//       </div>
+//       </div>
+//    // </div>
+
+ 
+
+
+
+
+
+//   )
 }
 
 

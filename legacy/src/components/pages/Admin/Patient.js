@@ -52,13 +52,18 @@ class Patient extends Component {
         <AdDashNav/>
         <div className=''>
         {this.state.data ? <ListOfRegPatients data={this.state.data}/>:<div>loading</div>}
+         <div>
+          
+        </div>
         </div>
         </div>
         <div>
           <Clock />
         </div>
+       
         {/* <MainDash/> */}
       </div>
+       
     </motion.div>
   )
 }
