@@ -1,21 +1,178 @@
 
-
-
-.Ns-content{
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
+*{
+    margin: 0;
+    padding: 0;
 }
 
-.Ns-content h1{
-    font-weight: bold;
+.dss-contents{
+   display: flex; 
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+ 
+}
+
+.left-sides{
+  margin-top: 1rem;
+    flex: 0.33;
+    background: #26343D;
+    height: 100vh;
+    border-top-right-radius: 1rem ;
+    border-bottom-right-radius: 1rem ;
+}
+
+.right-sides{
+    flex: 0.67;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    height: 130vh;
+
+}
+
+.header{
+    height: 15rem;
+    margin-top: 2rem;
+   
+}
+
+.top-rights{
+    float: right;
+    margin-right: 1rem;
+    font-size: 0.8rem;
+    font-weight: 800;
+} 
+
+
+
+#logo-png{
+    height: 100%;
+    object-fit: cover;
+}
+
+.chest{
+    height: 20rem;
+    margin-top: 2rem;
+    background: white;
+}
+
+#reg-svg{
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+.p3{
+    color: black;
+    padding: 1.8rem 0.8rem;
+    text-align: left;
+    font-size: smaller ;
+    
+}
+
+.p1{
+    color: white;
+  
+    
+  
     
 }
 
 
-.Ns-content .n-submit{
+
+
+#Links-signin{
+    text-decoration: none;
+    font-style: 600;
+    margin-left: .3rem;
+    cursor: pointer;
+    color: gray ;
+}
+
+#Links-signin:hover{
+    color: aqua;
+}
+
+.body-rights{
+    height: 100%;
+    width: 100%;
+
+}
+
+.containers{
+    height: 90%;
+    width: 60%;
+    margin: -5rem auto;
+    box-shadow: 0rem 0rem 2rem 0.1rem #48ea98;
+    border-radius: 0.5rem;
+    padding-top: 1rem;
+}
+
+.cr{
+    margin-left: 7.2rem;
+    font-weight: 800;
+}
+
+.inner-group{
+    margin-left: 6rem;
+    width: 110%;
+    position: relative;
+}
+
+.hac{
+    font-size: small;
+    font-weight: 300;
+    color: gray;
+    left: 20%;
+    top: 0rem;
+    position: absolute;
+    margin: 0.5rem auto;
+    background: white;
+}
+
+#sbtn{
+    width: 66%;
+    background: #26343D;
+    color: white;
+    cursor: pointer;
+    border: none;
+    padding: 0.5rem 2.5rem;
+    transition:all 0.3s ease-in-out;
+    margin-left: 6rem;
+}
+
+#sbtn:hover{
+    box-shadow: 0.5rem 0.5rem 1rem gray;;
+}
+
+.inner-group input{
+   
+    box-shadow: 0.1rem 0.1rem 0.3rem 0.1rem gray;
+}
+
+.inputs{
+    margin: 1.2rem auto;
+    width: 60%;
+    border: none;
+    padding: 0.5rem 0.5rem;
+}
+
+
+
+.inputs:focus{
+    outline: none;
+}
+
+.ds-content h1{
+    font-weight: bold;
+    cursor: pointer;
+    color: #26343D;
+}
+
+.ds-content .d-submit{
     background-color: #151E73;
     border: none;
     padding-left:6px;
-}
+}     
+

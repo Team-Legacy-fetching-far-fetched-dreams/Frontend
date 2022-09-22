@@ -63,11 +63,12 @@
 .A-content .sl-btn{
     display: flex;
     position: absolute;
-    bottom: 100px;
-    left: 600px;
+    bottom: 120px;
     width: 300px;
+    gap: 50px;
     height: 100px;
-    
+    align-items: center;
+    justify-content: center;
 }
 
 .sl-btn .A-login{
@@ -75,6 +76,12 @@
     border: none;
     padding-left:6px;
 }
+
+.sl-btn .A-signup{
+    background-color: #128A16;
+    border: none;
+    padding-left:6px;
+   }
 
 
 .A-content .A-image2{

@@ -9,6 +9,7 @@ import ContactUs from '../../components/pages/LandingPage/ContactUs';
 import DoctorPage from '../../components/pages/Doctor/DoctorPage';
 import NursePage from '../../components/pages/Nurse/NursePage';
 import AdminPage from '../../components/pages/Admin/AdminPage';
+import AdminSignUp from '../../components/pages/Admin/AdminSignUp';
 import AdminLogin from '../../components/pages/Admin/AdminLogin';
 import DoctorSignUp from '../../components/pages/Doctor/DoctorSignUp'
 import DoctorLogin from '../../components/pages/Doctor/DoctorLogin';
@@ -18,7 +19,13 @@ import {Routes, Route, useLocation} from 'react-router-dom'
 
 import InnerContent from './InnerContent'
 import AdminDashboard from '../../components/pages/Admin/AdminDashboard';
+import Doctor from '../../components/pages/Admin/Doctor';
+import Nurse from '../../components/pages/Admin/Nurse';
+import Patient from '../../components/pages/Admin/Patient';
+
 import DoctorDashboard from '../../components/pages/Doctor/DoctorDashboard';
+import DPatient from '../../components/pages/Doctor/D-Patient'
+
 import NurseDashboard from '../../components/pages/Nurse/NurseDashboard';
 import {AnimatePresence} from 'framer-motion/dist/framer-motion'
 // import ListOfRegPatients from './ListOfRegPatients';
@@ -26,7 +33,7 @@ import {AnimatePresence} from 'framer-motion/dist/framer-motion'
 const AnimatedRoutes = () => {
     const location = useLocation(); 
   return (
-<AnimatePresence>
+<AnimatePresence initial={false}>
     <Routes location={location} key={location.pathname}>
              <Route path ="/" element={<Demo/>} />
              <Route path ="/Verfication" element={<Verfication/>} />
@@ -40,18 +47,29 @@ const AnimatedRoutes = () => {
               {/* <Route path ="/ListOfRegPatients" element={<ListOfRegPatients/>} /> */}
               <Route path ="/AdminPage" element={<AdminPage/>} />
               
+              <Route path ="/AdminSignUp" element={<AdminSignUp/>} />
               <Route path ="/AdminLogin" element={<AdminLogin/>} />
+              <Route path ="/AdminSignUp" element={<AdminSignUp/>} />
               <Route path ="/DoctorSignUp" element={<DoctorSignUp/>} />
               <Route path ="/DoctorLogin" element={<DoctorLogin/>} />
               <Route path ="/NurseSignUp" element={<NurseSignUp/>} />
               <Route path ="/NurseLogin" element={<NurseLogin/>} />
+
               <Route path = '/AdminDashboard' element={<AdminDashboard/>} />
+                <Route path = '/AdminDashboard/Doctor' element={<Doctor/>} />
+                <Route path = '/AdminDashboard/Nurse' element={<Nurse/>} />
+                <Route path = '/AdminDashboard/Patient' element={<Patient/>} />
 
               <Route path ="/AdminDashboard" element={<InnerContent/>} >
                 <Route path = '/AdminDashboard/Patient' element={<AdminPage/>} />
                 <Route path = '/AdminDashboard/Products' element={<NursePage/>} />
               </Route>
+
+
               <Route path ="/DoctorDashboard" element={<DoctorDashboard/>} />
+              <Route path = '/DoctorDashboard/Patient' element={<DPatient/>} />
+            
+
               <Route path ="/NurseDashboard" element={<NurseDashboard/>} />
          </Routes>
      </AnimatePresence>

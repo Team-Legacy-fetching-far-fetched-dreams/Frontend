@@ -16,6 +16,8 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import {Link} from 'react-router-dom'
 import {motion} from 'framer-motion/dist/framer-motion'
+import { UilFacebookF , UilInstagram, UilLinkedin, UilYoutube, UilTwitter  } from '@iconscout/react-unicons'
+
 
 const Home = () => {
 const hero = useRef(null);
@@ -115,7 +117,26 @@ behavior: "smooth",
             </div>
           </div>
           <div className='footer'>
-            
+            <div className='social'>
+              <a href = 'https://www.facebook.com/profile.php?id=100086105886864'>
+              <UilFacebookF/>
+              </a>
+              <a href= 'https://instagram.com/lega.cyhealthcare?igshid=NDRkN2NkYzU='>
+             <UilInstagram/>
+              </a>
+             <a href = 'https://twitter.com/legacyhealthca2/status/1572236819491868674?s=46&t=M5aKCeFLNwB21SFljCsdHw'>
+             <UilTwitter />
+             </a>
+            <a href='/'>
+            <UilLinkedin/>
+            </a>
+              <a href='https://youtube.com/channel/UC9HoilrWwiE8DxHoQOCmKjA'>
+              <UilYoutube/>
+              </a> 
+           </div>
+           <div>
+          
+           </div>
           </div>
         </div>
   )

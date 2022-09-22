@@ -1,8 +1,11 @@
 import React from 'react'
 import './AdminDashboard.css'
 import Sidebar from './Sidebar'
-import MainDash from './MainDash'
+
+import AdDashNav from "./AdDashNav"
+import Widget from './Widget'
 import {motion} from 'framer-motion/dist/framer-motion'
+import {Link} from 'react-router-dom'
 
 const AdminDashboard = () => {
   return (
@@ -14,7 +17,21 @@ const AdminDashboard = () => {
     >
       <div className='A-d-g'>
         <Sidebar/>
-        <MainDash/>
+        <div className='Dashboardcontainer'>
+        <AdDashNav/>
+        <div className='widgets'>
+          <Link to="/AdminDashboard/Doctor">
+          <Widget type ="doctor"/>
+          </Link>
+          <Link to="/AdminDashboard/Nurse">
+          <Widget type="nurse"/>
+          </Link>
+          <Link to="/AdminDashboard/Patient">
+          <Widget type = "patient"/>
+          </Link>
+        </div>
+        </div>
+        {/* <MainDash/> */}
       </div>
     </motion.div>
   )

@@ -23,55 +23,74 @@ align-items: center;
     
   }
 
+  .container{
+    margin-top: 50px;
+  }
+
 .container h1{
-  display: inline-block;
+  margin-top: 20px;
   font-weight:bold;
-  padding-top:  150px;
-  padding-left: 50px;
 }
   
 
 
   .container .Vlogo{
-    position: absolute;
-    top: 50px;
-    left: 48.5%;
-    height: 70px;
+    max-height: 70px;
     margin: 5px;
    
+    }
+
+    .pic_div{
+      display: flex;
+      position: relative;
     }
 
 .Secure{
  /* look for a display or position to make the picture constant irrespective the items on the page*/
  position: absolute;
- left: 100px;
- top: 200px;
-   height: 300px;   
-   margin: 50px;   
+ left: 80px;
+ top: 0px;
+  height: 30vh;      
 }    
 
-
-
-.form{
-  position: absolute;
-  left: 500px;
-
+@media(max-width: 1200px) {
+  /* .Secure{
+    position: relative;
+    
+    left: 50px;
+    height : 150px;
+  } */
 }
 
+.form{
+display: grid;
+grid-template-columns: 400px 300px;
+}
 
 #btn{
-  position :absolute;
-  top: 200px;
-  left: 40%;
   border-radius: 100px;
   width: 50px;
   height: 50px;
+  padding-top: 10px;
 }
 
 
 #password{
   width:300px;
 }
-#confirmPassword{
-  width:300px;
+
+.mb-3 input:focus::placeholder {
+  color: transparent;
+}
+
+.mb-3 input {
+  text-align: center;
+}
+
+::-webkit-input-placeholder {
+  text-align: center;
+}
+
+:-moz-placeholder {
+  text-align: center;
 }
