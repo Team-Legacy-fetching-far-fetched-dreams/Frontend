@@ -5,6 +5,7 @@ import AdDashNav from "./AdDashNav"
 import ListOfSpecEmployee from '../TABLE LISTS/ListOfDoctors/ListOfSpecEmployee'
 
 
+import Clock from '../Clock'
 import {motion} from 'framer-motion/dist/framer-motion'
 
 class Doctor extends Component {
@@ -53,6 +54,9 @@ class Doctor extends Component {
         <div className=''>
           {this.state.data ? <ListOfSpecEmployee data={this.state.data}/>:<div>loading</div>}
         </div>
+        </div>
+        <div>
+          <Clock />
         </div>
         {/* <MainDash/> */}
       </div>

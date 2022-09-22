@@ -4,6 +4,7 @@ import {motion} from 'framer-motion/dist/framer-motion'
 import NSidebar from '../../../components/pages/Nurse/NSidebar'
 import NDashNav from "./NDashNav"
 import NWidget from './NWidget'
+import Clock from '../Clock'
 import {Link} from 'react-router-dom'
 
 
@@ -31,6 +32,9 @@ const NurseDashboard = () => {
           <Link to="/NurseDashboard/Doctor">
           <NWidget type="doctor"/>
           </Link>
+        </div>
+        <div>
+          <Clock/>
         </div>
         </div>
     </div> 

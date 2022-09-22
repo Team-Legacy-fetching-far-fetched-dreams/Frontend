@@ -1,6 +1,7 @@
 import React, { Component}  from 'react'
 import './NurseDashboard.css'
 import {motion} from 'framer-motion/dist/framer-motion'
+import Clock from '../Clock'
 import NSidebar from '../../../components/pages/Nurse/NSidebar'
 import NDashNav from "./NDashNav"
 import ListOfSpecEmployee from '../TABLE LISTS/ListOfDoctors/ListOfSpecEmployee'
@@ -53,6 +54,9 @@ class NDoctor extends Component{
         <NDashNav/>
         <div className=''>
         {this.state.data ? <ListOfSpecEmployee data={this.state.data}/>:<div>loading</div>}
+        </div>
+        <div>
+          <Clock />
         </div>
         </div>
     </div> 

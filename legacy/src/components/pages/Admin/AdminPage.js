@@ -50,8 +50,7 @@ const AdminPage = () => {
              }}
              >Hello Administrator,</motion.h1> 
              <p className="A-p">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquam scelerisque tortor nec aliquam. Quisque maximus posuere purus sit amet gravida. Fusce nisi ex, pharetra sit amet eros vel, venenatis eleifend nibh. 
-            
+             The admin is responsible for organizing the health services and daily activities such as keeping records of an employee,communicate between departments to ensure adequate patient care.            
           </p>
           <img src={Admin4} alt="" className = "A-image4"></img>
           <img src={Admin2} alt="" className = "A-image2"></img>  

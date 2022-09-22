@@ -7,6 +7,7 @@ import MainDash from '../../../components/pages/Admin/MainDash'
 import DcSidebar from '../../../components/pages/Doctor/DcSidebar'
 import DcDashNav from "./DcDashNav"
 import DcWidget from './DcWidget'
+import Clock from '../Clock'
 import {Link} from 'react-router-dom'
 
 const DoctorDashboard = () => {
@@ -55,6 +56,9 @@ const DoctorDashboard = () => {
         <Link to="/DoctorDashboard/Patient">
           <DcWidget type = "patient"/>
           </Link>
+        </div>
+        <div>
+          <Clock />
         </div>
         </div>
     </div> 

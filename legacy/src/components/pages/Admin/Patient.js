@@ -1,6 +1,7 @@
 import React, { Component}  from 'react'
 import './AdminDashboard.css'
 import Sidebar from './Sidebar'
+import Clock from '../Clock'
 import AdDashNav from "./AdDashNav"
 import {motion} from 'framer-motion/dist/framer-motion'
 import ListOfRegPatients from '../TABLE LISTS/Patient/ListOfRegPatients'
@@ -52,6 +53,9 @@ class Patient extends Component {
         <div className=''>
         {this.state.data ? <ListOfRegPatients data={this.state.data}/>:<div>loading</div>}
         </div>
+        </div>
+        <div>
+          <Clock />
         </div>
         {/* <MainDash/> */}
       </div>
