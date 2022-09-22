@@ -20,13 +20,13 @@ const AdminDashboard = () => {
         <div className='Dashboardcontainer'>
         <AdDashNav/>
         <div className='widgets'>
-          <Link to="/AdminDashboard/Doctor">
+          <Link to="/AdminDashboard/Nurse">
           <Widget type ="doctor"/>
           </Link>
-          <Link to="/AdminDashboard/Nurse">
+          <Link to="/AdminDashboard/Patient">
           <Widget type="nurse"/>
           </Link>
-          <Link to="/AdminDashboard/Patient">
+          <Link to="/AdminDashboard/Analytics">
           <Widget type = "patient"/>
           </Link>
         </div>
