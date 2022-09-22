@@ -39,7 +39,7 @@ const DoctorPage = () => {
       <img src={Doctor1} alt="" className = "D-image1"></img> 
       <img src={Doctor4} alt="" className = "D-image4"></img>
       <p className="d-p">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquam scelerisque tortor nec aliquam. Quisque maximus posuere purus sit amet gravida. Fusce nisi ex, pharetra sit amet eros vel, venenatis eleifend nibh. 
+              You can access various features after Login/SignUp. It has some features constiting of viewing their patient details(symptoms, name, mobile), diagnose patients and prescribe a drug if needed.
             
           </p>
 

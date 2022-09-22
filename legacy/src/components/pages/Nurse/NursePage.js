@@ -35,7 +35,8 @@ const NursePage = () => {
             </motion.h1> 
 
             <p className="N-p">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquam scelerisque tortor nec aliquam. Quisque maximus posuere purus sit amet gravida. Fusce nisi ex, pharetra sit amet eros vel, venenatis eleifend nibh. 
+              You can access various features after Login/SignUp. It has some features which includes record patient details and register patients vitals.
+      
             
           </p>
           <img src={Nurse2} alt="" className = "N-image2"></img>

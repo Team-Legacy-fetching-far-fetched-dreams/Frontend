@@ -37,8 +37,7 @@ const AdminPage = () => {
              }}
              >Hello Administrator,</motion.h1> 
              <p className="A-p">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquam scelerisque tortor nec aliquam. Quisque maximus posuere purus sit amet gravida. Fusce nisi ex, pharetra sit amet eros vel, venenatis eleifend nibh. 
-            
+            You can access various features after Login/SignUp. Some of the features include viewing list of patients,registers a patient and many more.
           </p>
           <img src={Admin4} alt="" className = "A-image4"></img>
           <img src={Admin2} alt="" className = "A-image2"></img>  
