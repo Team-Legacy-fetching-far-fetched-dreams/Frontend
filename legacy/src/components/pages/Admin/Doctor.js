@@ -2,9 +2,9 @@ import React from 'react'
 import './AdminDashboard.css'
 import Sidebar from './Sidebar'
 import AdDashNav from "./AdDashNav"
-import Widget from './Widget'
+import Clock from '../Clock'
 import {motion} from 'framer-motion/dist/framer-motion'
-import ListOfSpecEmployee from "../../pages/TABLE LISTS/ListOfDoctors/ListOfSpecEmployee"
+
 const Doctor = () => {
   return (
     <motion.div className='A-d-m'
@@ -18,9 +18,12 @@ const Doctor = () => {
         <div className='Dashboardcontainer'>
         <AdDashNav/>
         <div className=''>
+         
         </div>
-        <ListOfSpecEmployee/>
 
+        </div>
+        <div>
+          <Clock />
         </div>
         {/* <MainDash/> */}
       </div>

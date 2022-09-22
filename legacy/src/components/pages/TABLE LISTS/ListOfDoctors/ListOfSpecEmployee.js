@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+import './ListOfSpecEmployee.css'
 // import Logo from '../../../imgs/logo2.png'
 import {Link} from 'react-router-dom'
 
@@ -37,19 +38,16 @@ const ListOfSpecEmployee = ({data}) => {
   return (
     // <div className='d-m'>
     // <div className='d-g'>
-    <div className='N-g'>
-    <div className = "N-h">
-        {/* <img src={Logo} alt="" className = "N-logo"></img>   */}
-    </div>
+   //  <div className='N-g'>
+    
     <div className='N2-content'>
-      <div className='ListOfSpec'>
+           <h1>List of Specific Employee</h1>
 
-         
-     
-         <h1>List of Specific Employee</h1>
-      <table>
+           <div className='ListOfSpec'>
 
-        
+           <table>
+
+          
          <th>Public_id</th>
          <th>Username</th>
          <th>Other Names</th>
@@ -105,12 +103,11 @@ const ListOfSpecEmployee = ({data}) => {
          }
          )
       }
-        
        </table> 
       
+   
       </div>
-      </div>
-   </div>
+   //</div>
 
 
 

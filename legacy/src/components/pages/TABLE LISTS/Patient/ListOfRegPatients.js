@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import './ListOfRegPatients.css'
-//import Logo from '../../../imgs/logo2.png'
+// import Logo from '../../../imgs/logo2.png'
 import {Link} from 'react-router-dom'
 
 // const data = [
@@ -68,25 +68,21 @@ const ListOfRegPatients = ({data}) => {
  },[])
 //  );
   return (
-    // <div className='d-m'>
-    // <div className='d-g'>
-    <div className='N-g'>
-    <div className = "N-h">
-        {/* <img src={Logo} alt="" className = "N-logo"></img>   */}
-    </div>
+   //  <div className='N-g'>
+    
     <div className='N2-content'>
-      <div className='ListOfRegP'>
-
-         
-     
+      
          <h1>List of Registered Patients</h1>
+         <div className='ListOfRegP'>
       <table>
 
-        
-         <th>Patient_id</th>
+       
+          <th>Patient_id</th>
          <th>Surname</th>
          <th>Other Names</th>
          <th>Gender</th>
+      
+        
          {data.map((ListOf,key) =>{
 
 return( 
@@ -118,14 +114,7 @@ return(
     }
 
  </td>
-
- 
-
-             
-            
-
-
-           </tr>
+   </tr>
             )
          }
          )
@@ -135,30 +124,9 @@ return(
        
       </div>
       </div>
-   </div>
+   // </div>
 
-//   <div className='List_O_P'>
-//   <table>
-//     {/* <tr>
-//         <th>Patient_Id</th>
-//         <th>Surname</th>
-//         <th>Other_names</th>
-//         <th>Gender</th>
-//     </tr> */}
-    
-//     <tr>
-//         {/* <td>{patient_id}</td>
-//         <td>{surname}</td>
-//         <td>{other_names}</td>
-//         <td>{gender}</td> */}
-//         {/* <td><button>View</button></td>
-//         <td><button>Delete</button></td> */}
-
-//     </tr>
-//   </table>
-//  </div>
-//     </div> 
-// </div>
+ 
 
 
 
