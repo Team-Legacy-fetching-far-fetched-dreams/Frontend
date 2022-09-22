@@ -24,9 +24,12 @@ import Nurse from '../../components/pages/Admin/Nurse';
 import Patient from '../../components/pages/Admin/Patient';
 
 import DoctorDashboard from '../../components/pages/Doctor/DoctorDashboard';
-import DPatient from '../../components/pages/Doctor/D-Patient'
+import DPatient from './Doctor/DPatient'
 
 import NurseDashboard from '../../components/pages/Nurse/NurseDashboard';
+import NDoctor from '../../components/pages/Nurse/NDoctor';
+import NPatient from '../../components/pages/Nurse/NPatient';
+
 import {AnimatePresence} from 'framer-motion/dist/framer-motion'
 
 const AnimatedRoutes = () => {
@@ -66,9 +69,11 @@ const AnimatedRoutes = () => {
 
               <Route path ="/DoctorDashboard" element={<DoctorDashboard/>} />
               <Route path = '/DoctorDashboard/Patient' element={<DPatient/>} />
-            
+        
 
               <Route path ="/NurseDashboard" element={<NurseDashboard/>} />
+              <Route path ="/NurseDashboard/Doctor" element={<NDoctor/>} />
+              <Route path ="/NurseDashboard/Patient" element={<NPatient/>} />
          </Routes>
      </AnimatePresence>
   )
