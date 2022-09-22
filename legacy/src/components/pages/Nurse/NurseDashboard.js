@@ -6,7 +6,10 @@ import NDashNav from "./NDashNav"
 import NWidget from './NWidget'
 import {Link} from 'react-router-dom'
 
+
 const NurseDashboard = () => {
+
+ 
   return (
     <motion.div className='N-d-m'
     initial={{opacity: 0}}
@@ -28,7 +31,11 @@ const NurseDashboard = () => {
         </div>
     </div> 
 </motion.div>
-  )
-}
+    // <div className='N-m'>
 
+    // <div className='N-g'>
+    //  </div>
+    // </div>
+  )
+  }
 export default NurseDashboard

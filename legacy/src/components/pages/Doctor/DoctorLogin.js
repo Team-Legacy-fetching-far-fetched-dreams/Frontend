@@ -5,6 +5,7 @@ import Nip from '../../../imgs/nipp.png'
 
 import {Link} from 'react-router-dom'
 import welcomeimg from '../../../imgs/wel2.jpg' 
+import Button from 'react-bootstrap/Button';
 
   
 const DoctorLogin = () => {
@@ -115,6 +116,9 @@ const validate = (values) => {
 
     
 
+      <Link to ="/DoctorDashboard">
+             <Button className='d-login' active>Login</Button>
+      </Link>
      </div>
     </div> 
 </div>
