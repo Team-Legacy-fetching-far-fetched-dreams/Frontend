@@ -8,6 +8,10 @@ import {motion} from 'framer-motion/dist/framer-motion'
 import {login} from '../../../auth'
 // import welcomes from '../../../imgs/loginPic.png' 
 // import Nip from '../../../imgs/nipp.png'
+// import {Link} from 'react-router-dom'
+// import {motion} from 'framer-motion/dist/framer-motion'
+// import welcomes from '../../../imgs/loginpin.png' 
+import Nip from '../../../imgs/nipp.png'
 
 
 const AdminLogin = () => {
@@ -172,6 +176,8 @@ const validate = (values) => {
       </div>
        
     </motion.div>
+
+    
 
   )
 }

@@ -4,6 +4,10 @@ import {motion} from 'framer-motion/dist/framer-motion'
 import Sidebar from '../../../components/pages/Admin/Sidebar'
 import MainDash from '../../../components/pages/Admin/MainDash'
  
+import DcSidebar from '../../../components/pages/Doctor/DcSidebar'
+import DcDashNav from "./DcDashNav"
+import DcWidget from './DcWidget'
+import {Link} from 'react-router-dom'
 
 const DoctorDashboard = () => {
 
@@ -43,10 +47,16 @@ const DoctorDashboard = () => {
     exit={{opacity: 0}}
     >
     <div className='D-d-g'>
-    <Sidebar/>
-        <MainDash/>
-        <h1>WELCOME {data}</h1>
-        {/* <p>Your email is {email}</p> */}
+    
+    <DcSidebar/>
+        <div className='Dashboardcontainer'>
+        <DcDashNav/>
+        <div className='widgets'>
+        <Link to="/DoctorDashboard/Patient">
+          <DcWidget type = "patient"/>
+          </Link>
+        </div>
+        </div>
     </div> 
 </motion.div>
   )

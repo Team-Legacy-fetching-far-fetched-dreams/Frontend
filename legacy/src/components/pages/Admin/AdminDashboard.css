@@ -12,14 +12,28 @@
 
 
  .A-d-g{
-    display: grid;
+    display: flex;
        height: 93vh;
        width: 95vw;
        border-radius: 2rem;
        background-color: var(--glass);
        backdrop-filter: blur(7px);
        overflow: hidden;
-       grid-template-columns: 11rem auto 20rem;
    }
 
 
+
+   .Dashboardcontainer{
+   flex: 6;
+   }
+
+
+.widgets{
+      display: flex;
+      padding: 20px;
+      gap: 20px;
+   }
+
+   .widgets a{
+      text-decoration: none;
+   }

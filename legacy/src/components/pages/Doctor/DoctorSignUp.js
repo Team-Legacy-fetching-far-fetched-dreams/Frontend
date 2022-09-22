@@ -2,9 +2,7 @@ import React, {useState, useEffect} from 'react'
 import './DoctorSignUp.css'
 import Logo from '../../../imgs/logo2.png'
 import registerImg from '../../../imgs/415.jpg'
-import Button from 'react-bootstrap/Button';
 import {Link} from 'react-router-dom'
-import {useForm} from 'react-hook-form'
 
 const DoctorSignUp = () => {
 
@@ -57,6 +55,10 @@ const DoctorSignUp = () => {
     
         
       
+    // console.log(e.target);
+    // const {name, value} = e.target;
+    // setFormValues({...formValues, [name]: value});
+    // console.log(formValues);
   };
 
   useEffect(() => {

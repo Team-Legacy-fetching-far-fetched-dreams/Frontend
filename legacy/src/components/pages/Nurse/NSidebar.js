@@ -1,11 +1,11 @@
 import React from 'react'
-import './Sidebar.css'
+import './NSidebar.css'
 import Logo from '../../../imgs/logo2.png'
 // import {SidebarData} from "../Data/Data";
-import {UilSignOutAlt, UilEstate, UilUserNurse, UilUserMd , UilAccessibleIconAlt } from '@iconscout/react-unicons'
+import {UilSignOutAlt, UilEstate, UilUserMd , UilAccessibleIconAlt } from '@iconscout/react-unicons'
 import {Link} from 'react-router-dom'
 
-const Sidebar = () => {
+const NSidebar = () => {
 
 
 
@@ -14,33 +14,34 @@ const Sidebar = () => {
       <div className='l'>
         <img src={Logo} alt=''></img>
       </div>
-      <div className='menu'>
+      <div className='NSmenu'>
       
           <ul>
             <li>
-            <Link to ='/AdminDashBoard'>
+            <Link to ='/NurseDashBoard'>
               <UilEstate className="icon"/>
               <span>Dashboard</span>
               </Link>
             </li>
             <li>
-              <Link to ='/AdminDashboard/Doctor'>
-            <UilUserMd className="icon"/>
-              <span>Doctor</span>
-              </Link>
-            </li>
-            <li>
-            <Link to ='/AdminDashboard/Nurse'>
-            <UilUserNurse className="icon"/>
-              <span>Nurse</span>
-              </Link>
-            </li>
-            <li>
-            <Link to ='/AdminDashboard/Patient'>
+            <Link to ='/NurseDashboard/Patient'>
             <UilAccessibleIconAlt className="icon"/>
               <span>Patient</span>
             </Link>
             </li> 
+            <li>
+              <Link to ='/NurseDashboard/Doctor'>
+            <UilUserMd className="icon"/>
+              <span>Doctor</span>
+              </Link>
+            </li>
+            {/* <li>
+            <Link to ='/NurseDashboard/Nurse'>
+            <UilUserNurse className="icon"/>
+              <span>Nurse</span>
+              </Link>
+            </li> */}
+            
             <li>
               <Link to = '/LandingPage'>
             <UilSignOutAlt className="icon"/>
@@ -59,4 +60,4 @@ const Sidebar = () => {
   )
 }
 
-export default Sidebar
+export default NSidebar

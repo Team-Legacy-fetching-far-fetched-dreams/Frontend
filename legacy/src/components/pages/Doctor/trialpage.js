@@ -1,6 +1,6 @@
 import React from 'react'
 import {useLocation, useParams } from 'react-router-dom'
-import ListOfAllEmployees from '../../TABLE LISTS/ListOfAllEmployees/ListOfAllEmployees'
+import ListOfAllEmployees from '../../pages/TABLE LISTS/ListOfAllEmployees/ListOfAllEmployees'
 import PatientForm from '../Doctor/PatientForm.js'
 
 

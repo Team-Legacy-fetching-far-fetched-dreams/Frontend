@@ -65,7 +65,7 @@ const AdminPage = () => {
           <Link to ="/AdminLogin">
              <Button className='A-login' active>Login</Button>
           </Link>
-          <Link to ="/Mafu">
+          <Link to ="/Modal">
              <button className='A-login' active onClick={diaa}>Dia</button>
           </Link>
           <Link to ="/Mafu">

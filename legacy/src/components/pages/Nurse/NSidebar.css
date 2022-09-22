@@ -84,18 +84,18 @@ transition: all 300ms ease;
     height: 100px;
 } 
 
-.menu{
+.NSmenu{
     padding-left: 10px;
 }
 
 
-.menu ul{
+.NSmenu ul{
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-.menu li{
+.NSmenu li{
     display: flex;
     align-items: center;
     padding: 4px;
@@ -104,26 +104,26 @@ transition: all 300ms ease;
     margin-top: 30px;
 }
 
-.menu li a{
+.NSmenu li a{
     text-decoration: none;
     color: #888 ;
 }
 
-.menu li:nth-child(5){
+.NSmenu li:nth-child(4){
     position: absolute;
     bottom: 2.3rem;
 }
 
-.menu li:hover{
+.NSmenu li:hover{
     background-color: rgb(241, 241, 241);
 }
 
 
-.menu li .icon{
+.NSmenu li .icon{
     font-size: 18px;
 }
 
-.menu li span{
+.NSmenu li span{
 color: #888;
     margin-left: 10px;
 }

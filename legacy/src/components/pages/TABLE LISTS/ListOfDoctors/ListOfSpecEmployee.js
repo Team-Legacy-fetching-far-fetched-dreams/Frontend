@@ -76,7 +76,7 @@ const ListOfSpecEmployee = ({data}) => {
 
              <td key={key}>
             {
-               employ.other_names
+               employ.other_name
 
             }
              </td>

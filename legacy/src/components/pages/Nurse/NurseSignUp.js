@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import './NurseSignUp.css'
 import Logo from '../../../imgs/logo2.png'
-import Button from 'react-bootstrap/Button';
 import {Link} from 'react-router-dom'
 import registerImgs from '../../../imgs/nursesignup.jpg'
 
