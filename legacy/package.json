@@ -16,9 +16,10 @@
     "react-loader-spinner": "^5.1.7-beta.1",
     "react-router-dom": "^6.3.0",
     "react-scripts": "^2.1.8",
+    "styled-components": "^5.3.5",
     "web-vitals": "^2.1.4"
   },
-  "scripts": {
+  "scripts": { 
     "start": "react-scripts --openssl-legacy-provider start",
     "build": "react-scripts build",
     "test": "react-scripts test",

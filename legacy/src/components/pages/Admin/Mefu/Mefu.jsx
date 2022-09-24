@@ -1,16 +1,15 @@
-import React, {useState,} from 'react'
-import './Modal.css'
-import registerIm from '../../../../imgs/415.jpg'
-import Button from 'react-bootstrap/Button';
-import {Link} from 'react-router-dom'
-import {useForm} from 'react-hook-form'
+import React from 'react'
+import './Mefu.css'
+import nine from '../../../../imgs/hellonurse.jpg'
 import Logo from '../../../../imgs/logo2.png'
+import welcomes from '../../../../imgs/loginPic.png' 
+import Nip from '../../../../imgs/nipp.png'
+import {Link} from 'react-router-dom'
 
-
-
-const Modal = () => {
-
-return (
+const Mefu = ({open, onClose}) => {
+    if(!open) return null
+  return (
+ 
     <div className='dss-contents'>
     <div className='left-sides'>
     <h1 className='cryy'>Vitals</h1>
@@ -32,10 +31,10 @@ return (
     </div>
     <div className='body-rights'>
       <div className='containerer'>
-
+      <p onClick={onClose} className='closeBtn'>X</p>
         <h1 className='cry'>Diagnose</h1>
        
-        <form>
+        <form className='jkl'>
          <div className='inner-group'>
           <h5 className='hac'>Syptoms</h5>
          <textarea type='text' className='mess' name='syp' ></textarea>
@@ -65,8 +64,9 @@ return (
 
      </div>
 
-)
+   
 
+  )
 }
 
-export default Modal
+export default Mefu   

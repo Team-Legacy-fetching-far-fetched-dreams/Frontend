@@ -7,13 +7,16 @@ import Admin4 from '../../../imgs/Admin4.png'
 import {motion} from 'framer-motion/dist/framer-motion'
 import Button from 'react-bootstrap/Button';
 import {Link} from 'react-router-dom'
-import Modal from '../../../components/pages/Admin/Model/Modal'
 
+import Mefu from './Mefu/Mefu'
+const className='hello' 
 
 
 
 const AdminPage = () => {
 
+  const [openMefu, setOpenMefu] = useState(false)
+  
   return (
     <motion.div className='A-m'
     initial={{opacity: 0}}
@@ -51,18 +54,22 @@ const AdminPage = () => {
           
   
       <div className='sl-btn'>
+
+      <div>
+             <Button
+         onClick={() => setOpenMefu(true)}    className='modalBtn' active>PopUp
+             </Button>
+             <Mefu open={openMefu} onClose={() => setOpenMefu(false)}/>
+             </div>
+
          <Link to ="/AdminSignUp">
              <Button className='A-signup' active>SignUp</Button>
           </Link>
           <Link to ="/AdminLogin">
              <Button className='A-login' active>Login</Button>
           </Link>
-          <Link to ="/Modal">
-             <Button className='A-login' active>Dia</Button>
-          </Link>
-          <Link to ="/Mafu">
-             <Button className='A-login' active>PopUp</Button>
-          </Link>
+        
+      
         
       
        </div>

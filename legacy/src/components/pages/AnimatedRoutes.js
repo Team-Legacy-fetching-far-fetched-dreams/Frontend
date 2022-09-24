@@ -6,8 +6,7 @@ import Home from '../../components/pages/LandingPage/Home';
 import AboutUs from '../../components/pages/LandingPage/AboutUs';
 import ContactUs from '../../components/pages/LandingPage/ContactUs';
 
-import Mafu from '../../components/pages/Admin/Mafu/Mafu';
-import Modal from '../../components/pages/Admin/Model/Modal';
+
 import DoctorPage from '../../components/pages/Doctor/DoctorPage';
 import NursePage from '../../components/pages/Nurse/NursePage';
 import AdminPage from '../../components/pages/Admin/AdminPage';
@@ -36,14 +35,16 @@ const AnimatedRoutes = () => {
               <Route path ="/Home" element={<Home/>} />
               <Route path ="/ContactUs" element={<ContactUs/>} />
               <Route path ="/AboutUs" element={<AboutUs/>} />
+            
+
            
               <Route path ="/DoctorPage" element={<DoctorPage/>} />
               <Route path ="/NursePage" element={<NursePage/>} />
               <Route path ="/AdminPage" element={<AdminPage/>} />
-              <Route path ="/Modal" element={<Modal/>} />
-              <Route path ="/Mafu" element={<Mafu/>} />
+          
+             
 
-
+            
               <Route path ="/AdminSignUp" element={<AdminSignUp/>} />
               <Route path ="/AdminLogin" element={<AdminLogin/>} />
               <Route path ="/DoctorSignUp" element={<DoctorSignUp/>} />

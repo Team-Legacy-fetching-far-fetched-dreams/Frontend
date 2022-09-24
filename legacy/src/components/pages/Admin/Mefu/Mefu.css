@@ -16,6 +16,10 @@
     height: 100vh;
     width: 100vw;
     overflow-x: hidden;
+    margin-bottom: 25rem;
+    background: gray;
+    margin-left: 20rem;
+  
  
 }
 
@@ -153,6 +157,8 @@
 .cry{
   text-align: center;
     font-weight: 800;
+    color: white;
+    margin-left: 3rem;
 }
 
 .cryy{
@@ -209,7 +215,6 @@
 .mess{
     margin: 1.2rem auto;
     width: 60%;
- 
     padding: 0.5rem 0.5rem;
     height: 15rem;
     border-radius: 10px black;
@@ -238,4 +243,11 @@ textarea{
     border: none;
     padding-left:6px;
 }     
+
+.closeBtn{
+    color: red;
+    font-size: 25px;
+    margin-left: 47rem;
+    cursor: pointer;
+}
 
