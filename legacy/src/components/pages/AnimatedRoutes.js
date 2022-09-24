@@ -34,7 +34,10 @@ import NurseDashboard from '../../components/pages/Nurse/NurseDashboard';
 import NDoctor from '../../components/pages/Nurse/NDoctor';
 import NPatient from '../../components/pages/Nurse/NPatient';
 
+
+
 import {AnimatePresence} from 'framer-motion/dist/framer-motion'
+import PatientForm from './Doctor/PatientForm';
 // import ListOfRegPatients from './ListOfRegPatients';
 
 
@@ -88,6 +91,7 @@ const AnimatedRoutes = () => {
               <Route path ="/NurseDashboard" element={<NurseDashboard/>} />
               <Route path ="/NurseDashboard/Doctor" element={<NDoctor/>} />
               <Route path ="/NurseDashboard/Patient" element={<NPatient/>} />
+              <Route path ="/PatientForm" element = {<PatientForm/>}/>
          </Routes>
      </AnimatePresence>
   )

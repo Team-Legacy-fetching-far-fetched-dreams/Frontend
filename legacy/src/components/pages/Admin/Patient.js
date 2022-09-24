@@ -5,6 +5,7 @@ import Clock from '../Clock'
 import AdDashNav from "./AdDashNav"
 import {motion} from 'framer-motion/dist/framer-motion'
 import ListOfRegPatients from '../TABLE LISTS/Patient/ListOfRegPatients'
+import {Link} from 'react-router-dom'
 
 class Patient extends Component {
   constructor(props){
@@ -51,6 +52,11 @@ class Patient extends Component {
         <div className='Dashboardcontainer'>
         <AdDashNav/>
         <div className=''>
+        <div className='createButton'>
+            <Link to ={"/PatientForm"}>
+            <input type='submit' value = "Register New Patient" />
+            </Link>
+            </div>
         {this.state.data ? <ListOfRegPatients data={this.state.data}/>:<div>loading</div>}
          <div>
           

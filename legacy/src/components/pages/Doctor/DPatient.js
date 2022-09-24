@@ -11,12 +11,44 @@ class DPatient extends Component {
     super(props);
 
     this.state ={
-      data:undefined
+      data:undefined,
+
+      // const [searchObj, setSearchObj] = useState(initialSearch)
+      searchObj:{
+        data:"",
+        column_name: "surname"
+      }
     };
 }  
-  componentWillMount(){
+
+  componentDidMount(){
     this.renderMydata();
+    // this.renderSearchData();
   }
+
+  // renderSearchData(){
+  //   const initialSearch = {
+  //     data:"",
+  //     column_name: "surname"
+  //   }
+  //   const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY');
+    
+  //   const requestOptions = {
+  //     method: "POST",
+  //     headers : {
+  //       'content-type': 'application/json',
+  //       'Authorization': `Bearer ${JSON.parse(token)}`
+  //     },
+  //     body:JSON.stringify(this.state.searchObj)
+  //   }
+
+  //   fetch('http://127.0.0.1:5000/patients/search', requestOptions)
+  //   .then(res => res.json())
+  //   .then((resJson)=>{
+  //     // this.setState({ data : resJson })
+  //     // console.log(data)
+  //   });
+  // }
 
  renderMydata(){
   const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY');
@@ -35,6 +67,7 @@ class DPatient extends Component {
     .then(res => res.json())
     .then((resJson)=>{
       this.setState({ data : resJson })
+      console.log(resJson)
     });
 
  }
@@ -48,8 +81,9 @@ class DPatient extends Component {
 
     >
       <div className='D-d-g'>
-        <DcSidebar/>
+        <DcSidebar />
         <div className='Dashboardcontainer'>
+        {/* <DcDashNav func = {this.setState({data: this.state.searchObj.data})}/> */}
         <DcDashNav/>
         <div className=''>
         <div>

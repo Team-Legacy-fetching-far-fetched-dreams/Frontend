@@ -3,7 +3,7 @@ import './AdminSignUp.css'
 import Logo from '../../../imgs/logo2.png'
 import registerImg from '../../../imgs/415.jpg'
 // import Button from 'react-bootstrap/Button';
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 // import {useForm} from 'react-hook-form'
 
 const AdminSignUp = () => {
@@ -11,6 +11,7 @@ const AdminSignUp = () => {
   const [formValues,setFormValues] = useState( initialValues);
   const [formErrors,setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
+  const {navigate} = useNavigate();
 
   const handleChange = (e) => {
     const {name, value} = e.target;
@@ -45,6 +46,8 @@ useEffect(() => {
         .then((res)=>res.json())
         .then(data=>{
           console.log(data)
+
+         
         })
       }
      }

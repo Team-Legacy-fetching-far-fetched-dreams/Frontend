@@ -13,7 +13,9 @@ class NDoctor extends Component{
     super(props);
 
     this.state ={
-      data:undefined
+      data:undefined,
+      url:"",
+      islogged:false
     };
 }  
   componentWillMount(){
@@ -49,9 +51,9 @@ class NDoctor extends Component{
     exit={{opacity: 0}}
     >
     <div className='N-d-g'>
-    <NSidebar/>
+    <NSidebar setUrl={this.setState}/>
         <div className='Dashboardcontainer'>
-        <NDashNav/>
+        <NDashNav />
         <div className=''>
         {this.state.data ? <ListOfSpecEmployee data={this.state.data}/>:<div>loading</div>}
         </div>

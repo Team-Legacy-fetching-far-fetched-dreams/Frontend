@@ -7,17 +7,13 @@ import PatientForm from '../Doctor/PatientForm.js'
 const TrialPage = () => {
     const {name} = useParams()
 
-    
-      
 
-    const location = useLocation()
     return(
         <div>
             Hello {name} This is a tiral page
-
+//Should display loading before data is set
             <div>
-            <ListOfAllEmployees/>
-            <PatientForm/>
+
             </div>
         </div>
         

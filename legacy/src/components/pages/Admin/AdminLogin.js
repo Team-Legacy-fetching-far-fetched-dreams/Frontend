@@ -12,43 +12,13 @@ import {login} from '../../../auth'
 // import {motion} from 'framer-motion/dist/framer-motion'
 // import welcomes from '../../../imgs/loginpin.png' 
 // import Nip from '../../../imgs/nipp.png'
-
 import welcomes from '../../../imgs/loginpin.png' 
 import Nip from '../../../imgs/nipp.png'
 
 
 
 const AdminLogin = () => {
-  const [values,setValues] = useState({
-    userName:"",
-    password:"",
-
-  });
   
-  
-
-  const [submit,setSubmit]=useState(false);
-  // const [valid,setValid]= useState(false);
-
-  const handleuserName = (event) =>{
-    setValues({...values,userName: event.target.value})
-  }
-
-  const handlepassword = (event) =>{
-    setValues({...values,password: event.target.value})
-  }
-
-  const handleSubmit = (event) =>{
-    event.preventDefault();
-    // if(values.userName&&values.password){
-    //   setValid(true);
-    // }
-    setSubmit(true);
-  }
-
-  
-  // const [emailval, setemailval]= useState("");
-  // const [passval, setpassval] = useState("");
   const navigate = useNavigate()
   const initialValues = {username: "", password: ""};
   const [formValues,setFormValues] = useState( initialValues);
@@ -62,34 +32,23 @@ const AdminLogin = () => {
     setFormErrors(validate(formValues));
 };
  
-  const handlesubmit =(event)=>{
-    event.preventDefault();
+  const handleSubmit =(e)=>{
+    e.preventDefault();
     setFormErrors(validate(formValues));
     setIsSubmit(true);
     formValues["qualification"] = "Admin"
     console.log(formValues)
-    // setFormValues(initialValues)
+    console.log(formErrors)
 
-    
-
-}
-
-  useEffect(() => {
-    //  console.log(formErrors);
-    setFormErrors(validate(formValues));
-     if (Object.keys(formErrors).length === 0 && isSubmit){
-      console.log(formValues);
-
-      const requestOptions={
-        method : "POST",
-        headers: {
-            'content-type':'application/json'
-        },
-        body:JSON.stringify(formValues)
-    }
-  
-    if (Object.keys(formErrors).length === 0){
-    fetch('http://127.0.0.1:5000/user/login', requestOptions)
+    const requestOptions={
+      method : "POST",
+      headers: {
+          'content-type':'application/json'
+      },
+      body:JSON.stringify(formValues)
+  }
+  if (Object.keys(formErrors).length === 0 && isSubmit){
+  fetch('http://127.0.0.1:5000/user/login', requestOptions)
     .then((res)=>res.json())
     .then(data=>{
         console.log(data)
@@ -98,13 +57,64 @@ const AdminLogin = () => {
   
         if(data.access_token){
           // setislogged(true)
-          navigate('/AdminDashboard') 
+          if (data.qualification === 'Doctor'){
+            navigate('/DoctorDashBoard')
+          }
+          else if (data.qualification === 'Nurse'){
+            navigate('/NurseDashBoard')
+          }
+          else{
+            navigate('/AdminDashBoard')
+          }
         }
     })
-    }
+  }
+  
+
+}
+
+//   useEffect(() => {
+//     // console.log(formErrors);
+//     // setFormErrors(validate(formValues));
+//     //  if (Object.keys(formErrors).length === 0 && isSubmit){
+//     //   console.log(formValues);
+
+//     //   const requestOptions={
+//     //     method : "POST",
+//     //     headers: {
+//     //         'content-type':'application/json'
+//     //     },
+//     //     body:JSON.stringify(formValues)
+//     // }
+
+
+//     // fetch('http://127.0.0.1:5000/user/login', requestOptions)
+//     // .then((res)=>res.json())
+//     // .then(data=>{
+//     //     console.log(data)
+//     //     login(data.access_token)
+     
+  
+//     //     if(data.access_token){
+//     //       // setislogged(true)
+//     //       if (data.qualification === 'Doctor'){
+//     //         navigate('/DoctorDashBoard')
+//     //       }
+//     //       else if (data.qualification === 'Nurse'){
+//     //         navigate('/NurseDashBoard')
+//     //       }
+//     //       else{
+//     //         navigate('/AdminDashBoard')
+//     //       }
+//     //     }
+//     // })
+  
+//     // if (Object.keys(formErrors).length === 0){
+    
+//     // }
       
-     }
-},[formErrors])
+//     //  }
+// },[])
 
 
 const validate = (values) => {
@@ -138,15 +148,15 @@ const validate = (values) => {
 
            <div className='left-side'>
               <div className='img-class'>
-              {/* <img src={Nip} id='img-id'  alt='' srcSet=''/> */}
+              <img src={Nip} id='img-id'  alt='' srcSet=''/>
               </div>
-              <form onSubmit={handlesubmit}>
+              <form onSubmit={handleSubmit}>
                 <label for= 'emil1'>Username</label>
                 <p className='err'>{formErrors.username}</p>
-                <input className='ii' placeholder='Enter your username...' type='text' value={formValues.username} name='username' onChange={handleChange} id='emil1'></input>
+                <input className='ii' placeholder='Enter your username...' type='text' name='username' onChange={handleChange} value={formValues.username} id='emil1'></input>
                 <label for='pwd1'>Password</label>
-                <p className='err'>{formErrors.username}</p>
-                <input className='ii' placeholder='Enter your password...' type='password'  name='password' value={formValues.password} onChange={handleChange} id='pwd1'></input>
+                <p className='err'>{formErrors.password}</p>
+                <input className='ii' placeholder='Enter your password...' type='password'  name='password'  onChange={handleChange} value={formValues.password} id='pwd1'></input>
                 <button className='ll' type='submit' id='sub_butt'> Login </button>
               </form>
 

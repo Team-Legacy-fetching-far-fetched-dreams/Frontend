@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState, Component} from 'react'
 import './ListOfRegPatients.css'
 // import Logo from '../../../imgs/logo2.png'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 
 // const data = [
 //   {
@@ -57,15 +57,42 @@ import {Link} from 'react-router-dom'
 
 
 const ListOfRegPatients = ({data}) => {
-  
-//   const [listOfRegP,setlistOfRegP] = useState([]);
+   const navigate = useNavigate();
+   const initialSearch = { column_name: "surname", data: ""}
+   const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY')
+   const [searchObj, setSearchObj] = useState(initialSearch)
+   const [len, setLen] = useState(0)
+   const [actData, setActData] = useState()
+// const [,setlistOfRegP] = useState([]);
+const viewDetails = (id) =>{
+   navigate(`/TrialPage/:${id}`)
+}
+const StartSearch = (e) => {
+   const {name, value} = e.target;
+   
+   setSearchObj({...searchObj, [name]: value})
+   setLen(searchObj.data.length)
+   const requestOptions ={
+      method : 'POST',
+      headers :{
+         'content_type' : "application/json",
+         'Authorization' :`Bearer ${JSON.parse(token)}`
+      },
+      body: JSON.stringify(searchObj)
+   }
 
- useEffect(()=>{
-       console.log( data)
-      //  setlistOfRegP( data)
+   fetch("http://127.0.0.1:5000/patients/search", requestOptions)
+          .then((res)=>res.json())
+          .then(data=>{
+            console.log(data)
+            setActData(data)
+          })
+}
+
+ 
 
        
- },[])
+ 
 //  );
    return (
       // <div className='d-m'>
@@ -80,6 +107,10 @@ const ListOfRegPatients = ({data}) => {
            
        
            <h1>List of Registered Patients</h1>
+           <div className='search'>
+                <input type='text' placeholder='Search...' name="data" onChange ={StartSearch} value={searchObj.data}/>
+            
+             </div>
         <table>
   
           
@@ -87,7 +118,8 @@ const ListOfRegPatients = ({data}) => {
            <th>Surname</th>
            <th>Other Names</th>
            <th>Gender</th>
-           {data.map((ListOf,key) =>{
+           {/* {len===0?setActData(data):setActData(searchObj.data)} */}
+           {data.map((ListOf,key)=>{
   
   return( 
    <tr>
@@ -118,6 +150,13 @@ const ListOfRegPatients = ({data}) => {
       }
   
    </td>
+   
+   <td>
+   <Link to = {`/TrialPage/${ListOf.patient_id}`}>
+      <input type="submit" value="view"/> 
+   </Link>
+   </td>
+   
   
    
   

@@ -77,7 +77,16 @@ const DoctorSignUp = () => {
 
         if (Object.values(formErrors).length === 0){
           fetch("http://127.0.0.1:5000/user/signup", requestOptions)
-          .then((res)=>res.json())
+          .then((res)=>{
+            if (res.status===200){
+              console.log("SUCCESS")
+              return res.json()
+            }
+            else if(res.status === 409){
+              console.log("CONFLICT")
+              setFormErrors({email: "Email already exist"})
+            }
+            })
           .then(data=>{
             console.log(data)
           })

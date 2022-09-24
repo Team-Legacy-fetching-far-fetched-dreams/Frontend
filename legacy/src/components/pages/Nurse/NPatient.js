@@ -51,7 +51,7 @@ class NPatient extends Component{
         <div className='Dashboardcontainer'>
         <NDashNav/>
         <div className=''>
-        {this.state.data ? <ListOfRegPatients data={this.state.data}/>:<div>loading</div>}
+        {this.state.data ? <ListOfRegPatients data={this.state.data} />:<div>loading</div>}
 
         </div>
         <div>

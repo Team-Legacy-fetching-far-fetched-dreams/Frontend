@@ -12,6 +12,7 @@ const PatientForm = () => {
   const [formValues,setFormValues] = useState( initialValues);
   const [formErrors,setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
+  const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY');
 
   const handleChange = (e) => {
     const {name, value} = e.target;
@@ -33,7 +34,8 @@ const PatientForm = () => {
       const requestOptions ={
         method : "POST",
         headers : {
-          'content-type' : 'application/json'
+          'content-type' : 'application/json',
+          'Authorization': `Bearer ${JSON.parse(token)}`
         },
           body: JSON.stringify(formValues)
       }

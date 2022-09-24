@@ -3,16 +3,18 @@ import './AdminDashboard.css'
 import Sidebar from './Sidebar'
 import AdDashNav from "./AdDashNav"
 import ListOfSpecEmployee from '../TABLE LISTS/ListOfDoctors/ListOfSpecEmployee'
-
-
+import AdminLogin from './AdminLogin'
+import { logout } from '../../../auth'
 import Clock from '../Clock'
 import {motion} from 'framer-motion/dist/framer-motion'
+import {Link} from 'react-router-dom'
 
 class Doctor extends Component {
   constructor(props){
     super(props);
     this.state = {
-      data:undefined
+      data:undefined,
+      islogged : false
     };
 
   }
@@ -30,9 +32,21 @@ class Doctor extends Component {
         'Authorization': `Bearer ${JSON.parse(token)}`
       }
     }
-
+    
     fetch('/user/doctors', requestOptions)
-    .then(res => res.json())
+    .then(res => {
+      if(res.status===200){
+        this.setState({islogged:true})
+        return res.json()
+      }
+      else if (res.status === 401){
+        logout(token)
+        this.setState({islogged: false})
+        // navigate('/DoctorLogin')
+
+      }
+      res.json()
+    })
     .then((resJson)=>{
         this.setState({ data : resJson })
         console.log(resJson)
@@ -40,7 +54,7 @@ class Doctor extends Component {
   }
 
   render(){
-  return (
+  return (this.state.islogged===true?
     <motion.div className='A-d-m'
     initial={{opacity: 0}}
     animate={{opacity: 1}}
@@ -52,6 +66,11 @@ class Doctor extends Component {
         <div className='Dashboardcontainer'>
         <AdDashNav/>
         <div className=''>
+          <div className='createButton'>
+            <Link to ={"/DoctorSignUp"}>
+            <input type='submit' value = "Register New Doctor" />
+            </Link>
+            </div>
           {this.state.data ? <ListOfSpecEmployee data={this.state.data}/>:<div>loading</div>}
         </div>
 
@@ -61,7 +80,7 @@ class Doctor extends Component {
         </div>
         {/* <MainDash/> */}
       </div>
-    </motion.div>
+    </motion.div>:<AdminLogin/>
   )
 }
 }

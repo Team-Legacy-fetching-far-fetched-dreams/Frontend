@@ -24,6 +24,13 @@ const NurseLogin = () => {
    const [islogged, setislogged] = useState(false);
 
 
+   const handleChange = (e) => {
+      const {name, value} = e.target;
+      setFormValues({...formValues, [name]: value});
+      setFormErrors(validate(formValues));
+   }
+
+
    const handleSubmit = (event) => {
       event.preventDefault();
       setFormErrors(validate(formValues));
@@ -31,48 +38,44 @@ const NurseLogin = () => {
       formValues["qualification"] = "Nurse"
       console.log(formValues)
       // setFormValues(initialValues)
-
-      
       console.log(formValues)
-      setFormValues(initialValues)
-   }
+      // setFormValues(initialValues)
 
-   const handleChange = (e) => {
-      const {name, value} = e.target;
-      setFormValues({...formValues, [name]: value});
-   }
+      // setFormErrors(validate(formValues));
 
-   useEffect(() => {
-      //  console.log(formErrors);
-      setFormErrors(validate(formValues));
-       if (Object.keys(formErrors).length === 0 && isSubmit){
-        console.log(formValues);
-  
-        const requestOptions={
+      const requestOptions={
          method : "POST",
          headers: {
              'content-type':'application/json'
          },
          body:JSON.stringify(formValues)
      }
-     if (Object.keys(formErrors).length === 0){
-      fetch('http://127.0.0.1:5000/user/login', requestOptions)
-      .then((res)=>res.json())
-      .then(data=>{
-            console.log(data)
-            login(data.access_token)
-            
+      if (Object.keys(formErrors).length === 0 && isSubmit){
+     fetch('http://127.0.0.1:5000/user/login', requestOptions)
+     .then((res)=>res.json())
+     .then(data=>{
+           console.log(data)
+           login(data.access_token)
+           
+  
+           if(data.access_token){
+            if (data.qualification === 'Doctor'){
+               navigate('/DoctorDashBoard')
+             }
+             else if (data.qualification === 'Nurse'){
+               navigate('/NurseDashBoard')
+             }
+             else{
+               navigate('/AdminDashBoard')
+             }
+           }
+     })
+  }
+
+      }
    
-            if(data.access_token){
-            setislogged(true)
-            navigate('/NurseDashboard') 
-            }
-      })
-   }
 
-       }
-  },[formErrors])
-
+  
   const validate = (values) => {
    const errors = {};
    
@@ -102,7 +105,7 @@ const NurseLogin = () => {
                   <form onSubmit={handleSubmit}>
                      <label for= 'emill1' >Username</label>
                      <p className='err'>{formErrors.username}</p>
-                     <input className='ii' placeholder='Enter your username...'  name='username' value={formValues.username} onChange={handleChange} type='text' id='emill1'></input>
+                     <input className='ii' placeholder='Enter your username...'  name='username'  onChange={handleChange} value={formValues.username}type='text' id='emill1'></input>
                      <label for='pwdd1'>Password</label>
                      <p className='err'>{formErrors.password}</p>
                      <input className='ii' placeholder='Enter your password...'  name='password' value={formValues.password} onChange={handleChange} type='password' id='pwdd1'></input> 
