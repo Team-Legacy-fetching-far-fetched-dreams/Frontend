@@ -18,7 +18,6 @@ const Doctor = () => {
         <div className='Dashboardcontainer'>
         <AdDashNav/>
         <div className=''>
-         
         </div>
 
         </div>

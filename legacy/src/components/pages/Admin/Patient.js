@@ -19,7 +19,6 @@ const Doctor = () => {
         <AdDashNav/>
         <div className=''>
          <div>
-          
         </div>
         </div>
         </div>

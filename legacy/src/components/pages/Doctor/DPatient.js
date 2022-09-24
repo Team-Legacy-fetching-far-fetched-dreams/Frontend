@@ -18,7 +18,6 @@ const DPatient = () => {
         <div className='Dashboardcontainer'>
         <DcDashNav/>
         <div className=''>
-         
         </div>
         </div>
         <div>

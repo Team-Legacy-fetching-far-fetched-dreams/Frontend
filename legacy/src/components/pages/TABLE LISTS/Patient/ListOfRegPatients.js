@@ -74,13 +74,14 @@ const ListOfRegPatients = ({data}) => {
       
          <h1>List of Registered Patients</h1>
          <div className='ListOfRegP'>
-      <table>
+      <table className="table3">
 
        
           <th>Patient_id</th>
          <th>Surname</th>
          <th>Other Names</th>
          <th>Gender</th>
+         <th>Action</th>
       
         
          {data.map((ListOf,key) =>{
@@ -114,6 +115,12 @@ return(
     }
 
  </td>
+ <td>
+<Link to = {"/AdminDashboard/Doctor"}>
+   <input type="submit" value="view"/>
+</Link>
+ </td>
+ 
    </tr>
             )
          }
