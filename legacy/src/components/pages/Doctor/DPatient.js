@@ -1,24 +1,24 @@
 import React from 'react'
-import './AdminDashboard.css'
-import Sidebar from './Sidebar'
-import AdDashNav from "./AdDashNav"
+import './DPatient.css'
+import DcSidebar from './DcSidebar'
+import DcDashNav from "./DcDashNav"
 import Clock from '../Clock'
 import {motion} from 'framer-motion/dist/framer-motion'
 
-const Nurse = () => {
+const DPatient = () => {
   return (
-    <motion.div className='N-d-m'
+    <motion.div className='D-d-m'
     initial={{opacity: 0}}
     animate={{opacity: 1}}
     exit={{opacity: 0}}
-    
+
     >
-      <div className='N-d-g'>
-        <Sidebar/>
+      <div className='D-d-g'>
+        <DcSidebar/>
         <div className='Dashboardcontainer'>
-        <AdDashNav/>
+        <DcDashNav/>
         <div className=''>
-          
+         
         </div>
         </div>
         <div>
@@ -30,4 +30,4 @@ const Nurse = () => {
   )
 }
 
-export default Nurse
+export default DPatient

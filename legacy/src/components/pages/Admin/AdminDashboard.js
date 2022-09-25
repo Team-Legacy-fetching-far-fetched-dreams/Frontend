@@ -1,7 +1,7 @@
 import React from 'react'
 import './AdminDashboard.css'
 import Sidebar from './Sidebar'
-
+import Clock from '../Clock'
 import AdDashNav from "./AdDashNav"
 import Widget from './Widget'
 import {motion} from 'framer-motion/dist/framer-motion'
@@ -29,6 +29,9 @@ const AdminDashboard = () => {
           <Link to="/AdminDashboard/Patient">
           <Widget type = "patient"/>
           </Link>
+        </div>
+        <div>
+          <Clock />
         </div>
         </div>
         {/* <MainDash/> */}

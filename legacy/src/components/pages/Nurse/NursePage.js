@@ -35,8 +35,7 @@ const NursePage = () => {
             </motion.h1> 
 
             <p className="N-p">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquam scelerisque tortor nec aliquam. Quisque maximus posuere purus sit amet gravida. Fusce nisi ex, pharetra sit amet eros vel, venenatis eleifend nibh. 
-            
+            Nurses are responsible for managing most of our ongoing care and treatment in hospital. They assess, plan and administer your daily treatment and manage your general health. They can also direct you to the right people to speak to about specific medical issues.            
           </p>
           <img src={Nurse2} alt="" className = "N-image2"></img>
           <img src={Nurse3} alt="" className = "N-image3"></img>  
