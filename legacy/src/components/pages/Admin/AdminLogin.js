@@ -14,16 +14,24 @@ import {login} from '../../../auth'
 // import Nip from '../../../imgs/nipp.png'
 import welcomes from '../../../imgs/loginpin.png' 
 import Nip from '../../../imgs/nipp.png'
+import { set } from 'react-hook-form'
 
 
 
 const AdminLogin = () => {
+ 
+
+  const [submit,setSubmit]=useState(false);
+  // const [valid,setValid]= useState(false);
   
+  // const [emailval, setemailval]= useState("");
+  // const [passval, setpassval] = useState("");
   const navigate = useNavigate()
   const initialValues = {username: "", password: ""};
   const [formValues,setFormValues] = useState( initialValues);
   const [formErrors,setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
+  const [data, setData] = useState()
   // const [islogged, setislogged] = useState(false);
   
   const handleChange = (e) => {
@@ -52,19 +60,32 @@ const AdminLogin = () => {
     .then((res)=>res.json())
     .then(data=>{
         console.log(data)
+        setData(data)
         login(data.access_token)
      
   
         if(data.access_token){
           // setislogged(true)
           if (data.qualification === 'Doctor'){
-            navigate('/DoctorDashBoard')
+            navigate('/DoctorDashBoard', {
+              state: {
+                id: data.id
+              }
+            })
           }
           else if (data.qualification === 'Nurse'){
-            navigate('/NurseDashBoard')
+            navigate('/NurseDashBoard', {
+              state:{
+                id: data.id
+              }
+            } )
           }
           else{
-            navigate('/AdminDashBoard')
+            navigate('/AdminDashBoard', {
+              state:{
+                id: data.id
+              }
+            })
           }
         }
     })

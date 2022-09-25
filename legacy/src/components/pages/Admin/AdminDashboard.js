@@ -1,83 +1,80 @@
-import React,{Component} from 'react'
+import React,{useState, Component} from 'react'
 import './AdminDashboard.css'
 import Sidebar from './Sidebar'
 import Clock from '../Clock'
 import AdDashNav from "./AdDashNav"
 import Widget from './Widget'
 import {motion} from 'framer-motion/dist/framer-motion'
-import {Link, useNavigate} from 'react-router-dom'
-import { logout } from '../../../auth'
+import {Link, useLocation, useNavigate} from 'react-router-dom'
+import { logout,} from '../../../auth'
 import AdminLogin from './AdminLogin'
 
-class AdminDashboard extends Component{
+const AdminDashboard=() => {
+ const  [data, setData] = useState()
+ const [isloading, setIsLoading] = useState(true)
+ const navigate = useNavigate()
+ const location = useLocation()
 
-
-  constructor(props){
-    super(props);
-
-    this.state ={
-      data:undefined,
-      islogged:false,
-      view:false
-  }
-}
-
-componentDidMount(){
-  this.renderMyInfo()
-}
-
-renderMyInfo(){
-    
-  const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY');
+ const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY');
+  
   // const navigate = useNavigate()
   const requestOptions = {
     method: "GET",
     headers : {
       'content-type': 'application/json',
       'Authorization': `Bearer ${JSON.parse(token)}`
-    },
+    }
     
   }
 
 
-  console.log(token)
 
+
+
+  
+
+
+useState(() => {
+
+
+  if(token){
   fetch('/user/users', requestOptions)
     .then(res => 
       {
       if (res.status===200)
       {
-        this.setState({islogged: true})
+        return res.json()
       }
-      else if (res.status == 401){
+      else if(res.status == 401){
         logout(token)
-        this.setState({islogged: false})
-        // navigate("/AdminLogin")
-
-      }
-      else if (res.status===402){
-        this.setState({islogged: false})
+        navigate("/AdminLogin")
       }
       return res.json()
       })
     .then(data=>{
       console.log(data)
-      this.setState({data: data})
+      setData(data)
+      setIsLoading(false)
       
     })
-}
 
-render(){
+  }else{
+    navigate('/AdminLogin')
+  }
+  console.log(location)
+},[])
+    
+  
+
+  
 
 
 
-  return (this.state.islogged===true?
+  return (isloading?<div>...LOADING...</div>:
     <motion.div className='A-d-m'
     initial={{opacity: 0}}
     animate={{opacity: 1}}
-    exit={{opacity: 0}}
-    
-    >
+    exit={{opacity: 0}}>
       <div className='A-d-g'>
         <Sidebar/>
         <div className='Dashboardcontainer'>
@@ -99,8 +96,6 @@ render(){
         </div>
         {/* <MainDash/> */}
       </div>
-    </motion.div>:<AdminLogin/>
-  )
-}
+    </motion.div>)
 }
 export default AdminDashboard

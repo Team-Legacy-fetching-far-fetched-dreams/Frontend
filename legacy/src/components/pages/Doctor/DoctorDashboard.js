@@ -3,81 +3,64 @@ import './DoctorDashboard.css'
 import {motion} from 'framer-motion/dist/framer-motion'
 import Sidebar from '../../../components/pages/Admin/Sidebar'
 import MainDash from '../../../components/pages/Admin/MainDash'
- 
+import {Link, useNavigate} from 'react-router-dom'
 import DcSidebar from '../../../components/pages/Doctor/DcSidebar'
 import DcDashNav from "./DcDashNav"
 import DcWidget from './DcWidget'
 import Clock from '../Clock'
-import {Link, useNavigate} from 'react-router-dom'
 import rendrIfo from './renderInfo'
 import { logout } from '../../../auth'
 import DoctorLogin from './DoctorLogin'
 
+const DoctorDashboard=()=>{
+  const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY');
+  const [state, setState] = useState([0,0])
 
-class DoctorDashboard extends Component{
-
-  // 
-  constructor(props){
-    super(props);
-
-    this.state ={
-      data:undefined,
-      islogged:false,
-      view:false
-  }
-}
   
-
-  componentDidMount(){
-    this.renderMyInfo()
-  }
-
-  renderMyInfo(){
-    
-    const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY');
-    // const navigate = useNavigate()
+  useEffect(() => {
     const requestOptions = {
-      method: "GET",
-      headers : {
-        'content-type': 'application/json',
-        'Authorization': `Bearer ${JSON.parse(token)}`
-      },
-      
+    method: "GET",
+    headers : {
+      'content-type': 'application/json',
+      'Authorization': `Bearer ${JSON.parse(token)}`
+    }
+    
+   
     }
   
   
-    console.log(token)
-  
-    fetch('/user/users', requestOptions)
-      .then(res => 
-        {
+   
+
+
+  console.log(token)
+
+  fetch('/user/users', requestOptions)
+    .then(res =>
+      {
         if (res.status===200)
         {
-          this.setState({islogged: true})
-          
-          
+
+          return res.json()
         }
         else if (res.status == 401){
           logout(token)
-          this.setState({islogged: false})
           // navigate('/DoctorLogin')
-
         }
         else if (res.status===402){
-
         }
-        return res.json()
-        })
-      .then(data=>{
-        console.log(data)
-        this.setState({data: data})
-        
-      })
-  }
+      
+      res.json()
+    })
+    .then(data=>{
+      console.log(data)})
+    
+    
+    
+    // console.log(state)
+    
 
-
-render(){
-  return (this.state.islogged===true?
+}, []);
+  return (
     <motion.div className='D-d-m'
     initial={{opacity: 0}}
     animate={{opacity: 1}}
@@ -100,9 +83,9 @@ render(){
         </div>
         </div>
     </div> 
-</motion.div>:<DoctorLogin/>
+</motion.div>
   )
 }
-}
+
 
 export default DoctorDashboard

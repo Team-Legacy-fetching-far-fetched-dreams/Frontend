@@ -38,7 +38,7 @@ const NurseLogin = () => {
       formValues["qualification"] = "Nurse"
       console.log(formValues)
       // setFormValues(initialValues)
-      console.log(formValues)
+      console.log(formErrors)
       // setFormValues(initialValues)
 
       // setFormErrors(validate(formValues));

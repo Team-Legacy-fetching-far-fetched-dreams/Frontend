@@ -53,13 +53,12 @@ class Patient extends Component {
         <AdDashNav/>
         <div className=''>
         <div className='createButton'>
-            <Link to ={"/PatientForm"}>
-            <input type='submit' value = "Register New Patient" />
+            <Link to ={"/Patient/Register"}>
+            <input type='submit' value = "Register New Nurse" />
             </Link>
             </div>
         {this.state.data ? <ListOfRegPatients data={this.state.data}/>:<div>loading</div>}
          <div>
-          
         </div>
         </div>
         </div>

@@ -8,6 +8,9 @@ import ContactUs from '../../components/pages/LandingPage/ContactUs';
 
 import Hello from '../../Hello';
 import TrialPage from '../../components/pages/Doctor/trialpage.js';
+import PatientInfo from '../pages/Patient/UsersInfo/PatientInfo'
+import UsersInfo from '../pages/Patient/UsersInfo/UsersInfo'
+import PatientForm from './Doctor/PatientForm';
 
 import Modal from '../../components/pages/Admin/Model/Modal';
 import DoctorPage from '../../components/pages/Doctor/DoctorPage';
@@ -37,7 +40,7 @@ import NPatient from '../../components/pages/Nurse/NPatient';
 
 
 import {AnimatePresence} from 'framer-motion/dist/framer-motion'
-import PatientForm from './Doctor/PatientForm';
+
 // import ListOfRegPatients from './ListOfRegPatients';
 
 
@@ -56,6 +59,9 @@ const AnimatedRoutes = () => {
            
               <Route path ="/Hello" element={<Hello/>} />
               <Route path = "/TrialPage/:name" element={<TrialPage/>} />
+              <Route path = "/Profile/Patient/:id" element={<PatientInfo/>}/>
+              <Route path = "/Profile/Users/:id" element={<UsersInfo/>}/>
+              <Route path = "/Patient/Register" element={<PatientForm/>}/>
 
               <Route path ="/DoctorPage" element={<DoctorPage/>} />
               <Route path ="/NursePage" element={<NursePage/>} />

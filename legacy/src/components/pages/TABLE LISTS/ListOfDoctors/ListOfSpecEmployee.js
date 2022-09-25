@@ -23,9 +23,31 @@ import {Link} from 'react-router-dom'
 
 
 
+
+
+
+
 const ListOfSpecEmployee = ({data}) => {
  
 //   const [listOfSpec,setlistOfSpec] = useState([]);
+
+const DeleteUser = (id) =>{
+   const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY')
+
+   const requestOptions ={
+      method : 'DELETE',
+      headers :{
+         'content_type' : "application/json",
+         'Authorization' :`Bearer ${JSON.parse(token)}`
+      }
+   }
+
+   fetch(`/user/user/${id}`,requestOptions)
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data)
+        })
+}
 
  useEffect(
     ()=>{
@@ -94,7 +116,12 @@ const ListOfSpecEmployee = ({data}) => {
 
 
             </td>
-             
+            <td>
+<Link to = {`/Profile/Users/${employ.public_id}`}>
+   <input type="submit" value="view" />
+</Link>
+   <input type="submit" value="Delete" onClick={DeleteUser(employ.public_id)}/>
+ </td>
             
 
 

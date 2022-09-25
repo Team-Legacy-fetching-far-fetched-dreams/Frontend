@@ -38,6 +38,7 @@ const PatientForm = () => {
           'Authorization': `Bearer ${JSON.parse(token)}`
         },
           body: JSON.stringify(formValues)
+         
       }
 
       if (Object.values(formErrors).length === 0){

@@ -5,9 +5,12 @@ import AdDashNav from "./AdDashNav"
 import ListOfSpecEmployee from '../TABLE LISTS/ListOfDoctors/ListOfSpecEmployee'
 import AdminLogin from './AdminLogin'
 import { logout } from '../../../auth'
+import {Link} from 'react-router-dom'
+
+
 import Clock from '../Clock'
 import {motion} from 'framer-motion/dist/framer-motion'
-import {Link} from 'react-router-dom'
+
 
 class Doctor extends Component {
   constructor(props){
