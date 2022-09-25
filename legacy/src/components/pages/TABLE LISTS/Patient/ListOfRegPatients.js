@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import './ListOfRegPatients.css'
 // import Logo from '../../../imgs/logo2.png'
 import {Link} from 'react-router-dom'
+import Button from 'react-bootstrap/esm/Button'
 
 // const data = [
 //   {
@@ -55,7 +56,9 @@ import {Link} from 'react-router-dom'
 // ]
 // data = {patient_id :"", surname:"",other_names:"",gender:""}
 
+const DeleteUser = ({data}) => {
 
+}
 const ListOfRegPatients = ({data}) => {
   
 //   const [listOfRegP,setlistOfRegP] = useState([]);
@@ -71,8 +74,12 @@ const ListOfRegPatients = ({data}) => {
    //  <div className='N-g'>
     
     <div className='N2-content'>
-      
          <h1>List of Registered Patients</h1>
+         <div className='New'>
+         <Link to = {"/AdminDashboard/Patient"}>
+         <Button className="btn btn-primary btn-sm" type="submit"  role="button"><span></span><span className="  p-2 ">New Registration</span></Button>
+         </Link>
+         </div>
          <div className='ListOfRegP'>
       <table className="table3">
 
@@ -116,10 +123,12 @@ return(
 
  </td>
  <td>
-<Link to = {"/AdminDashboard/Doctor"}>
-   <input type="submit" value="view"/>
-</Link>
- </td>
+              <Link to = {"/AdminDashboard/Patient"}>
+                <input className="p-1 m-2" type="submit" value="view"/>
+             </Link>
+             <input  type="submit" value="delete" onClick={DeleteUser(ListOf.patient_id)}/>
+
+             </td>
  
    </tr>
             )

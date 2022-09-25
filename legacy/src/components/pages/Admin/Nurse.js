@@ -18,6 +18,7 @@ const Nurse = () => {
         <div className='Dashboardcontainer'>
         <AdDashNav/>
         <div className=''>
+          <ListOfAllEmployees data={data}/>
         </div>
         </div>
         <div>

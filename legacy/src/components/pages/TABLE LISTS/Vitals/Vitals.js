@@ -9,12 +9,12 @@ const Vitals = ({data}) => {
         },[]
     )
   return (
-    <div className='N2-content'>
+    <div className='N4-content'>
         
             <h1>List of Vitals</h1>
             <div className='VitalsC'>
             
-            <table className='VitalT'>
+            <table className='table4'>
             <th>Patient_id</th>
             <th>Temperature (C)</th>
             <th>Height (m)</th>
@@ -24,7 +24,7 @@ const Vitals = ({data}) => {
             <th>Date_Recorded</th>
             {data.map((vit,key) =>{
                 return(
-                    <tr className='viTr'>
+                    <tr >
                         <td key={key}>
                             {
                                 vit.patient_id

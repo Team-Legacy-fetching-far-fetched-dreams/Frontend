@@ -1,26 +1,23 @@
-table{
+.table5{
     font-family: 'poppins';
     border-collapse: collapse;
     width: 75%; 
     border: 1px solid blue;
     margin: 25px 0;
     border-radius: 8px 8px 0 0;
-   /* position: relative; */
     font-size: 0.9em; 
-    overflow:hidden; 
+    overflow:scroll; 
     max-height: 400px;
-
     box-shadow: 0 0 20px rgba(0, 0 ,0.15);
-    /* flex-direction: column; */
 }
 
 .ListOfSpec{
     max-height: 500px;
-    overflow-x: scroll;
+    overflow-x: hidden;
 }
  
 
-tr:hover td{
+.table5 tr:hover td{
     color: #4478b8;
     cursor: pointer;
     background-color: #ffffff;
@@ -28,7 +25,7 @@ tr:hover td{
 }
 
  
-td button{
+.table5 td button{
     border: none;
     padding: 7px 10px;
     border-radius: 15px;
@@ -36,32 +33,33 @@ td button{
     color: white;
 }
 
-td {
+.table5 td {
  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 3px 6px 4px ;
+  text-align: center;
+  padding: 5px 5px 5px ;
   border: 1px solid #dddddd;
-  font-size:15px;
+  font-size:14px;
+  
   
 
 }
 
-th{
-    background-color: #009879;
+.table5 th{
+    background-color: #3977eb;
     border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-    color: white;
-    font-weight:bold;
-    font-size:25px;
+    text-align: center;
+    padding: 1px 5px 10px 5px;
+    color: black;
+    font-weight:2px;
+    font-size:20px;
 
 }
 
- tr :nth-of-type(even){
+ .table5 tr :nth-of-type(even){
       background-color: #f3f3f3;
 } 
 
- h1{
-    text-align: left;
+ .N5-content h1{
+    margin-left: 230px;
 }
  

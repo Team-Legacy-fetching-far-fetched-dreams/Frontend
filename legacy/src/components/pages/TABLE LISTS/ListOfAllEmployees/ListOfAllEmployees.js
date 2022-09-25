@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+import '../../TABLE LISTS/ListOfAllEmployees/ListOfAllEmployees.css'
 // import Logo from '../../../imgs/logo2.png'
 import {Link} from 'react-router-dom'
 
@@ -43,7 +44,6 @@ import {Link} from 'react-router-dom'
 
 const ListOfAllEmployees = ({data}) => {
   
-//   const [listOfAllEmp,setlistOfAllEmp] = useState([]);
 
  useEffect(
     ()=>{
@@ -56,17 +56,13 @@ const ListOfAllEmployees = ({data}) => {
   return (
     // <div className='d-m'>
     // <div className='d-g'>
-    <div className='N-g'>
-    <div className = "N-h">
-        {/* <img src={Logo} alt="" className = "N-logo"></img>   */}
-    </div>
-    <div className='N2-content'>
-      <div className='ListOfAllEmp'>
-
-         
-     
-         <h1>List of All Employees</h1>
-      <table>
+   
+   
+    <div className='N6-content'>
+      
+          <h1>List of All Employees</h1>
+         <div className='ListOfAllEmp'>
+      <table className='table6'>
 
         
          <th>Public_id</th>
@@ -75,6 +71,7 @@ const ListOfAllEmployees = ({data}) => {
          <th>Gender</th>
          <th>Qualification</th>
          <th>Surname</th>
+         <th>Action</th>
          {data.map((ofAll,key) =>{
 
            return( 
@@ -121,12 +118,12 @@ const ListOfAllEmployees = ({data}) => {
 
             </td>
 
-            
-             
-            
-
-
-           </tr>
+            <td>
+<Link to = {"/AdminDashboard/Patient"}>
+   <input type="submit" value="view"/>
+</Link>
+ </td>
+        </tr>
             )
          }
          )
@@ -135,7 +132,7 @@ const ListOfAllEmployees = ({data}) => {
        </table> 
       
       </div>
-      </div>
+      
    </div>
 
 

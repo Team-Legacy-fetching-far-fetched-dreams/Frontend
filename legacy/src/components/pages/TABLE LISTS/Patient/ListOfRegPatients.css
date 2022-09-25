@@ -1,24 +1,8 @@
-/* *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-} */
-/* .List_O_P{
-  justify-content: center;
-   flex-direction:column-reverse; 
-  margin-top: 0px;
-} */
 
-/* tr{
-    border: 1px;
-} */
 .ListOfRegP{
-    /* max-height: 500px;
-    overflow-y: scroll; */
-    /* position: relative; */
-    max-height: 500px;
-    overflow-x: scroll;
-    /* width: 1200px; */
+    
+     max-height: 500px;
+    overflow-x: scroll; 
     
 
 
@@ -32,13 +16,10 @@
     border: 1px solid blue;
     margin: 25px 0;
     border-radius: 8px 8px 0 0;
-   /* position: relative; */
     font-size: 0.9em; 
-    /* overflow-x:scroll;  */
     max-height: 400px;
     overflow-x: scroll;
     box-shadow: 0 0 20px rgba(0, 0 ,0.15);
-    /* flex-direction: column; */
 }
 
  
@@ -66,6 +47,7 @@
   border: 1px solid #dddddd;
   font-size:14px;
   
+  
 
 }
 
@@ -73,7 +55,7 @@
     background-color: #3977eb;
     border: 1px solid #dddddd;
     text-align: center;
-    padding: 1px 1px 20px 2px;
+    padding: 1px 5px 5px 10px;
     color: rgb(15, 14, 14);
     font-weight:2px;
     font-size:20px;
@@ -82,15 +64,19 @@
 
 }
 
-/* .th{
-    position: fixed;
-} */
+
 
  .table3 tr :nth-of-type(even){
       background-color: #f3f3f3;
 } 
 
  .N2-content h1{
-    text-align: left;
+    margin-left: 180px;
+}
+
+.New{
+    text-align: end;
+    padding-right: 180px;
+    padding-bottom: 5px;
 }
  
