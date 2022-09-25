@@ -6,6 +6,7 @@ import NDashNav from "./NDashNav"
 import NWidget from './NWidget'
 import Clock from '../Clock'
 import {Link} from 'react-router-dom'
+import VitalsForm from './Vitals/VitalsForm'
 
 const NurseDashboard = () => {
   return (
@@ -18,6 +19,7 @@ const NurseDashboard = () => {
     <NSidebar/>
         <div className='Dashboardcontainer'>
         <NDashNav/>
+        <VitalsForm/>
         <div className='widgets'>
         <Link to="/NurseDashboard/Patient">
           <NWidget type = "patient"/>
