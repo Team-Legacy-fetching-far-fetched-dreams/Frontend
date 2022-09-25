@@ -8,7 +8,7 @@ import {motion} from 'framer-motion/dist/framer-motion'
 import Button from 'react-bootstrap/Button';
 import {Link} from 'react-router-dom'
 
-import Mefu from './Mefu/Mefu'
+
 const className='hello' 
 
 
@@ -55,18 +55,16 @@ const AdminPage = () => {
   
       <div className='sl-btn'>
 
-      <div>
-             <Button
-         onClick={() => setOpenMefu(true)}    className='modalBtn' active>PopUp
-             </Button>
-             <Mefu open={openMefu} onClose={() => setOpenMefu(false)}/>
-             </div>
+      
 
          <Link to ="/AdminSignUp">
              <Button className='A-signup' active>SignUp</Button>
           </Link>
           <Link to ="/AdminLogin">
              <Button className='A-login' active>Login</Button>
+          </Link>
+          <Link to ="/Mefu">
+             <Button className='A-login' active>Dia</Button>
           </Link>
         
       
