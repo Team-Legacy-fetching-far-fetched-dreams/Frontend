@@ -3,17 +3,17 @@ import './DoctorDashboard.css'
 import {motion} from 'framer-motion/dist/framer-motion'
 import Sidebar from '../../../components/pages/Admin/Sidebar'
 import MainDash from '../../../components/pages/Admin/MainDash'
- 
+import {Link, useNavigate} from 'react-router-dom'
 import DcSidebar from '../../../components/pages/Doctor/DcSidebar'
 import DcDashNav from "./DcDashNav"
 import DcWidget from './DcWidget'
 import Clock from '../Clock'
-import {Link} from 'react-router-dom'
+import DoctorLogin from './DoctorLogin'
+import { logout } from '../../../auth'
 
 const DoctorDashboard = () => {
 
   const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY');
-  const {data} = localStorage.getItem('DATA');
   const [state, setState] = useState([0,0])
   useEffect(() => {
     const requestOptions = {
@@ -21,7 +21,7 @@ const DoctorDashboard = () => {
     headers : {
       'content-type': 'application/json',
       'Authorization': `Bearer ${JSON.parse(token)}`
-    },
+    }
     
   }
 
@@ -29,15 +29,28 @@ const DoctorDashboard = () => {
   console.log(token)
 
   fetch('/user/users', requestOptions)
-    .then(res => res.json())
-    .then(data=>{
-      console.log(data)
-      setState(data)
+    .then(res =>
+      {
+        if (res.status===200)
+        {
+
+          return res.json()
+        }
+        else if (res.status == 401){
+          logout(token)
+          // navigate('/DoctorLogin')
+        }
+        else if (res.status===402){
+        }
       
+      res.json()
     })
+    .then(data=>{
+      console.log(data)})
     
     
-    console.log(state)
+    
+    // console.log(state)
     
 
 }, []);

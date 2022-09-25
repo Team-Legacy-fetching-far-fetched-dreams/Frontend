@@ -23,7 +23,7 @@
 
 
 }
-table{
+.table3{
     font-family: 'poppins';
     border-collapse: collapse;
     min-width: max-content;
@@ -43,7 +43,7 @@ table{
 
  
 
-tr:hover td{
+.table3 tr:hover td{
     color: #4478b8;
     cursor: pointer;
     background-color: #ffffff;
@@ -51,7 +51,7 @@ tr:hover td{
 }
 
  
-td button{
+.table3 td button{
     border: none;
     padding: 7px 10px;
     border-radius: 15px;
@@ -59,7 +59,7 @@ td button{
     color: white;
 }
 
-td {
+.table3 td {
  border: 1px solid #dddddd;
   text-align: center;
   padding: 5px 5px 5px ;
@@ -69,7 +69,7 @@ td {
 
 }
 
-th{
+.table3 th{
     background-color: #3977eb;
     border: 1px solid #dddddd;
     text-align: center;
@@ -86,11 +86,11 @@ th{
     position: fixed;
 } */
 
- tr :nth-of-type(even){
+ .table3 tr :nth-of-type(even){
       background-color: #f3f3f3;
 } 
 
- h1{
+ .N2-content h1{
     text-align: left;
 }
  

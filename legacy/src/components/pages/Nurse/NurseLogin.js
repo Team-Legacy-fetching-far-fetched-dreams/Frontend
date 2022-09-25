@@ -64,9 +64,16 @@ const NurseLogin = () => {
             
    
             if(data.access_token){
-            setislogged(true)
-            navigate('/NurseDashboard') 
-            }
+               if (data.qualification === 'Doctor'){
+                  navigate('/DoctorDashBoard')
+                }
+                else if (data.qualification === 'Nurse'){
+                  navigate('/NurseDashBoard')
+                }
+                else{
+                  navigate('/AdminDashBoard')
+                }
+               }
       })
    }
 

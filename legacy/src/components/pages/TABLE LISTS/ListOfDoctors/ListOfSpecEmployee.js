@@ -94,7 +94,11 @@ const ListOfSpecEmployee = ({data}) => {
 
 
             </td>
-             
+            <td>
+<Link to = {`/Profile/Users/${employ.public_id}`}>
+   <input type="submit" value="view" />
+</Link>
+ </td>
             
 
 

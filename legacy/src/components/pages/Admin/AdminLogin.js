@@ -19,33 +19,10 @@ import Nip from '../../../imgs/nipp.png'
 
 
 const AdminLogin = () => {
-  const [values,setValues] = useState({
-    userName:"",
-    password:"",
-
-  });
-  
-  
+ 
 
   const [submit,setSubmit]=useState(false);
   // const [valid,setValid]= useState(false);
-
-  const handleuserName = (event) =>{
-    setValues({...values,userName: event.target.value})
-  }
-
-  const handlepassword = (event) =>{
-    setValues({...values,password: event.target.value})
-  }
-
-  const handleSubmit = (event) =>{
-    event.preventDefault();
-    // if(values.userName&&values.password){
-    //   setValid(true);
-    // }
-    setSubmit(true);
-  }
-
   
   // const [emailval, setemailval]= useState("");
   // const [passval, setpassval] = useState("");
@@ -69,15 +46,9 @@ const AdminLogin = () => {
     formValues["qualification"] = "Admin"
     console.log(formValues)
     // setFormValues(initialValues)
-
-    
-
-}
-
-  useEffect(() => {
-    //  console.log(formErrors);
-    setFormErrors(validate(formValues));
-     if (Object.keys(formErrors).length === 0 && isSubmit){
+  }
+    useEffect(() => {
+    if (Object.keys(formErrors).length === 0 && isSubmit){
       console.log(formValues);
 
       const requestOptions={
@@ -98,13 +69,23 @@ const AdminLogin = () => {
   
         if(data.access_token){
           // setislogged(true)
-          navigate('/AdminDashboard') 
+          if (data.qualification === 'Doctor'){
+            navigate('/DoctorDashBoard')
+          }
+          else if (data.qualification === 'Nurse'){
+            navigate('/NurseDashBoard')
+          }
+          else{
+            navigate('/AdminDashBoard')
+          }
         }
     })
     }
       
      }
-},[formErrors])
+
+    },[formErrors])
+
 
 
 const validate = (values) => {

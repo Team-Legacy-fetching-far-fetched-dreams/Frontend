@@ -1,0 +1,104 @@
+/* .user-img{
+    height: 5%;
+    width: 30px;
+    
+    padding-top: 0px;
+   
+}
+
+.pro{
+  
+}
+
+
+.email_id{
+    display: flex;
+    margin-top: 1px;
+    align-items: center;
+}
+
+
+.username{
+    font-size: 20px;
+    padding-top: 2px;
+}
+
+.user-block{
+    display:block ;
+    
+    border-bottom: 0px solid grey;
+    margin-bottom: -37px;
+}
+.pro{
+    margin-top: 0px;
+    padding: 30px;
+    display: grid;
+
+}
+ p9{
+  font-size: 13px;
+  color:aqua;
+}
+
+.details{
+    display: flex;
+}
+
+.other_names{
+    font-size: 20px;
+    padding-top: 2px;
+}
+
+
+.second_part{
+  float:right ;
+  justify-content: right;
+  align-items: right;
+  left: 35;
+  column-gap: 1ch;
+} */
+
+body {
+    background: rgb(99, 39, 120)
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #BA68C8
+}
+
+.profile-button {
+    background: rgb(99, 39, 120);
+    box-shadow: none;
+    border: none
+}
+
+.profile-button:hover {
+    background: #682773
+}
+
+.profile-button:focus {
+    background: #682773;
+    box-shadow: none
+}
+
+.profile-button:active {
+    background: #682773;
+    box-shadow: none
+}
+
+.back:hover {
+    color: #682773;
+    cursor: pointer
+}
+
+.labels {
+    font-size: 11px
+}
+
+.add-experience:hover {
+    background: #BA68C8;
+    color: #fff;
+    cursor: pointer;
+    border: solid 1px #BA68C8
+}

@@ -3,6 +3,7 @@ import './AdminDashboard.css'
 import Sidebar from './Sidebar'
 import AdDashNav from "./AdDashNav"
 import ListOfSpecEmployee from '../TABLE LISTS/ListOfDoctors/ListOfSpecEmployee'
+import {Link} from 'react-router-dom'
 
 
 import Clock from '../Clock'
@@ -52,6 +53,11 @@ class Doctor extends Component {
         <div className='Dashboardcontainer'>
         <AdDashNav/>
         <div className=''>
+        <div className='createButton'>
+            <Link to ={"/DoctorSignUp"}>
+            <input type='submit' value = "Register New Doctor" />
+            </Link>
+          </div>
           {this.state.data ? <ListOfSpecEmployee data={this.state.data}/>:<div>loading</div>}
         </div>
 
