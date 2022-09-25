@@ -8,6 +8,8 @@ import Nip from '../../../../imgs/nipp.png'
 import registerImg from '../../../../imgs/415.jpg'
 
 const Mefu = () => {
+
+
   
   return (
    
@@ -41,6 +43,8 @@ const Mefu = () => {
 
          
          <input type='submit' id='sbtn' className='subway' value='Submit' />
+
+         
          </form>
       </div>
 
