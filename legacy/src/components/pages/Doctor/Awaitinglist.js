@@ -18,7 +18,7 @@ const AwaitingList = () => {
         <div className='Dashboardcontainer'>
         <DcDashNav/>
         <div className=''>
-        <VitalsForm/>
+       
         </div>
         </div>
         {/* <MainDash/> */}
