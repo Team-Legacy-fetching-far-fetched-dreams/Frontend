@@ -90,6 +90,7 @@ const validate = (values) => {
    errors.address = "Please state your address!";
   }
   return errors;
+ 
 };
 
    
@@ -109,7 +110,7 @@ const validate = (values) => {
     <div className='body-rights'>
       <div className='containersy'>
 
-        <h1 className='cr cvb'>Create Account!</h1>
+        <h1 className='cvb'>Create Account!</h1>
        
         <form onSubmit={handleSubmit}>
          <div className='loki'>
@@ -153,7 +154,9 @@ const validate = (values) => {
           <p className='lon'>{formErrors.gender}</p>
 
         
-         <input type='submit' onClick="validation();"  id='klo' className='submay' value='Submit' />
+        {/* //  <input type='submit' onClick="validation();"  id='klo' className='submay' value='Submit' /> */}
+         <input type='submit'  id='klo' name='xcz' className='submay' value='Submit' />
+      
        
          </form>
 
@@ -166,11 +169,15 @@ const validate = (values) => {
   
 
      </div>
-      
 
-      )
-}
- 
+     
+      
+     
+  
+  );
+   }
+
+   
 
 
 export default AdminSignUp

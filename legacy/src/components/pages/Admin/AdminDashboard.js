@@ -42,7 +42,7 @@ useState(() => {
     setId(location.state.id)
   }
   if(token){
-  fetch("/user/users", requestOptions)
+  fetch(`/user/user/${id}`, requestOptions)
     .then(res => 
       {
         setIsLoading(true)
@@ -76,7 +76,7 @@ useState(() => {
 
 
 
-  return (isloading?<div>...LOADING...</div>:
+  return (isloading?<div className='offers'>...LOADING...</div>:
     <motion.div className='A-d-m'
     initial={{opacity: 0}}
     animate={{opacity: 1}}
