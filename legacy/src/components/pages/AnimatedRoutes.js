@@ -12,7 +12,7 @@ import PatientInfo from '../pages/Patient/UsersInfo/PatientInfo'
 import UsersInfo from '../pages/Patient/UsersInfo/UsersInfo'
 import PatientForm from './Doctor/PatientForm';
 
-// import Modal from '../../components/pages/Admin/Model/Modal';
+import Modal from '../../components/pages/Admin/Model/Modal';
 import Mefu from '../../components/pages/Admin/Mefu/Mefu'
 import DoctorPage from '../../components/pages/Doctor/DoctorPage';
 import NursePage from '../../components/pages/Nurse/NursePage';
@@ -33,11 +33,12 @@ import Patient from '../../components/pages/Admin/Patient';
 
 import DoctorDashboard from '../../components/pages/Doctor/DoctorDashboard';
 import DPatient from './Doctor/DPatient'
+// import AwaitingList from './Doctor/Awaitinglist'
 
 import NurseDashboard from '../../components/pages/Nurse/NurseDashboard';
 import NDoctor from '../../components/pages/Nurse/NDoctor';
 import NPatient from '../../components/pages/Nurse/NPatient';
-
+// import VitalsForm from './Nurse/Vitals/VitalsForm';
 
 
 import {AnimatePresence} from 'framer-motion/dist/framer-motion'
@@ -71,7 +72,7 @@ const AnimatedRoutes = () => {
               <Route path ="/NursePage" element={<NursePage/>} />
               {/* <Route path ="/ListOfRegPatients" element={<ListOfRegPatients/>} /> */}
               <Route path ="/AdminPage" element={<AdminPage/>} />
-              {/* <Route path ="/Modal" element={<Modal/>} /> */}
+              <Route path ="/Modal" element={<Modal/>} />
               {/* <Route path ="/Mafu" element={<Mafu/>} /> */}
 
           
@@ -99,12 +100,15 @@ const AnimatedRoutes = () => {
 
               <Route path ="/DoctorDashboard" element={<DoctorDashboard/>} />
               <Route path = '/DoctorDashboard/Patient' element={<DPatient/>} />
-        
+              {/* <Route path = '/DoctorDashboard/AwaitingList' element={<AwaitingList/>} /> */}
+              
 
               <Route path ="/NurseDashboard" element={<NurseDashboard/>} />
               <Route path ="/NurseDashboard/Doctor" element={<NDoctor/>} />
               <Route path ="/NurseDashboard/Patient" element={<NPatient/>} />
               <Route path ="/PatientForm" element = {<PatientForm/>}/>
+              {/* <Route path ="/NurseDashboard" element={<VitalsForm/>} /> */}
+
          </Routes>
      </AnimatePresence>
   )
