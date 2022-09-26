@@ -23,6 +23,18 @@ align-items: center;
     
   }
 
+.AusCusLink{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.AusCusLink a{
+  text-decoration: none;
+  padding-left: 20px;
+  color: var(--blue)
+}
+
   .container{
     margin-top: 50px;
   }

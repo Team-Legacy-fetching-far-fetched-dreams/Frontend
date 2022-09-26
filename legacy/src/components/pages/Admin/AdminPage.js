@@ -20,6 +20,9 @@ const AdminPage = () => {
         <div className = "A-h">
             <img src={Logo} alt="" className = "A-logo"></img>  
         </div>
+        <Link to="/LandingPage">
+     <Button as="sub" className="btn" id = "back-btn" >Back</Button>
+     </Link>
         <div className='A-content'>
              <motion.h1
              initial=  'hidden' animate='visible' variants={{
@@ -37,7 +40,7 @@ const AdminPage = () => {
              }}
              >Hello Administrator,</motion.h1> 
              <p className="A-p">
-             The admin is responsible for organizing the health services and daily activities such as keeping records of an employee,communicate between departments to ensure adequate patient care.            
+            You can access various features after Login/SignUp. Some of the features include viewing list of patients,registers a patient and many more.
           </p>
           <img src={Admin4} alt="" className = "A-image4"></img>
           <img src={Admin2} alt="" className = "A-image2"></img>  

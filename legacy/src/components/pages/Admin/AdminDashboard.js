@@ -1,19 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './AdminDashboard.css'
 import Sidebar from './Sidebar'
-import Calendar from '../../Calendar'
+import Calendar from 'react-calendar';
 import Clock from '../Clock'
 import AdDashNav from "./AdDashNav"
 import Widget from './Widget'
 import {motion} from 'framer-motion/dist/framer-motion'
 import {Link} from 'react-router-dom'
+import 'react-calendar/dist/Calendar.css';
 
 const AdminDashboard = () => {
 
-  const style = {
-    position: "relative",
-    margin: "50px auto"
-  }
+  // const style = {
+  //   position: "relative",
+  //   margin: "50px auto"
+  // }
+  
+  const [value, onChange] = useState(new Date());
   
   return (
     <motion.div className='A-d-m'
@@ -38,9 +41,8 @@ const AdminDashboard = () => {
           </Link>
         </div>
         <div>
-        <Calendar style={style} width="302px" 
-          onDayClick={(e, day)=> this.onDayClick(e, day)}/>   
-          <Clock />
+       <Calendar onChange={onChange} value={value} />
+        <Clock />
         </div>
         </div>
         {/* <MainDash/> */}

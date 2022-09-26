@@ -4,8 +4,11 @@ import {motion} from 'framer-motion/dist/framer-motion'
 import Logo from '../../../imgs/logo2.png'
 import Back from '../../../imgs/Doc.png'
 import Hospital from '../../../imgs/Artboard 1.png'
+import Button from 'react-bootstrap/Button';
+import {Link, useNavigate} from 'react-router-dom'
 
 const ContactUs = () => {
+  const navigate = useNavigate()
   return (
     <motion.div className='C-m'
     initial={{opacity: 0}}
@@ -15,9 +18,10 @@ const ContactUs = () => {
     <div className='C-g'>
     <div className = "C-h">
         <img src={Logo} alt="" className = "D-logo"></img>  
-        
      </div>
-    
+     <Link to="/LandingPage">
+     <Button as="sub" className="btn" id = "back-btn" onClick={() => navigate(-1)}>Back</Button>
+     </Link>
      <img src={Back} alt="" className='cback-image'></img>
            <div className='chester'>
                

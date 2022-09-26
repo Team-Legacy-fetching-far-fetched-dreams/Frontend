@@ -42,7 +42,15 @@
     padding-right: 20px;
  }
 
- 
+ #back-btn{
+   position: absolute;
+   top: 0px;
+   left: 0px;
+   height:40px;
+   color: grey;
+   background-color: whitesmoke;
+   border: none;
+ }
 
  .back-image1{
    position: absolute;

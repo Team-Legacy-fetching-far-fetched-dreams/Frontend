@@ -20,8 +20,8 @@
 */
 
 .N1-content{
-  min-height: 100vh;
-  min-width: 100vh;
+  min-height: 10vh;
+  min-width: 10vh;
   overflow-x: hidden;
   background: linear-gradient(to right, rgb(223, 221, 221), 50% #273294 50%);
 
@@ -59,7 +59,7 @@
 }
 
 .img-class{
-    height: 6rem;
+    height: 4rem;
 }
 
 #img-id{
@@ -74,7 +74,7 @@
 }
 
 .ll{
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 }
 
 .dd{
@@ -143,10 +143,10 @@ height: 100%;
 width: 95%;
 margin: 0rem auto;
 }
-#wel-img-id{
+.nlogin-img{
     width: 80%;
     object-fit: cover;
-    margin-top: 30px;
+    margin-top: 0px;
     border-radius: 50px;
 
 }

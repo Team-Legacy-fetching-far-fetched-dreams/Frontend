@@ -15,6 +15,9 @@ const NursePage = () => {
        <div className = "N-h">
            <img src={Logo} alt="" className = "N-logo"></img>  
        </div>
+       <Link to="/LandingPage">
+     <Button as="sub" className="btn" id = "back-btn" >Back</Button>
+     </Link>
        <div className='N-content'>
             <motion.h1
              initial=  'hidden' animate='visible' variants={{
@@ -35,7 +38,7 @@ const NursePage = () => {
             </motion.h1> 
 
             <p className="N-p">
-            Nurses are responsible for managing most of our ongoing care and treatment in hospital. They assess, plan and administer your daily treatment and manage your general health. They can also direct you to the right people to speak to about specific medical issues.            
+              You can access various features after Login/SignUp. It has some features which includes record patient details and register patients vitals.
           </p>
           <img src={Nurse2} alt="" className = "N-image2"></img>
           <img src={Nurse3} alt="" className = "N-image3"></img>  

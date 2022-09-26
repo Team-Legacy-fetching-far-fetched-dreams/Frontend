@@ -7,9 +7,16 @@ import {useNavigate} from 'react-router-dom'
 import {motion} from 'framer-motion/dist/framer-motion'
 import {Button,Form} from 'react-bootstrap'
 import {useForm} from 'react-hook-form'
+import {Link} from 'react-router-dom'
   
 const Verfication = () => {
 
+  const goToAbout=()=>{
+    navigate("/AboutUs")
+  }
+  const goToContact=()=>{
+    navigate("/ContactUs")
+  }
 
 const {register, reset, handleSubmit, formState:{errors}} = useForm();
 const navigate = useNavigate()
@@ -54,6 +61,14 @@ const body={
     >
     <div className="AppGlass">
       <div align="center" className = "container">
+        <div className="AusCusLink">
+        <Button onClick={goToAbout}>
+        AboutUs
+        </Button>
+        <Button onClick={goToContact}>
+        ContactUs
+        </Button>
+        </div>
          <img src={Logo} alt="" className = "Vlogo"></img>
          <h1>Welcome!!</h1>
          <h2>Please Enter The Unique Code</h2>

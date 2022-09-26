@@ -16,6 +16,9 @@ const DoctorPage = () => {
         <div className = "d-h">
          <img src={Logo} alt="" className = "D-logo"></img>  
       </div>
+      <Link to="/LandingPage">
+     <Button as="sub" className="btn" id = "back-btn" >Back</Button>
+     </Link>
       <div className='d-content'>
       <motion.h1 align='center'
       initial=  'hidden' animate='visible' variants={{
@@ -39,7 +42,7 @@ const DoctorPage = () => {
       <img src={Doctor1} alt="" className = "D-image1"></img> 
       <img src={Doctor4} alt="" className = "D-image4"></img>
       <p className="d-p">
-      Doctors are responsible for mitigating the pain and suffering of others by providing them with medical treatment and healthcare.             
+              You can access various features after Login/SignUp. It has some features constiting of viewing their patient details(symptoms, name, mobile), diagnose patients and prescribe a drug if needed.
           </p>
 
       <div className='sl-btn'>

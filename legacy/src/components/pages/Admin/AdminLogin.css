@@ -24,10 +24,10 @@
 */
 
 .login-encase{
-    height: 75vh;
+    height: 65vh;
     width: 70%;
     border-radius: 1rem;
-    margin: 2rem auto;
+    margin: 1rem auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,7 +55,7 @@
 }
 
 .img-class{
-    height: 6rem;
+    height: 4rem;
    
 }
 
@@ -74,7 +74,7 @@
 }
 
 .ll{
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 }
 
 .dd{

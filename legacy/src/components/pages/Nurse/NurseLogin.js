@@ -48,7 +48,7 @@ const handleSubmit = (event) => {
                   
                </div>
                <div className='wwelcomeImg'>
-                <img src={wwelcomeImg} id='wel-img-id' alt='' srcSet='' />
+                <img src={wwelcomeImg} className="nlogin-img" alt='' srcSet='' />
                </div>
                </div>
                </div> 

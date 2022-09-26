@@ -37,7 +37,8 @@ behavior: "smooth",
             <img src={Back} alt="" className='back-image'></img>
           </div>
           <p className="body-p">
-          Health is the most important asset in our life. There is a saying that “healthy mind stays in healthy body”. So we have to take care of both physical and mental health.            
+          Health is the most important asset in our life. There is a saying that “healthy mind stays in healthy body”. So we have to take care of both physical and mental health. 
+            
           </p>
           <Button variant="success" className='main-btn' onclick={()=> scrollToSection(hero)} active>Get Started</Button>
           <div className='scroll'>
@@ -61,7 +62,7 @@ behavior: "smooth",
             ></motion.img>
           </div>
           <div className='p'>
-          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquam scelerisque tortor nec aliquam. Quisque maximus posuere purus sit amet gravida. Fusce nisi ex, pharetra sit amet eros vel, venenatis eleifend nibh. </p>
+         <p>The hospital has different tools and equipments such as stestroscope,microscope,injectors and so on. It also has a pharmacy centre which contains drugs such as Antibiotics, Metformin, Losatan, etc. </p>
           <img src={Object1} alt='' className='object'></img>
           <img src={Object2} alt='' className='object'></img>
           <img src={Object3} alt='' className='object'></img>
@@ -112,7 +113,8 @@ behavior: "smooth",
                 </Link>
             </div>
             <div>
-            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquam scelerisque tortor nec aliquam. Quisque maximus posuere purus sit amet gravida. </p>
+          <p>These sections comprises of the admin, doctor and nurse and each of them has its own vital or major role to play according to how the images are being created or formed..</p>
+
             </div>
           </div>
           <div className='footer'>
