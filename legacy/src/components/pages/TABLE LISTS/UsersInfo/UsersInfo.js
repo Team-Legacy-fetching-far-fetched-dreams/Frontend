@@ -1,12 +1,22 @@
 import React from 'react'
 import Button from 'react-bootstrap/esm/Button'
+import "./UsersInfo.css"
+import NewProfile from "./NewProfile.png"
+import Logo from '../../../../imgs/logo2.png'
+import { Link } from 'react-router-dom'
+
 
 
 const UsersInfo = (data) => {
     
   return (
     
-    
+    <div className='d-m'>
+    <div className='d-g'>
+    <div className='d-h'>
+             <img src={Logo} alt="" className = "D-logo"></img> 
+                </div>
+            <img src={NewProfile} alt="" className='NewPro'></img> 
     <div className="row">
     <div className="col-md-3 border-right">
         <div className="d-flex flex-column align-items-center text-center p-3 py-5"><span className="font-weight-bold"><h4>{data.qualification} : {data.public_id}</h4></span><h7>{data.username}</h7><img className="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"/><span className="text-black-50">{data.email}</span><span> </span></div>
@@ -17,6 +27,10 @@ const UsersInfo = (data) => {
                 <h4 className="text-right">User Profile </h4>
                 <div className="col-md-4">
         <div className="p-3 py-4">
+
+        <Link to = {"/AdminDashboard/Patient"}>
+         <Button className="btn btn-primary  btn-sm" type="submit"  role="button"><span></span><span className="p-1">View Vitals</span></Button>
+         </Link> 
             {/* <Button className="btn btn-primary btn-sm" href="#" role="button"><span></span><span className="  p-2 ">Edit Profile</span></Button> */}
             {/* <div className="col-md-12"><label className="labels">Experience in Designing</label></div> */}
             {/* <div className="col-md-12"><label className="labels">Additional Details</label><input type="text" className="form-control" placeholder="additional details" value=""/></div> */}
@@ -74,8 +88,8 @@ const UsersInfo = (data) => {
     </div>
     
 </div>
-
-    
+</div>
+</div>
    
   )
 }

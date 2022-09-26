@@ -119,9 +119,10 @@ const ListOfAllEmployees = ({data}) => {
             </td>
 
             <td>
-<Link to = {"/AdminDashboard/Patient"}>
-   <input type="submit" value="view"/>
+<Link to = {"/UsersInfo/"}>
+   <input className="p-1 m-2" type="submit" value="view"/>
 </Link>
+<input  type="submit" value="delete" />
  </td>
         </tr>
             )

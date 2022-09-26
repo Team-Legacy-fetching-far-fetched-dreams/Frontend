@@ -4,7 +4,53 @@ import Sidebar from './Sidebar'
 import AdDashNav from "./AdDashNav"
 import Clock from '../Clock'
 import {motion} from 'framer-motion/dist/framer-motion'
+import ListOfSpecEmployees from "../../pages/TABLE LISTS/ListOfDoctors/ListOfSpecEmployee"
 
+const data = [
+    {
+      public_id:'1',
+      username: "Manu",
+      other_names:'Godsaves',
+      gender: "Male",
+      surname: "kofi"
+      },
+      {
+        public_id:'2',
+        username: "Essuman",
+        other_names:'Godsaves',
+        gender: "Male",
+        surname: "kofi"
+        },
+        {
+          public_id:'1',
+          username: "Manu",
+          other_names:'Godsaves',
+          gender: "Male",
+          surname: "kofi"
+          },
+          {
+            public_id:'1',
+            username: "Manu",
+            other_names:'Godsaves',
+            gender: "Male",
+            surname: "kofi"
+            },
+            {
+              public_id:'1',
+              username: "Manu",
+              other_names:'Godsaves',
+              gender: "Male",
+              surname: "kofi"
+              },
+              {
+                public_id:'1',
+                username: "Manu",
+                other_names:'Godsaves',
+                gender: "Male",
+                surname: "kofi"
+                },
+   
+  ]
 const Doctor = () => {
   return (
     <motion.div className='A-d-m'
@@ -18,7 +64,7 @@ const Doctor = () => {
         <div className='Dashboardcontainer'>
         <AdDashNav/>
         <div className=''>
-          <ListOfSpecEmployee data={data}/>
+          <ListOfSpecEmployees data={data}/>
         </div>
 
         </div>
