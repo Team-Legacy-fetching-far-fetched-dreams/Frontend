@@ -1,9 +1,14 @@
 import React from 'react'
-import './NurseDashboard.css'
+import './NPatient.css'
 import {motion} from 'framer-motion/dist/framer-motion'
 import Clock from '../Clock'
-import NSidebar from '../../../components/pages/Nurse/NSidebar'
+import NSidebar from './NSidebar'
 import NDashNav from "./NDashNav"
+import NWidget2 from './NWidget2'
+import Table from './Table/Table'
+
+
+
 
 const NPatient = () => {
   return (
@@ -14,14 +19,17 @@ const NPatient = () => {
     >
     <div className='N-d-g'>
     <NSidebar/>
-        <div className='Dashboardcontainer'>
+        <div className='Dashboardcontainer1'>
         <NDashNav/>
-        <div className=''>
-        
+        <div className='NWidgets2'>
+          <NWidget2/>
+          <NWidget2/>
         </div>
         <div>
           <Clock />
+        
         </div>
+        <Table/>
         </div>
     </div> 
 </motion.div>

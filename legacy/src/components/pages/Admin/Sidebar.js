@@ -26,19 +26,19 @@ const Sidebar = () => {
             <li>
               <Link to ='/AdminDashboard/Doctor'>
             <UilUserMd className="icon"/>
-              <span>Nurse</span>
+              <span>Doctor</span>
               </Link>
             </li>
             <li>
             <Link to ='/AdminDashboard/Nurse'>
             <UilUserNurse className="icon"/>
-              <span>patient</span>
+              <span>Nurse</span>
               </Link>
             </li>
             <li>
             <Link to ='/AdminDashboard/Patient'>
             <UilAccessibleIconAlt className="icon"/>
-              <span>Analytics</span>
+              <span>Patient</span>
             </Link>
             </li> 
             <li>

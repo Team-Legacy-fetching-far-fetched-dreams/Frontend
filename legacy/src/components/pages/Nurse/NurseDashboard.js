@@ -6,6 +6,10 @@ import NDashNav from "./NDashNav"
 import NWidget from './NWidget'
 import Clock from '../Clock'
 import {Link} from 'react-router-dom'
+import Table2 from './Table2/Table2'
+import RightSide from './RightSide/RightSide'
+
+
 
 const NurseDashboard = () => {
   return (
@@ -14,9 +18,11 @@ const NurseDashboard = () => {
     animate={{opacity: 1}}
     exit={{opacity: 0}}
     >
+     
     <div className='N-d-g'>
+      
     <NSidebar/>
-        <div className='Dashboardcontainer'>
+        <div className='Dashboardcontainer3'>
         <NDashNav/>
         <div className='widgets'>
         <Link to="/NurseDashboard/Patient">
@@ -25,13 +31,23 @@ const NurseDashboard = () => {
           <Link to="/NurseDashboard/Doctor">
           <NWidget type="doctor"/>
           </Link>
+          <div className='right23'>
+          <RightSide/>
+          </div>
+
         </div>
+      
+    
         <div>
           <Clock/>
         </div>
+        
+       
         </div>
+        
     </div> 
 </motion.div>
+
   )
 }
 

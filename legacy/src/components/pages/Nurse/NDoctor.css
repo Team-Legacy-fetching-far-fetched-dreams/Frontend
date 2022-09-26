@@ -1,0 +1,14 @@
+.NDoctor {
+    display: flex;
+}
+
+.Dashboardcontainer2{
+    flex: 6;
+    }
+
+   
+.NWidgets3 {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+}
