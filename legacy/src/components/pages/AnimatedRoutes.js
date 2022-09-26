@@ -23,14 +23,18 @@ import Doctor from '../../components/pages/Admin/Doctor';
 import Nurse from '../../components/pages/Admin/Nurse';
 import PatientInfo from './TABLE LISTS/UsersInfo/PatientInfo';
 import UsersInfo from './TABLE LISTS/UsersInfo/UsersInfo';
+import VitalsForm from './TABLE LISTS/Vitals/VitalsForm';
 import Patient from '../../components/pages/Admin/Patient';
 
 import DoctorDashboard from '../../components/pages/Doctor/DoctorDashboard';
 import DPatient from './Doctor/DPatient'
+import AwaitingList from './Doctor/Awaitinglist'
 
 import NurseDashboard from '../../components/pages/Nurse/NurseDashboard';
 import NDoctor from '../../components/pages/Nurse/NDoctor';
 import NPatient from '../../components/pages/Nurse/NPatient';
+
+
 
 import {AnimatePresence} from 'framer-motion/dist/framer-motion'
 // import ListOfRegPatients from './ListOfRegPatients';
@@ -51,6 +55,7 @@ const AnimatedRoutes = () => {
               <Route path ="/NursePage" element={<NursePage/>} />
               <Route path ="/PatientInfo" element={<PatientInfo/>}/>
               <Route path ="/UsersInfo" element={<UsersInfo/>}/>
+              <Route path ="/VitalForm" element={<VitalsForm/>}/>
               {/* <Route path ="/ListOfRegPatients" element={<ListOfRegPatients/>} /> */}
               <Route path ="/AdminPage" element={<AdminPage/>} />
               
@@ -75,11 +80,14 @@ const AnimatedRoutes = () => {
 
               <Route path ="/DoctorDashboard" element={<DoctorDashboard/>} />
               <Route path = '/DoctorDashboard/Patient' element={<DPatient/>} />
-        
+              <Route path = '/DoctorDashboard/AwaitingList' element={<AwaitingList/>} />
+              
 
               <Route path ="/NurseDashboard" element={<NurseDashboard/>} />
               <Route path ="/NurseDashboard/Doctor" element={<NDoctor/>} />
               <Route path ="/NurseDashboard/Patient" element={<NPatient/>} />
+              
+
          </Routes>
      </AnimatePresence>
   )

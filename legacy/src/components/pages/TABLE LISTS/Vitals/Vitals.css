@@ -72,6 +72,6 @@
     padding-bottom: 3px;
 }
 
-.New1 :hover {
+.New1 :hover button{
         color: black;
 }

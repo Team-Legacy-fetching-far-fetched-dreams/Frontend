@@ -8,6 +8,7 @@ import Clock from '../Clock'
 import {Link} from 'react-router-dom'
 
 
+
 const NurseDashboard = () => {
 
  
@@ -21,6 +22,8 @@ const NurseDashboard = () => {
     <NSidebar/>
         <div className='Dashboardcontainer'>
         <NDashNav/>
+        
+        
         <div className='widgets'>
         <Link to="/NurseDashboard/Patient">
           <NWidget type = "patient"/>

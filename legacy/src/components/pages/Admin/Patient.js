@@ -5,7 +5,6 @@ import Clock from '../Clock'
 import AdDashNav from "./AdDashNav"
 import {motion} from 'framer-motion/dist/framer-motion'
 import Vitals from "../../pages/TABLE LISTS/Vitals/Vitals"
-
 const data = [
     {
     patient_id:'1',

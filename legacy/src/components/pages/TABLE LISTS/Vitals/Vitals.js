@@ -15,7 +15,7 @@ const Vitals = ({data}) => {
         
             <h1>List of Vitals</h1>
             <div className='New1'>
-            <Link to = {"/AdminDashboard/Patient"}>
+            <Link to = {"/VitalsForm"}>
          <Button className="btn btn-primary btn-sm" type="submit"  role="button"><span></span><span className=" p-2 ">Record Vitals</span></Button>
          </Link>
          </div>
