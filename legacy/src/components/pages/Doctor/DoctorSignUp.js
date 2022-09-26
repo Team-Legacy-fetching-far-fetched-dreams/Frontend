@@ -3,14 +3,37 @@ import './DoctorSignUp.css'
 import Logo from '../../../imgs/logo2.png'
 import registerImg from '../../../imgs/415.jpg'
 import {Link} from 'react-router-dom'
-import {useForm} from 'react-hook-form'
 
 const DoctorSignUp = () => {
 
+
+  // const {register, handleSubmit} = useForm();
+  // const signUp=(data)=>{
+  //   data["qualification"] = "Doctor"
+  //   //e.preventDefault();
+  //   console.log(data)
+
+  //   const requestOptions ={
+  //     method : "POST",
+  //     headers : {
+  //       'content-type' : 'application/json'
+  //     },
+  //       body:JSON.stringify(data)
+  //   }
+
+  //   fetch("http://127.0.0.1:5000/user/signup", requestOptions)
+  //     .then((res)=>res.json())
+  //     .then(data=>{
+  //       console.log(data)
+  //     })
+
+  // }
   const initialValues = {surname: "", other_name: "", email: "", birth_date: "", address: "", contact1: "", contact2: "", gender: ""};
   const [formValues,setFormValues] = useState( initialValues);
   const [formErrors,setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
+  const [isloading, setIsLoading] = useState(false);
+  const [isSuccess, setIsSucces] = useState(false)
  // const {register, handleSubmit} = useForm();
  // const signUp=(data)=>{
     //e.preventDefault();
@@ -18,10 +41,8 @@ const DoctorSignUp = () => {
  // }
 
   const handleChange = (e) => {
-      console.log(e.target);
       const {name, value} = e.target;
       setFormValues({...formValues, [name]: value});
-      console.log(formValues);
   };
 
  
@@ -29,16 +50,52 @@ const DoctorSignUp = () => {
     e.preventDefault();
     setFormErrors(validate(formValues));
     setIsSubmit(true);
-    console.log(e.target);
-    const {name, value} = e.target;
-    setFormValues({...formValues, [name]: value});
-    console.log(formValues);
+    formValues["qualification"] = "Doctor"
+    console.log(formValues)
+    
+    
+    
+        
+      
+    // console.log(e.target);
+    // const {name, value} = e.target;
+    // setFormValues({...formValues, [name]: value});
+    // console.log(formValues);
   };
 
   useEffect(() => {
-       console.log(formErrors);
+      //  console.log(formErrors);
        if (Object.keys(formErrors).length === 0 && isSubmit){
+        setIsLoading(true)
         console.log(formValues);
+
+
+        const requestOptions ={
+          method : "POST",
+          headers : {
+            'content-type' : 'application/json'
+          },
+            body: JSON.stringify(formValues)
+        }
+
+        if (Object.values(formErrors).length === 0){
+          fetch("/user/signup", requestOptions)
+          .then((res)=>{
+            setIsLoading(false)
+            if (res.status===200){
+              console.log("SUCCESS")
+              setIsSucces(true)
+              return res.json()
+            }
+            else if(res.status === 409){
+              console.log("CONFLICT")
+              setFormErrors({email: "Email already exist"})
+            }
+            })
+          .then(data=>{
+            console.log(data)
+          })
+        }
        }
   },[formErrors])
   // const [email,setemail]=useState('');
@@ -50,7 +107,7 @@ const DoctorSignUp = () => {
   // const [phone,setphone]=useState('');
   // const [gender,setgender]=useState('');
 
-const validate = (values) => {
+  const validate = (values) => {
        const errors = {};
        const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
        if (!values.surname){
@@ -152,8 +209,9 @@ simply better.</p>
              <input type='submit' id='sbtn' className='subway' value='Submit' />
              </form>
           </div>
-
+          {isloading && <div>...LAODING...</div>}
         </div>
+        {isSuccess && <div>Please Chek your eamil for your login Credentials</div>}
         </div>
      
 

@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+import './ListOfSpecEmployee.css'
 // import Logo from '../../../imgs/logo2.png'
 import {Link} from 'react-router-dom'
 
@@ -22,43 +23,66 @@ import {Link} from 'react-router-dom'
 
 
 
+
+
+
+
 const ListOfSpecEmployee = ({data}) => {
  
 //   const [listOfSpec,setlistOfSpec] = useState([]);
 
- useEffect(
-    ()=>{
-       console.log(data)
-      //  setlistOfSpec(data)
 
-       
- },[]
- );
-  return (
+   const DeleteUser = (e) =>{
+      console.log(e)
+      console.log(e)
+      // e.preventDefault()
+      // const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY')
+   
+      // const requestOptions ={
+      //    method : 'DELETE',
+      //    headers :{
+      //       'content_type' : "application/json",
+      //       'Authorization' :`Bearer ${JSON.parse(token)}`
+      //    }
+      // }
+   
+      // fetch(`/user/user/${id}`,requestOptions)
+      //      .then(res=>res.json())
+      //      .then(data=>{
+      //          console.log(data)
+      //      })
+   }
+
+
+
+
+
+ 
+  return (data.length>0?
     // <div className='d-m'>
     // <div className='d-g'>
-    <div className='N-g'>
-    <div className = "N-h">
-        {/* <img src={Logo} alt="" className = "N-logo"></img>   */}
-    </div>
-    <div className='N2-content'>
-      <div className='ListOfSpec'>
+   //  <div className='N-g'>
+    
+    <div className='N5-content'>
+           <h1>List of Specific Employee</h1>
 
-         
-     
-         <h1>List of Specific Employee</h1>
-      <table>
+           <div className='ListOfSpec'>
 
-        
+           <table className='table5'>
+
+          
          <th>Public_id</th>
          <th>Username</th>
          <th>Other Names</th>
          <th>Gender</th>
          <th>Surname</th>
+         <th colspan="2">Action</th>
          {data.map((employ,key) =>{
 
            return( 
+            
             <tr>
+               
             <td key={key}>
             {
                employ.public_id
@@ -76,7 +100,7 @@ const ListOfSpecEmployee = ({data}) => {
 
              <td key={key}>
             {
-               employ.other_names
+               employ.other_name
 
             }
              </td>
@@ -87,7 +111,7 @@ const ListOfSpecEmployee = ({data}) => {
 
             </td>
 
-          
+           
 
             <td key={key}>
                {
@@ -96,21 +120,26 @@ const ListOfSpecEmployee = ({data}) => {
 
 
             </td>
-             
+            <td>
+<Link to = {`/Profile/Users/${employ.public_id}`}>
+   <input className='p-1 m-2' type="submit" value="view" />
+</Link>
+   <input type="submit" value = "DELETE" onClick={DeleteUser(employ.public_id)}/>
+ </td>
             
 
 
            </tr>
+          
             )
          }
          )
       }
-        
        </table> 
       
+   
       </div>
-      </div>
-   </div>
+   </div>:<div>List Empty</div>
 
 
 

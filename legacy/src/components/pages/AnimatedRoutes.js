@@ -7,8 +7,13 @@ import AboutUs from '../../components/pages/LandingPage/AboutUs';
 import ContactUs from '../../components/pages/LandingPage/ContactUs';
 
 import Hello from '../../Hello';
-// import TrialPage from '../../components/pages/Doctor/trialpage.js';
+import TrialPage from '../../components/pages/Doctor/trialpage.js';
+import PatientInfo from '../pages/Patient/UsersInfo/PatientInfo'
+import UsersInfo from '../pages/Patient/UsersInfo/UsersInfo'
+import PatientForm from './Doctor/PatientForm';
 
+
+import Mefu from '../../components/pages/Admin/Mefu/Mefu'
 import DoctorPage from '../../components/pages/Doctor/DoctorPage';
 import NursePage from '../../components/pages/Nurse/NursePage';
 import AdminPage from '../../components/pages/Admin/AdminPage';
@@ -28,13 +33,18 @@ import Patient from '../../components/pages/Admin/Patient';
 
 import DoctorDashboard from '../../components/pages/Doctor/DoctorDashboard';
 import DPatient from './Doctor/DPatient'
+// import AwaitingList from './Doctor/Awaitinglist'
 
 import NurseDashboard from '../../components/pages/Nurse/NurseDashboard';
 import NDoctor from '../../components/pages/Nurse/NDoctor';
 import NPatient from '../../components/pages/Nurse/NPatient';
+// import VitalsForm from './Nurse/Vitals/VitalsForm';
+
 
 import {AnimatePresence} from 'framer-motion/dist/framer-motion'
+
 // import ListOfRegPatients from './ListOfRegPatients';
+
 
 
 const AnimatedRoutes = () => {
@@ -48,15 +58,27 @@ const AnimatedRoutes = () => {
               <Route path ="/Home" element={<Home/>} />
               <Route path ="/ContactUs" element={<ContactUs/>} />
               <Route path ="/AboutUs" element={<AboutUs/>} />
+              <Route path ="/Mefu" element={<Mefu/>} />
+            
+
            
               <Route path ="/Hello" element={<Hello/>} />
-              {/* <Route path = "/TrialPage/:name" element={<TrialPage/>} /> */}
+              <Route path = "/TrialPage/:name" element={<TrialPage/>} />
+              <Route path = "/Profile/Patient/:id" element={<PatientInfo/>}/>
+              <Route path = "/Profile/Users/:id" element={<UsersInfo/>}/>
+              <Route path = "/Patient/Register" element={<PatientForm/>}/>
 
               <Route path ="/DoctorPage" element={<DoctorPage/>} />
               <Route path ="/NursePage" element={<NursePage/>} />
               {/* <Route path ="/ListOfRegPatients" element={<ListOfRegPatients/>} /> */}
               <Route path ="/AdminPage" element={<AdminPage/>} />
               
+              {/* <Route path ="/Mafu" element={<Mafu/>} /> */}
+
+          
+             
+
+            
               <Route path ="/AdminSignUp" element={<AdminSignUp/>} />
               <Route path ="/AdminLogin" element={<AdminLogin/>} />
               <Route path ="/AdminSignUp" element={<AdminSignUp/>} />
@@ -78,11 +100,15 @@ const AnimatedRoutes = () => {
 
               <Route path ="/DoctorDashboard" element={<DoctorDashboard/>} />
               <Route path = '/DoctorDashboard/Patient' element={<DPatient/>} />
-        
+              {/* <Route path = '/DoctorDashboard/AwaitingList' element={<AwaitingList/>} /> */}
+              
 
               <Route path ="/NurseDashboard" element={<NurseDashboard/>} />
               <Route path ="/NurseDashboard/Doctor" element={<NDoctor/>} />
               <Route path ="/NurseDashboard/Patient" element={<NPatient/>} />
+              <Route path ="/PatientForm" element = {<PatientForm/>}/>
+              {/* <Route path ="/NurseDashboard" element={<VitalsForm/>} /> */}
+
          </Routes>
      </AnimatePresence>
   )

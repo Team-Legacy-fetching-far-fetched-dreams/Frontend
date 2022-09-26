@@ -1,27 +1,27 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import './DoctorSignUp.css'
 import Logo from '../../../imgs/logo2.png'
 import registerImg from '../../../imgs/415.jpg'
 import Button from 'react-bootstrap/Button';
 import {Link} from 'react-router-dom'
 import {useForm} from 'react-hook-form'
-import imgs from '../../../imgs/patientimage.png'
+import imgs from '../../../imgs/patient image.png'
 const PatientForm = () => {
 
-  const initialValues = {surname: "", other_name: "", email: "", birth_date: "", address: "", contact1: "", contact2: "", gender: ""};
+  const initialValues = {surname: "", other_names: "", email: "", date_of_birth: "", address: "", contact1: "", contact2: "", gender: ""};
   const [formValues,setFormValues] = useState( initialValues);
   const [formErrors,setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
+  const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY');
 
   const handleChange = (e) => {
     const {name, value} = e.target;
     setFormValues({...formValues, [name]: value})
   }
-    const handlesubmit=(e)=>{
+    const handleSubmit=(e)=>{
     e.preventDefault();
     setFormErrors(validate(formValues));
     setIsSubmit(true);
-   
     console.log(formValues)
   }
 
@@ -34,13 +34,15 @@ const PatientForm = () => {
       const requestOptions ={
         method : "POST",
         headers : {
-          'content-type' : 'application/json'
+          'content-type' : 'application/json',
+          'Authorization': `Bearer ${JSON.parse(token)}`
         },
           body: JSON.stringify(formValues)
+         
       }
 
       if (Object.values(formErrors).length === 0){
-        fetch("http://127.0.0.1:5000/patients", requestOptions)
+        fetch("/patients",requestOptions)
         .then((res)=>res.json())
         .then(data=>{
           console.log(data)
@@ -50,27 +52,7 @@ const PatientForm = () => {
 },[formErrors])
 
 
-  // const {register, handleSubmit} = useForm();
-  // const signUp=(data)=>{
-  //   data["qualification"] = "Patient"
-  //   //e.preventDefault();
-  //   console.log(data)
 
-  //   const requestOptions ={
-  //     method : "POST",
-  //     headers : {
-  //       'content-type' : 'application/json'
-  //     },
-  //       body:JSON.stringify(data)
-  //   }
-
-  //   fetch("http://127.0.0.1:5000/user/signup", requestOptions)
-  //     .then((res)=>res.json())
-  //     .then(data=>{
-  //       console.log(data)
-  //     })
-
-  // }
 
   // const [email,setemail]=useState('');
   // const[Fusername, setFusername]=useState('');
@@ -88,11 +70,11 @@ const PatientForm = () => {
     if (!values.surname){
      errors.surname = "Surname is required!";
     }
-    if (!values.other_name){
-     errors.other_name = "Another name other than Surname is required!";
+    if (!values.other_names){
+     errors.other_names = "Another name other than Surname is required!";
     }
-    if (!values.birth_date){
-     errors.birth_date = "Date of birth is required!";
+    if (!values.date_of_birth){
+     errors.date_of_birth = "Date of birth is required!";
     }
     if (!values.email){
      errors.email = "Email is required!";
@@ -112,11 +94,11 @@ const PatientForm = () => {
 };
 
 
-  const {register, handleSubmit} = useForm();
-  const signUp=(data)=>{
-    //e.preventDefault();
-    console.log(data)
-  }
+  // const {register, handleSubmit} = useForm();
+  // const signUp=(data)=>{
+  //   //e.preventDefault();
+  //   console.log(data)
+  // }
 
    
   return (
@@ -127,7 +109,7 @@ const PatientForm = () => {
             <img src={Logo} id='logo-png' alt='' srcSet='' />
           </div>
           <div className='shoulders'>
-            <img src={registerImg} id='reg-gng' alt='' srcSet='' />
+            <img src={imgs} id='reg-gng' alt='' srcSet='' />
           </div>
           <h1 className='p1'>Legacy Healthcare</h1>
           <p className='p1'>Legacy Health’s mission is to positively impact the well-being of every individual in
@@ -144,7 +126,6 @@ simply better.</p>
         <div className='body-rights'>
           <div className='containers'>
             <h1 className='cr'>Create Account!</h1>
-            
             <form onSubmit={handleSubmit}>
              <div className='inner-group'>
               <h5 className='hac'>Surname</h5>
@@ -153,14 +134,14 @@ simply better.</p>
               <p className='err'>{formErrors.surname}</p>
               <div className='inner-group'>
               <h5 className='hac'>Other Names</h5>
-              <input className='inputs' type='text' name='other_name' onChange={handleChange} value= {formValues.other_name}   id='oname'/>
+              <input className='inputs' type='text' name='other_names' onChange={handleChange} value= {formValues.other_names}   id='oname'/>
               </div>
               <p className='err'>{formErrors.other_name}</p>
               <div className='inner-group'>
               <h5 className='hac'>Date Of Birth</h5>
-              <input className='inputs'  type='date' id='birthday' name='birth_date' onChange={handleChange} value= {formValues.birth_date} />
+              <input className='inputs'  type='date' id='birthday' name='date_of_birth' onChange={handleChange} value= {formValues.date_of_birth} />
               </div>
-              <p className='err'>{formErrors.birth_date}</p>
+              <p className='err'>{formErrors.date_of_birth}</p>
               <div className='inner-group'>
               <h5 className='hac'>Email</h5>
               <input className='inputs'  type='email' name='email' id='email1' onChange={handleChange} value= {formValues.email} />

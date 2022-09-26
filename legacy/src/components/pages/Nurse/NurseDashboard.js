@@ -12,6 +12,10 @@ const NurseDashboard = () => {
 
  
   return (
+    // <div className='N-m'>
+    // <div className='N-g'>
+    //  </div>
+    // </div>
     <motion.div className='N-d-m'
     initial={{opacity: 0}}
     animate={{opacity: 1}}
@@ -35,11 +39,13 @@ const NurseDashboard = () => {
         </div>
     </div> 
 </motion.div>
-    // <div className='N-m'>
+
+  )
+}
 
     // <div className='N-g'>
     //  </div>
     // </div>
-  )
-  }
+  
+  
 export default NurseDashboard

@@ -1,18 +1,14 @@
 
-.ListOfRegP{
-    
-     max-height: 500px;
-    overflow-x: scroll; 
-    
 
-
+.VitalsC{
+    max-height: 500px;
+    overflow-x: hidden; 
 }
-.table3{
+.table4{
     font-family: 'poppins';
     border-collapse: collapse;
-    min-width: max-content;
-     width: 75%;  
-    
+    width: 78%;
+    /* min-width: 30%; */
     border: 1px solid blue;
     margin: 25px 0;
     border-radius: 8px 8px 0 0;
@@ -22,9 +18,7 @@
     box-shadow: 0 0 20px rgba(0, 0 ,0.15);
 }
 
- 
-
-.table3 tr:hover td{
+.table4 tr:hover td{
     color: #4478b8;
     cursor: pointer;
     background-color: #ffffff;
@@ -32,7 +26,7 @@
 }
 
  
-.table3 td button{
+.table4 td button{
     border: none;
     padding: 7px 10px;
     border-radius: 15px;
@@ -40,7 +34,7 @@
     color: white;
 }
 
-.table3 td {
+.table4 td {
  border: 1px solid #dddddd;
   text-align: center;
   padding: 5px 5px 5px ;
@@ -51,7 +45,7 @@
 
 }
 
-.table3 th{
+.table4 th{
     background-color: #3977eb;
     border: 1px solid #dddddd;
     text-align: center;
@@ -65,18 +59,10 @@
 }
 
 
-
- .table3 tr :nth-of-type(even){
+ .table4 tr :nth-of-type(even){
       background-color: #f3f3f3;
 } 
 
- .N2-content h1{
-    margin-left: 180px;
+ .N4-content h1{
+    margin-left: 300px;
 }
-
-.New{
-    text-align: end;
-    padding-right: 180px;
-    padding-bottom: 5px;
-}
- 

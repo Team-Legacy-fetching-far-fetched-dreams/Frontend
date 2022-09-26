@@ -20,6 +20,13 @@
 
 */
 
+.ListOfRegP{
+    flex-direction: column;
+   
+
+}
+
+
 .N1-content{
   min-height: 100vh;
   min-width: 100vh;
