@@ -1,13 +1,42 @@
+
 import React, {useState} from 'react'
 import './AdminLogin.css'
 import Logo from '../../../imgs/logo2.png'
 import {Link} from 'react-router-dom'
 import {motion} from 'framer-motion/dist/framer-motion'
+
 import welcomes from '../../../imgs/loginpin.png' 
 import Nip from '../../../imgs/nipp.png'
 
 
+
 const AdminLogin = () => {
+  const [values,setValues] = useState({
+    userName:"",
+    password:"",
+
+  });
+  
+  
+
+  const [submit,setSubmit]=useState(false);
+  // const [valid,setValid]= useState(false);
+
+  const handleuserName = (event) =>{
+    setValues({...values,userName: event.target.value})
+  }
+
+  const handlepassword = (event) =>{
+    setValues({...values,password: event.target.value})
+  }
+
+  const handleSubmit = (event) =>{
+    event.preventDefault();
+    // if(values.userName&&values.password){
+    //   setValid(true);
+    // }
+    setSubmit(true);
+  }
 
   
   const [emailval, setemailval]= useState("");
@@ -29,6 +58,7 @@ const AdminLogin = () => {
        <div  className = "A-h">
            <img src={Logo} alt="" className = "A-logo"></img>  
        </div>
+
        <div className='Al-content'>
            <div  className='login-encase'>
 
@@ -71,7 +101,8 @@ const AdminLogin = () => {
 
 
       </div>
-       </div>
+      </div>
+       
     </motion.div>
 
     

@@ -87,7 +87,6 @@ const validate = (values) => {
                  <Link className='linkss' to ="/DoctorDashboard" > Login </Link></button>
                 
               </form>
-
              
             
      

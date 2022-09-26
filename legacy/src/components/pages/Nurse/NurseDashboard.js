@@ -11,7 +11,10 @@ import RightSide from './RightSide/RightSide'
 
 
 
+
 const NurseDashboard = () => {
+
+ 
   return (
     <motion.div className='N-d-m'
     initial={{opacity: 0}}

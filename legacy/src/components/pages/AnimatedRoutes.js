@@ -31,6 +31,7 @@ import NDoctor from '../../components/pages/Nurse/NDoctor';
 import NPatient from '../../components/pages/Nurse/NPatient';
 
 import {AnimatePresence} from 'framer-motion/dist/framer-motion'
+// import ListOfRegPatients from './ListOfRegPatients';
 
 const AnimatedRoutes = () => {
     const location = useLocation(); 
@@ -46,6 +47,7 @@ const AnimatedRoutes = () => {
            
               <Route path ="/DoctorPage" element={<DoctorPage/>} />
               <Route path ="/NursePage" element={<NursePage/>} />
+              {/* <Route path ="/ListOfRegPatients" element={<ListOfRegPatients/>} /> */}
               <Route path ="/AdminPage" element={<AdminPage/>} />
               
               <Route path ="/AdminSignUp" element={<AdminSignUp/>} />

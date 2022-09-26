@@ -5,7 +5,7 @@ import Clock from '../Clock'
 import AdDashNav from "./AdDashNav"
 import {motion} from 'framer-motion/dist/framer-motion'
 
-const Patient = () => {
+const Doctor = () => {
   return (
     <motion.div className='A-d-m'
     initial={{opacity: 0}}
@@ -18,16 +18,19 @@ const Patient = () => {
         <div className='Dashboardcontainer'>
         <AdDashNav/>
         <div className=''>
-         
+         <div>
+        </div>
         </div>
         </div>
         <div>
           <Clock />
         </div>
+       
         {/* <MainDash/> */}
       </div>
+       
     </motion.div>
   )
 }
 
-export default Patient
+export default Doctor

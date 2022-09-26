@@ -14,11 +14,53 @@
 
  /* .Al-content h1{
     font-weight: bold;
+    display: inline-block;
+    padding-top:  1px;
+    padding-left: 50px;
+    
+
 }
 
-.Al-content .a-login{
-    background-color: #151E73;
+.Al-content h2{
+    text-align: center;
+    padding-left: 60px;
+    height: 30px;
+    font-size: 25px;
+    font-style: normal;
+}
+.form-container{
+    position: absolute;
+    left: 518px;
+    display: block;
+    margin-top: 26em;
+    margin-right: 2em;
+}
+
+input:focus{
+    outline-color: rgb(13, 20, 20);
+}
+.login-btn{
+    width: 35%;
+    color: white;
+    background-color: blue;
+    border-radius: 15px;
     border: none;
+}
+
+.text{
+    color:black;
+    text-align: center;
+    text-decoration: underline;
+    top: 80px;
+    
+}
+.Ad-img{
+    position: absolute;
+  left: 100px;
+  top: 200px;
+   height: 300px;   
+   margin: 50px;   
+}
     padding-left:6px;
 }
 */
@@ -164,3 +206,4 @@
         font-weight: bolder;
     }
   
+

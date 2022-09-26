@@ -18,8 +18,9 @@ const Doctor = () => {
         <div className='Dashboardcontainer'>
         <AdDashNav/>
         <div className=''>
-         
+          <ListOfSpecEmployee data={data}/>
         </div>
+
         </div>
         <div>
           <Clock />
