@@ -63,7 +63,7 @@ const validate = (values) => {
     
 
   return (
-    <div className='d-m'>
+    <div className='bnk d-m'>
     <div className='d-g'>
     <div className = "d-h">
      <img src={Logo} alt="" className = "D-logo"></img>  

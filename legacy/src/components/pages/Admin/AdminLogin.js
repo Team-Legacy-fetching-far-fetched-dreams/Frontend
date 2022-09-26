@@ -25,7 +25,7 @@ const AdminLogin = () => {
     exit={{opacity: 0}}
     
     >
-    <div className='A-g'>
+    <div className='bnk A-g'>
        <div  className = "A-h">
            <img src={Logo} alt="" className = "A-logo"></img>  
        </div>

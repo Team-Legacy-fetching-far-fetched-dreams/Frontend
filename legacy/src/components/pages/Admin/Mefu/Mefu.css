@@ -11,13 +11,6 @@
     font-size: 1rem;
 }
 
-.lon{
-    color: red;
-    text-align: center;
-    margin-bottom: -5px;
-    font-size: 11px;
-}
-
 .dss-contents{
    display: flex; 
     justify-content: center;
@@ -25,6 +18,18 @@
     width: 100vw;
     overflow-x: hidden;
  
+}
+
+.hij{
+  
+    margin-top: 1rem;
+    flex: 0.33;
+    background: gray;
+    height: 100vh;
+    border-top-right-radius: 1rem ;
+    border-bottom-right-radius: 1rem ;
+    margin-left: 15px;
+    padding-bottom: 65rem;
 }
 
 .left-sides{
@@ -39,18 +44,6 @@
    
 }
 
-.hay{
-  
-    flex: 0.20;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    height: 35vh;
-    width: 5rem;
-}
-
-
-
 .right-sides{
     margin-top: 4rem;
     flex: 0.67;
@@ -58,6 +51,7 @@
     flex-direction: column;
     align-items: flex-end;
     height: 100vh;
+   
   
 
 }
@@ -74,6 +68,7 @@
     margin-right: 1rem;
     font-size: 0.8rem;
     font-weight: 800;
+    
 
 } 
 
@@ -143,34 +138,28 @@
 
 }
 
-.containersy{
-    height:77%;
+.containerser{
+    height: 90%;
     width: 60%;
-    margin: -5.5rem auto;
+    margin: -2.3rem auto;
     box-shadow: 0rem 0rem 2rem 0.1rem #48ea98;
     border-radius: 0.5rem;
-    padding-top: 1rem;
-
- 
+  
+   padding-bottom: 65rem;
+  
+   
 }
 
-.cvb{
-    font-weight: 1000;
-    margin-right: 15rem;
-    font-size: 1.2rem;
-    
+.cry{
+    padding-top: 10px;
+    text-align: center;
+    font-weight: 800;
 }
 
 .inner-group{
     margin-left: 6rem;
     width: 110%;
     position: relative;
-}
-.loki{
-    margin-left: 6rem;
-    width: 110%;
-    position: relative;
-    font-size: 12px;
 }
 
 .hac{
@@ -184,7 +173,7 @@
     background: white;
 }
 
-.submay{
+#sbtn{
     width: 66%;
     background: #26343D;
     color: white;
@@ -193,15 +182,10 @@
     padding: 0.5rem 2.5rem;
     transition:all 0.3s ease-in-out;
     margin-left: 6rem;
-    margin-top: 10px;
-}
-
-.submay:hover{
-    box-shadow: 0.5rem 0.5rem 1rem gray;
 }
 
 #sbtn:hover{
-    box-shadow: 0.5rem 0.5rem 1rem gray;
+    box-shadow: 0.5rem 0.5rem 1rem gray;;
 }
 
 .inner-group input{
@@ -209,14 +193,10 @@
     box-shadow: 0.1rem 0.1rem 0.3rem 0.1rem gray;
 }
 
-.loki input{
-    box-shadow: 0.1rem 0.1rem 0.3rem 0.1rem gray;
-}
-
-.inputs{
+.tinputs{
     margin: 1.2rem auto;
     width: 60%;
-    border: none;
+    height: 15rem;
     padding: 0.5rem 0.5rem;
 }
 

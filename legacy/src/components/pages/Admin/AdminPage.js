@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import './AdminPage.css'
 import Logo from '../../../imgs/logo2.png'
 import Admin2 from '../../../imgs/Admin2.png'
@@ -8,7 +8,15 @@ import {motion} from 'framer-motion/dist/framer-motion'
 import Button from 'react-bootstrap/Button';
 import {Link} from 'react-router-dom'
 
+
+const className='hello' 
+
+
+
 const AdminPage = () => {
+
+  const [openMefu, setOpenMefu] = useState(false)
+  
   return (
     <motion.div className='A-m'
     initial={{opacity: 0}}
@@ -48,13 +56,24 @@ const AdminPage = () => {
           
   
       <div className='sl-btn'>
+
+      
+
          <Link to ="/AdminSignUp">
              <Button className='A-signup' active>SignUp</Button>
           </Link>
           <Link to ="/AdminLogin">
              <Button className='A-login' active>Login</Button>
           </Link>
+          <Link to ="/Mefu">
+             <Button className='A-login' active>Dia</Button>
+          </Link>
+        
+      
+        
+      
        </div>
+      
         </div>
      </div>
     </motion.div>

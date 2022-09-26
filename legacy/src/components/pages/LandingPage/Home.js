@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import './LandingPage.css'
 import Comp from '../../../imgs/comp.png'
 import Back from '../../../imgs/Doc.png'
@@ -18,6 +18,7 @@ import {Link} from 'react-router-dom'
 import {motion} from 'framer-motion/dist/framer-motion'
 import { UilFacebookF , UilInstagram, UilLinkedin, UilYoutube, UilTwitter  } from '@iconscout/react-unicons'
 
+import Mefu from '../Admin/Mefu/Mefu'
 
 const Home = () => {
 const hero = useRef(null);
@@ -29,6 +30,7 @@ const scrollToSection =(elementRef)=>{
 behavior: "smooth",
   });
 };
+const [openMefu, setOpenMefu] = useState(false)
   return (
     <div className='body'>
           <h1 className='main-text'>Take good care of <br/> your <span>health</span></h1>
@@ -74,7 +76,13 @@ behavior: "smooth",
             <img src={Hospital} alt="" className='hospital-image'></img>
 
           </div> */}
+
+
+
+
           <div className='Who-are-you' ref={hero}>
+
+ 
             <div>
               <h1>Who are you?</h1>
             </div>

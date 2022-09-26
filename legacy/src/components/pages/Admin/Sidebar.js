@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import './Sidebar.css'
 import Logo from '../../../imgs/logo2.png'
 // import {SidebarData} from "../Data/Data";
@@ -6,7 +6,7 @@ import {UilSignOutAlt, UilEstate, UilUserNurse, UilUserMd , UilAccessibleIconAlt
 import {Link} from 'react-router-dom'
 
 const Sidebar = () => {
-
+ const [selected, setSelected] = useState(0)
 
 
   return (
@@ -17,7 +17,9 @@ const Sidebar = () => {
       <div className='menu'>
       
           <ul>
-            <li>
+            <li className='active'
+            
+            >
             <Link to ='/AdminDashBoard'>
               <UilEstate className="icon"/>
               <span>Dashboard</span>

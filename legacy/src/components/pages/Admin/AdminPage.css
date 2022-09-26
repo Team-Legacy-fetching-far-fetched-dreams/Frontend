@@ -102,3 +102,13 @@
  top: 80px;
 
 }
+
+
+.modalBtn{
+    z-index: -1;
+    position: fixed;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 12px 24px;
+}
