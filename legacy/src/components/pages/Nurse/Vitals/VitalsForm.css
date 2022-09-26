@@ -1,28 +1,21 @@
-body{
-  background: #0f0c29;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
-}
 
-
-
-.App {
+/* .App {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-}
+} */
 
 .register{
-  max-width: 978px;
-  width: 100vw;
+  max-width: 600px;
+  height: 720px;
+  /* width: 80vw; */
   display:flex;
-  border: 1px solid #141515;
-  border-radius: 5px;
+  border: 1px solid #f0f4f4;
+  border-radius: 20px;
   /* box-shadow: 1px 3px 10px #e9ecef; */
-  background-color: white;
+  background-color: rgb(241, 241, 241);
 }
 
 .register span{
@@ -32,7 +25,7 @@ body{
 #form{
   max-width: 320px;
   width: 100vw;
-  margin: 2em auto;
+  margin: 8em;
 }
 
 #form >  input, .btn{
@@ -60,18 +53,19 @@ body{
   flex-direction: column;
 }
 
-.register .col-1{
-  margin: auto;
+.col-1{
+  /* margin: auto; */
   padding: 0.5em 0;
+
 }
 
 .register .col-2 img{
-  width: 400px;
+  width: 350px;
   height: 100%;
-  object-fit: cover;
+  object-fit:scale-down;
   align-self: flex-end;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
   display: none;
 }
 
@@ -83,11 +77,13 @@ body{
 .label{
   display:flex;
   align-items: left;
-  font-size: 0.8em;
+  font-size: 1em;
   column-gap:0ch;
 }
-.head{
+.topic{
   font-size: 1.5em;
+  height: 45px;
+ 
 }
 .tags{
   display: flex;
@@ -97,16 +93,15 @@ body{
 }
 .bp{
   display:flex;
-  margin: auto;
-  padding: 0.9em 0;
+  padding: 0.5em 0;
 }
 .eachbp{
-  max-width: 150px;
+  max-width: 525px;
   height: 40px;
-  margin: 2em auto;
+  margin: 0em 0.5rem;
+  
 
 }
 
-#slash{
-  font-size: large;
-}
+
+

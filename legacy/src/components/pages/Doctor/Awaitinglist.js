@@ -3,6 +3,7 @@ import './AwaitingList.css'
 import DcSidebar from './DcSidebar'
 import DcDashNav from "./DcDashNav"
 import {motion} from 'framer-motion/dist/framer-motion'
+import VitalsForm from '../Nurse/Vitals/VitalsForm'
 
 const AwaitingList = () => {
   return (
@@ -17,11 +18,12 @@ const AwaitingList = () => {
         <div className='Dashboardcontainer'>
         <DcDashNav/>
         <div className=''>
-         
+        <VitalsForm/>
         </div>
         </div>
         {/* <MainDash/> */}
       </div>
+      
     </motion.div>
   )
 }
