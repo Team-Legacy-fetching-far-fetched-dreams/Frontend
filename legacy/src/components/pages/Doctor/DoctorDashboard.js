@@ -75,7 +75,7 @@ const DoctorDashboard=()=>{
         <Link to="/DoctorDashboard/Patient">
           <DcWidget type = "patient"/>
           </Link>
-           <rendrIfo props = {this.setState(this.state.data)}/>
+  
         </div>
         <div>
           <Clock />

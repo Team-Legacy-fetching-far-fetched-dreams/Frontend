@@ -11,6 +11,7 @@ import AdminLogin from './AdminLogin'
 
 const AdminDashboard=() => {
  const  [data, setData] = useState()
+ const [id, setId] = useState()
  const [isloading, setIsLoading] = useState(true)
  const navigate = useNavigate()
  const location = useLocation()
@@ -36,11 +37,15 @@ const AdminDashboard=() => {
 
 useState(() => {
 
-
+  console.log(location)
+  if(location.state){
+    setId(location.state.id)
+  }
   if(token){
-  fetch('/user/users', requestOptions)
+  fetch("/user/users", requestOptions)
     .then(res => 
       {
+        setIsLoading(true)
       if (res.status===200)
       {
         return res.json()
@@ -48,6 +53,7 @@ useState(() => {
       else if(res.status == 401){
         logout(token)
         navigate("/AdminLogin")
+        console.log("Your token has expired, pleae login again")
       }
       return res.json()
       })
@@ -61,7 +67,7 @@ useState(() => {
   }else{
     navigate('/AdminLogin')
   }
-  console.log(location)
+  
 },[])
     
   
@@ -86,7 +92,7 @@ useState(() => {
           <Link to="/AdminDashboard/Nurse">
           <Widget type="nurse"/>
           </Link>
-          <Link to="/DoctorDashboard/Patient">
+          <Link to="/AdminDashboard/Patient">
           <Widget type = "patient"/>
           </Link>
         </div>

@@ -12,7 +12,8 @@ import PatientInfo from '../pages/Patient/UsersInfo/PatientInfo'
 import UsersInfo from '../pages/Patient/UsersInfo/UsersInfo'
 import PatientForm from './Doctor/PatientForm';
 
-import Modal from '../../components/pages/Admin/Model/Modal';
+// import Modal from '../../components/pages/Admin/Model/Modal';
+import Mefu from '../../components/pages/Admin/Mefu/Mefu'
 import DoctorPage from '../../components/pages/Doctor/DoctorPage';
 import NursePage from '../../components/pages/Nurse/NursePage';
 import AdminPage from '../../components/pages/Admin/AdminPage';
@@ -56,6 +57,9 @@ const AnimatedRoutes = () => {
               <Route path ="/Home" element={<Home/>} />
               <Route path ="/ContactUs" element={<ContactUs/>} />
               <Route path ="/AboutUs" element={<AboutUs/>} />
+              <Route path ="/Mefu" element={<Mefu/>} />
+            
+
            
               <Route path ="/Hello" element={<Hello/>} />
               <Route path = "/TrialPage/:name" element={<TrialPage/>} />
@@ -67,10 +71,13 @@ const AnimatedRoutes = () => {
               <Route path ="/NursePage" element={<NursePage/>} />
               {/* <Route path ="/ListOfRegPatients" element={<ListOfRegPatients/>} /> */}
               <Route path ="/AdminPage" element={<AdminPage/>} />
-              <Route path ="/Modal" element={<Modal/>} />
+              {/* <Route path ="/Modal" element={<Modal/>} /> */}
               {/* <Route path ="/Mafu" element={<Mafu/>} /> */}
 
+          
+             
 
+            
               <Route path ="/AdminSignUp" element={<AdminSignUp/>} />
               <Route path ="/AdminLogin" element={<AdminLogin/>} />
               <Route path ="/AdminSignUp" element={<AdminSignUp/>} />

@@ -57,7 +57,7 @@ class Doctor extends Component {
   }
 
   render(){
-  return (this.state.islogged===true?
+  return (
     <motion.div className='A-d-m'
     initial={{opacity: 0}}
     animate={{opacity: 1}}
@@ -83,7 +83,7 @@ class Doctor extends Component {
         </div>
         {/* <MainDash/> */}
       </div>
-    </motion.div>:<AdminLogin/>
+    </motion.div>
   )
 }
 }

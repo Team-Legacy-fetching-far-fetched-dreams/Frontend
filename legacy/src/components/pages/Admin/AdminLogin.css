@@ -12,6 +12,11 @@
     
 }
 
+.bnk{
+    border: 2px rgb(228, 223, 223);
+    background: rgb(213, 209, 209);
+}
+
  /* .Al-content h1{
     font-weight: bold;
     display: inline-block;
@@ -78,6 +83,7 @@ input:focus{
     align-items: center;
     box-shadow: 0.5rem 0.5rem 2rem -1rem rgba(58, 57, 57);
     background: linear-gradient(to right bottom, rgba(255,255,255,0.7), rgba(236,236,236,0.4));
+
 
 }
 

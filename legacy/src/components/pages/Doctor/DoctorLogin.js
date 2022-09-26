@@ -43,7 +43,7 @@ const handleSubmit = (e) => {
 }
 
 if (Object.keys(formErrors).length === 0 && isSubmit){
-fetch('http://127.0.0.1:5000/user/login', requestOptions)
+fetch('/user/login', requestOptions)
 .then((res)=>res.json())
 .then(data=>{
     console.log(data)
@@ -85,7 +85,7 @@ const validate = (values) => {
     
 
   return (
-    <div className='d-m'>
+    <div className='bnk d-m'>
     <div className='d-g'>
     <div className = "d-h">
      <img src={Logo} alt="" className = "D-logo"></img>  

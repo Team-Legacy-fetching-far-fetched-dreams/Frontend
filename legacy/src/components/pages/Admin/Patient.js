@@ -54,7 +54,7 @@ class Patient extends Component {
         <div className=''>
         <div className='createButton'>
             <Link to ={"/Patient/Register"}>
-            <input type='submit' value = "Register New Nurse" />
+            <input type='submit' value = "Register New Patient" />
             </Link>
             </div>
         {this.state.data ? <ListOfRegPatients data={this.state.data}/>:<div>loading</div>}

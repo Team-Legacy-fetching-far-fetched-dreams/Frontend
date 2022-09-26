@@ -56,7 +56,7 @@ const AdminLogin = () => {
       body:JSON.stringify(formValues)
   }
   if (Object.keys(formErrors).length === 0 && isSubmit){
-  fetch('http://127.0.0.1:5000/user/login', requestOptions)
+  fetch('/user/login', requestOptions)
     .then((res)=>res.json())
     .then(data=>{
         console.log(data)
@@ -69,21 +69,21 @@ const AdminLogin = () => {
           if (data.qualification === 'Doctor'){
             navigate('/DoctorDashBoard', {
               state: {
-                id: data.id
+                id: data.public_id
               }
             })
           }
           else if (data.qualification === 'Nurse'){
             navigate('/NurseDashBoard', {
               state:{
-                id: data.id
+                id: data.public_id
               }
             } )
           }
           else{
             navigate('/AdminDashBoard', {
               state:{
-                id: data.id
+                id: data.public_id
               }
             })
           }
@@ -159,7 +159,7 @@ const validate = (values) => {
     exit={{opacity: 0}}
     
     >
-    <div className='A-g'>
+    <div className='bnk A-g'>
        <div  className = "A-h">
            <img src={Logo} alt="" className = "A-logo"></img>  
        </div>

@@ -31,33 +31,34 @@ const ListOfSpecEmployee = ({data}) => {
  
 //   const [listOfSpec,setlistOfSpec] = useState([]);
 
-const DeleteUser = (id) =>{
-   const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY')
 
-   const requestOptions ={
-      method : 'DELETE',
-      headers :{
-         'content_type' : "application/json",
-         'Authorization' :`Bearer ${JSON.parse(token)}`
-      }
+   const DeleteUser = (e) =>{
+      console.log(e)
+      console.log(e)
+      // e.preventDefault()
+      // const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY')
+   
+      // const requestOptions ={
+      //    method : 'DELETE',
+      //    headers :{
+      //       'content_type' : "application/json",
+      //       'Authorization' :`Bearer ${JSON.parse(token)}`
+      //    }
+      // }
+   
+      // fetch(`/user/user/${id}`,requestOptions)
+      //      .then(res=>res.json())
+      //      .then(data=>{
+      //          console.log(data)
+      //      })
    }
 
-   fetch(`/user/user/${id}`,requestOptions)
-        .then(res=>res.json())
-        .then(data=>{
-            console.log(data)
-        })
-}
 
- useEffect(
-    ()=>{
-       console.log(data)
-      //  setlistOfSpec(data)
 
-       
- },[]
- );
-  return (
+
+
+ 
+  return (data.length>0?
     // <div className='d-m'>
     // <div className='d-g'>
    //  <div className='N-g'>
@@ -78,7 +79,9 @@ const DeleteUser = (id) =>{
          {data.map((employ,key) =>{
 
            return( 
+            
             <tr>
+               
             <td key={key}>
             {
                employ.public_id
@@ -107,7 +110,7 @@ const DeleteUser = (id) =>{
 
             </td>
 
-          
+           
 
             <td key={key}>
                {
@@ -120,12 +123,13 @@ const DeleteUser = (id) =>{
 <Link to = {`/Profile/Users/${employ.public_id}`}>
    <input type="submit" value="view" />
 </Link>
-   <input type="submit" value="Delete" onClick={DeleteUser(employ.public_id)}/>
+   <input type="submit" value = "DELETE" onClick={DeleteUser(employ.public_id)}/>
  </td>
             
 
 
            </tr>
+          
             )
          }
          )
@@ -134,7 +138,7 @@ const DeleteUser = (id) =>{
       
    
       </div>
-   //</div>
+   //</div>:<div>List Empty</div>
 
 
 

@@ -51,7 +51,7 @@ const NurseLogin = () => {
          body:JSON.stringify(formValues)
      }
       if (Object.keys(formErrors).length === 0 && isSubmit){
-     fetch('http://127.0.0.1:5000/user/login', requestOptions)
+     fetch('/user/login', requestOptions)
      .then((res)=>res.json())
      .then(data=>{
            console.log(data)

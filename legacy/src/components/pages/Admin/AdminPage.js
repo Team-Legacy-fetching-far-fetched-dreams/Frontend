@@ -7,21 +7,24 @@ import Admin4 from '../../../imgs/Admin4.png'
 import {motion} from 'framer-motion/dist/framer-motion'
 import Button from 'react-bootstrap/Button';
 import {Link} from 'react-router-dom'
-import Modal from '../../../components/pages/Admin/Model/Modal'
 
+
+const className='hello' 
 
 
 
 const AdminPage = () => {
 
-  const diaa = () => {
-    fetch("http://127.0.0.1:5000/patients/vital/1")
-    .then((res)=>res.json())
-    .then(data=>{
-      console.log(data)
-    })
-  }
+  // const diaa = () => {
+  //   fetch("http://127.0.0.1:5000/patients/vital/1")
+  //   .then((res)=>res.json())
+  //   .then(data=>{
+  //     console.log(data)
+  //   })
+  // }
 
+  const [openMefu, setOpenMefu] = useState(false)
+  
   return (
     <motion.div className='A-m'
     initial={{opacity: 0}}
@@ -58,18 +61,20 @@ const AdminPage = () => {
           
   
       <div className='sl-btn'>
+
+      
+
          <Link to ="/AdminSignUp">
              <Button className='A-signup' active>SignUp</Button>
           </Link>
           <Link to ="/AdminLogin">
              <Button className='A-login' active>Login</Button>
           </Link>
-          <Link to ="/Modal">
-             <button className='A-login' active onClick={diaa}>Dia</button>
+          <Link to ="/Mefu">
+             <Button className='A-login' active>Dia</Button>
           </Link>
-          <Link to ="/Mafu">
-             <Button className='A-login' active>PopUp</Button>
-          </Link>
+        
+      
         
       
        </div>

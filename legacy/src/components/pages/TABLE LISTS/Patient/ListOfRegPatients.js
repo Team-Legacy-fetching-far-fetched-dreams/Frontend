@@ -44,7 +44,7 @@ const openProfile = (id) => {
  }) 
  
 //  );
-   return (
+   return (data.length>0?
       <div className='N2-content'>
            
         <h1>List of Registered Patients</h1>
@@ -92,6 +92,7 @@ const openProfile = (id) => {
 <Link to = {`/Profile/Patient/${ListOf.patient_id}`}>
    <input type="submit" value="view" />
 </Link>
+<input type="submit" value="view" />
  </td>  
   
   
@@ -104,7 +105,7 @@ const openProfile = (id) => {
         </table> 
          
         </div>
-        </div>
+        </div>:<div>List Empty</div>
 
   
 
