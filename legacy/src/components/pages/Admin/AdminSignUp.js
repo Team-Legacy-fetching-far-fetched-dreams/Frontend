@@ -5,19 +5,20 @@ import registerImg from '../../../imgs/415.jpg'
 import Button from 'react-bootstrap/Button';
 import {Link} from 'react-router-dom'
 import {useForm} from 'react-hook-form'
+import reactNotification from 'react-notifications-component'
+import { store } from 'react-notifications-component'
+
+import 'react-notifications-component/dist/theme.css'
 
 
 
 
-
-
-
-
- 
 
 
 
 const AdminSignUp = () => {
+
+  
  
 
   const initialValues = {surname: "", other_name: "", email: "", birth_date: "", address: "", contact1: "", contact2: "", gender: ""};
@@ -73,6 +74,7 @@ const validate = (values) => {
    errors.address = "Please state your address!";
   }
   return errors;
+ 
 };
 
    
@@ -92,7 +94,7 @@ const validate = (values) => {
     <div className='body-rights'>
       <div className='containersy'>
 
-        <h1 className='cr cvb'>Create Account!</h1>
+        <h1 className='cvb'>Create Account!</h1>
        
         <form onSubmit={handleSubmit}>
          <div className='loki'>
@@ -136,7 +138,8 @@ const validate = (values) => {
           <p className='lon'>{formErrors.gender}</p>
 
         
-         <input type='submit' onClick="validation();"  id='klo' className='submay' value='Submit' />
+         <input type='submit'  id='klo' name='xcz' className='submay' value='Submit' />
+      
        
          </form>
 
@@ -149,6 +152,8 @@ const validate = (values) => {
   
 
      </div>
+
+     
       
      
   
