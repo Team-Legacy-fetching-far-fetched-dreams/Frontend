@@ -63,12 +63,12 @@ const ListOfSpecEmployee = ({data}) => {
     // <div className='d-g'>
    //  <div className='N-g'>
     
-    <div className='N2-content'>
+    <div className='N5-content'>
            <h1>List of Specific Employee</h1>
 
            <div className='ListOfSpec'>
 
-           <table>
+           <table className='table5'>
 
           
          <th>Public_id</th>
@@ -76,6 +76,7 @@ const ListOfSpecEmployee = ({data}) => {
          <th>Other Names</th>
          <th>Gender</th>
          <th>Surname</th>
+         <th colspan="2">Action</th>
          {data.map((employ,key) =>{
 
            return( 
@@ -121,7 +122,7 @@ const ListOfSpecEmployee = ({data}) => {
             </td>
             <td>
 <Link to = {`/Profile/Users/${employ.public_id}`}>
-   <input type="submit" value="view" />
+   <input className='p-1 m-2' type="submit" value="view" />
 </Link>
    <input type="submit" value = "DELETE" onClick={DeleteUser(employ.public_id)}/>
  </td>
@@ -138,7 +139,7 @@ const ListOfSpecEmployee = ({data}) => {
       
    
       </div>
-   //</div>:<div>List Empty</div>
+   </div>:<div>List Empty</div>
 
 
 

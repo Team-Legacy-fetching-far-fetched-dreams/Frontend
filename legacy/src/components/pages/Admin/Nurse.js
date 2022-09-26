@@ -58,7 +58,7 @@ class Nurse extends Component {
             <input type='submit' value = "Register New Nurse" />
             </Link>
             </div>
-        {this.state.data ? <ListOfSpecEmployee data={this.state.data}/>:<div>loading</div>}
+        {this.state.data ? <ListOfSpecEmployee data={this.state.data} />:<div>loading</div>}
         </div>
         </div>
         <div>

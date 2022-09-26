@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 // import user_2 from '../UsersInfo/user_2.png'
 import Button from 'react-bootstrap/esm/Button'
 import { set } from 'react-hook-form'
-import {useParams} from 'react-router-dom'
+import {useParams, Link} from 'react-router-dom'
 const PatientInfo = () => {
     const { id } = useParams()
     const [data,setData] = useState()
@@ -32,9 +32,12 @@ const PatientInfo = () => {
         <div className="p-3 py-5">
             <div className="d-flex justify-content-between align-items-center mb-3">
                 <h4 className="text-right">Patient Profile </h4>
+              
                 <div className="col-md-4">
         <div className="p-3 py-4">
-            {/* <Button className="btn btn-primary btn-sm" href="#" role="button"><span></span><span className="  p-2 ">Edit Profile</span></Button> */}
+        <Link to = {"/AdminDashboard/Nurse"}>
+         <Button className="btn btn-primary  btn-sm" type="submit"  role="button"><span></span><span className="p-1">View Vitals</span></Button>
+         </Link>
             {/* <div className="col-md-12"><label className="labels">Experience in Designing</label></div> */}
             {/* <div className="col-md-12"><label className="labels">Additional Details</label><input type="text" className="form-control" placeholder="additional details" value=""/></div> */}
         </div>
