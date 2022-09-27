@@ -5,9 +5,11 @@ import {Link,useLocation} from 'react-router-dom'
   
 
 
-const DeleteUser = ({data}) => {
 
-}
+
+
+
+
 
 const ListOfSpecEmployee = ({data}, type) => {
  
@@ -20,6 +22,10 @@ const ListOfSpecEmployee = ({data}, type) => {
    
  useEffect(
     ()=>{
+      const DeleteUser = (e) =>{
+         console.log(e)
+         console.log(e)
+      }
       
        console.log(data)
       console.log(location.pathname.split("/")[location.pathname.split("/").length -1])
@@ -47,6 +53,37 @@ const ListOfSpecEmployee = ({data}, type) => {
  );
   return (data.length>0?
 
+//   const [listOfSpec,setlistOfSpec] = useState([]);
+
+
+   
+      // e.preventDefault()
+      // const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY')
+   
+      // const requestOptions ={
+      //    method : 'DELETE',
+      //    headers :{
+      //       'content_type' : "application/json",
+      //       'Authorization' :`Bearer ${JSON.parse(token)}`
+      //    }
+      // }
+   
+      // fetch(`/user/user/${id}`,requestOptions)
+      //      .then(res=>res.json())
+      //      .then(data=>{
+      //          console.log(data)
+      //      })
+   
+
+
+
+
+
+ 
+  
+    // <div className='d-m'>
+    // <div className='d-g'>
+   //  <div className='N-g'>
     
     <div className='N5-content'>
            {user==="users"?<div>...loading...</div>:<h1>List of {user}</h1>}
@@ -65,7 +102,9 @@ const ListOfSpecEmployee = ({data}, type) => {
          {data.map((employ,key) =>{
 
            return( 
+            
             <tr>
+               
             <td key={key}>
             {
                employ.public_id
@@ -83,7 +122,7 @@ const ListOfSpecEmployee = ({data}, type) => {
 
              <td key={key}>
             {
-               employ.other_names
+               employ.other_name
 
             }
              </td>
@@ -94,7 +133,7 @@ const ListOfSpecEmployee = ({data}, type) => {
 
             </td>
 
-          
+           
 
             <td key={key}>
                {
@@ -104,19 +143,16 @@ const ListOfSpecEmployee = ({data}, type) => {
 
             </td>
             <td>
-              <Link to = {"/UsersInfo"}>
-                <input className="p-1 m-2" type="submit" value="view"/>
-             </Link>
-             <input  type="submit" value="delete" onClick={DeleteUser(employ.public_id)}/>
-
-             </td>
-             
-
-             
+<Link to = {`/Profile/Users/${employ.public_id}`}>
+   <input className='p-1 m-2' type="submit" value="view" />
+</Link>
+   <input type="submit" value = "DELETE" />
+ </td>
             
 
 
            </tr>
+          
             )
          }
          )

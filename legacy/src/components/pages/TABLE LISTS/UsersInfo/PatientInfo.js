@@ -1,14 +1,32 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+// import user_2 from '../UsersInfo/user_2.png'
 import Button from 'react-bootstrap/esm/Button'
-import { Link } from 'react-router-dom'
- import Logo from '../../../../imgs/logo2.png'
+import { set } from 'react-hook-form'
+import {useParams, Link} from 'react-router-dom'
+import Logo from '../../../../imgs/logo2.png'
 import NewProfile from "./NewProfile.png"
 import "./PatientInfo.css"
+const PatientInfo = () => {
+    const { id } = useParams()
+    const [data,setData] = useState()
+    useEffect(()=>{
+        const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY')
+        const requestOptions = {
+            method: "GET",
+            headers : {
+              'content-type': 'application/json',
+              'Authorization': `Bearer ${JSON.parse(token)}`
+            }
+        }
 
-const PatientInfo = (data) => {
-
-    return  (
-       
+        fetch(`/patients/${id}`,requestOptions)
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data)
+            setData(data)
+        })
+    },[])
+    return  (data?
         <div className='d-m'>
             <div className='d-g'>
                 <div className='d-h'>
@@ -17,6 +35,7 @@ const PatientInfo = (data) => {
                 <img src={NewProfile} alt="" className='NewPro'></img> 
 
     <div className="row align-content-center ">
+    <div className="row">
     <div className="col-md-3 border-right">
      <div className="d-flex flex-column align-items-center text-center p-3 py-5"><span className="font-weight-bold"><h4>Patient : {data.patient_id}</h4></span><img className="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"/><span className="text-black-50">{data.email}</span><span> </span></div>
     </div>
@@ -45,7 +64,7 @@ const PatientInfo = (data) => {
                 <div className="col-md-6 p-1"><label className="labels">{data.surname} {data.other_names}</label></div>
 
                 <div className="col-md-6 p-1"><label className="labels">Birth date : </label></div>
-                <div className="col-md-6 p-1"><label className="labels">{data.birth_date}</label></div>
+                <div className="col-md-6 p-1"><label className="labels">{data.date_of_birth}</label></div>
 
 
                 <div className="col-md-6 p-1"><label className="labels">Address : </label></div>
@@ -79,7 +98,7 @@ const PatientInfo = (data) => {
 </div>
 
 </div>
-
+</div>:<div>LOADING</div>
 
   )  
    

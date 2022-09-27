@@ -9,7 +9,7 @@ const AwaitingTable = ({data}) => {
         console.log(data)
     },[])
     
-  return (
+  return (data.length>0?
     <div className='N7-content'>
        <h1>List of Awaiting Patients</h1>
          
@@ -26,7 +26,7 @@ const AwaitingTable = ({data}) => {
         
          {data.map((Await,key) =>{
 
-return( 
+return(
  <tr>
  <td key={key}>
  {
@@ -56,7 +56,7 @@ return(
 
  </td>
  <td>
-              <Link to = {""}>
+              <Link to = {`/Patient/Diagnosis/${Await.patient_id}`}>
                 <input className="p-1 m-2" type="submit" value="Diagnose"/>
              </Link>
 
@@ -71,7 +71,7 @@ return(
       </table> 
        
       </div>
-    </div>
+    </div>:<div>List Empty</div>
   )
 }
 

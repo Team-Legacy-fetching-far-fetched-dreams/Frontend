@@ -49,6 +49,9 @@ const DoctorPage = () => {
           <Link to ="/DoctorLogin">
              <Button className='d-login' active>Login</Button>
           </Link>
+          <Link to ="/Hello">
+             <Button className='d-login' active>Login</Button>
+          </Link>
        </div>
          </div>
         </div> 

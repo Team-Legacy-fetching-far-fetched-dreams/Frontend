@@ -1,16 +1,63 @@
-import React, {useEffect, useState} from 'react'
+import React, {Component} from 'react'
 import './AdminDashboard.css'
 import Sidebar from './Sidebar'
 import AdDashNav from "./AdDashNav"
+import ListOfSpecEmployee from '../TABLE LISTS/ListOfDoctors/ListOfSpecEmployee'
+import AdminLogin from './AdminLogin'
+import { logout } from '../../../auth'
+
+
 import Clock from '../Clock'
 import {motion} from 'framer-motion/dist/framer-motion'
 import {Link,useLocation} from 'react-router-dom'
 
 
-const Doctor = () => {
 
-  
+class Doctor extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      data:undefined,
+      islogged : false
+    };
 
+  }
+
+  componentWillMount(){
+    this.renderMydata();
+  }
+
+  renderMydata(){
+    const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY')
+    const requestOptions = {
+      method: "GET",
+      header : {
+        'content-type': 'application/json',
+        'Authorization': `Bearer ${JSON.parse(token)}`
+      }
+    }
+    
+    fetch('/user/doctors', requestOptions)
+    .then(res => {
+      if(res.status===200){
+        this.setState({islogged:true})
+        return res.json()
+      }
+      else if (res.status === 401){
+        logout(token)
+        this.setState({islogged: false})
+        // navigate('/DoctorLogin')
+
+      }
+      res.json()
+    })
+    .then((resJson)=>{
+        this.setState({ data : resJson })
+        console.log(resJson)
+    })
+  }
+
+  render(){
   return (
     <motion.div className='A-d-m'
     initial={{opacity: 0}}
@@ -23,6 +70,12 @@ const Doctor = () => {
         <div className='Dashboardcontainer'>
         <AdDashNav/>
         <div className=''>
+          <div className='createButton'>
+            <Link to ={"/DoctorSignUp"}>
+            <input type='submit' value = "Register New Doctor" />
+            </Link>
+            </div>
+          {this.state.data ? <ListOfSpecEmployee data={this.state.data}/>:<div>loading</div>}
         </div>
 
         </div>
@@ -33,6 +86,7 @@ const Doctor = () => {
       </div>
     </motion.div>
   )
+}
 }
 
 export default Doctor
