@@ -11,11 +11,13 @@ import {login, useAuth} from '../../../auth'
   
 const DoctorLogin = () => {
   const navigate = useNavigate()
-  const initialValues = {username: "", password: ""};
+  const initialValues = {username: "", password: "", incorrect:""};
   const [formValues,setFormValues] = useState( initialValues);
   const [formErrors,setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
   const [islogged, setislogged] = useState(false);
+  const [isloading, setIsLoading] = useState(false);
+  const [data, setData] = useState()
 
 
 
@@ -43,22 +45,48 @@ const handleSubmit = (e) => {
 }
 
 if (Object.keys(formErrors).length === 0 && isSubmit){
-fetch('/user/login', requestOptions)
-.then((res)=>res.json())
+  setIsLoading(true)
+  fetch('/user/login', requestOptions)
+    .then((res)=>{
+      setIsLoading(false)
+      if (res.status===200){
+        console.log("SUCCESS")
+        setislogged(true)
+        return res.json()
+        
+      }
+      else if(res.status === 400){
+        console.log("Incorect")
+        setFormErrors({incorrect: "Incorrect Passwword or Username"})
+      }
+    })
 .then(data=>{
     console.log(data)
-    login(data.access_token)
+    
 
-    if(data.access_token){
-      
+    if(islogged){
+      setData(data)
+      login(data.access_token)
       if (data.qualification === 'Doctor'){
-        navigate('/DoctorDashBoard')
+        navigate('/DoctorDashBoard',{
+          state: {
+            id: data.public_id
+          }
+        })
       }
       else if (data.qualification === 'Nurse'){
-        navigate('/NurseDashBoard')
+        navigate('/NurseDashBoard',{
+          state: {
+            id: data.public_id
+          }
+        })
       }
       else{
-        navigate('/AdminDashBoard')
+        navigate('/AdminDashBoard',{
+          state: {
+            id: data.public_id
+          }
+        })
       }
      
     }
@@ -105,6 +133,8 @@ const validate = (values) => {
                 <label for='pwd1'>Password</label>
                 <p className='err'>{formErrors.password}</p>
                 <input className='ii' placeholder='Enter your password...'  name='password' onChange={handleChange} value= {formValues.password} type='password'  id='pwd1' ></input>
+                <p className='err'>{formErrors.incorrect}</p>
+                {isloading && <div>...LAODING...</div>}
                 <button value='Submit' className='ll' type='submit' id='sub_butt'> 
                   Login </button>
                 

@@ -22,6 +22,7 @@ const NDashNav = () => {
                 </div>
                 <div className='item'>
                     <img src={Avatar} alt='' className='avatar'/>
+                    <span>{data.data.username}</span>
                 </div>
             </div>
 

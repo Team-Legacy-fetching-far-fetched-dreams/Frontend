@@ -27,10 +27,12 @@ const AdminLogin = () => {
   // const [emailval, setemailval]= useState("");
   // const [passval, setpassval] = useState("");
   const navigate = useNavigate()
-  const initialValues = {username: "", password: ""};
+  const initialValues = {username: "", password: "", incorrect:""};
   const [formValues,setFormValues] = useState( initialValues);
   const [formErrors,setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
+  const [isloading, setIsLoading] = useState(false);
+  const [islogged, setislogged] = useState(false);
   const [data, setData] = useState()
   // const [islogged, setislogged] = useState(false);
   
@@ -56,15 +58,30 @@ const AdminLogin = () => {
       body:JSON.stringify(formValues)
   }
   if (Object.keys(formErrors).length === 0 && isSubmit){
+    setIsLoading(true)
   fetch('/user/login', requestOptions)
-    .then((res)=>res.json())
+    .then((res)=>{
+      setIsLoading(false)
+      if (res.status===200){
+        console.log("SUCCESS")
+        setislogged(true)
+        return res.json()
+        
+      }
+      else if(res.status === 400){
+        console.log("Incorect")
+        setFormErrors({incorrect: "Incorrect Passwword or Username"})
+      }
+    })
     .then(data=>{
         console.log(data)
-        setData(data)
-        login(data.access_token)
+        
+        
      
   
-        if(data.access_token){
+        if(islogged){
+          setData(data)
+          login(data.access_token)
           // setislogged(true)
           if (data.qualification === 'Doctor'){
             navigate('/DoctorDashBoard', {
@@ -178,10 +195,14 @@ const validate = (values) => {
                 <label for='pwd1'>Password</label>
                 <p className='err'>{formErrors.password}</p>
                 <input className='ii' placeholder='Enter your password...' type='password'  name='password'  onChange={handleChange} value={formValues.password} id='pwd1'></input>
+                <p className='err'>{formErrors.incorrect}</p>
+                {isloading && <div>...LAODING...</div>}
                 <button className='ll' type='submit' id='sub_butt'> Login </button>
               </form>
+              
 
               <div className='footers'>
+              
                 <h4 className='dd'>Don't have an Account ? <Link className='link' to ="/AdminSignUp">Register Now</Link>
 
                 </h4>

@@ -51,8 +51,8 @@ const Hello = () => {
     // console.log(watch("password"));
 
     return (
-        <div className="container">
-            <div className="form">                                                                                                                                                                                  
+        <div className="box">
+            <div className="script">                                                                                                                                                                                  
                 <Form.Group>
                     <Form.Label>Username</Form.Label>
                     <Form.Control type="text"

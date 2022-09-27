@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import './DoctorSignUp.css'
 import Logo from '../../../imgs/logo2.png'
 import registerImg from '../../../imgs/415.jpg'
-import {Link} from 'react-router-dom'
+import {Link, useLocation} from 'react-router-dom'
 
 const DoctorSignUp = () => {
 
@@ -32,6 +32,9 @@ const DoctorSignUp = () => {
   const [formValues,setFormValues] = useState( initialValues);
   const [formErrors,setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
+  const [isloading, setIsLoading] = useState(false);
+  const [isSuccess, setIsSucces] = useState(false)
+  const location = useLocation()
  // const {register, handleSubmit} = useForm();
  // const signUp=(data)=>{
     //e.preventDefault();
@@ -64,8 +67,39 @@ const DoctorSignUp = () => {
   useEffect(() => {
       //  console.log(formErrors);
        if (Object.keys(formErrors).length === 0 && isSubmit){
+        setIsLoading(true)
         console.log(formValues);
-       }
+       
+
+       const requestOptions ={
+        method : "POST",
+        headers : {
+          'content-type' : 'application/json'
+        },
+          body: JSON.stringify(formValues)
+      }
+
+      if (Object.values(formErrors).length === 0){
+        fetch("/user/signup", requestOptions)
+        .then((res)=>{
+          setIsLoading(false)
+          if (res.status===200){
+            console.log("SUCCESS")
+            setIsSucces(true)
+            return res.json()
+            
+          }
+          else if(res.status === 409){
+            console.log("CONFLICT")
+            setFormErrors({email: "Email already exist"})
+          }
+          })
+        .then(data=>{
+          console.log(data)
+          console.log(location)
+        })
+      }
+    }
   },[formErrors])
   // const [email,setemail]=useState('');
   // const[Fusername, setFusername]=useState('');
@@ -172,8 +206,9 @@ const DoctorSignUp = () => {
         </form>
 
      </div>
-
+     {isloading && <div>...LAODING...</div>}
    </div>
+   {isSuccess && <div>Please Chek your eamil for your login Credentials</div>}
    </div>
 
 

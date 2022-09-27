@@ -9,7 +9,67 @@ import {Link} from 'react-router-dom'
 
 
 const NurseDashboard = () => {
-
+  const  [data, setData] = useState()
+  const [id, setId] = useState()
+  const [isloading, setIsLoading] = useState(true)
+  const navigate = useNavigate()
+  const location = useLocation()
+ 
+  const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY');
+   
+   // const navigate = useNavigate()
+   const requestOptions = {
+     method: "GET",
+     headers : {
+       'content-type': 'application/json',
+       'Authorization': `Bearer ${JSON.parse(token)}`
+     }
+     
+   }
+ 
+ 
+ 
+ 
+ 
+   
+ 
+ 
+ useEffect(() => {
+ 
+   console.log(location)
+   // if(location.state.id===undefined){
+   //   setId(location.state.id)
+   //   console('hello')
+   // }
+   if(token){
+   fetch(`/user/user/${location.state.id}`, requestOptions)
+     .then(res => 
+       {
+         setIsLoading(true)
+       if (res.status===200)
+       {
+         return res.json()
+       }
+       else if(res.status == 401){
+         logout(token)
+         navigate("/NurseLogin")
+         console.log("Your token has expired, pleae login again")
+       }
+       return res.json()
+       })
+     .then(data=>{
+       console.log(data)
+       setData(data)
+       setIsLoading(false)
+       
+     })
+ 
+   }else{
+     navigate('/NurseLogin')
+   }
+   console.log(data)
+ },[])
+     
  
   return (
     // <div className='N-m'>

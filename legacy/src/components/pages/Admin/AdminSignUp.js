@@ -3,17 +3,8 @@ import './AdminSignUp.css'
 import Logo from '../../../imgs/logo2.png'
 import registerImg from '../../../imgs/415.jpg'
 // import Button from 'react-bootstrap/Button';
-import {Link} from 'react-router-dom'
+import {Link, useLocation} from 'react-router-dom'
 // import {useForm} from 'react-hook-form'
-
-
-
-
-
-
-
-
- 
 
 
 
@@ -24,6 +15,9 @@ const AdminSignUp = () => {
   const [formValues,setFormValues] = useState( initialValues);
   const [formErrors,setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
+  const [isloading, setIsLoading] = useState(false);
+  const [isSuccess, setIsSucces] = useState(false)
+  const location = useLocation()
 
   const handleChange = (e) => {
     const {name, value} = e.target;
@@ -43,6 +37,7 @@ const handleSubmit = (e) => {
 useEffect(() => {
      //console.log(formErrors);
      if (Object.keys(formErrors).length === 0 && isSubmit){
+      setIsLoading(true)
       console.log(formValues);
 
       const requestOptions ={
@@ -54,10 +49,23 @@ useEffect(() => {
       }
 
       if (Object.values(formErrors).length === 0){
-        fetch("http://127.0.0.1:5000/user/signup", requestOptions)
-        .then((res)=>res.json())
+        fetch("/user/signup", requestOptions)
+        .then((res)=>{
+        setIsLoading(false)
+        if (res.status===200){
+          console.log("SUCCESS")
+          setIsSucces(true)
+          return res.json()
+          
+        }
+        else if(res.status === 409){
+          console.log("CONFLICT")
+          setFormErrors({email: "Email already exist"})
+        }
+        })
         .then(data=>{
           console.log(data)
+          console.log(location)
         })
       }
      }
@@ -161,8 +169,10 @@ const validate = (values) => {
          </form>
 
       </div>
+      {isloading && <div>...LAODING...</div>}
  
     </div>
+    {isSuccess && <div>Please Chek your eamil for your login Credentials</div>}
     </div>
  
 

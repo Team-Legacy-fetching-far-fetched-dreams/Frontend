@@ -8,13 +8,18 @@ import DcSidebar from '../../../components/pages/Doctor/DcSidebar'
 import DcDashNav from "./DcDashNav"
 import DcWidget from './DcWidget'
 import Clock from '../Clock'
+import {Link, useLocation, useNavigate} from 'react-router-dom'
 import rendrIfo from './renderInfo'
 import { logout } from '../../../auth'
 import DoctorLogin from './DoctorLogin'
 
 const DoctorDashboard=()=>{
   const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY');
-  const [state, setState] = useState([0,0])
+  const  [data, setData] = useState()
+  const [id, setId] = useState()
+  const [isloading, setIsLoading] = useState(true)
+  const navigate = useNavigate()
+  const location = useLocation()
 
   
   useEffect(() => {
@@ -33,8 +38,8 @@ const DoctorDashboard=()=>{
 
 
   console.log(token)
-
-  fetch('/user/users', requestOptions)
+  if (token){
+  fetch(`/user/users${location.state.id}`, requestOptions)
     .then(res =>
       {
         if (res.status===200)
@@ -42,9 +47,10 @@ const DoctorDashboard=()=>{
 
           return res.json()
         }
-        else if (res.status == 401){
+        else if(res.status == 401){
           logout(token)
-          // navigate('/DoctorLogin')
+          navigate("/DoctorLogin")
+          console.log("Your token has expired, pleae login again")
         }
         else if (res.status===402){
         }
@@ -52,15 +58,20 @@ const DoctorDashboard=()=>{
       res.json()
     })
     .then(data=>{
-      console.log(data)})
+      console.log(data)
+      setData(data)
+      setIsLoading(false)
+    })
     
-    
+  }else{
+    navigate('/AdminLogin')
+  }
     
     // console.log(state)
     
 
 }, []);
-  return (
+  return (isloading?<div className='offers'>...LOADING...</div>:
     <motion.div className='D-d-m'
     initial={{opacity: 0}}
     animate={{opacity: 1}}

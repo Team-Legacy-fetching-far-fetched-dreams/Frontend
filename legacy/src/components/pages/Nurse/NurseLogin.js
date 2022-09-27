@@ -21,7 +21,9 @@ const NurseLogin = () => {
    const [formValues,setFormValues] = useState( initialValues);
    const [formErrors,setFormErrors] = useState({});
    const [isSubmit, setIsSubmit] = useState(false);
+   const [isloading, setIsLoading] = useState(false);
    const [islogged, setislogged] = useState(false);
+   const [data, setData] = useState()
 
 
    const handleChange = (e) => {
@@ -51,14 +53,30 @@ const NurseLogin = () => {
          body:JSON.stringify(formValues)
      }
       if (Object.keys(formErrors).length === 0 && isSubmit){
+         setIsLoading(true)
      fetch('/user/login', requestOptions)
-     .then((res)=>res.json())
+     
+     .then((res)=>{
+      setIsLoading(false)
+      if (res.status===200){
+         console.log("SUCCESS")
+         setislogged(true)
+         return res.json()
+         
+       }
+       else if(res.status === 400){
+         console.log("Incorect")
+         setFormErrors({incorrect: "Incorrect Passwword or Username"})
+       }
+     })
      .then(data=>{
            console.log(data)
-           login(data.access_token)
+           
            
   
-           if(data.access_token){
+           if(islogged){
+            setData(data)
+            login(data.access_token)
             if (data.qualification === 'Doctor'){
                navigate('/DoctorDashBoard')
              }
@@ -108,7 +126,9 @@ const NurseLogin = () => {
                      <input className='ii' placeholder='Enter your username...'  name='username'  onChange={handleChange} value={formValues.username}type='text' id='emill1'></input>
                      <label for='pwdd1'>Password</label>
                      <p className='err'>{formErrors.password}</p>
-                     <input className='ii' placeholder='Enter your password...'  name='password' value={formValues.password} onChange={handleChange} type='password' id='pwdd1'></input> 
+                     <input className='ii' placeholder='Enter your password...'  name='password' value={formValues.password} onChange={handleChange} type='password' id='pwdd1'></input>
+                     <p className='err'>{formErrors.incorrect}</p>
+                     {isloading && <div>...LAODING...</div>} 
                      <button className='ll' type='submit' id='sub_butt'> Login </button>
                   </form>
 

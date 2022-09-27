@@ -3,7 +3,10 @@ import './DcDashNav.css'
 import { UilSearch,UilEnglishToChinese, UilBell} from '@iconscout/react-unicons'
 import Avatar from '../../../imgs/nipp.png'
 
-const DcDashNav = () => {
+const DcDashNav = (data) => {
+    useEffect(()=>{
+        console.log(data)
+    })
   return (
     <div className='DcDashNav'> 
         <div className='wrapper'>
@@ -23,6 +26,7 @@ const DcDashNav = () => {
                 </div>
                 <div className='item'>
                     <img src={Avatar} alt='' className='avatar'/>
+                    <span>{data.data.username}</span>
                 </div>
             </div>
 

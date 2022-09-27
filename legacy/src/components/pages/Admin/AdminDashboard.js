@@ -1,4 +1,4 @@
-import React,{useState, Component} from 'react'
+import React,{useState, useEffect, Component} from 'react'
 import './AdminDashboard.css'
 import Sidebar from './Sidebar'
 import Clock from '../Clock'
@@ -35,14 +35,15 @@ const AdminDashboard=() => {
   
 
 
-useState(() => {
+useEffect(() => {
 
   console.log(location)
-  if(location.state){
-    setId(location.state.id)
-  }
+  // if(location.state.id===undefined){
+  //   setId(location.state.id)
+  //   console('hello')
+  // }
   if(token){
-  fetch(`/user/user/${id}`, requestOptions)
+  fetch(`/user/user/${location.state.id}`, requestOptions)
     .then(res => 
       {
         setIsLoading(true)
@@ -67,7 +68,7 @@ useState(() => {
   }else{
     navigate('/AdminLogin')
   }
-  
+  console.log(data)
 },[])
     
   
@@ -84,7 +85,7 @@ useState(() => {
       <div className='A-d-g'>
         <Sidebar/>
         <div className='Dashboardcontainer'>
-        <AdDashNav/>
+        <AdDashNav data={data}/>
         <div className='widgets'>
           <Link to="/AdminDashboard/Doctor">
           <Widget type ="doctor"/>

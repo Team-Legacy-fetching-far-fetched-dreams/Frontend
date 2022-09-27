@@ -2,8 +2,12 @@ import React from 'react'
 import './AdDashNav.css'
 import { UilSearch,UilEnglishToChinese, UilBell} from '@iconscout/react-unicons'
 import Avatar from '../../../imgs/nipp.png'
+import { useEffect } from 'react'
 
-const AdDashNav = () => {
+const AdDashNav = (data) => {
+    useEffect(()=>{
+        console.log(data)
+    })
   return (
     <div className='AdDashNav'> 
         <div className='wrapper'>
@@ -22,6 +26,7 @@ const AdDashNav = () => {
                 </div>
                 <div className='item'>
                     <img src={Avatar} alt='' className='avatar'/>
+                        <span>{data.data.username}</span>
                 </div>
             </div>
 
