@@ -1,20 +1,17 @@
 
 
 .VitalsC{
-    max-height: 500px;
-    overflow-x: hidden; 
+    max-height: 450px;
+    overflow-x: scroll; 
 }
 .table4{
     font-family: 'poppins';
     border-collapse: collapse;
     width: 78%;
-    /* min-width: 30%; */
     border: 1px solid blue;
     margin: 25px 0;
-    border-radius: 8px 8px 0 0;
+    border-radius: 10px 10px 0 0;
     font-size: 0.9em; 
-    max-height: 400px;
-    overflow-x: scroll;
     box-shadow: 0 0 20px rgba(0, 0 ,0.15);
 }
 
@@ -65,4 +62,15 @@
 
  .N4-content h1{
     margin-left: 300px;
+    margin-bottom: -9px;
+}
+
+.New1{
+    text-align:end;
+    padding-right: 260px;
+    padding-bottom: 3px;
+}
+
+.New1 :hover button{
+        color: black;
 }

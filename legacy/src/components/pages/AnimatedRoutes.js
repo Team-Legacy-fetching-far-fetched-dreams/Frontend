@@ -8,9 +8,10 @@ import ContactUs from '../../components/pages/LandingPage/ContactUs';
 
 import Hello from '../../Hello';
 import TrialPage from '../../components/pages/Doctor/trialpage.js';
-import PatientInfo from '../pages/Patient/UsersInfo/PatientInfo'
-import UsersInfo from '../pages/Patient/UsersInfo/UsersInfo'
+import PatientInfo from './TABLE LISTS/UsersInfo/PatientInfo';
+import UsersInfo from './TABLE LISTS/UsersInfo/UsersInfo';
 import PatientForm from './Doctor/PatientForm';
+import AwaitingTable from './TABLE LISTS/AwaitingTable/AwaitingTable';
 
 import Modal from '../../components/pages/Admin/Model/Modal';
 import Mefu from '../../components/pages/Admin/Mefu/Mefu'
@@ -29,6 +30,7 @@ import InnerContent from './InnerContent'
 import AdminDashboard from '../../components/pages/Admin/AdminDashboard';
 import Doctor from '../../components/pages/Admin/Doctor';
 import Nurse from '../../components/pages/Admin/Nurse';
+import VitalsForm from './TABLE LISTS/Vitals/VitalsForm';
 import Patient from '../../components/pages/Admin/Patient';
 
 import DoctorDashboard from '../../components/pages/Doctor/DoctorDashboard';
@@ -60,7 +62,7 @@ const AnimatedRoutes = () => {
               <Route path ="/Home" element={<Home/>} />
               <Route path ="/ContactUs" element={<ContactUs/>} />
               <Route path ="/AboutUs" element={<AboutUs/>} />
-              <Route path ="/Mefu" element={<Mefu/>} />
+              <Route path ="/Patient/Diagnosis/:id" element={<Mefu/>} />
             
 
            
@@ -72,10 +74,12 @@ const AnimatedRoutes = () => {
 
               <Route path ="/DoctorPage" element={<DoctorPage/>} />
               <Route path ="/NursePage" element={<NursePage/>} />
+              <Route path ="/VitalsForm/:id" element={<VitalsForm/>}/>
               {/* <Route path ="/ListOfRegPatients" element={<ListOfRegPatients/>} /> */}
               <Route path ="/AdminPage" element={<AdminPage/>} />
               <Route path ="/Modal" element={<Modal/>} />
               {/* <Route path ="/Mafu" element={<Mafu/>} /> */}
+              <Route path ="/AwaitingTable" element={<AwaitingTable/>}/>
 
           
              

@@ -5,15 +5,13 @@
     border: 1px solid blue;
     margin: 25px 0;
     border-radius: 8px 8px 0 0;
-    font-size: 0.9em; 
-    overflow:scroll; 
-    max-height: 400px;
+    font-size: 0.9em;
     box-shadow: 0 0 20px rgba(0, 0 ,0.15);
 }
 
 .ListOfSpec{
     max-height: 500px;
-    overflow-x: hidden;
+    overflow-x: scroll;
 }
  
 

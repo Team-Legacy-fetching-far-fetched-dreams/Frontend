@@ -116,7 +116,6 @@ const Mefu = () => {
          </form>
       </div>
       {isLoadingD &&<div>...LOADIND...</div>}
-
     </div>
     </div>
  

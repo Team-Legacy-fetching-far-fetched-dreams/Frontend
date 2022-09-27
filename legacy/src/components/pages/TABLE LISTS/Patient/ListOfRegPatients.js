@@ -1,6 +1,5 @@
 import React, {useEffect, useState, Component} from 'react'
 import './ListOfRegPatients.css'
-// import Logo from '../../../imgs/logo2.png'
 import {Link, useNavigate} from 'react-router-dom'
 import Button from 'react-bootstrap/esm/Button'
 
@@ -42,13 +41,12 @@ const openProfile = (id) => {
 }
  useEffect(()=>{
        console.log( data)
-      //  setlistOfRegP( data)
 
- }) 
+       
+ },[])
  
 //  );
-  return (
-   //  <div className='N-g'>
+  return (data.length>0?
     
     <div className='N2-content'>
          <h1>List of Registered Patients</h1>
@@ -138,13 +136,13 @@ const openProfile = (id) => {
         </table> 
          
         
-        </div>:<div>List Empty</div>
+        </div>
 
   
 
   
   
-  </div>
+  </div>:<div>List Empty</div>
   
     )
 

@@ -1,5 +1,7 @@
 import React, {useEffect} from 'react'
 import './Vitals.css'
+import { Link } from 'react-router-dom'
+import Button from 'react-bootstrap/esm/Button'
 
 const Vitals = ({data}) => {
 
@@ -12,11 +14,16 @@ const Vitals = ({data}) => {
     <div className='N4-content'>
         
             <h1>List of Vitals</h1>
+            <div className='New1'>
+            <Link to = "/VitalsForm">
+         <Button className="btn btn-primary btn-sm" type="submit"  role="button"><span></span><span className=" p-2 ">Record Vitals</span></Button>
+         </Link>
+         </div>
             <div className='VitalsC'>
-            
-            <table className='table4'>
+    
+           <table className='table4'>
             <th>Patient_id</th>
-            <th>Temperature (C)</th>
+            <th>Temperature ({'\u00b0'}C)</th>
             <th>Height (m)</th>
             <th>Blood Pressure (mmHg)</th>
             <th>Weight (kg)</th> 

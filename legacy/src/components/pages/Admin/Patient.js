@@ -52,6 +52,7 @@ class Patient extends Component {
         <div className='Dashboardcontainer'>
         <AdDashNav/>
         <div className=''>
+
         <div className='createButton'>
             <Link to ={"/Patient/Register"}>
             <input type='submit' value = "Register New Patient" />

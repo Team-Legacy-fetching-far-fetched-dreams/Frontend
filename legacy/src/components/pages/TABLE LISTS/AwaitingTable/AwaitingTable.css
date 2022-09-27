@@ -1,5 +1,5 @@
 
-.ListOfAllEmp{
+.ListOfAwaiting{
     
     max-height: 500px;
    overflow-x: scroll; 
@@ -7,7 +7,7 @@
 
 
 }
-.table6{
+.table7{
    font-family: 'poppins';
    border-collapse: collapse;
    min-width: max-content;
@@ -22,7 +22,7 @@
 
 
 
-.table6 tr:hover td{
+.table7 tr:hover td{
    color: #4478b8;
    cursor: pointer;
    background-color: #ffffff;
@@ -30,7 +30,7 @@
 }
 
 
-.table6 td button{
+.table7 td button{
    border: none;
    padding: 7px 10px;
    border-radius: 15px;
@@ -38,7 +38,7 @@
    color: white;
 }
 
-.table6 td {
+.table7 td {
 border: 1px solid #dddddd;
  text-align: center;
  padding: 5px 5px 5px ;
@@ -49,7 +49,7 @@ border: 1px solid #dddddd;
 
 }
 
-.table6 th{
+.table7 th{
    background-color: #3977eb;
    border: 1px solid #dddddd;
    text-align: center;
@@ -64,11 +64,11 @@ border: 1px solid #dddddd;
 
 
 
-.table6 tr :nth-of-type(even){
+.table7 tr :nth-of-type(even){
      background-color: #f3f3f3;
 } 
 
-.N6-content h1{
-   margin-left: 230px;
+.N7-content h1{
+   margin-left: 225px;
 }
 
