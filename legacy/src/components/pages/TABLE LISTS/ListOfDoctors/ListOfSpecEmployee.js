@@ -1,49 +1,55 @@
 import React, {useEffect, useState} from 'react'
 import './ListOfSpecEmployee.css'
-// import Logo from '../../../imgs/logo2.png'
-import {Link} from 'react-router-dom'
+import {Link,useLocation} from 'react-router-dom'
 
-// const datum = [
-//   {
-//     public_id:'1',
-//     username: "Manu",
-//     other_names:'Godsaves',
-//     gender: "Male",
-//     surname: "kofi"
-//     },
-//     {
-//       public_id:'2',
-//       username: "Essuman",
-//       other_names:'Godsaves',
-//       gender: "Male",
-//       surname: "kofi"
-//       },
- 
-// ]
+  
+
 
 const DeleteUser = ({data}) => {
 
 }
 
-const ListOfSpecEmployee = ({data}) => {
+const ListOfSpecEmployee = ({data}, type) => {
  
-//   const [listOfSpec,setlistOfSpec] = useState([]);
-
+   const location = useLocation()
+   let user = "users"
+   // const [user,setUser] = useState()
+   // const [loc,setLoc] = useState()
+   
+   
+   
  useEffect(
     ()=>{
+      
        console.log(data)
-      //  setlistOfSpec(data)
+      console.log(location.pathname.split("/")[location.pathname.split("/").length -1])
+      let loc = location.pathname.split("/")[location.pathname.split("/").length -1]
+      // setLoc(location.pathname)
+      console.log(loc)
+
+
+      if (loc==="Doctor"){
+         user = "Doctor"
+         console.log(user)
+       }
+      else if (loc === "Nurse"){
+         user = "Nurse"
+         console.log(user)
+      }
+      else{
+         user = "Admin"
+         console.log(user)
+      }
+       
 
        
- },[]
+ },[user]
  );
-  return (
-    // <div className='d-m'>
-    // <div className='d-g'>
-   //  <div className='N-g'>
+  return (data.length>0?
+
     
     <div className='N5-content'>
-           <h1>List of Specific Employee</h1>
+           {user==="users"?<div>...loading...</div>:<h1>List of {user}</h1>}
 
            <div className='ListOfSpec'>
 
@@ -119,7 +125,7 @@ const ListOfSpecEmployee = ({data}) => {
       
    
       </div>
-   </div>
+   </div>:<div>List Empty</div>
 
 
 

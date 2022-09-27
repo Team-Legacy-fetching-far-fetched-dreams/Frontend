@@ -1,6 +1,6 @@
 import React from 'react'
-// import './VitalsForm.css';
-import bgImg from "../../../../imgs/doc5.png";
+import './VitalsForm.css';
+
 import { useState, useEffect } from "react";
 
 
@@ -12,7 +12,7 @@ export const VitalsForm = () => {
   const [isSubmit, setIsSubmit] = useState(false);
 
     const handleChange = (e) => {
-    console.log(e.target);
+    // console.log(e.target);
     const { name, value } = e.target;
     setFormValues({...formValues, [name]: value });
     };
@@ -67,12 +67,13 @@ export const VitalsForm = () => {
     <section>
         <div className="register">
             <div className="col-1">
-                <h2 className="head">Vitals Form</h2>
-                <span>this form is under test!</span>
+            
+                {/* <span>this form is under test!</span> */}
 
                 <form onSubmit={handleSubmit} id='form' className='flex flex-col'>
+                <h2 className="topic">Vitals Form</h2>
                     <h1 className="label">Temperature</h1> 
-                    <input type="number" name="temperature" placeholder='temperature(celsius)' value={ formValues.temperature} onChange={handleChange}/>
+                    <input type="number" name="temperature" placeholder='temperature(celsius)' onChange={handleChange} value={ formValues.temperature} />
                     <h3 className="tags">{formErrors.temperature}</h3>
                     
                     <h1 className="label">Weight</h1> 
@@ -91,7 +92,7 @@ export const VitalsForm = () => {
                     <h3 className="tags">{formErrors.bloodpressure_mm}</h3>
                     </div>
 
-                    <div id='slash'>/</div>
+                    
                     <div >
                     <input type="number" name="bloodpressure_hg" placeholder='bloodpressure_hg' value={ formValues.bloodpressure_hg} onChange={handleChange} className='eachbp'/>
                     <h3 className="tags">{formErrors.bloodpressure_hg}</h3>
@@ -115,9 +116,7 @@ export const VitalsForm = () => {
                 </form>
 
             </div>
-            <div className="col-2">
-                <img src={bgImg}alt=""/>
-            </div>
+            
         </div>
     </section>
   )

@@ -17,11 +17,11 @@ const AwaitingList = () => {
         <div className='Dashboardcontainer'>
         <DcDashNav/>
         <div className=''>
-         
         </div>
         </div>
         {/* <MainDash/> */}
       </div>
+      
     </motion.div>
   )
 }

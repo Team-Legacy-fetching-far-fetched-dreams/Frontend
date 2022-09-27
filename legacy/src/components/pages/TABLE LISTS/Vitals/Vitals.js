@@ -15,7 +15,7 @@ const Vitals = ({data}) => {
         
             <h1>List of Vitals</h1>
             <div className='New1'>
-            <Link to = {"/VitalsForm"}>
+            <Link to = "/VitalsForm">
          <Button className="btn btn-primary btn-sm" type="submit"  role="button"><span></span><span className=" p-2 ">Record Vitals</span></Button>
          </Link>
          </div>
@@ -23,7 +23,7 @@ const Vitals = ({data}) => {
     
            <table className='table4'>
             <th>Patient_id</th>
-            <th>Temperature (F)</th>
+            <th>Temperature ({'\u00b0'}C)</th>
             <th>Height (m)</th>
             <th>Blood Pressure (mmHg)</th>
             <th>Weight (kg)</th> 

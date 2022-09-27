@@ -31,9 +31,7 @@ const UsersInfo = (data) => {
         <Link to = {"/AdminDashboard/Patient"}>
          <Button className="btn btn-primary  btn-sm" type="submit"  role="button"><span></span><span className="p-1">View Vitals</span></Button>
          </Link> 
-            {/* <Button className="btn btn-primary btn-sm" href="#" role="button"><span></span><span className="  p-2 ">Edit Profile</span></Button> */}
-            {/* <div className="col-md-12"><label className="labels">Experience in Designing</label></div> */}
-            {/* <div className="col-md-12"><label className="labels">Additional Details</label><input type="text" className="form-control" placeholder="additional details" value=""/></div> */}
+           
         </div>
     </div>
 
@@ -69,21 +67,7 @@ const UsersInfo = (data) => {
 
                 
             </div>
-            {/* <div className="row mt-3">
-                
-                <div className="col-md-12"><label className="labels">Address </label></div>
-                <div className="col-md-12"><label className="labels">Contact 1</label></div>
-                <div className="col-md-12"><label className="labels">Contact 1</label></div>
-                <div className="col-md-12"><label className="labels">Username</label></div>
-                <div className="col-md-12"><label className="labels">Date_Created</label></div>
-                <div className="col-md-12"><label className="labels">Qualification</label></div>
-                <div className="col-md-12"><label className="labels"></label></div>
-            </div> */}
-            {/* <div className="row mt-3">
-                <div className="col-md-6"><label className="labels">Country</label></div>
-                <div className="col-md-6"><label className="labels">State/Region</label></div>
-            </div> */}
-            {/* <div className="mt-5 text-center"><button className="btn btn-primary profile-button" type="button">Save Profile</button></div> */}
+           
         </div>
     </div>
     

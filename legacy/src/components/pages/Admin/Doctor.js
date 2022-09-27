@@ -1,57 +1,16 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import './AdminDashboard.css'
 import Sidebar from './Sidebar'
 import AdDashNav from "./AdDashNav"
 import Clock from '../Clock'
 import {motion} from 'framer-motion/dist/framer-motion'
-import ListOfSpecEmployees from "../../pages/TABLE LISTS/ListOfDoctors/ListOfSpecEmployee"
+import {Link,useLocation} from 'react-router-dom'
 
-const data = [
-    {
-      public_id:'1',
-      username: "Manu",
-      other_names:'Godsaves',
-      gender: "Male",
-      surname: "kofi"
-      },
-      {
-        public_id:'2',
-        username: "Essuman",
-        other_names:'Godsaves',
-        gender: "Male",
-        surname: "kofi"
-        },
-        {
-          public_id:'1',
-          username: "Manu",
-          other_names:'Godsaves',
-          gender: "Male",
-          surname: "kofi"
-          },
-          {
-            public_id:'1',
-            username: "Manu",
-            other_names:'Godsaves',
-            gender: "Male",
-            surname: "kofi"
-            },
-            {
-              public_id:'1',
-              username: "Manu",
-              other_names:'Godsaves',
-              gender: "Male",
-              surname: "kofi"
-              },
-              {
-                public_id:'1',
-                username: "Manu",
-                other_names:'Godsaves',
-                gender: "Male",
-                surname: "kofi"
-                },
-   
-  ]
+
 const Doctor = () => {
+
+  
+
   return (
     <motion.div className='A-d-m'
     initial={{opacity: 0}}
@@ -64,7 +23,6 @@ const Doctor = () => {
         <div className='Dashboardcontainer'>
         <AdDashNav/>
         <div className=''>
-          <ListOfSpecEmployees data={data}/>
         </div>
 
         </div>
