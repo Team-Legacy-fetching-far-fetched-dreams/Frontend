@@ -1,5 +1,5 @@
 import React from 'react'
-import './VitalsForm.css';
+// import './VitalsForm.css';
 import bgImg from "../../../../imgs/doc5.png";
 import { useState, useEffect } from "react";
 
