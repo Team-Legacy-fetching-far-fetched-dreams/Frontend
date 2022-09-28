@@ -12,6 +12,7 @@ import PatientInfo from './TABLE LISTS/UsersInfo/PatientInfo';
 import UsersInfo from './TABLE LISTS/UsersInfo/UsersInfo';
 import PatientForm from './Doctor/PatientForm';
 import AwaitingTable from './TABLE LISTS/AwaitingTable/AwaitingTable';
+import VitPage from './TABLE LISTS/Vitals/VitPage';
 
 import Modal from '../../components/pages/Admin/Model/Modal';
 import Mefu from '../../components/pages/Admin/Mefu/Mefu'
@@ -71,6 +72,7 @@ const AnimatedRoutes = () => {
               <Route path = "/Profile/Patient/:id" element={<PatientInfo/>}/>
               <Route path = "/Profile/Users/:id" element={<UsersInfo/>}/>
               <Route path = "/Patient/Register" element={<PatientForm/>}/>
+              <Route path = "Patient/Vitals/:id" element = {<VitPage/>}/>
 
               <Route path ="/DoctorPage" element={<DoctorPage/>} />
               <Route path ="/NursePage" element={<NursePage/>} />

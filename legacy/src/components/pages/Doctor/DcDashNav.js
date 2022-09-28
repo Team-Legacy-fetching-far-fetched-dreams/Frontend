@@ -1,11 +1,11 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import './DcDashNav.css'
 import { UilSearch,UilEnglishToChinese, UilBell} from '@iconscout/react-unicons'
 import Avatar from '../../../imgs/nipp.png'
 
-const DcDashNav = (data) => {
+const DcDashNav = () => {
     useEffect(()=>{
-        console.log(data)
+        // console.log(data)
     })
   return (
     <div className='DcDashNav'> 
@@ -26,7 +26,7 @@ const DcDashNav = (data) => {
                 </div>
                 <div className='item'>
                     <img src={Avatar} alt='' className='avatar'/>
-                    <span>{data.data.username}</span>
+                    {/* <span>{data.data.username}</span> */}
                 </div>
             </div>
 

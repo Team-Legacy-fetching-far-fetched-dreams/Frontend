@@ -3,7 +3,6 @@ import './DoctorDashboard.css'
 import {motion} from 'framer-motion/dist/framer-motion'
 import Sidebar from '../../../components/pages/Admin/Sidebar'
 import MainDash from '../../../components/pages/Admin/MainDash'
-import {Link, useNavigate} from 'react-router-dom'
 import DcSidebar from '../../../components/pages/Doctor/DcSidebar'
 import DcDashNav from "./DcDashNav"
 import DcWidget from './DcWidget'
@@ -39,7 +38,7 @@ const DoctorDashboard=()=>{
 
   console.log(token)
   if (token){
-  fetch(`/user/users${location.state.id}`, requestOptions)
+  fetch(`/user/user/${location.state.id}`, requestOptions)
     .then(res =>
       {
         if (res.status===200)
@@ -79,11 +78,14 @@ const DoctorDashboard=()=>{
     >
     <div className='D-d-g'>
     
-    <DcSidebar/>
+    <DcSidebar data ={data}/>
         <div className='Dashboardcontainer'>
         <DcDashNav/>
         <div className='widgets'>
-        <Link to="/DoctorDashboard/Patient">
+        <Link to={{
+          pathname:"/DoctorDashboard/Patient",
+          state:data
+        }}>
           <DcWidget type = "patient"/>
           </Link>
   

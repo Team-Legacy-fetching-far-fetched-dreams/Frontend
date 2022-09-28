@@ -7,9 +7,11 @@ const AwaitingTable = ({data}) => {
 
     useEffect(()=>{
         console.log(data)
+        console.log("gkf")
     },[])
     
-  return (data.length>0?
+  return (data.length?
+
     <div className='N7-content'>
        <h1>List of Awaiting Patients</h1>
          
@@ -30,7 +32,7 @@ return(
  <tr>
  <td key={key}>
  {
-    Await.patient_id
+    Await.persion_id
 
  }
   
@@ -56,7 +58,7 @@ return(
 
  </td>
  <td>
-              <Link to = {`/Patient/Diagnosis/${Await.patient_id}`}>
+              <Link to = {`/Patient/Diagnosis/${Await.person_id}`}>
                 <input className="p-1 m-2" type="submit" value="Diagnose"/>
              </Link>
 
@@ -71,7 +73,7 @@ return(
       </table> 
        
       </div>
-    </div>:<div>List Empty</div>
+    </div>:<div>List EmpdWty</div>
   )
 }
 

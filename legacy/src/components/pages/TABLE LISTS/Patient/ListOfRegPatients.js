@@ -96,25 +96,7 @@ const openProfile = (id) => {
       }
  </td>
 
- <td key={key}>
- {
-    ListOf.surname
-
- }
-  </td>
-
-  <td key={key}>
- {
-    ListOf.other_names
-
- }
-  </td>
- <td key={key}>
-    {
-       ListOf.gender
-    }
-
- </td>
+ 
  <td>
               <Link to =  {`/Profile/Patient/${ListOf.patient_id}`}>
                 <input className="p-1 m-2" type="submit" value="view"/>

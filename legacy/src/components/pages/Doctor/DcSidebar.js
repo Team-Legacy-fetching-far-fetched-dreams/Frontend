@@ -5,8 +5,9 @@ import Logo from '../../../imgs/logo2.png'
 import {UilSignOutAlt, UilEstate, UilAccessibleIconAlt, UilStethoscopeAlt } from '@iconscout/react-unicons'
 import {Link} from 'react-router-dom'
 
-const DcSidebar = () => {
-
+const DcSidebar = (data) => {
+  console.log(data)
+  console.log("soandfk")
 
   return (
     <div className='Sidebar'>
@@ -17,13 +18,18 @@ const DcSidebar = () => {
       
           <ul>
             <li>
-            <Link to ='/DoctorDashBoard'>
+            <Link to ={{
+              pathname:'/DoctorDashBoard'
+            }}>
               <UilEstate className="icon"/>
               <span>Dashboard</span>
               </Link>
             </li>
             <li>
-            <Link to ='/DoctorDashboard/Patient'>
+            <Link to = {{
+              pathname: '/DoctorDashboard/Patient',
+              state: data
+            }}>
             <UilAccessibleIconAlt className="icon"/>
               <span>Patient</span>
             </Link>
@@ -35,7 +41,10 @@ const DcSidebar = () => {
               </Link>
             </li>
             <li>
-            <Link to ='/DoctorDashboard/AwaitingList'>
+            <Link to ={{
+              pathname:'/DoctorDashboard/AwaitingList',
+              state:data
+            }}>
             <UilStethoscopeAlt className="icon"/>
               <span>Awaiting List</span>
             </Link>

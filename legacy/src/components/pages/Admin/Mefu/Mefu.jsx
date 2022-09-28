@@ -4,7 +4,7 @@ import nine from '../../../../imgs/hellonurse.jpg'
 import Logo from '../../../../imgs/logo2.png'
 // import welcomes from '../../../../imgs/loginPic.png' 
 import Nip from '../../../../imgs/nipp.png'
-import {Link, useParams} from 'react-router-dom'
+import {Link, useParams, useNavigate} from 'react-router-dom'
 
 import registerImg from '../../../../imgs/415.jpg'
 
@@ -14,11 +14,26 @@ const Mefu = () => {
   const [data,setData] = useState()
   const [isvitalAvail, setIsVitAvail] = useState(false)
   const [isSubmit, setIsSubmit] = useState(false);
-  const [isLoadingV, setIsLoadingV] = useState(false);
+  const [isLoadingV, setIsLoadingV] = useState(true);
   const [isLoadingD, setIsLoadingD] = useState(false);
-  const [isDone, setIsDone] =  useState(false);
+  const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY')
+  const [vitals, setVitals] =  useState(false);
+  const navigate = useNavigate()
   const { id } = useParams()
-
+  const requestOptionsD = {
+    method: "POST",
+    headers : {
+      'content-type': 'application/json',
+      'Authorization': `Bearer ${JSON.parse(token)}`
+    }, body:JSON.stringify(formValues)
+}
+const requestOptionsV = {
+  method: "GET",
+  headers : {
+    'content-type': 'application/json',
+    'Authorization': `Bearer ${JSON.parse(token)}`
+  }
+}
 
   const handleChange = (e) => {
     const {name, value} = e.target;
@@ -31,9 +46,10 @@ const Mefu = () => {
     console.log(formValues)
 
     if (isSubmit && id){
-      fetch(`patients/diagnosis/${id}`)
-      setIsLoadingD(true)
-      .then(res=>res.json())
+      fetch(`/patients/diagnosis/${id}`,requestOptionsD)
+      .then(res=>{
+        setIsLoadingD(true)
+        return res.json()})
       .then(data=>{
         setIsLoadingD(false)
         console.log(data)
@@ -41,27 +57,24 @@ const Mefu = () => {
     }
   }
   useEffect(()=>{
-    const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY')
-    const requestOptions = {
-      method: "GET",
-      headers : {
-        'content-type': 'application/json',
-        'Authorization': `Bearer ${JSON.parse(token)}`
-      }, body:JSON.stringify(formValues)
-  }
     if (id){
-    fetch(`patients/vital/${id}`, requestOptions)
-    setIsLoadingV(true)
+    fetch(`/patients/vital/${id}`, requestOptionsV)
     .then(res=>{
+      setIsLoadingV(true)
       if (res.status==200){
         setIsVitAvail(true)
-        res.json()
+        return res.json()
+      }
+      else if(res.status===401){
+        navigate('/DoctorLogin')
+        console.log("gout")
       }
     })
     .then(data=>{
       setIsLoadingV(false)
       console.log(data)
-      setData(data)
+      setData(data[data.length-1])
+      console.log(data[data.length-1])
     })
   }
     },[])
@@ -69,7 +82,7 @@ const Mefu = () => {
   return (
    
     <div className='dss-contents'>
-    <div className='hij'>
+    {!isLoadingV?<div className='hij'>
     <h1 className='cry'>Vitals</h1>
     {(data && isvitalAvail)?<div className='left-sides'>
     
@@ -84,7 +97,7 @@ const Mefu = () => {
 </ul>
     </div>:<div>No available vitals</div>}
      
-    </div>
+    </div>:<div>...Loading...</div>}
     <div className='right-sides'>
     <div className='body-rights'>
       <div className='containerser'>
@@ -110,7 +123,7 @@ const Mefu = () => {
          
 
          
-         <input type='submit' id='sbtn' className='subway' value='Submit' />
+         <input type='submit' id='sbtn' className='subway' value='Submit' onClick={sendDiagnosis}/>
 
          
          </form>

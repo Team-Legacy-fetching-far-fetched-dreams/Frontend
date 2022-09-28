@@ -5,8 +5,9 @@ import DcDashNav from "./DcDashNav"
 import {motion} from 'framer-motion/dist/framer-motion'
 import AwaitingTable from '../TABLE LISTS/AwaitingTable/AwaitingTable'
 import { useParams } from 'react-router-dom'
+import { propTypes } from 'react-bootstrap/esm/Image'
 
-const AwaitingList = () => {
+const AwaitingList = (props) => {
   const [data,setData] = useState([])
   const [loading,setLoading] = useState(true);
 
@@ -23,14 +24,16 @@ const AwaitingList = () => {
 
     console.log(token)
   
-    fetch("/patients/appoint", requestOptions)
+    fetch("/patients/appoint")
       .then(res => {
         setLoading(true)
-        res.json()
+        return res.json()
       })
-      .then((resJson)=>{
-        setData(resJson)
+      .then((data)=>{
+        setData(data)
         setLoading(false)
+        console.log(data)
+        console.log("ijirbnpib")
       });
   }
   ,[])

@@ -61,30 +61,42 @@ const NurseLogin = () => {
       if (res.status===200){
          console.log("SUCCESS")
          setislogged(true)
-         return res.json()
-         
+         return res.json()  
        }
        else if(res.status === 400){
          console.log("Incorect")
          setFormErrors({incorrect: "Incorrect Passwword or Username"})
        }
+      //  res.json()
      })
      .then(data=>{
            console.log(data)
            
-           
+           console.log(islogged)
   
            if(islogged){
             setData(data)
             login(data.access_token)
             if (data.qualification === 'Doctor'){
-               navigate('/DoctorDashBoard')
+               navigate('/DoctorDashBoard',{
+                  state: {
+                    id: data.public_id
+                  }
+               })
              }
              else if (data.qualification === 'Nurse'){
-               navigate('/NurseDashBoard')
+               navigate('/NurseDashBoard',{
+                  state: {
+                    id: data.public_id
+                  }
+               })
              }
              else{
-               navigate('/AdminDashBoard')
+                  navigate('/AdminDashBoard',{
+                    state: {
+                      id: data.public_id
+                    }
+                  })
              }
            }
      })

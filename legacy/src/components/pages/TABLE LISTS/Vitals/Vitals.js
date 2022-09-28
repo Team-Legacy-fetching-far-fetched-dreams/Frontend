@@ -3,7 +3,7 @@ import './Vitals.css'
 import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/esm/Button'
 
-const Vitals = ({data}) => {
+const Vitals = ({data}, id) => {
 
     useEffect(
         ()=>{
@@ -15,11 +15,11 @@ const Vitals = ({data}) => {
         
             <h1>List of Vitals</h1>
             <div className='New1'>
-            <Link to = "/VitalsForm">
+            <Link to =  {`/VitalsForm/${id}`}>
          <Button className="btn btn-primary btn-sm" type="submit"  role="button"><span></span><span className=" p-2 ">Record Vitals</span></Button>
          </Link>
          </div>
-            <div className='VitalsC'>
+            {data?<div className='VitalsC'>
     
            <table className='table4'>
             <th>Patient_id</th>
@@ -82,7 +82,7 @@ const Vitals = ({data}) => {
                 )
             })}
             </table>
-        </div>
+        </div>:<div>List is Empty</div>}
       
     </div>
   )

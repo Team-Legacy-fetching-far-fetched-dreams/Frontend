@@ -2,14 +2,29 @@ import React from 'react'
 import './VitalsForm.css';
 
 import { useState, useEffect } from "react";
+import { useParams } from 'react-router-dom';
 
 
 
 export const VitalsForm = () => {
-  const initialValues = {temperature: "", weight: "", height:"", bloodpressure_mm:"", bloodpressure_hg:"" };
+  const initialValues = {temperature: "", weight: "", height:"", bloodpressure_mm:"", bloodpressure_Hg:"" };
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
+  const [isloading, setIsLoading] = useState(false)
+  const { id } = useParams()
+
+  const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY')
+
+  const requestOptions = {
+    method: "POST",
+    headers : {
+      'content-type': 'application/json',
+      'Authorization': `Bearer ${JSON.parse(token)}`
+    }, 
+    body : JSON.stringify(formValues)
+}
+
 
     const handleChange = (e) => {
     // console.log(e.target);
@@ -21,6 +36,17 @@ export const VitalsForm = () => {
         e.preventDefault();
         setFormErrors(validate(formValues));
         setIsSubmit(true);
+        if (Object.keys(formErrors).length === 0 && isSubmit) {
+        fetch(`/patients/vital/${id}`, requestOptions)
+        .then(res=>{
+            setIsLoading(true)
+            res.json()
+        })
+        .then(data=>{
+            console.log(data)
+            setIsLoading(false)
+        })
+    }
     };
 
     useEffect(() => {
@@ -52,10 +78,10 @@ export const VitalsForm = () => {
         }else if (values.bloodpressure_mm < 5){
             errors.bloodpressure_mm = "value for bloodpressure_mm has exceeded maximum"
         }
-        if (!values.bloodpressure_hg) {
-            errors.bloodpressure_hg = "bloodpressure_hg is required!"; 
-        }else if (values.bloodpressure_hg < 5){
-            errors.bloodpressure_hg = "value for bloodpressure_hg has exceeded maximum"
+        if (!values.bloodpressure_Hg) {
+            errors.bloodpressure_Hg = "bloodpressure_hg is required!"; 
+        }else if (values.bloodpressure_Hg < 5){
+            errors.bloodpressure_Hg = "value for bloodpressure_hg has exceeded maximum"
         }    
         return errors;
     }
@@ -94,8 +120,8 @@ export const VitalsForm = () => {
 
                     
                     <div >
-                    <input type="number" name="bloodpressure_hg" placeholder='bloodpressure_hg' value={ formValues.bloodpressure_hg} onChange={handleChange} className='eachbp'/>
-                    <h3 className="tags">{formErrors.bloodpressure_hg}</h3>
+                    <input type="number" name="bloodpressure_Hg" placeholder='bloodpressure_Hg' value={ formValues.bloodpressure_Hg} onChange={handleChange} className='eachbp'/>
+                    <h3 className="tags">{formErrors.bloodpressure_Hg}</h3>
                     </div>
 
                     </div>
@@ -110,7 +136,7 @@ export const VitalsForm = () => {
                    
                     
                     
-                    
+                    {isloading && <div>...|Loading..</div>}
                     
                     <button className='btn'>Submit</button>
                 </form>

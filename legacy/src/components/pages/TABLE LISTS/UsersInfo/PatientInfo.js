@@ -49,7 +49,7 @@ const PatientInfo = () => {
                 <div className="col-md-4">
         <div className="p-3 py-4">
             
-        <Link to = {"/AdminDashboard/Nurse"}>
+        <Link to = {`/Patient/Vitals/${id}`}>
          <Button className="btn btn-primary  btn-sm" type="submit"  role="button"><span></span><span className="p-1">View Vitals</span></Button>
          </Link>
          

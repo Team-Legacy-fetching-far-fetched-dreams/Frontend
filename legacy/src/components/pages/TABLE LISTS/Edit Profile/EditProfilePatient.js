@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 const EditProfilePatient = (data) => {
  
@@ -12,6 +12,10 @@ const EditProfilePatient = (data) => {
     const handleChange1=(e)=>{
     setOthernames(e.target.value)
     }
+useEffect(()=>{
+    
+},[])
+
   return (
 
     
