@@ -43,6 +43,13 @@ import {Link} from 'react-router-dom'
 
 
 const ListOfAllEmployees = ({data}) => {
+   if(data === 'View')
+   {
+      return {
+         background: 'rgb(145 254 159 / 47%',
+         color: 'red',
+      }
+   }
   
 
  useEffect(
