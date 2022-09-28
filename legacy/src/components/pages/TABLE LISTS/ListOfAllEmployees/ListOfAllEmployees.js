@@ -43,13 +43,6 @@ import {Link} from 'react-router-dom'
 
 
 const ListOfAllEmployees = ({data}) => {
-   if(data === 'View')
-   {
-      return {
-         background: 'rgb(145 254 159 / 47%',
-         color: 'red',
-      }
-   }
   
 
  useEffect(
@@ -78,7 +71,7 @@ const ListOfAllEmployees = ({data}) => {
          <th>Gender</th>
          <th>Qualification</th>
          <th>Surname</th>
-         <th>Action</th>
+         <th>Action </th>
          {data.map((ofAll,key) =>{
 
            return( 

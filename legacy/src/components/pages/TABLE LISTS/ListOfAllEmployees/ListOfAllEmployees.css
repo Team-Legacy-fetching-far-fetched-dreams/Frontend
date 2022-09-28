@@ -8,7 +8,7 @@
 
 }
 .table6{
-   font-family: 'poppins';
+   font-family:'Times New Roman', Times, serif;
    border-collapse: collapse;
    min-width: max-content;
     width: 75%;  
@@ -17,8 +17,8 @@
    margin: 25px 0;
    border-radius: 8px 8px 0 0;
    font-size: 0.9em; 
-   /* max-height: 30px;
-   overflow-y: scroll; */
+    max-height: 30px;
+   overflow-y: scroll; 
    box-shadow: 0 0 20px rgb(198, 194, 238);
 }
 
@@ -27,7 +27,7 @@
 .table6 tr:hover td{
    color: #cecfd7;
    cursor: pointer;
-   background-color: #1f0b69;
+   background-color: #423867;
 
 }
 
@@ -36,8 +36,8 @@
    border: none;
    padding: 7px 10px;
    border-radius: 15px;
-   background-color: rgb(39, 39, 146);
-   color: rgb(88, 177, 121);
+   background-color: rgb(234, 227, 218);
+   color: rgb(171, 168, 179);
 }
 
 .table6 td {
@@ -53,7 +53,7 @@ border: 1px solid #dddddd;
 
 .table6 th{
    background-color: #e9ecf1;
-   border: 1px solid #dddddd;
+   border: 1px solid #f9f5f5;
    text-align: center;
    padding: 1px 5px 5px 10px;
    color: rgb(15, 14, 14);
@@ -67,7 +67,7 @@ border: 1px solid #dddddd;
 
 
 .table6 tr :nth-of-type(even){
-     background-color: hsl(220, 26%, 91%);
+     background-color: hsl(220, 8%, 92%);
 } 
 
 .N6-content h1{
