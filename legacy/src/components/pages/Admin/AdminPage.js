@@ -6,7 +6,7 @@ import Admin3 from '../../../imgs/Admin3.png'
 import Admin4 from '../../../imgs/Admin4.png'
 import {motion} from 'framer-motion/dist/framer-motion'
 import Button from 'react-bootstrap/Button';
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 
 
 const className='hello' 
@@ -15,6 +15,14 @@ const className='hello'
 
 const AdminPage = () => {
 
+  // const diaa = () => {
+  //   fetch("http://127.0.0.1:5000/patients/vital/1")
+  //   .then((res)=>res.json())
+  //   .then(data=>{
+  //     console.log(data)
+  //   })
+  // }
+  const navigate = useNavigate()
   const [openMefu, setOpenMefu] = useState(false)
   
   return (
@@ -28,9 +36,7 @@ const AdminPage = () => {
         <div className = "A-h">
             <img src={Logo} alt="" className = "A-logo"></img>  
         </div>
-        <Link to="/LandingPage">
-     <Button as="sub" className="btn" id = "back-btn" >Back</Button>
-     </Link>
+     <Button as="sub" className="btn" id = "back-btn" onClick={() => navigate(-1)} >Back</Button>
         <div className='A-content'>
              <motion.h1
              initial=  'hidden' animate='visible' variants={{

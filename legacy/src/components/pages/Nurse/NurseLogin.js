@@ -1,23 +1,98 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import './NurseLogin.css'
 import Logo from '../../../imgs/logo2.png'
-import {Link} from 'react-router-dom'
+import Button from 'react-bootstrap/Button';
+import {Link, useNavigate} from 'react-router-dom'
 import wwelcomeImg from '../../../imgs/login1.png'
 import Nip from '../../../imgs/nipp.png'
+import {login, useAuth} from '../../../auth'
+import { FormSelect } from 'react-bootstrap';
+import {useForm} from 'react-hook-form'
 
 
 const NurseLogin = () => {
-const[emailval2, setemailval2] = useState("");
-const [passval2, setpassval2] = useState("");
 
-const handleSubmit = (event) => {
-   event.preventDefault();
-}
+
+// const[emailval2, setemailval2] = useState("");
+// const [passval2, setpassval2] = useState("");
+
+   const navigate = useNavigate()
+   const initialValues = {username: "", password: ""};
+   const [formValues,setFormValues] = useState( initialValues);
+   const [formErrors,setFormErrors] = useState({});
+   const [isSubmit, setIsSubmit] = useState(false);
+   const [islogged, setislogged] = useState(false);
+
+
+   const handleChange = (e) => {
+      const {name, value} = e.target;
+      setFormValues({...formValues, [name]: value});
+      setFormErrors(validate(formValues));
+   }
+
+
+   const handleSubmit = (event) => {
+      event.preventDefault();
+      setFormErrors(validate(formValues));
+      setIsSubmit(true);
+      formValues["qualification"] = "Nurse"
+      console.log(formValues)
+      // setFormValues(initialValues)
+      console.log(formErrors)
+      // setFormValues(initialValues)
+
+      // setFormErrors(validate(formValues));
+
+      const requestOptions={
+         method : "POST",
+         headers: {
+             'content-type':'application/json'
+         },
+         body:JSON.stringify(formValues)
+     }
+      if (Object.keys(formErrors).length === 0 && isSubmit){
+     fetch('/user/login', requestOptions)
+     .then((res)=>res.json())
+     .then(data=>{
+           console.log(data)
+           login(data.access_token)
+           
+  
+           if(data.access_token){
+            if (data.qualification === 'Doctor'){
+               navigate('/DoctorDashBoard')
+             }
+             else if (data.qualification === 'Nurse'){
+               navigate('/NurseDashBoard')
+             }
+             else{
+               navigate('/AdminDashBoard')
+             }
+           }
+     })
+  }
+
+      }
+   
+
+  
+  const validate = (values) => {
+   const errors = {};
+   
+   if (!values.username){
+    errors.username = "Username is required!";
+   }
+   if (!values.password){
+    errors.password = "Password is required!";
+   }
+   
+   return errors;
+ };
 
   return (
     <div className='N-m'>
     <div className='N-g'>
-       <div className = "N-h">
+       <div className = "N-h lh">
            <img src={Logo} alt="" className = "N-logo"></img>  
        </div>
        <div className='Nl-content'>
@@ -29,10 +104,12 @@ const handleSubmit = (event) => {
                   </div>
                   <form onSubmit={handleSubmit}>
                      <label for= 'emill1' >Username</label>
-                     <input className='ii' placeholder='Enter your username...' value={emailval2} onChange={(e)=>{setemailval2(e.target.value)}} type='text' id='emill1'></input>
+                     <p className='err'>{formErrors.username}</p>
+                     <input className='ii' placeholder='Enter your username...'  name='username'  onChange={handleChange} value={formValues.username}type='text' id='emill1'></input>
                      <label for='pwdd1'>Password</label>
-                     <input className='ii' placeholder='Enter your password...'  value={passval2} onChange={(e)=>{setpassval2(e.target.value)}} type='password' id='pwdd1'></input> 
-                     <button className='ll' type='submit' id='sub_butt'> <Link className='linkss' to ='/NurseDashboard'>Login</Link>  </button>
+                     <p className='err'>{formErrors.password}</p>
+                     <input className='ii' placeholder='Enter your password...'  name='password' value={formValues.password} onChange={handleChange} type='password' id='pwdd1'></input> 
+                     <button className='ll' type='submit' id='sub_butt'> Login </button>
                   </form>
 
                   <div className='footers'>
@@ -61,5 +138,6 @@ const handleSubmit = (event) => {
    </div>
   )
 }
-
-export default NurseLogin
+   export default NurseLogin
+         
+           

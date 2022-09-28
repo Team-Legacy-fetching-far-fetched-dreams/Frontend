@@ -8,6 +8,7 @@ const DcDashNav = () => {
     <div className='DcDashNav'> 
         <div className='wrapper'>
             <div className='search'>
+                {/* <input type='text' placeholder='Search...' onChange ={props.setState(e.target.value)}/> */}
                 <input type='text' placeholder='Search...'/>
             < UilSearch/>
             </div>

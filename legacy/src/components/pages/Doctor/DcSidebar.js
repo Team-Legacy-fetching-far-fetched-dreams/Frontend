@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import './DcSidebar.css'
 import Logo from '../../../imgs/logo2.png'
 // import {SidebarData} from "../Data/Data";
-import {UilSignOutAlt, UilEstate, UilAccessibleIconAlt } from '@iconscout/react-unicons'
+import {UilSignOutAlt, UilEstate, UilAccessibleIconAlt, UilStethoscopeAlt } from '@iconscout/react-unicons'
 import {Link} from 'react-router-dom'
 
 const DcSidebar = () => {
@@ -27,12 +27,18 @@ const DcSidebar = () => {
             <UilAccessibleIconAlt className="icon"/>
               <span>Patient</span>
             </Link>
-            </li> 
+            </li>
             <li>
               <Link to = '/LandingPage'>
             <UilSignOutAlt className="icon"/>
               <span>Logout</span>
               </Link>
+            </li>
+            <li>
+            <Link to ='/DoctorDashboard/AwaitingList'>
+            <UilStethoscopeAlt className="icon"/>
+              <span>Awaiting List</span>
+            </Link>
             </li>
            
           </ul>

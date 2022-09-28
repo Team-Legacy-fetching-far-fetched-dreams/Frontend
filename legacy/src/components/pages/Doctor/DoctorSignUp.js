@@ -5,7 +5,29 @@ import registerImg from '../../../imgs/415.jpg'
 import {Link} from 'react-router-dom'
 
 const DoctorSignUp = () => {
+ 
 
+  // const {register, handleSubmit} = useForm();
+  // const signUp=(data)=>{
+  //   data["qualification"] = "Doctor"
+  //   //e.preventDefault();
+  //   console.log(data)
+
+  //   const requestOptions ={
+  //     method : "POST",
+  //     headers : {
+  //       'content-type' : 'application/json'
+  //     },
+  //       body:JSON.stringify(data)
+  //   }
+
+  //   fetch("http://127.0.0.1:5000/user/signup", requestOptions)
+  //     .then((res)=>res.json())
+  //     .then(data=>{
+  //       console.log(data)
+  //     })
+
+  // }
   const initialValues = {surname: "", other_name: "", email: "", birth_date: "", address: "", contact1: "", contact2: "", gender: ""};
   const [formValues,setFormValues] = useState( initialValues);
   const [formErrors,setFormErrors] = useState({});
@@ -17,10 +39,8 @@ const DoctorSignUp = () => {
  // }
 
   const handleChange = (e) => {
-      console.log(e.target);
       const {name, value} = e.target;
       setFormValues({...formValues, [name]: value});
-      console.log(formValues);
   };
 
  
@@ -28,14 +48,21 @@ const DoctorSignUp = () => {
     e.preventDefault();
     setFormErrors(validate(formValues));
     setIsSubmit(true);
-    console.log(e.target);
-    const {name, value} = e.target;
-    setFormValues({...formValues, [name]: value});
-    console.log(formValues);
+    formValues["qualification"] = "Doctor"
+    console.log(formValues)
+    
+    
+    
+        
+      
+    // console.log(e.target);
+    // const {name, value} = e.target;
+    // setFormValues({...formValues, [name]: value});
+    // console.log(formValues);
   };
 
   useEffect(() => {
-       console.log(formErrors);
+      //  console.log(formErrors);
        if (Object.keys(formErrors).length === 0 && isSubmit){
         console.log(formValues);
        }
@@ -49,7 +76,7 @@ const DoctorSignUp = () => {
   // const [phone,setphone]=useState('');
   // const [gender,setgender]=useState('');
 
-const validate = (values) => {
+  const validate = (values) => {
        const errors = {};
        const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
        if (!values.surname){

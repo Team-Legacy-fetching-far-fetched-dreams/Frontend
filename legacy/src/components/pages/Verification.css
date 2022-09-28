@@ -35,6 +35,8 @@ align-items: center;
   color: var(--blue)
 }
 
+
+
   .container{
     margin-top: 50px;
   }
@@ -42,6 +44,7 @@ align-items: center;
 .container h1{
   margin-top: 20px;
   font-weight:bold;
+  text-align: center;
 }
   
 
@@ -52,16 +55,16 @@ align-items: center;
    
     }
 
-    .pic_div{
+    /* .pic_div{
       display: flex;
       position: relative;
-    }
+    } */
 
 .Secure{
  /* look for a display or position to make the picture constant irrespective the items on the page*/
  position: absolute;
- left: 80px;
- top: 0px;
+ left: 250px;
+ top: 250px;
   height: 30vh;      
 }    
 
@@ -74,10 +77,11 @@ align-items: center;
   } */
 }
 
-.form{
+/* .form{
 display: grid;
 grid-template-columns: 400px 300px;
-}
+
+} */
 
 #btn{
   border-radius: 100px;

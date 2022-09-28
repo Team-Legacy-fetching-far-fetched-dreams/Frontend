@@ -1,11 +1,8 @@
 import React from 'react'
-import './MainDash.css'
-
 const MainDash = () => {
   return (
     <div className=''>
       <h1>Dashboard</h1>
-
     </div>
   )
 }

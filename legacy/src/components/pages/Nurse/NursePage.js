@@ -5,19 +5,18 @@ import Nurse2 from '../../../imgs/Nurse2.png'
 import Nurse3 from '../../../imgs/Nurse3.png'
 import Nurse4 from '../../../imgs/Nurse4.png'
 import Button from 'react-bootstrap/Button';
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import {motion} from 'framer-motion/dist/framer-motion'
 
 const NursePage = () => {
+  const navigate = useNavigate()
   return (
     <div className='N-m'>
     <div className='N-g'>
        <div className = "N-h">
            <img src={Logo} alt="" className = "N-logo"></img>  
        </div>
-       <Link to="/LandingPage">
-     <Button as="sub" className="btn" id = "back-btn" >Back</Button>
-     </Link>
+     <Button as="sub" className="btn" id = "back-btn" onClick={() => navigate(-1)} >Back</Button>
        <div className='N-content'>
             <motion.h1
              initial=  'hidden' animate='visible' variants={{

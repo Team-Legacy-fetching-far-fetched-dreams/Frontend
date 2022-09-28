@@ -1,68 +1,110 @@
 import React, {useState, useEffect} from 'react'
 import './NurseSignUp.css'
 import Logo from '../../../imgs/logo2.png'
-import {Link} from 'react-router-dom'
+import {Link, useLocation} from 'react-router-dom'
 import registerImgs from '../../../imgs/nursesignup.jpg'
 
 const NurseSignUp = () => {
-
- 
   const initialValues = {surname: "", other_name: "", email: "", birth_date: "", address: "", contact1: "", contact2: "", gender: ""};
   const [formValues,setFormValues] = useState( initialValues);
   const [formErrors,setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
+  const [isloading, setIsLoading] = useState(false);
+  const [isSuccess, setIsSucces] = useState(false)
+  const location = useLocation()
 
-  
   const handleChange = (e) => {
-    console.log(e.target);
     const {name, value} = e.target;
-    setFormValues({...formValues, [name]: value});
-    console.log(formValues);
-};
+    setFormValues({...formValues, [name]: value})
+  }
 
 
-const handleSubmit = (e) => {
-  e.preventDefault();
-  setFormErrors(validate(formValues));
-  setIsSubmit(true);
-};
+   const handleSubmit=(e)=>{
+      
+      e.preventDefault();
+      setFormErrors(validate(formValues));
+      setIsSubmit(true);
+      formValues["qualification"] = "Nurse"
+      console.log(formValues)
+    }
 
-useEffect(() => {
-     console.log(formErrors);
-     if (Object.keys(formErrors).length === 0 && isSubmit){
-      console.log(formValues);
-     }
-},[formErrors])
+    useEffect(() => {
+      //  console.log(formErrors);
+       if (Object.keys(formErrors).length === 0 && isSubmit){
+        setIsLoading(true)
+        console.log(formValues);
 
-const validate = (values) => {
-  const errors = {};
-  const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  if (!values.surname){
-   errors.surname = "Surname is required!";
-  }
-  if (!values.other_name){
-   errors.other_name = "Another name other than Surname is required!";
-  }
-  if (!values.birth_date){
-   errors.birth_date = "Date of birth is required!";
-  }
-  if (!values.email){
-   errors.email = "Email is required!";
-  } else if (!regex.test(values.email)){
-   errors.email = "Invalid email!";
-  }
-  if (!values.contact1){
-   errors.contact1 = "Contacts is required!";
-  }
-  if (!values.gender){
-   errors.gender = "Please state your gender!";
-  }
-  if (!values.address){
-   errors.address = "Please state your address!";
-  }
-  return errors;
-};
+
+        const requestOptions ={
+          method : "POST",
+          headers : {
+            'content-type' : 'application/json'
+          },
+            body: JSON.stringify(formValues)
+        }
+
+        if (Object.values(formErrors).length === 0){
+          fetch("/user/signup", requestOptions)
+          .then((res)=>{
+            setIsLoading(false)
+            if (res.status===200){
+              console.log("SUCCESS")
+              setIsSucces(true)
+              return res.json()
+              
+            }
+            else if(res.status === 409){
+              console.log("CONFLICT")
+              setFormErrors({email: "Email already exist"})
+            }
+            })
+          .then(data=>{
+            console.log(data)
+            console.log(location)
+          })
+        }
+       }
+  },[formErrors])
   
+    // const [email,setemail]=useState('');
+    // const[Fusername, setFusername]=useState('');
+    // const [Susername,setSusername]=useState('');
+    // const [bd,setbd]=useState('');
+    // const [age,setage]=useState('');
+    // const [address,setaddress]=useState('');
+    // const [phone,setphone]=useState('');
+    // const [gender,setgender]=useState('');
+
+    const validate = (values) => {
+      const errors = {};
+      const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      if (!values.surname){
+       errors.surname = "Surname is required!";
+      }
+      if (!values.other_name){
+       errors.other_name = "Another name other than Surname is required!";
+      }
+      if (!values.birth_date){
+       errors.birth_date = "Date of birth is required!";
+      }
+      if (!values.email){
+       errors.email = "Email is required!";
+      } else if (!regex.test(values.email)){
+       errors.email = "Invalid email!";
+      }
+      if (!values.contact1){
+       errors.contact1 = "Contacts is required!";
+      }
+      if (!values.gender){
+       errors.gender = "Please state your gender!";
+      }
+      if (!values.address){
+       errors.address = "Please state your address!";
+      }
+      return errors;
+};
+
+
   return (
     <div className='dss-contents'>
    
@@ -128,8 +170,9 @@ const validate = (values) => {
         </form>
 
      </div>
-
+     {isloading && <div>...LAODING...</div>}
    </div>
+   {isSuccess && <div>Please Chek your eamil for your login Credentials</div>}
    </div>
 
 

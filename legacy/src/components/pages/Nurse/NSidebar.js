@@ -5,7 +5,7 @@ import Logo from '../../../imgs/logo2.png'
 import {UilSignOutAlt, UilEstate, UilUserMd , UilAccessibleIconAlt } from '@iconscout/react-unicons'
 import {Link} from 'react-router-dom'
 
-const NSidebar = () => {
+const NSidebar = (props) => {
 
 
 
@@ -18,7 +18,7 @@ const NSidebar = () => {
       
           <ul>
             <li>
-            <Link to ='/NurseDashBoard'>
+            <Link to ='/NurseDashBoard' onClick={()=>props.setUrl({url:"/NurseDashboard"})}>
               <UilEstate className="icon"/>
               <span>Dashboard</span>
               </Link>

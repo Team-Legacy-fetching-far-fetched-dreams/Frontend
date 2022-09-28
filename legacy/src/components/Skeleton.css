@@ -1,0 +1,82 @@
+.Sidebarsk {
+    flex: 1;
+    animation: skeleton 1s ease infinite alternate;
+  }
+  
+  @keyframes skeleton {
+    to {
+      opacity: 0.5;
+    }
+  }
+  
+  .lsk {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    
+  }
+
+  .lskimg{
+    background-color: hsl(200,20%,70%);
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+  }
+  
+  .menusk {
+    padding-left: 10px;
+  }
+
+  .menusk li{
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    margin-top: 30px;
+    border-radius : 0.7rem;
+    height: 32.61px;
+    width: 175px;
+    background-color: hsl(200,20%,70%);
+}
+
+.menusk li:nth-child(5){
+    position: absolute;
+    bottom: 2.3rem;
+}
+  
+  .bottomsk {
+    display: flex;
+    position: absolute;
+    bottom: 4.3rem;
+    align-items: center;
+    margin: 10px;
+  }
+  
+  .colorOptionsk{
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    margin: 5px;
+    background-color: hsl(200,20%,70%);
+}
+
+.AdDashNavsk{
+    height:50px;
+    display: flex;
+    align-items: center;
+    margin-top:10px; 
+}
+
+.itemsk{
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    position: relative;
+    background-color: hsl(200,20%,70%);
+}
+.avatarsk{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: hsl(200,20%,70%);
+}
