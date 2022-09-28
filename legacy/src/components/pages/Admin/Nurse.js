@@ -4,8 +4,34 @@ import Sidebar from './Sidebar'
 import AdDashNav from "./AdDashNav"
 import Clock from '../Clock'
 import {motion} from 'framer-motion/dist/framer-motion'
+import ListOfAllEmployees from '../TABLE LISTS/ListOfAllEmployees/ListOfAllEmployees'
 
 const Nurse = () => {
+  const data = [{
+    patient_Id : '1',
+    surname : "Baissie",
+    other_names : "Francis",
+    gender: "Male"
+  },
+  {
+    patient_Id : '1',
+    surname : "Baissie",
+    other_names : "Francis",
+    gender: "Male"
+  },
+  {
+    patient_Id : '1',
+    surname : "Baissie",
+    other_names : "Francis",
+    gender: "Male"
+  },
+  {
+    patient_Id : '1',
+    surname : "Baissie",
+    other_names : "Francis",
+    gender: "Male"
+  }
+  ]
   return (
     <motion.div className='N-d-m'
     initial={{opacity: 0}}

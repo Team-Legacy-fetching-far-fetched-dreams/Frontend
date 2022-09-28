@@ -4,8 +4,35 @@ import DcSidebar from './DcSidebar'
 import DcDashNav from "./DcDashNav"
 import Clock from '../Clock'
 import {motion} from 'framer-motion/dist/framer-motion'
+import ListOfRegPatients from '../TABLE LISTS/Patient/ListOfRegPatients'
 
 const DPatient = () => {
+
+  const data = [{
+    patient_Id : '1',
+    surname : "Baissie",
+    other_names : "Francis",
+    gender: "Male"
+  },
+  {
+    patient_Id : '1',
+    surname : "Baissie",
+    other_names : "Francis",
+    gender: "Male"
+  },
+  {
+    patient_Id : '1',
+    surname : "Baissie",
+    other_names : "Francis",
+    gender: "Male"
+  },
+  {
+    patient_Id : '1',
+    surname : "Baissie",
+    other_names : "Francis",
+    gender: "Male"
+  }
+  ]
   return (
     <motion.div className='D-d-m'
     initial={{opacity: 0}}

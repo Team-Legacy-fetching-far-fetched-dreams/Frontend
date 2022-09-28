@@ -6,7 +6,6 @@ import NDashNav from "./NDashNav"
 import NWidget from './NWidget'
 import Clock from '../Clock'
 import {Link} from 'react-router-dom'
-import Table2 from './Table2/Table2'
 import RightSide from './RightSide/RightSide'
 
 
