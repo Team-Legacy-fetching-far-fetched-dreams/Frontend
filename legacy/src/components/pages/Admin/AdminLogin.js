@@ -199,7 +199,7 @@ const validate = (values) => {
              
               </div>
               <div className='welcomeImg'>
-                {/* <img src={welcomes} id='wel-img-id' alt='' srcSet='' /> */}
+                <img src={welcomes} id='wel-img-id' alt='' srcSet='' />
               </div>
             </div>
 

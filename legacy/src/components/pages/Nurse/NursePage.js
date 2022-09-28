@@ -43,12 +43,8 @@ const NursePage = () => {
           <img src={Nurse3} alt="" className = "N-image3"></img>  
           <img src={Nurse4} alt="" className = "N-image4"></img>
       <div className='sl-btn'>
-        <Link to ="/NurseSignUp">
-          <Button className='N-signup' active>SignUp</Button>
-          </Link>
-          <Link to ="/NurseLogin">
-             <Button className='N-login' active>Login</Button>
-          </Link>
+        <Link to ="/NurseSignUp" className='btn btn-success'>SignUp</Link>
+          <Link to ="/NurseLogin" className='btn btn-primary N-login'>Login</Link>
        </div>
        </div>
     </div>

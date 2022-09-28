@@ -46,12 +46,8 @@ const DoctorPage = () => {
           </p>
 
       <div className='sl-btn'>
-        <Link to ="/DoctorSignUp">
-          <Button className='d-signup' active>SignUp</Button>
-          </Link>
-          <Link to ="/DoctorLogin">
-             <Button className='d-login' active>Login</Button>
-          </Link>
+        <Link to ="/DoctorSignUp" className='btn btn-success'>SignUp</Link>
+          <Link to ="/DoctorLogin" className='btn btn-primary d-login'>Login</Link>
           <Link to ="/Hello">
              <Button className='d-login' active>Login</Button>
           </Link>
