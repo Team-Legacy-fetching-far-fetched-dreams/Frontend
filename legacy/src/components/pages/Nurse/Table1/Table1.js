@@ -17,6 +17,7 @@ const rows = [
   createData("Dr.Koah ", 11112, "2 september 2022", "Offline"),
   createData("Dr.Larbi", 11113, "2 september 2022", "Active"),
   createData("Dr.Francis", 11114, "2 september 2022", "Unavailable"),
+  createData('dr.kkkk', )
 ];
 
 
@@ -51,7 +52,7 @@ export default function BasicTable() {
           component={Paper}
           style={{ boxShadow: "0px 13px 20px 0px #80808029" }}
         >
-          <Table1 sx={{ minWidth: 65 }} aria-label="simple table">
+          <Table1 sx={{ minWidth: 650 }} aria-label="simple table">
             <TableHead>
               <TableRow>
                 <TableCell>Staff</TableCell>
