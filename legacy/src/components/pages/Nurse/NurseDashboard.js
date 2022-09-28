@@ -8,11 +8,13 @@ import Calendar from 'react-calendar';
 import Clock from '../Clock'
 import {Link} from 'react-router-dom'
 import 'react-calendar/dist/Calendar.css'
+import Skeleton from '../../Skeleton'
 
 const NurseDashboard = () => {
   const [value, onChange] = useState(new Date());
+  const [isloading, setIsLoading] = useState(true)
  
-  return (
+  return (isloading?<Skeleton type="sidebar"/> :
     // <div className='N-m'>
     // <div className='N-g'>
     //  </div>

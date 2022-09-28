@@ -64,7 +64,26 @@
     height:50px;
     display: flex;
     align-items: center;
-    margin-top:10px; 
+    margin-top:10px;
+    animation: skeleton 1s ease infinite alternate; 
+}
+
+.searchsk {
+    display: flex;
+    align-items: center;
+    border-radius: 50px ;
+    border: 0.5px solid lightgray;
+    padding:3px;
+    width: 200px;
+    height: 30px;
+    background-color: hsl(200,20%,70%)
+}
+
+.navsk{
+    width: 70px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: hsl(200,20%,70%);
 }
 
 .itemsk{
@@ -72,11 +91,44 @@
     align-items: center;
     margin-right: 20px;
     position: relative;
-    background-color: hsl(200,20%,70%);
 }
 .avatarsk{
     width: 30px;
     height: 30px;
     border-radius: 50%;
     background-color: hsl(200,20%,70%);
+}
+
+.widgetsk{
+    display: flex;
+    width: 250px;
+    padding: 10px;
+    border-radius: 10px;
+    height: 100px;
+    background-color: hsl(200,20%,70%);
+    animation: skeleton 1s ease infinite alternate; 
+ }
+
+.calsk{
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    width: 250px;
+    height: 270px;
+    background-color: hsl(200,20%,70%);
+    animation: skeleton 1s ease infinite alternate; 
+}
+
+.clksk{
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    position: absolute;
+    top: 80%;
+    right: -30px;
+    transform: translate(-50%, -50%);
+    background-color: hsl(200,20%,70%);
+    animation: skeleton 1s ease infinite alternate;
 }

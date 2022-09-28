@@ -24,13 +24,10 @@ export default function Skeleton({ type }) {
         <div className='Dashboardcontainer'>
         <div className='AdDashNavsk'> 
         <div className='wrapper'>
-            <div className='search'>
-                <input type='text' placeholder='Search...'/>
-            </div>
+            <div className='searchsk'></div>
             <div className='items'>
-                <div className='item'>
-                   
-                 English
+                <div className='itemsk'>
+                <div className="navsk"></div>
                 </div>
                 <div className='item'>
                     
@@ -40,12 +37,39 @@ export default function Skeleton({ type }) {
                 <div className="avatarsk"></div>
                 </div>
             </div>
-
         </div>
     </div> 
         <div className='widgets'>
-         
+        <div className='widgetsk'>
+        <div className='left'>
+          <span className='title'></span>
+          <span className='link'></span>
         </div>
+        <div className='right'>
+          <div className=''></div>
+        </div>
+    </div>
+    <div className='widgetsk'>
+        <div className='left'>
+          <span className='title'></span>
+          <span className='link'></span>
+        </div>
+        <div className='right'>
+          <div className=''></div>
+        </div>
+    </div>
+    <div className='widgetsk'>
+        <div className='left'>
+          <span className='title'></span>
+          <span className='link'></span>
+        </div>
+        <div className='right'>
+          <div className=''></div>
+        </div>
+    </div>
+        </div>
+        <div className="calsk"></div>
+        <div className="clksk"></div>
         <div>
         </div>
         </div>

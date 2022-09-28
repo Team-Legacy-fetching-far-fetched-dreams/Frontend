@@ -11,6 +11,7 @@ import DcWidget from './DcWidget'
 import Clock from '../Clock'
 import rendrIfo from './renderInfo'
 import { logout } from '../../../auth'
+import Skeleton from '../../Skeleton'
 import DoctorLogin from './DoctorLogin'
 import 'react-calendar/dist/Calendar.css'
 
@@ -18,6 +19,7 @@ const DoctorDashboard=()=>{
   const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY');
   const [state, setState] = useState([0,0])
   const [value, onChange] = useState(new Date());
+  const [isloading, setIsLoading] = useState(true)
   
   useEffect(() => {
     const requestOptions = {
@@ -62,7 +64,7 @@ const DoctorDashboard=()=>{
     
 
 }, []);
-  return (
+  return (isloading?<Skeleton type="sidebar"/> :
     <motion.div className='D-d-m'
     initial={{opacity: 0}}
     animate={{opacity: 1}}
