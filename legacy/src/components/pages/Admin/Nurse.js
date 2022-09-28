@@ -3,7 +3,6 @@ import './AdminDashboard.css'
 import Sidebar from './Sidebar'
 import AdDashNav from "./AdDashNav"
 import ListOfSpecEmployee from '../TABLE LISTS/ListOfDoctors/ListOfSpecEmployee'
-import Clock from '../Clock'
 import {motion} from 'framer-motion/dist/framer-motion'
 import {Link} from 'react-router-dom'
 
@@ -60,9 +59,6 @@ class Nurse extends Component {
             </div>
         {this.state.data ? <ListOfSpecEmployee data={this.state.data} />:<div>loading</div>}
         </div>
-        </div>
-        <div>
-          <Clock />
         </div>
         {/* <MainDash/> */}
       </div>

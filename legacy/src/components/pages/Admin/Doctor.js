@@ -6,8 +6,6 @@ import ListOfSpecEmployee from '../TABLE LISTS/ListOfDoctors/ListOfSpecEmployee'
 import AdminLogin from './AdminLogin'
 import { logout } from '../../../auth'
 import {Link} from 'react-router-dom'
-import Clock from '../Clock'
-import Calendar from 'react-calendar';
 import {motion} from 'framer-motion/dist/framer-motion'
 
 
@@ -76,9 +74,6 @@ class Doctor extends Component {
           {this.state.data ? <ListOfSpecEmployee data={this.state.data}/>:<div>loading</div>}
         </div>
 
-        </div>
-        <div>
-          <Clock />
         </div>
         {/* <MainDash/> */}
       </div>
