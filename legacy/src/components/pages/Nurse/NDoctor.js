@@ -5,7 +5,7 @@ import Clock from '../Clock'
 import NSidebar from '../../../components/pages/Nurse/NSidebar'
 import NDashNav from "./NDashNav"
 import NWidget3 from './NWidget3'
-import ListOfAllEmployees from './'
+import Table1 from './Table1/Table1'
 
 
 
