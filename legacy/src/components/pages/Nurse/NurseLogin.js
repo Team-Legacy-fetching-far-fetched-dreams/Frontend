@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import './NurseLogin.css'
 import Logo from '../../../imgs/logo2.png'
 import Button from 'react-bootstrap/Button';
-import {Link, useNavigate} from 'react-router-dom'
+import {Link, useNavigate, useLocation} from 'react-router-dom'
 import wwelcomeImg from '../../../imgs/login1.png'
 import Nip from '../../../imgs/nipp.png'
 import {login, useAuth} from '../../../auth'
@@ -17,13 +17,14 @@ const NurseLogin = () => {
 // const [passval2, setpassval2] = useState("");
 
    const navigate = useNavigate()
-   const initialValues = {username: "", password: ""};
+   const initialValues = {username: "", password: "", incorrect:""};
    const [formValues,setFormValues] = useState( initialValues);
    const [formErrors,setFormErrors] = useState({});
    const [isSubmit, setIsSubmit] = useState(false);
    const [isloading, setIsLoading] = useState(false);
    const [islogged, setislogged] = useState(false);
    const [data, setData] = useState()
+   const location = useLocation()
 
 
    const handleChange = (e) => {
@@ -52,7 +53,7 @@ const NurseLogin = () => {
          },
          body:JSON.stringify(formValues)
      }
-      if (Object.keys(formErrors).length === 0 && isSubmit){
+      if (Object.keys(formErrors).length === 0){
          setIsLoading(true)
      fetch('/user/login', requestOptions)
      
@@ -70,11 +71,9 @@ const NurseLogin = () => {
       //  res.json()
      })
      .then(data=>{
-           console.log(data)
-           
+         if(data){
+           console.log(data) 
            console.log(islogged)
-  
-           if(islogged){
             setData(data)
             login(data.access_token)
             if (data.qualification === 'Doctor'){
@@ -125,6 +124,7 @@ const NurseLogin = () => {
        <div className = "N-h">
            <img src={Logo} alt="" className = "N-logo"></img>  
        </div>
+       {location.state && <div>{location.state.message}</div>}
        <div className='Nl-content'>
             <div className='login-coverpage'>
                <div className='left-side'>

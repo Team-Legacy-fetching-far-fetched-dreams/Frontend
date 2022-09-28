@@ -55,7 +55,7 @@ const  [state, setState] = useState()
     exit={{opacity: 0}}
     >
     <div className='N-d-g'>
-    <NSidebar setUrl={this.setState}/>
+    <NSidebar />
         <div className='Dashboardcontainer'>
         <NDashNav />
         <div className=''>

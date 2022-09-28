@@ -3,7 +3,7 @@ import './DoctorLogin.css'
 import Logo from '../../../imgs/logo2.png'
 import Nip from '../../../imgs/nipp.png'
 import Button from 'react-bootstrap/Button';
-import {Link, useNavigate} from 'react-router-dom'
+import {Link, useNavigate, useLocation} from 'react-router-dom'
 import welcomeimg from '../../../imgs/wel2.jpg' 
 import {useForm} from 'react-hook-form'
 import {login, useAuth} from '../../../auth'
@@ -18,6 +18,7 @@ const DoctorLogin = () => {
   const [islogged, setislogged] = useState(false);
   const [isloading, setIsLoading] = useState(false);
   const [data, setData] = useState()
+  const location = useLocation()
 
 
 
@@ -44,7 +45,7 @@ const handleSubmit = (e) => {
     body:JSON.stringify(formValues)
 }
 
-if (Object.keys(formErrors).length === 0 && isSubmit){
+if (Object.keys(formErrors).length === 0){
   setIsLoading(true)
   fetch('/user/login', requestOptions)
     .then((res)=>{
@@ -61,10 +62,8 @@ if (Object.keys(formErrors).length === 0 && isSubmit){
       }
     })
 .then(data=>{
+    if(data){
     console.log(data)
-    
-
-    if(islogged){
       setData(data)
       login(data.access_token)
       if (data.qualification === 'Doctor'){

@@ -16,6 +16,7 @@ const ListOfSpecEmployee = ({data}) => {
  
    const location = useLocation()
    const [user,setUser] = useState()
+   const [isAuth, setAuth] = useState(false)
    const navigate = useNavigate()
    // const [loc,setLoc] = useState()
    const handleSubmit = () =>{
@@ -33,6 +34,7 @@ const ListOfSpecEmployee = ({data}) => {
    
  useEffect(
     ()=>{
+
       const DeleteUser = (e) =>{
          console.log(e)
          console.log(e)
@@ -42,6 +44,7 @@ const ListOfSpecEmployee = ({data}) => {
        console.log(data)
       console.log(location.pathname.split("/")[location.pathname.split("/").length -1])
       let loc = location.pathname.split("/")[location.pathname.split("/").length -1]
+      // let access =  location.pathname.split("/")[1]
       // seLoc(location.pathname)
       console.log(loc)
 
@@ -58,7 +61,10 @@ const ListOfSpecEmployee = ({data}) => {
          setUser("ADMINS")
         
       }
-       
+      
+      // if (access==="AdminDashboard"){
+      //    setAuth(true)
+      // }
 
        
  },[]
@@ -159,7 +165,7 @@ const ListOfSpecEmployee = ({data}) => {
 <Link to = {`/Profile/Users/${employ.public_id}`}>
    <input className='p-1 m-2' type="submit" value="view" />
 </Link>
-   <input type="submit" value = "DELETE" />
+   {isAuth && <input type="submit" value = "DELETE" />}
  </td>
             
 

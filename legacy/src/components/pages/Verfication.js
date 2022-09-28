@@ -80,7 +80,7 @@ const body={
     console.log(data)
 
 
-    fetch('http://localhost:5000/hms/verification', requestOptions)
+    fetch('/hms/verification', requestOptions)
     .then((res)=>res.json())
     .then(data=>{
       console.log(data)

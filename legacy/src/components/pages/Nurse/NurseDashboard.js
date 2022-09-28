@@ -6,7 +6,7 @@ import NDashNav from "./NDashNav"
 import NWidget from './NWidget'
 import Clock from '../Clock'
 import {Link, useNavigate, useLocation} from 'react-router-dom'
-import { logout } from '../../../auth'
+import { logout, useAuth } from '../../../auth'
 
 
 
@@ -17,6 +17,7 @@ const NurseDashboard = () => {
   const [isloading, setIsLoading] = useState(true)
   const navigate = useNavigate()
   const location = useLocation()
+  const { logged } = useAuth()
  
   const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY');
    
@@ -37,14 +38,14 @@ const NurseDashboard = () => {
    
  
  
- useEffect(() => {
+
  
    console.log(location)
    // if(location.state.id===undefined){
    //   setId(location.state.id)
    //   console('hello')
    // }
-   if(token){
+   if(logged && location.state){
    fetch(`/user/user/${location.state.id}`, requestOptions)
      .then(res => 
        {
@@ -71,7 +72,7 @@ const NurseDashboard = () => {
      navigate('/NurseLogin')
    }
    console.log(data)
- },[])
+
      
  
   return (

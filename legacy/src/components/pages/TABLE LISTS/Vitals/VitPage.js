@@ -49,7 +49,7 @@ const VitPage = () =>{
         <NDashNav/>
         <div className=''>
         <div>
-         {isLoading ? <div>...LOADING...</div>:<Vitals data = {data}/>}
+         {isLoading ? <div>...LOADING...</div>:<Vitals data = {data} id={id}/>}
       </div>
         </div>
         </div>

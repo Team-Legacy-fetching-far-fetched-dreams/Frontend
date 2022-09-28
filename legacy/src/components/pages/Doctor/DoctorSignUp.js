@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import './DoctorSignUp.css'
 import Logo from '../../../imgs/logo2.png'
 import registerImg from '../../../imgs/415.jpg'
-import {Link, useLocation} from 'react-router-dom'
+import {Link, useLocation, useNavigate} from 'react-router-dom'
 
 const DoctorSignUp = () => {
 
@@ -35,6 +35,7 @@ const DoctorSignUp = () => {
   const [isloading, setIsLoading] = useState(false);
   const [isSuccess, setIsSucces] = useState(false)
   const location = useLocation()
+  const navigate = useNavigate()
  // const {register, handleSubmit} = useForm();
  // const signUp=(data)=>{
     //e.preventDefault();
@@ -62,11 +63,8 @@ const DoctorSignUp = () => {
     // const {name, value} = e.target;
     // setFormValues({...formValues, [name]: value});
     // console.log(formValues);
-  };
-
-  useEffect(() => {
       //  console.log(formErrors);
-       if (Object.keys(formErrors).length === 0 && isSubmit){
+       if (Object.keys(formErrors).length === 0 ){
         setIsLoading(true)
         console.log(formValues);
        
@@ -97,10 +95,15 @@ const DoctorSignUp = () => {
         .then(data=>{
           console.log(data)
           console.log(location)
+          navigate("/DoctorLogin",{
+            state:{
+              message:"Please Check your email for your login Credentials"
+          }
+        })
         })
       }
     }
-  },[formErrors])
+  }
   // const [email,setemail]=useState('');
   // const[Fusername, setFusername]=useState('');
   // const [Susername,setSusername]=useState('');
@@ -199,16 +202,16 @@ const DoctorSignUp = () => {
          <input className='nm inputs'  type='text'  name='gender' placeholder='Male/Female' id='gender' onChange={handleChange} value= {formValues.gender} />
          </div>
          <p className='lon'>{formErrors.gender}</p>
-
+         {isloading && <div>...LAODING...</div>}
        
         <input type='submit' onClick="validation();"  id='klo' className='submay' value='Submit' />
       
         </form>
 
      </div>
-     {isloading && <div>...LAODING...</div>}
+     
    </div>
-   {isSuccess && <div>Please Chek your eamil for your login Credentials</div>}
+
    </div>
 
 

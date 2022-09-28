@@ -6,7 +6,7 @@ import AdDashNav from "./AdDashNav"
 import Widget from './Widget'
 import {motion} from 'framer-motion/dist/framer-motion'
 import {Link, useLocation, useNavigate} from 'react-router-dom'
-import { logout,} from '../../../auth'
+import { logout, useAuth} from '../../../auth'
 import AdminLogin from './AdminLogin'
 
 const AdminDashboard=() => {
@@ -15,6 +15,7 @@ const AdminDashboard=() => {
  const [isloading, setIsLoading] = useState(true)
  const navigate = useNavigate()
  const location = useLocation()
+//  const [logged] = useAuth()
 
  const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY');
   
@@ -35,14 +36,16 @@ const AdminDashboard=() => {
   
 
 
-useEffect(() => {
 
+
+  const [logged] = useAuth()
   console.log(location)
   // if(location.state.id===undefined){
   //   setId(location.state.id)
   //   console('hello')
   // }
-  if(token){
+  useEffect(()=>{
+  if(location.state){
   fetch(`/user/user/${location.state.id}`, requestOptions)
     .then(res => 
       {
@@ -65,13 +68,15 @@ useEffect(() => {
       
     })
 
-  }else{
+  }
+  else{
     navigate('/AdminLogin')
   }
   console.log(data)
-},[])
+  console.log("ouh")
+
     
-  
+}, [])
 
   
 

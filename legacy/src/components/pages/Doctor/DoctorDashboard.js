@@ -9,7 +9,7 @@ import DcWidget from './DcWidget'
 import Clock from '../Clock'
 import {Link, useLocation, useNavigate} from 'react-router-dom'
 import rendrIfo from './renderInfo'
-import { logout } from '../../../auth'
+import { logout, useAuth } from '../../../auth'
 import DoctorLogin from './DoctorLogin'
 
 const DoctorDashboard=()=>{
@@ -20,8 +20,8 @@ const DoctorDashboard=()=>{
   const navigate = useNavigate()
   const location = useLocation()
 
+  const [logged] = useAuth()
   
-  useEffect(() => {
     const requestOptions = {
     method: "GET",
     headers : {
@@ -37,7 +37,7 @@ const DoctorDashboard=()=>{
 
 
   console.log(token)
-  if (token){
+  if(logged && location.state){
   fetch(`/user/user/${location.state.id}`, requestOptions)
     .then(res =>
       {
@@ -63,13 +63,13 @@ const DoctorDashboard=()=>{
     })
     
   }else{
-    navigate('/AdminLogin')
+    navigate('/DoctorLogin')
   }
     
     // console.log(state)
     
 
-}, []);
+
   return (isloading?<div className='offers'>...LOADING...</div>:
     <motion.div className='D-d-m'
     initial={{opacity: 0}}

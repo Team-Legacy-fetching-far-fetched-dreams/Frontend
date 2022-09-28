@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import './AdminLogin.css'
 import Logo from '../../../imgs/logo2.png'
 // import Button from 'react-bootstrap/Button';
-import {Link, useNavigate} from 'react-router-dom'
+import {Link, useNavigate, useParams, useLocation} from 'react-router-dom'
 import {motion} from 'framer-motion/dist/framer-motion'
 // import {useForm} from 'react-hook-form'
 import {login} from '../../../auth'
@@ -34,6 +34,7 @@ const AdminLogin = () => {
   const [isloading, setIsLoading] = useState(false);
   const [islogged, setislogged] = useState(false);
   const [data, setData] = useState()
+  const location = useLocation()
   // const [islogged, setislogged] = useState(false);
   
   const handleChange = (e) => {
@@ -49,7 +50,7 @@ const AdminLogin = () => {
     formValues["qualification"] = "Admin"
     console.log(formValues)
     console.log(formErrors)
-
+  
     const requestOptions={
       method : "POST",
       headers: {
@@ -57,59 +58,64 @@ const AdminLogin = () => {
       },
       body:JSON.stringify(formValues)
   }
-  if (Object.keys(formErrors).length === 0 && isSubmit){
-    setIsLoading(true)
-  fetch('/user/login', requestOptions)
-    .then((res)=>{
-      setIsLoading(false)
-      if (res.status===200){
-        console.log("SUCCESS")
-        setislogged(true)
-        return res.json()
-        
-      }
-      else if(res.status === 400){
-        console.log("Incorect")
-        setFormErrors({incorrect: "Incorrect Passwword or Username"})
-      }
-    })
-    .then(data=>{
-        console.log(data)
-        
-        
-     
   
-        if(islogged){
-          setData(data)
-          login(data.access_token)
-          // setislogged(true)
-          if (data.qualification === 'Doctor'){
-            navigate('/DoctorDashBoard', {
-              state: {
-                id: data.public_id
-              }
-            })
-          }
-          else if (data.qualification === 'Nurse'){
-            navigate('/NurseDashBoard', {
-              state:{
-                id: data.public_id
-              }
-            } )
-          }
-          else{
-            navigate('/AdminDashBoard', {
-              state:{
-                id: data.public_id
-              }
-            })
-          }
-        }
-    })
-  }
   
 
+    if (Object.keys(formErrors).length === 0){
+    setIsLoading(true)
+    fetch('/user/login', requestOptions)
+      .then((res)=>{
+        setIsLoading(false)
+        if (res.status===200){
+          console.log("SUCCESS")
+          setislogged(true)
+          return res.json()
+          
+        }
+        else {
+          console.log("Incorect")
+          setFormErrors({incorrect: "Incorrect Passwword or Username"})
+        }
+      })
+      .then(data=>{
+        // login(data.access_token)
+        console.log(data)
+        console.log("ljsnido")
+          
+            setData(data)
+            setSubmit(false)
+            login(data.access_token)
+            // setislogged(true)
+            
+            if (data.qualification === 'Doctor'){
+              navigate('/DoctorDashBoard', {
+                state: {
+                  id: data.public_id
+                }
+              })
+            }
+            else if (data.qualification === 'Nurse'){
+              navigate('/NurseDashBoard', {
+                state:{
+                  id: data.public_id
+                }
+              } )
+            }
+            else{
+              navigate('/AdminDashBoard', {
+                state:{
+                  id: data.public_id
+                }
+              })
+          }
+        
+      })
+    }
 }
+
+  
+
+
 
 //   useEffect(() => {
 //     // console.log(formErrors);
@@ -180,14 +186,16 @@ const validate = (values) => {
        <div  className = "A-h">
            <img src={Logo} alt="" className = "A-logo"></img>  
        </div>
-
+       {location.state && <div>{location.state.message}</div>}
        <div className='Al-content'>
            <div  className='login-encase'>
 
            <div className='left-side'>
               <div className='img-class'>
               <img src={Nip} id='img-id'  alt='' srcSet=''/>
+              
               </div>
+             
               <form onSubmit={handleSubmit}>
                 <label for= 'emil1'>Username</label>
                 <p className='err'>{formErrors.username}</p>

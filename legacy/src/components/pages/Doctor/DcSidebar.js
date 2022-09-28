@@ -3,11 +3,20 @@ import './DcSidebar.css'
 import Logo from '../../../imgs/logo2.png'
 // import {SidebarData} from "../Data/Data";
 import {UilSignOutAlt, UilEstate, UilAccessibleIconAlt, UilStethoscopeAlt } from '@iconscout/react-unicons'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
+import { logout } from '../../../auth'
 
 const DcSidebar = (data) => {
   console.log(data)
   console.log("soandfk")
+
+  const navigate = useNavigate() 
+const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY');
+ const logOut =() =>{
+
+  logout(token)
+  navigate("/LandingPage")
+ }
 
   return (
     <div className='Sidebar'>
@@ -35,7 +44,7 @@ const DcSidebar = (data) => {
             </Link>
             </li>
             <li>
-              <Link to = '/LandingPage'>
+              <Link to = '/LandingPage' onClick={logOut}>
             <UilSignOutAlt className="icon"/>
               <span>Logout</span>
               </Link>
