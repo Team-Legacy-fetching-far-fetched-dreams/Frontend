@@ -1,4 +1,4 @@
-import React, { Component}  from 'react'
+import React, { Component, useEffect, useState}  from 'react'
 import './AdminDashboard.css'
 import Sidebar from './Sidebar'
 import Clock from '../Clock'
@@ -6,20 +6,14 @@ import AdDashNav from "./AdDashNav"
 import {motion} from 'framer-motion/dist/framer-motion'
 import ListOfRegPatients from '../TABLE LISTS/Patient/ListOfRegPatients'
 import {Link} from 'react-router-dom'
+import { logout } from '../../../auth'
 
-class Patient extends Component {
-  constructor(props){
-    super(props);
+const Patient =()=> {
+  const  [state, setState] = useState()
+  const [isLoading, setLoading]  = useState()
+ 
 
-    this.state ={
-      data:undefined
-    };
-}  
-  componentWillMount(){
-    this.renderMydata();
-  }
-
-  renderMydata(){
+  useEffect(() =>{
     const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY');
     const requestOptions = {
       method: "GET",
@@ -33,14 +27,25 @@ class Patient extends Component {
      console.log(token)
   
     fetch('/patients', requestOptions)
-      .then(res => res.json())
-      .then((resJson)=>{
-        this.setState({ data : resJson })
-      });
+    .then(res => {
+      if(res.status===200){
+        setLoading(true)
+        return res.json()
+      }
+      else if (res.status === 401){
+        logout(token)
+      }
+      res.json()
+    })
+    .then((resJson)=>{
+        setState(resJson)
+        console.log(resJson)
+        setLoading(false)
+    })
   
-   }
-   render(){
-  return (
+   },[])
+ 
+  return (state?
     <motion.div className='A-d-m'
     initial={{opacity: 0}}
     animate={{opacity: 1}}
@@ -58,7 +63,7 @@ class Patient extends Component {
             <input type='submit' value = "Register New Patient" />
             </Link>
             </div>
-        {this.state.data ? <ListOfRegPatients data={this.state.data}/>:<div>loading</div>}
+        {!isLoading ? <ListOfRegPatients data={state}/>:<div>loading</div>}
          <div>
         </div>
         </div>
@@ -70,8 +75,8 @@ class Patient extends Component {
         {/* <MainDash/> */}
       </div>
        
-    </motion.div>
+    </motion.div>:<div>...LOADING...</div>
   )
 }
-}
+
 export default Patient

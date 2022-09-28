@@ -1,28 +1,22 @@
-import React, { Component}  from 'react'
+import React, { Component, useEffect, useState}  from 'react'
 import './NurseDashboard.css'
 import {motion} from 'framer-motion/dist/framer-motion'
 import Clock from '../Clock'
 import NSidebar from '../../../components/pages/Nurse/NSidebar'
 import NDashNav from "./NDashNav"
 import ListOfSpecEmployee from '../TABLE LISTS/ListOfDoctors/ListOfSpecEmployee'
+import { logout } from '../../../auth'
 
 
 
-class NDoctor extends Component{
-  constructor(props){
-    super(props);
+const NDoctor =() =>{
+ 
 
-    this.state ={
-      data:undefined,
-      url:"",
-      islogged:false
-    };
-}  
-  componentWillMount(){
-    this.renderMydata();
-  }
-
- renderMydata(){
+const  [state, setState] = useState()
+  const [isLoading, setLoading]  = useState()
+ 
+  useEffect(() =>{
+ 
   const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY');
   const requestOptions = {
     method: "GET",
@@ -36,15 +30,25 @@ class NDoctor extends Component{
    console.log(token)
 
   fetch('/user/doctors', requestOptions)
-    .then(res => res.json())
-    .then((resJson)=>{
-      this.setState({ data : resJson })
+  .then(res => {
+    if(res.status===200){
+      setLoading(true)
+      return res.json()
+    }
+    else if (res.status === 401){
+      logout(token)
+    }
+    res.json()
+  })
+  .then((resJson)=>{
+      setState(resJson)
       console.log(resJson)
-    });
+      setLoading(false)
+  })
 
- }
-  render(){
-  return (
+ },[])
+
+  return (state?
     <motion.div className='N-d-m'
     initial={{opacity: 0}}
     animate={{opacity: 1}}
@@ -55,15 +59,14 @@ class NDoctor extends Component{
         <div className='Dashboardcontainer'>
         <NDashNav />
         <div className=''>
-        {this.state.data ? <ListOfSpecEmployee data={this.state.data}/>:<div>loading</div>}
+        {!isLoading ? <ListOfSpecEmployee data={state}/>:<div>loading</div>}
         </div>
         <div>
           <Clock />
         </div>
         </div>
     </div> 
-</motion.div>
+</motion.div>:<div>...LOADING...</div>
   )
-}
 }
 export default NDoctor

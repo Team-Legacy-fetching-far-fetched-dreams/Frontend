@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import './ListOfSpecEmployee.css'
-import {Link,useLocation} from 'react-router-dom'
+import {Link,Navigate,useLocation, useNavigate} from 'react-router-dom'
+import Button from 'react-bootstrap/esm/Button'
 
   
 
@@ -11,13 +12,23 @@ import {Link,useLocation} from 'react-router-dom'
 
 
 
-const ListOfSpecEmployee = ({data}, type) => {
+const ListOfSpecEmployee = ({data}) => {
  
    const location = useLocation()
-   let user = "users"
-   // const [user,setUser] = useState()
+   const [user,setUser] = useState()
+   const navigate = useNavigate()
    // const [loc,setLoc] = useState()
-   
+   const handleSubmit = () =>{
+      if(user=='DOCTORS'){
+         navigate("/DoctorSignUp")
+      }
+      if (user=='NURSES'){
+         navigate("/NurseSignUp")
+      }
+      if (user=='ADMINS'){
+         navigate("/AdminSignUp")
+      }
+   }
    
    
  useEffect(
@@ -27,31 +38,32 @@ const ListOfSpecEmployee = ({data}, type) => {
          console.log(e)
       }
       
+      console.log("ujgui")
        console.log(data)
       console.log(location.pathname.split("/")[location.pathname.split("/").length -1])
       let loc = location.pathname.split("/")[location.pathname.split("/").length -1]
-      // setLoc(location.pathname)
+      // seLoc(location.pathname)
       console.log(loc)
 
 
       if (loc==="Doctor"){
-         user = "Doctor"
-         console.log(user)
+         setUser("DOCTORS")
+        
        }
       else if (loc === "Nurse"){
-         user = "Nurse"
-         console.log(user)
+         setUser("NURSES")
+         
       }
       else{
-         user = "Admin"
-         console.log(user)
+         setUser("ADMINS")
+        
       }
        
 
        
- },[user]
+ },[]
  );
-  return (data.length>0?
+  return (
 
 //   const [listOfSpec,setlistOfSpec] = useState([]);
 
@@ -86,9 +98,10 @@ const ListOfSpecEmployee = ({data}, type) => {
    //  <div className='N-g'>
     
     <div className='N5-content'>
-           {user==="users"?<div>...loading...</div>:<h1>List of {user}</h1>}
+           {<h1>LIST OF {user}</h1>}
 
-           <div className='ListOfSpec'>
+           {data.length>0?<div className='ListOfSpec'>
+           <Button className="btn btn-primary btn-sm" type="submit"  role="button" onClick={handleSubmit}><span></span><span className="  p-2 ">New Registration</span></Button>
 
            <table className='table5'>
 
@@ -160,8 +173,8 @@ const ListOfSpecEmployee = ({data}, type) => {
        </table> 
       
    
-      </div>
-   </div>:<div>List Empty</div>
+      </div>:<div>List Empty</div>}
+   </div>
 
 
 

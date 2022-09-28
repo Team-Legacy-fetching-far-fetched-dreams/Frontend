@@ -26,7 +26,7 @@ const AdDashNav = (data) => {
                 </div>
                 <div className='item'>
                     <img src={Avatar} alt='' className='avatar'/>
-                        <span>{data.data.username}</span>
+                        {/* <span>{data.data.username}</span> */}
                 </div>
             </div>
 

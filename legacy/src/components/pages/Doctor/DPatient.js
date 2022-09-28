@@ -1,31 +1,25 @@
-import React, { Component} from 'react'
+import React, { Component, useEffect, useState} from 'react'
 import './DPatient.css'
 import DcSidebar from './DcSidebar'
 import DcDashNav from "./DcDashNav"
 import Clock from '../Clock'
 import {motion} from 'framer-motion/dist/framer-motion'
 import ListOfRegPatients from '../TABLE LISTS/Patient/ListOfRegPatients'
+import { logout } from '../../../auth'
 
-class DPatient extends Component {
-  constructor(props){
-    super(props);
-
-    this.state ={
-      data:undefined,
+const DPatient = () => {
+    const  [state, setState] = useState()
+    const [isLoading, setLoading]  = useState()
 
       // const [searchObj, setSearchObj] = useState(initialSearch)
-      searchObj:{
+      const searchObj ={
         data:"",
         column_name: "surname"
       }
-    };
-}  
 
-  componentDidMount(){
-    this.renderMydata();
-    // this.renderSearchData();
-  }
 
+
+  
   // renderSearchData(){
   //   const initialSearch = {
   //     data:"",
@@ -50,7 +44,7 @@ class DPatient extends Component {
   //   });
   // }
 
- renderMydata(){
+  useEffect(() =>{
   const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY');
   const requestOptions = {
     method: "GET",
@@ -64,16 +58,26 @@ class DPatient extends Component {
    console.log(token)
 
   fetch('/patients', requestOptions)
-    .then(res => res.json())
-    .then((resJson)=>{
-      this.setState({ data : resJson })
+  .then(res => {
+    if(res.status===200){
+      setLoading(true)
+      return res.json()
+    }
+    else if (res.status === 401){
+      logout(token)
+    }
+    res.json()
+  })
+  .then((resJson)=>{
+      setState(resJson)
       console.log(resJson)
-    });
+      setLoading(false)
+  })
 
- }
-  render(){
+ },[])
+
     
-  return (
+  return (state?
     <motion.div className='D-d-m'
     initial={{opacity: 0}}
     animate={{opacity: 1}}
@@ -87,7 +91,7 @@ class DPatient extends Component {
         <DcDashNav/>
         <div className=''>
         <div>
-          {this.state.data ? <ListOfRegPatients data={this.state.data}/>:<div>loading</div>}
+          {!isLoading ? <ListOfRegPatients data={state}/>:<div>loading</div>}
       </div>
         </div>
         </div>
@@ -96,11 +100,11 @@ class DPatient extends Component {
         </div>
         {/* <MainDash/> */}
       </div>
-    </motion.div>
+    </motion.div>:<div>...LOADING...</div>
 
     
   );
 }
-}
+
 
 export default DPatient
