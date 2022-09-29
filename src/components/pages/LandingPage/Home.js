@@ -64,7 +64,7 @@ const [openMefu, setOpenMefu] = useState(false)
             ></motion.img>
           </div>
           <div className='p'>
-         <p>The hospital has different tools and equipments such as stestroscope,microscope,injectors and so on. It also has a pharmacy centre which contains drugs such as Antibiotics, Metformin, Losatan, etc. </p>
+         <p>The hospital has different tools and equipments such as stethoscope,microscope,injectors and so on. It also has a pharmacy centre which contains drugs such as Antibiotics, Metformin, Losatan, etc. </p>
           <img src={Object1} alt='' className='object'></img>
           <img src={Object2} alt='' className='object'></img>
           <img src={Object3} alt='' className='object'></img>
@@ -121,7 +121,7 @@ const [openMefu, setOpenMefu] = useState(false)
                 </Link>
             </div>
             <div>
-          <p>These sections comprises of the admin, doctor and nurse and each of them has its own vital or major role to play according to how the images are being created or formed..</p>
+          <p>These sections comprise of the admin, doctor and nurse. Each of them has its own vital or major role to play according to how the images are being created or formed..</p>
 
             </div>
           </div>

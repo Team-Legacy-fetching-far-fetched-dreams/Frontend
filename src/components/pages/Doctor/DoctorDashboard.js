@@ -41,7 +41,7 @@ const DoctorDashboard=()=>{
   
   
    
-
+ useEffect(()=>{
 
   console.log(token)
   if(logged && location.state){
@@ -74,7 +74,7 @@ const DoctorDashboard=()=>{
   }
     
     // console.log(state)
-    
+  },[]) 
 
 
   return (isloading?<Skeleton type="sidebar"/> :

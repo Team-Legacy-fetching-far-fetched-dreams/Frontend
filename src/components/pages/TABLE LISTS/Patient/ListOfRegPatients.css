@@ -1,7 +1,7 @@
 
 .ListOfRegP{
     
-     max-height: 500px;
+     max-height: 450px;
     overflow-x: scroll; 
     
 
@@ -17,8 +17,6 @@
     margin: 25px 0;
     border-radius: 8px 8px 0 0;
     font-size: 0.9em; 
-    max-height: 400px;
-    overflow-x: scroll;
     box-shadow: 0 0 20px rgba(0, 0 ,0.15);
 }
 

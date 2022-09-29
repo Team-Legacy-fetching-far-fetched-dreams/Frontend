@@ -122,82 +122,80 @@ const PatientForm = () => {
    
   return (
    
-      <div className='dss-contents'>
-        <div className='left-sides'>
-          <div className='header'>
-            <img src={Logo} id='logo-png' alt='' srcSet='' />
-          </div>
-          <div className='shoulders'>
-            <img src={imgs} id='reg-gng' alt='' srcSet='' />
-          </div>
-          <h1 className='p1'>Legacy Healthcare</h1>
-          <p className='p1'>Legacy Health’s mission is to positively impact the well-being of every individual in
-our community. We’re creating easy access to providers, comprehensive services,
-and friendly care right in your community. That’s what makes Legacy Health
-simply better.</p>
-        </div>
-        <div className='right-sides'>
-        <div className='top-rights'>
-        <p>Already have an Account?
-        <Link id='Links-signin' to ="/PatientForm">Sign In</Link>
-        </p>
-        </div>
-        <div className='body-rights'>
-          <div className='containers'>
-            <h1 className='cr'>Create Account!</h1>
-            <form onSubmit={handleSubmit}>
-             <div className='inner-group'>
-              <h5 className='hac'>Surname</h5>
-             <input type='text' className='inputs' onChange={handleChange} value= {formValues.surname} name='surname' id='fname'></input>
-              </div>
-              <p className='err'>{formErrors.surname}</p>
-              <div className='inner-group'>
-              <h5 className='hac'>Other Names</h5>
-              <input className='inputs' type='text' name='other_names' onChange={handleChange} value= {formValues.other_names}   id='oname'/>
-              </div>
-              <p className='err'>{formErrors.other_name}</p>
-              <div className='inner-group'>
-              <h5 className='hac'>Date Of Birth</h5>
-              <input className='inputs'  type='date' id='birthday' name='date_of_birth' onChange={handleChange} value= {formValues.date_of_birth} />
-              </div>
-              <p className='err'>{formErrors.date_of_birth}</p>
-              <div className='inner-group'>
-              <h5 className='hac'>Email</h5>
-              <input className='inputs'  type='email' name='email' id='email1' onChange={handleChange} value= {formValues.email} />
-              </div>
-              <p className='err'>{formErrors.email}</p>
-              <div className='inner-group'>
-              <h5 className='hac'>Address</h5>
-              <input className='inputs'  type='text' name='address' id='address' onChange={handleChange} value= {formValues.address} />
-              </div>
-              <p className='err'>{formErrors.address}</p>
-              <div className='inner-group'>
-              <h5 className='hac'>Phone</h5>
-              <input className='inputs' type="tel"   id="phone" name="contact1" onChange={handleChange} value= {formValues.contact1} />
-              </div>
-              <p className='err'>{formErrors.contact1}</p>
-              <div className='inner-group'>
-              <h5 className='hac'>Other Phone</h5>
-              <input className='inputs' type="tel"  id="phone" name="contact2" onChange={handleChange} value= {formValues.contact2} />
-              </div>
-              <div className='inner-group'>
-              <h5 className='hac'>Gender</h5>
-              <input className='inputs'  type='text'  name='gender' placeholder='Male/Female' id='gender' onChange={handleChange} value= {formValues.gender} />
-              </div>
-              <p className='err'>{formErrors.gender}</p>
-              {isloading && <div>...LAODING...</div>}
-             
-             <input type='submit' id='sbtn' className='subway' value='Submit' />
-             </form>
-          </div>
-
-        </div>
-        </div>
-     
-
-      
-    
+    <div className='dss-contents'>
+   
+    <div className='hay'>
+           <img cay src={Logo} id='logo-png' alt='' srcSet='' />
          </div>
+   <div className='right-sides'>
+   <div className='top-rights'>
+   <p>Already have an Account?
+   <Link id='Links-signin' to ="/AdminLogin">Sign In</Link>
+   </p>
+   </div>
+ 
+   <div className='body-rights'>
+     <div className='containersy'>
+
+       <h1 className='cvb'>Create Account!</h1>
+      
+       <form onSubmit={handleSubmit}>
+        <div className='loki'>
+         <h5 className='hac'>Surname</h5>
+        <input type='text' className='nm inputs' onChange={handleChange} value= {formValues.surname} name='surname' id='fname'></input>
+         </div>
+         <p className='lon'>{formErrors.surname}</p>
+         <div className='loki'>
+         <h5 className='hac'>Other Names</h5>
+         <input className='nm inputs' type='text' name='other_name' onChange={handleChange} value= {formValues.other_name}   id='oname'/>
+         </div>
+         <p className='lon'>{formErrors.other_name}</p>
+         <div className='loki'>
+         <h5 className='hac'>Date Of Birth</h5>
+         <input className='nm inputs'  type='date' id='birthday' name='birth_date' onChange={handleChange} value= {formValues.birth_date} />
+         </div>
+         <p className='lon'>{formErrors.birth_date}</p>
+         <div className='loki'>
+         <h5 className='hac'>Email</h5>
+         <input className='nm inputs'  type='email' name='email' id='email1' onChange={handleChange} value= {formValues.email} />
+         </div>
+         <p className='lon'>{formErrors.email}</p>
+         <div className='loki'>
+         <h5 className='hac'>Address</h5>
+         <input className='nm inputs'  type='text' name='address' id='address' onChange={handleChange} value= {formValues.address} />
+         </div>
+         <p className='lon'>{formErrors.address}</p>
+         <div className='loki'>
+         <h5 className='hac'>Phone</h5>
+         <input className='nm inputs' type="tel"   id="phone" name="contact1" onChange={handleChange} value= {formValues.contact1} />
+         </div>
+         <p className='lon'>{formErrors.contact1}</p>
+         <div className='loki'>
+         <h5 className='hac'>Other Phone</h5>
+         <input className='nm inputs' type="tel"  id="phone" name="contact2" onChange={handleChange} value= {formValues.contact2} />
+         </div>
+         <div className='loki'>
+         <h5 className='hac'>Gender</h5>
+         <input className='nm inputs'  type='text'  name='gender' placeholder='Male/Female' id='gender' onChange={handleChange} value= {formValues.gender} />
+         </div>
+         <p className='lon'>{formErrors.gender}</p>
+         {isloading && <div>...LOADING...</div>}
+       
+        <input type='submit' onClick="validation();"  id='klo' className='submay' value='Submit' />
+      
+        </form>
+
+     </div>
+     
+   </div>
+
+   </div>
+
+
+ 
+
+    </div>
+        
         
       
   )
