@@ -73,7 +73,7 @@ return(
       </table> 
        
       </div>
-    </div>:<div>List EmpdWty</div>
+    </div>:<div>List Empty</div>
   )
 }
 

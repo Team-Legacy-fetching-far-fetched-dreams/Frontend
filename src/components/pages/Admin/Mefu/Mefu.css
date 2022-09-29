@@ -24,23 +24,22 @@
   
     margin-top: 1rem;
     flex: 0.33;
-    background: gray;
-    height: 100vh;
-    border-top-right-radius: 1rem ;
-    border-bottom-right-radius: 1rem ;
-    margin-left: 15px;
+    background: rgb(69, 69, 248);
+    height: 50px;
+    border-radius: 2rem 2rem 1rem ;
+    margin-left: 70px;
     padding-bottom: 65rem;
 }
 
 .left-sides{
   margin-top: 1rem;
     flex: 0.33;
-    background: #26343D;
-    height: 100vh;
+    background: white;
+    height: 50px;
     border-top-right-radius: 1rem ;
     border-bottom-right-radius: 1rem ;
     margin-left: 15px;
-    padding-bottom: 65rem;
+    padding-bottom: 20rem;
    
 }
 
@@ -50,7 +49,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    height: 100vh;
+    height: 50px;
    
   
 
@@ -154,6 +153,7 @@
     padding-top: 10px;
     text-align: center;
     font-weight: 800;
+    color: white;
 }
 
 .inner-group{
@@ -218,3 +218,11 @@
     padding-left:6px;
 }     
 
+.op{
+    color: white;
+    padding-top: 2px ;
+}
+
+.opp{
+    padding-top: 5px;
+}

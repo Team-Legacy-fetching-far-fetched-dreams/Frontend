@@ -35,6 +35,7 @@ export const VitalsForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setIsLoading(true)
         setFormErrors(validate(formValues));
         setIsSubmit(true);
         if (Object.keys(formErrors).length === 0 && isSubmit) {
@@ -143,7 +144,7 @@ export const VitalsForm = () => {
                    
                     
                     
-                    {isloading && <div>...|Loading..</div>}
+                    {isloading && <div>LOADING..</div>}
                     
                     <button className='btn'>Submit</button>
                 </form>

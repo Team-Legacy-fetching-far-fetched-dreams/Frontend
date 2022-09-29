@@ -184,7 +184,7 @@ const NurseSignUp = () => {
         </form>
 
      </div>
-     {isloading && <div>...LAODING...</div>}
+     {isloading && <div>LOADING...</div>}
    </div>
    {isSuccess && <div>Please Chek your eamil for your login Credentials</div>}
    </div>

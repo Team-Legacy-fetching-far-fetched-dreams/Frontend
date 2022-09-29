@@ -1,7 +1,7 @@
 import React, { Component, useEffect, useState}  from 'react'
 import './NurseDashboard.css'
 import {motion} from 'framer-motion/dist/framer-motion'
-import NSidebar from '../../../components/pages/Nurse/NSidebar'
+import NSidebar from './NSidebar'
 import NDashNav from "./NDashNav"
 import ListOfSpecEmployee from '../TABLE LISTS/ListOfDoctors/ListOfSpecEmployee'
 import { logout } from '../../../auth'
@@ -62,7 +62,7 @@ const  [state, setState] = useState()
         </div>
         </div>
     </div> 
-</motion.div>:<div>...LOADING...</div>
+</motion.div>:<div>LOADING...</div>
   )
 }
 export default NDoctor

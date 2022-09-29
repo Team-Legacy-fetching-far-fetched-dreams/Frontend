@@ -140,7 +140,7 @@ const NurseLogin = () => {
                      <p className='err'>{formErrors.password}</p>
                      <input className='ii' placeholder='Enter your password...'  name='password' value={formValues.password} onChange={handleChange} type='password' id='pwdd1'></input>
                      <p className='err'>{formErrors.incorrect}</p>
-                     {isloading && <div>...LAODING...</div>} 
+                     {isloading && <div>LOADING...</div>} 
                      <button className='ll' type='submit' id='sub_butt'> Login </button>
                   </form>
 
