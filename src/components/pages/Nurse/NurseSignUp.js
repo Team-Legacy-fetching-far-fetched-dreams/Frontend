@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import './NurseSignUp.css'
 import Logo from '../../../imgs/logo2.png'
-import {Link, useLocation} from 'react-router-dom'
+import {Link, useLocation, useNavigate} from 'react-router-dom'
 import registerImgs from '../../../imgs/nursesignup.jpg'
 
 const NurseSignUp = () => {
@@ -12,6 +12,7 @@ const NurseSignUp = () => {
   const [isloading, setIsLoading] = useState(false);
   const [isSuccess, setIsSucces] = useState(false)
   const location = useLocation()
+  const navigate = useNavigate()
 
   const handleChange = (e) => {
     const {name, value} = e.target;
@@ -61,6 +62,19 @@ const NurseSignUp = () => {
           .then(data=>{
             console.log(data)
             console.log(location)
+            if (location.state){
+              navigate(-1, {
+                state:{
+                  message:"Doctor registered successfully"
+                }
+              })
+            }else{
+            navigate("/DoctorLogin",{
+              state:{
+                message:"Please Check your email for your login Credentials"
+            }
+          })
+        }
           })
         }
        }
