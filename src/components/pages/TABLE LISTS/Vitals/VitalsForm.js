@@ -3,7 +3,7 @@ import './VitalsForm.css';
 import {Button} from 'react-bootstrap'
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from 'react-router-dom';
-
+import VImg from '../../../../imgs/Vitalsformimg.png'
 
 
 export const VitalsForm = () => {
@@ -156,6 +156,7 @@ export const VitalsForm = () => {
             
         </div>
     </section>
+    <img src={VImg} alt="0" className="vimg"></img>
     </div>
     </div>
   )

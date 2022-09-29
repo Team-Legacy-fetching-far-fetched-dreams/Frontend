@@ -15,7 +15,7 @@ import {login} from '../../../auth'
 import welcomes from '../../../imgs/loginpin.png' 
 import Nip from '../../../imgs/nipp.png'
 import { set } from 'react-hook-form'
-
+import Cliploader from 'react-spinners/ClipLoader'
 
 
 const AdminLogin = () => {
@@ -204,7 +204,7 @@ const validate = (values) => {
                 <p className='err'>{formErrors.password}</p>
                 <input className='ii' placeholder='Enter your password...' type='password'  name='password'  onChange={handleChange} value={formValues.password} id='pwd1'></input>
                 <p className='err'>{formErrors.incorrect}</p>
-                {isloading && <div>LOADING...</div>}
+                {isloading && <div><Cliploader size={30} color="blue"/></div>}
                 <button className='ll' type='submit' id='sub_butt'> Login </button>
               </form>
               

@@ -5,7 +5,7 @@ import Logo from '../../../../imgs/logo2.png'
 // import welcomes from '../../../../imgs/loginPic.png' 
 import Nip from '../../../../imgs/nipp.png'
 import {Link, useParams, useNavigate} from 'react-router-dom'
-
+import DiaImg from '../../../../imgs/Diagimg.png'
 import registerImg from '../../../../imgs/415.jpg'
 
 const Mefu = () => {
@@ -74,8 +74,8 @@ const requestOptionsV = {
     .then(data=>{
       setIsLoadingV(false)
       console.log(data)
-      setData(data[data.length-1])
-      console.log(data[data.length-1])
+      // setData(data[data.length-1])
+      // console.log(data[data.length-1])
     })
   }
     },[])
@@ -85,7 +85,7 @@ const requestOptionsV = {
     <div className='dss-contents'>
     {!isLoadingV?<div className='hij'>
     <h1 className='cry'>Vitals</h1>
-    {(data && isvitalAvail)?<div className='left-sides'>
+    {(data && isvitalAvail)?<div className='left-sis'>
     
     <ul className='op'>
   <li className='opp'>ID : {data.patient_id}</li>
@@ -99,8 +99,8 @@ const requestOptionsV = {
     </div>:<div>No available vitals</div>}
      
     </div>:<div>LOADING...</div>}
-    <div className='right-sides'>
-    <div className='body-rights'>
+    <img src={DiaImg} alt="" className="diagimg"></img>
+    <div className='right-s'>
       <div className='containerser'>
 
         <h1 className='cry'>DIAGNOSE</h1>
@@ -129,14 +129,10 @@ const requestOptionsV = {
          
          </form>
       </div>
-      {isLoadingD &&<div>LOADIND...</div>}
+      {isLoadingD &&<div>LOADING...</div>}
     </div>
     </div>
- 
 
-  
-
-     </div>
   )
 }
 

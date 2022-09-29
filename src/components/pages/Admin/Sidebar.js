@@ -1,15 +1,16 @@
 import React,{useState} from 'react'
 import './Sidebar.css'
 import Logo from '../../../imgs/logo2.png'
-// import {SidebarData} from "../Data/Data";
+import {SidebarData} from "../Data/Data";
 import {UilSignOutAlt, UilEstate, UilUserNurse, UilUserMd , UilAccessibleIconAlt } from '@iconscout/react-unicons'
 import {motion} from 'framer-motion/dist/framer-motion'
-import {Link, useNavigate} from 'react-router-dom'
+import {Link, NavLink, useNavigate} from 'react-router-dom'
 import { logout } from '../../../auth'
 
 
 const Sidebar = () => {
   const navigate = useNavigate() 
+  const [selected, setSelected] = useState(0);
 const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY');
  const logOut =() =>{
 
@@ -17,7 +18,6 @@ const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY');
   navigate("/LandingPage")
  }
 
- 
 
   return (
     <div className='Sidebar'>
@@ -25,9 +25,26 @@ const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY');
         <img src={Logo} alt=''></img>
       </div>
       <div className='menu'>
-      
+      {/* {SidebarData.map((item, index) => {
+          return (
+            <div to = {item.link}
+              className={selected === index ? "menuItem active" : "menuItem"}
+              key={index}
+              onClick={() => setSelected(index)}
+            >
+              <item.icon />
+              <span>{item.heading}</span>
+            </div>
+          );
+        })}
+        {/* signoutIcon *
+        <Link to = '/LandingPage'>
+            <UilSignOutAlt className="icon"/>
+              <span>Logout</span>
+              </Link>
+       */}
           <ul>
-            <motion.li className='active'
+            <motion.li
             whileHover={{scale:1.1, originX: 0, color: ''}}
             transition={{ type: "spring" , stiffness: 300}}
             >
@@ -54,7 +71,7 @@ const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY');
               <span>Nurse</span>
               </Link>
             </motion.li>
-            <motion.li
+            <motion.li 
             whileHover={{scale:1.1, originX: 0, color: ''}}
             transition={{ type: "spring" , stiffness: 300}}
             >
@@ -63,7 +80,7 @@ const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY');
               <span>Patient</span>
             </Link>
             </motion.li> 
-            <motion.li
+            <motion.li 
             whileHover={{scale:1.1, originX: 0, color: ''}}
             transition={{ type: "spring" , stiffness: 300}}
             >

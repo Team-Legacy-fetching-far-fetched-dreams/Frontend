@@ -6,6 +6,7 @@ import ListOfSpecEmployee from '../TABLE LISTS/ListOfDoctors/ListOfSpecEmployee'
 import {motion} from 'framer-motion/dist/framer-motion'
 import {Link} from 'react-router-dom'
 import { logout } from '../../../auth'
+import Cliploader from 'react-spinners/ClipLoader'
 
 const Nurse = () => {
 
@@ -52,12 +53,12 @@ const Nurse = () => {
         <div className='Dashboardcontainer'>
         <AdDashNav/>
         
-        {!isLoading ? <ListOfSpecEmployee data={state} />:<div>loading</div>}
+        {!isLoading ? <ListOfSpecEmployee data={state} />:<div><Cliploader size={30} color="blue" className='spinner'/></div>}
        
         </div>
         {/* <MainDash/> */}
       </div>
-    </motion.div>:<div>...LOADING...</div>
+    </motion.div>:<div><Cliploader size={30} color="blue" className='spinner'/></div>
   )
 
 }

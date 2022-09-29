@@ -16,8 +16,6 @@
     justify-content: center;
     height: 100vh;
     width: 100vw;
-    overflow-x: hidden;
- 
 }
 
 .hij{
@@ -27,11 +25,11 @@
     background: rgb(69, 69, 248);
     height: 50px;
     border-radius: 2rem 2rem 1rem ;
-    margin-left: 70px;
+    margin-left: 50px;
     padding-bottom: 65rem;
 }
 
-.left-sides{
+/* .left-sides{
   margin-top: 1rem;
     flex: 0.33;
     background: white;
@@ -41,18 +39,21 @@
     margin-left: 15px;
     padding-bottom: 20rem;
    
-}
+} */
 
-.right-sides{
-    margin-top: 4rem;
+.right-s{
     flex: 0.67;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     height: 50px;
-   
-  
+}
 
+.diagimg{
+height: 300px;
+position: absolute;
+top: 200px;
+right: 45%;
 }
 
 .header{
