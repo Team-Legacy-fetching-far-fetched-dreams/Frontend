@@ -27,7 +27,7 @@ const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY');
       <div className='menu'>
       
           <ul>
-            <motion.li className='active' onClick={{handleClick}}
+            <motion.li className='active'
             whileHover={{scale:1.1, originX: 0, color: ''}}
             transition={{ type: "spring" , stiffness: 300}}
             >

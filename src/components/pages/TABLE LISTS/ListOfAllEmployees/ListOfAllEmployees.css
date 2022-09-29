@@ -1,31 +1,33 @@
 
 .ListOfAllEmp{
     
-    max-height: 500px;
-   overflow-x: scroll; 
+    max-height: 300px;
+   overflow-y: scroll; 
    
 
 
 }
 .table6{
-   font-family: 'poppins';
+   font-family:'Times New Roman', Times, serif;
    border-collapse: collapse;
    min-width: max-content;
     width: 75%;  
    
-   border: 1px solid blue;
+   border: 1px solid rgb(126, 126, 173);
    margin: 25px 0;
    border-radius: 8px 8px 0 0;
    font-size: 0.9em; 
-   box-shadow: 0 0 20px rgba(0, 0 ,0.15);
+    max-height: 30px;
+   overflow-y: scroll; 
+   box-shadow: 0 0 20px rgb(198, 194, 238);
 }
 
 
 
 .table6 tr:hover td{
-   color: #4478b8;
+   color: #cecfd7;
    cursor: pointer;
-   background-color: #ffffff;
+   background-color: #423867;
 
 }
 
@@ -34,8 +36,8 @@
    border: none;
    padding: 7px 10px;
    border-radius: 15px;
-   background-color: blue;
-   color: white;
+   background-color: rgb(234, 227, 218);
+   color: rgb(171, 168, 179);
 }
 
 .table6 td {
@@ -50,8 +52,8 @@ border: 1px solid #dddddd;
 }
 
 .table6 th{
-   background-color: #3977eb;
-   border: 1px solid #dddddd;
+   background-color: #e9ecf1;
+   border: 1px solid #f9f5f5;
    text-align: center;
    padding: 1px 5px 5px 10px;
    color: rgb(15, 14, 14);
@@ -65,10 +67,27 @@ border: 1px solid #dddddd;
 
 
 .table6 tr :nth-of-type(even){
-     background-color: #f3f3f3;
+     background-color: hsl(220, 8%, 92%);
 } 
 
 .N6-content h1{
    margin-left: 230px;
+
 }
 
+@media screen and (max-width: 1200px) {
+   .Table {
+     margin-top: 2rem;
+   }
+ }
+ 
+ 
+ @media screen and (max-width: 768px) {
+   .Table{
+     position: relative;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     width: 18rem;
+   }
+ }

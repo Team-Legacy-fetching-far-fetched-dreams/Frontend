@@ -10,6 +10,9 @@ import {
      UilAccessibleIconAlt
 } from "@iconscout/react-unicons";
 
+
+import doc11 from '../../../imgs/doc11.png'
+
 export const WidgetData = [
     {
         title: "DOCTOR",
@@ -54,3 +57,16 @@ export const WidgetData = [
 
 
 // ];
+
+
+// Recent Update Card Data
+export const UpdatesData = [
+    {
+      img: doc11,
+      name: " Dr Essuman",
+      noti: "Last seen ",
+      time: "25 seconds ago",
+    },
+   
+  ];
+  

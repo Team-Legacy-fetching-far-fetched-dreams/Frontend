@@ -3,7 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
     "@iconscout/react-unicons": "^1.1.6",
+    "@mui/material": "^5.10.6",
+    "@mui/x-data-grid": "^5.17.4",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
@@ -27,7 +31,11 @@
   "proxy": "https://legacy-healthcare-services.herokuapp.com",
   "secure": "False",
   "scripts": {
+<<<<<<< HEAD:package.json
     "start": "react-scripts start",
+=======
+    "start": "react-Scripts start",
+>>>>>>> de362fc0403c468583117f8c04ee80bf7890ca48:legacy/package.json
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

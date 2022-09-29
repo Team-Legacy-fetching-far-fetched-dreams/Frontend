@@ -1,0 +1,14 @@
+.RightSide{
+    display: flex;
+    flex-direction: column;
+    width: 95px;
+    justify-content: space-evenly;
+    gap: 10rem;
+    
+
+}
+
+
+.pat{
+    margin-top: 50px;
+}
