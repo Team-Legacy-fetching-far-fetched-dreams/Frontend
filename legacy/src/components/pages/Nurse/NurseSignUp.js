@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react'
 import './NurseSignUp.css'
 import Logo from '../../../imgs/logo2.png'
 import {Link, useLocation} from 'react-router-dom'
-import registerImgs from '../../../imgs/nursesignup.jpg'
 
 const NurseSignUp = () => {
   const initialValues = {surname: "", other_name: "", email: "", birth_date: "", address: "", contact1: "", contact2: "", gender: ""};

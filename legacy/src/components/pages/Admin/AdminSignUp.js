@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import './AdminSignUp.css'
 import Logo from '../../../imgs/logo2.png'
-import registerImg from '../../../imgs/415.jpg'
 // import Button from 'react-bootstrap/Button';
 import {Link} from 'react-router-dom'
 
