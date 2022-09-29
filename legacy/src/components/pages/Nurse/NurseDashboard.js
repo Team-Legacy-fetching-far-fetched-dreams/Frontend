@@ -4,21 +4,24 @@ import {motion} from 'framer-motion/dist/framer-motion'
 import NSidebar from '../../../components/pages/Nurse/NSidebar'
 import NDashNav from "./NDashNav"
 import NWidget from './NWidget'
+import Calendar from 'react-calendar';
 import Clock from '../Clock'
 import {Link, useNavigate, useLocation} from 'react-router-dom'
 import { logout, useAuth } from '../../../auth'
 
 
-
+import 'react-calendar/dist/Calendar.css'
+import Skeleton from '../../Skeleton'
 
 const NurseDashboard = () => {
   const  [data, setData] = useState()
   const [id, setId] = useState()
-  const [isloading, setIsLoading] = useState(true)
+  // const [isloading, setIsLoading] = useState(true)
   const navigate = useNavigate()
   const location = useLocation()
   const { logged } = useAuth()
- 
+  const [value, onChange] = useState(new Date());
+  const [isloading, setIsLoading] = useState(true)
   const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY');
    
    // const navigate = useNavigate()
@@ -36,7 +39,7 @@ const NurseDashboard = () => {
  
  
    
- 
+  useEffect(()=>{
  
 
  
@@ -45,7 +48,7 @@ const NurseDashboard = () => {
    //   setId(location.state.id)
    //   console('hello')
    // }
-   if(logged && location.state){
+   if(location.state){
    fetch(`/user/user/${location.state.id}`, requestOptions)
      .then(res => 
        {
@@ -73,9 +76,11 @@ const NurseDashboard = () => {
    }
    console.log(data)
 
-     
  
-  return (
+
+}, [])
+ 
+  return (isloading?<Skeleton type="sidebar"/> :
     // <div className='N-m'>
     // <div className='N-g'>
     //  </div>
@@ -101,6 +106,7 @@ const NurseDashboard = () => {
         </div>
         <div>
           <Clock/>
+          <Calendar onChange={onChange} value={value} />
         </div>
         </div>
     </div> 

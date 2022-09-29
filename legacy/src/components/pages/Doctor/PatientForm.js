@@ -3,7 +3,7 @@ import './DoctorSignUp.css'
 import Logo from '../../../imgs/logo2.png'
 import registerImg from '../../../imgs/415.jpg'
 import Button from 'react-bootstrap/Button';
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import {useForm} from 'react-hook-form'
 import imgs from '../../../imgs/patient image.png'
 const PatientForm = () => {
@@ -13,6 +13,9 @@ const PatientForm = () => {
   const [formErrors,setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
   const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY');
+  const navigate = useNavigate()
+  const [isloading, setIsLoading] = useState(false);
+  const [isSuccess, setIsSucces] = useState(false)
 
   const handleChange = (e) => {
     const {name, value} = e.target;
@@ -23,13 +26,12 @@ const PatientForm = () => {
     setFormErrors(validate(formValues));
     setIsSubmit(true);
     console.log(formValues)
-  }
+  
 
-  useEffect(() => {
     //  console.log(formErrors);
-     if (Object.keys(formErrors).length === 0 && isSubmit){
+     if (Object.keys(formErrors).length === 0 ){
       console.log(formValues);
-
+      setIsLoading(true)
 
       const requestOptions ={
         method : "POST",
@@ -43,13 +45,30 @@ const PatientForm = () => {
 
       if (Object.values(formErrors).length === 0){
         fetch("/patients",requestOptions)
-        .then((res)=>res.json())
-        .then(data=>{
-          console.log(data)
+        .then((res)=>{
+          setIsLoading(false)
+          if (res.status===200){
+            console.log("SUCCESS")
+            setIsSucces(true)
+            return res.json() 
+          }
         })
+        .then(data=>{
+          if(data){
+          console.log(data)
+          navigate(-1,{
+            state:{
+                message:"Patient Registered Succesfully"            
+            }
+          })
+        }
+      })
+
+       
       }
+
      }
-},[formErrors])
+}
 
 
 
@@ -166,7 +185,7 @@ simply better.</p>
               <input className='inputs'  type='text'  name='gender' placeholder='Male/Female' id='gender' onChange={handleChange} value= {formValues.gender} />
               </div>
               <p className='err'>{formErrors.gender}</p>
-
+              {isloading && <div>...LAODING...</div>}
              
              <input type='submit' id='sbtn' className='subway' value='Submit' />
              </form>

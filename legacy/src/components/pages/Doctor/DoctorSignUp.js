@@ -5,7 +5,7 @@ import registerImg from '../../../imgs/415.jpg'
 import {Link, useLocation, useNavigate} from 'react-router-dom'
 
 const DoctorSignUp = () => {
-
+ 
 
   // const {register, handleSubmit} = useForm();
   // const signUp=(data)=>{
@@ -95,11 +95,19 @@ const DoctorSignUp = () => {
         .then(data=>{
           console.log(data)
           console.log(location)
+          if (location.state){
+            navigate(-1, {
+              state:{
+                message:"Doctor registered successfully"
+              }
+            })
+          }else{
           navigate("/DoctorLogin",{
             state:{
               message:"Please Check your email for your login Credentials"
           }
         })
+      }
         })
       }
     }

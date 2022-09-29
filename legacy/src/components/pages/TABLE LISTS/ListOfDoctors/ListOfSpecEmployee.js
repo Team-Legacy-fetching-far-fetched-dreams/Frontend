@@ -21,7 +21,11 @@ const ListOfSpecEmployee = ({data}) => {
    // const [loc,setLoc] = useState()
    const handleSubmit = () =>{
       if(user=='DOCTORS'){
-         navigate("/DoctorSignUp")
+         navigate("/DoctorSignUp",{
+            state:{
+               prevLocation : location.pathname
+            }
+         })
       }
       if (user=='NURSES'){
          navigate("/NurseSignUp")
@@ -44,7 +48,7 @@ const ListOfSpecEmployee = ({data}) => {
        console.log(data)
       console.log(location.pathname.split("/")[location.pathname.split("/").length -1])
       let loc = location.pathname.split("/")[location.pathname.split("/").length -1]
-      // let access =  location.pathname.split("/")[1]
+      let access =  location.pathname.split("/")[1]
       // seLoc(location.pathname)
       console.log(loc)
 
@@ -62,9 +66,9 @@ const ListOfSpecEmployee = ({data}) => {
         
       }
       
-      // if (access==="AdminDashboard"){
-      //    setAuth(true)
-      // }
+      if (access==="AdminDashboard"){
+         setAuth(true)
+      }
 
        
  },[]
@@ -105,10 +109,10 @@ const ListOfSpecEmployee = ({data}) => {
     
     <div className='N5-content'>
            {<h1>LIST OF {user}</h1>}
-
+         {location.state && <div>{location.state.message}</div>}
+           
+           {isAuth && <Button className="btn btn-primary btn-sm" type="submit"  role="button" onClick={handleSubmit}><span></span><span className="  p-2 ">New Registration</span></Button>}
            {data.length>0?<div className='ListOfSpec'>
-           <Button className="btn btn-primary btn-sm" type="submit"  role="button" onClick={handleSubmit}><span></span><span className="  p-2 ">New Registration</span></Button>
-
            <table className='table5'>
 
           

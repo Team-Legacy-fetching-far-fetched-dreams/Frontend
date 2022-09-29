@@ -2,7 +2,6 @@ import React, { Component, useEffect, useState} from 'react'
 import './DPatient.css'
 import DcSidebar from './DcSidebar'
 import DcDashNav from "./DcDashNav"
-import Clock from '../Clock'
 import {motion} from 'framer-motion/dist/framer-motion'
 import ListOfRegPatients from '../TABLE LISTS/Patient/ListOfRegPatients'
 import { logout } from '../../../auth'
@@ -96,7 +95,6 @@ const DPatient = () => {
         </div>
         </div>
         <div>
-          <Clock />
         </div>
         {/* <MainDash/> */}
       </div>

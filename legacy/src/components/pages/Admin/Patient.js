@@ -1,16 +1,16 @@
 import React, { Component, useEffect, useState}  from 'react'
 import './AdminDashboard.css'
 import Sidebar from './Sidebar'
-import Clock from '../Clock'
 import AdDashNav from "./AdDashNav"
 import {motion} from 'framer-motion/dist/framer-motion'
 import ListOfRegPatients from '../TABLE LISTS/Patient/ListOfRegPatients'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import { logout } from '../../../auth'
 
 const Patient =()=> {
   const  [state, setState] = useState()
   const [isLoading, setLoading]  = useState()
+  const navigate = useNavigate()
  
 
   useEffect(() =>{
@@ -23,10 +23,9 @@ const Patient =()=> {
       }
     }
   
+
   
-     console.log(token)
-  
-    fetch('/patients', requestOptions)
+    fetch("/patients", requestOptions)
     .then(res => {
       if(res.status===200){
         setLoading(true)
@@ -34,6 +33,9 @@ const Patient =()=> {
       }
       else if (res.status === 401){
         logout(token)
+      }
+      else{
+        navigate(-1)
       }
       res.json()
     })
@@ -56,21 +58,15 @@ const Patient =()=> {
         <Sidebar/>
         <div className='Dashboardcontainer'>
         <AdDashNav/>
-        <div className=''>
+       
 
         <div className='createButton'>
-            <Link to ={"/Patient/Register"}>
-            <input type='submit' value = "Register New Patient" />
-            </Link>
             </div>
         {!isLoading ? <ListOfRegPatients data={state}/>:<div>loading</div>}
          <div>
         </div>
         </div>
-        </div>
-        <div>
-          <Clock />
-        </div>
+       
        
         {/* <MainDash/> */}
       </div>

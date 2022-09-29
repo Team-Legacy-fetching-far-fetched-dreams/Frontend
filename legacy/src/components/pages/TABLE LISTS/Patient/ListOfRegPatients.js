@@ -1,6 +1,6 @@
 import React, {useEffect, useState, Component} from 'react'
 import './ListOfRegPatients.css'
-import {Link, useNavigate} from 'react-router-dom'
+import {Link, useLocation, useNavigate} from 'react-router-dom'
 import Button from 'react-bootstrap/esm/Button'
 
 
@@ -9,11 +9,13 @@ const DeleteUser = ({data}) => {
 
 }
 const ListOfRegPatients = ({data}) => {
+   const location = useLocation()
    const navigate = useNavigate();
    const initialSearch = { column_name: "surname", data: ""}
    const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY')
    const [searchObj, setSearchObj] = useState(initialSearch)
    const [len, setLen] = useState(0)
+   const [isAuth, setAuth] = useState()
    const [actData, setActData] = useState()
 // const [,setlistOfRegP] = useState([]);
 const viewDetails = (id) =>{
@@ -34,27 +36,36 @@ const StartSearch = (e) => {
    }
 }
 
-
+const handleSubmit = () =>{
+   navigate("/Patient/Register")
+}
 
 const openProfile = (id) => {
    navigate(`/Profile/Patient/${id}`)
 }
  useEffect(()=>{
        console.log( data)
+       console.log(location)
+       console.log("iahoi")
+       let access =  location.pathname.split("/")[1]
+         
 
+       if (access === "AdminDashboard" || access === "NurseDashboard"){
+            setAuth(true)
+       }
        
  },[])
  
 //  );
-  return (data.length>0?
+  return (
+   //  <div className='N-g'>
     
     <div className='N2-content'>
          <h1>List of Registered Patients</h1>
          <div className='New'>
-         <Link to = {"/AdminDashboard/Patient"}>
-         <Button className="btn btn-primary btn-sm" type="submit"  role="button"><span></span><span className="  p-2 ">New Registration</span></Button>
-         </Link>
-         </div>
+         {location.state && <div>{location.state.message}</div>}
+         {isAuth &&<Link to = "/Patient/Register"><Button className="btn btn-primary btn-sm" type="submit"  role="button"><span></span><span className="  p-2 " onclick={handleSubmit}>New Registration</span></Button> </Link> }
+         </div>{data.length>0?
          <div className='ListOfRegP'>
       <table className="table3">
 
@@ -66,7 +77,7 @@ const openProfile = (id) => {
          <th>Action</th>
            {data.map((ListOf,key) =>{
   
-  return( 
+  return(
 
    <tr>
    <td key={key}>
@@ -97,11 +108,15 @@ const openProfile = (id) => {
  </td>
 
  
+
+
+
+
  <td>
               <Link to =  {`/Profile/Patient/${ListOf.patient_id}`}>
                 <input className="p-1 m-2" type="submit" value="view"/>
              </Link>
-             <input  type="submit" value="delete" onClick={DeleteUser(ListOf.patient_id)}/>
+             {isAuth && <input  type="submit" value="delete" onClick={DeleteUser(ListOf.patient_id)}/>}
 
              </td>
   
@@ -118,13 +133,13 @@ const openProfile = (id) => {
         </table> 
          
         
-        </div>
+        </div>:<div>List Empty</div>}
 
   
 
   
   
-  </div>:<div>List Empty</div>
+  </div>
   
     )
 

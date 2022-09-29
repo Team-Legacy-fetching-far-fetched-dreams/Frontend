@@ -1,10 +1,11 @@
-import React from 'react'
+import React,{useState} from 'react'
 import './Sidebar.css'
 import Logo from '../../../imgs/logo2.png'
 // import {SidebarData} from "../Data/Data";
 import {UilSignOutAlt, UilEstate, UilUserNurse, UilUserMd , UilAccessibleIconAlt } from '@iconscout/react-unicons'
 import {Link, useNavigate} from 'react-router-dom'
 import { logout } from '../../../auth'
+
 
 const Sidebar = () => {
   const navigate = useNavigate() 
@@ -25,7 +26,9 @@ const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY');
       <div className='menu'>
       
           <ul>
-            <li>
+            <li className='active'
+            
+            >
             <Link to ='/AdminDashBoard'>
               <UilEstate className="icon"/>
               <span>Dashboard</span>
@@ -50,7 +53,7 @@ const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY');
             </Link>
             </li> 
             <li>
-              <Link to = '/LandingPage' onClick={logOut}>
+              <Link to = '/LandingPage'>
             <UilSignOutAlt className="icon"/>
               <span>Logout</span>
               </Link>

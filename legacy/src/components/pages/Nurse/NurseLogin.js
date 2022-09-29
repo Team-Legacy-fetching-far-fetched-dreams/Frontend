@@ -121,7 +121,7 @@ const NurseLogin = () => {
   return (
     <div className='N-m'>
     <div className='N-g'>
-       <div className = "N-h">
+       <div className = "N-h lh">
            <img src={Logo} alt="" className = "N-logo"></img>  
        </div>
        {location.state && <div>{location.state.message}</div>}
@@ -157,7 +157,7 @@ const NurseLogin = () => {
                   
                </div>
                <div className='wwelcomeImg'>
-                <img src={wwelcomeImg} id='wel-img-id' alt='' srcSet='' />
+                <img src={wwelcomeImg} className="nlogin-img" alt='' srcSet='' />
                </div>
                </div>
                </div> 

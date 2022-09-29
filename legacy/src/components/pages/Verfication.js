@@ -3,6 +3,7 @@ import './Verification.css'
 import Logo from '../../imgs/logo2.png'
 import Security from '../../imgs/security.png'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import Alert from 'react-bootstrap/Alert';
 // import {Link, useNavigate} from 'react-router-dom'
 // import {motion} from 'framer-motion/dist/framer-motion'
 // import {useForm} from 'react-hook-form'
@@ -55,9 +56,24 @@ import {useNavigate} from 'react-router-dom'
 import {motion} from 'framer-motion/dist/framer-motion'
 import {Button,Form} from 'react-bootstrap'
 import {useForm} from 'react-hook-form'
+import {Link} from 'react-router-dom'
   
 const Verfication = () => {
 
+  const showAlert= () =>{
+    return(
+    <Alert variant="primary">
+      This is a alert—check it out!
+    </Alert>
+    )
+  } 
+
+  const goToAbout=()=>{
+    navigate("/AboutUs")
+  }
+  const goToContact=()=>{
+    navigate("/ContactUs")
+  }
 
 const {register, reset, handleSubmit, formState:{errors}} = useForm();
 const navigate = useNavigate()
@@ -85,7 +101,7 @@ const body={
     .then(data=>{
       console.log(data)
 
-      {(data.access==='granted')?navigate('/LandingPage') :navigate('/')}
+      {(data.access==='granted')?navigate('/LandingPage') : navigate('/')}
     })
     
 
@@ -102,6 +118,14 @@ const body={
     >
     <div className="AppGlass">
       <div align="center" className = "container">
+        <div className="AusCusLink">
+        <Button onClick={goToAbout}>
+        AboutUs
+        </Button>
+        <Button onClick={goToContact}>
+        ContactUs
+        </Button>
+        </div>
          <img src={Logo} alt="" className = "Vlogo"></img>
          <h1>Welcome!!</h1>
          <h2>Please Enter The Unique Code</h2>

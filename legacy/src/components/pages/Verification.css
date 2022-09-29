@@ -23,6 +23,20 @@ align-items: center;
     
   }
 
+.AusCusLink{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.AusCusLink a{
+  text-decoration: none;
+  padding-left: 20px;
+  color: var(--blue)
+}
+
+
+
   .container{
     margin-top: 50px;
   }
@@ -41,16 +55,16 @@ align-items: center;
    
     }
 
-    .pic_div{
+    /* .pic_div{
       display: flex;
       position: relative;
-    }
+    } */
 
 .Secure{
  /* look for a display or position to make the picture constant irrespective the items on the page*/
  position: absolute;
- left: 80px;
- top: 0px;
+ left: 250px;
+ top: 250px;
   height: 30vh;      
 }    
 
@@ -63,10 +77,11 @@ align-items: center;
   } */
 }
 
-.form{
+/* .form{
 display: grid;
 grid-template-columns: 400px 300px;
-}
+
+} */
 
 #btn{
   border-radius: 100px;

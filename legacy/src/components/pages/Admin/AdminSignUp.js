@@ -62,7 +62,8 @@ const handleSubmit = (e) => {
           setFormErrors({email: "Email already exist"})
         }
         })
-        .then(data=>{
+        .then(data=>
+          {if(data){
           console.log(data)
           console.log(location)
           navigate("/AdminLogin",{
@@ -70,7 +71,8 @@ const handleSubmit = (e) => {
               message:"Please Check your email for your login Credentials"
           }
         })
-        })
+        }
+      })
       }
     }
 }
@@ -186,11 +188,7 @@ const validate = (values) => {
      
       
      
-  
-  );
-   }
-
-   
-
+  )
+}
 
 export default AdminSignUp

@@ -4,13 +4,17 @@ import {motion} from 'framer-motion/dist/framer-motion'
 import Sidebar from '../../../components/pages/Admin/Sidebar'
 import MainDash from '../../../components/pages/Admin/MainDash'
 import DcSidebar from '../../../components/pages/Doctor/DcSidebar'
+import Calendar from 'react-calendar';
 import DcDashNav from "./DcDashNav"
 import DcWidget from './DcWidget'
 import Clock from '../Clock'
 import {Link, useLocation, useNavigate} from 'react-router-dom'
 import rendrIfo from './renderInfo'
 import { logout, useAuth } from '../../../auth'
+// import { logout } from '../../../auth'
+import Skeleton from '../../Skeleton'
 import DoctorLogin from './DoctorLogin'
+import 'react-calendar/dist/Calendar.css'
 
 const DoctorDashboard=()=>{
   const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY');
@@ -21,6 +25,9 @@ const DoctorDashboard=()=>{
   const location = useLocation()
 
   const [logged] = useAuth()
+  const [state, setState] = useState([0,0])
+  const [value, onChange] = useState(new Date());
+  // const [isloading, setIsLoading] = useState(true)
   
     const requestOptions = {
     method: "GET",
@@ -70,7 +77,7 @@ const DoctorDashboard=()=>{
     
 
 
-  return (isloading?<div className='offers'>...LOADING...</div>:
+  return (isloading?<Skeleton type="sidebar"/> :
     <motion.div className='D-d-m'
     initial={{opacity: 0}}
     animate={{opacity: 1}}
@@ -92,7 +99,7 @@ const DoctorDashboard=()=>{
         </div>
         <div>
           <Clock />
-          <div></div>
+          <Calendar onChange={onChange} value={value} />
         </div>
         </div>
     </div> 

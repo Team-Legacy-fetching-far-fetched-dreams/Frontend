@@ -3,7 +3,6 @@ import './AdminDashboard.css'
 import Sidebar from './Sidebar'
 import AdDashNav from "./AdDashNav"
 import ListOfSpecEmployee from '../TABLE LISTS/ListOfDoctors/ListOfSpecEmployee'
-import Clock from '../Clock'
 import {motion} from 'framer-motion/dist/framer-motion'
 import {Link} from 'react-router-dom'
 import { logout } from '../../../auth'
@@ -55,9 +54,6 @@ const Nurse = () => {
         
         {!isLoading ? <ListOfSpecEmployee data={state} />:<div>loading</div>}
        
-        </div>
-        <div>
-          <Clock />
         </div>
         {/* <MainDash/> */}
       </div>

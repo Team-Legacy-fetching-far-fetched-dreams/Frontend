@@ -1,0 +1,134 @@
+.Sidebarsk {
+    flex: 1;
+    animation: skeleton 1s ease infinite alternate;
+  }
+  
+  @keyframes skeleton {
+    to {
+      opacity: 0.5;
+    }
+  }
+  
+  .lsk {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    
+  }
+
+  .lskimg{
+    background-color: hsl(200,20%,70%);
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+  }
+  
+  .menusk {
+    padding-left: 10px;
+  }
+
+  .menusk li{
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    margin-top: 30px;
+    border-radius : 0.7rem;
+    height: 32.61px;
+    width: 175px;
+    background-color: hsl(200,20%,70%);
+}
+
+.menusk li:nth-child(5){
+    position: absolute;
+    bottom: 2.3rem;
+}
+  
+  .bottomsk {
+    display: flex;
+    position: absolute;
+    bottom: 4.3rem;
+    align-items: center;
+    margin: 10px;
+  }
+  
+  .colorOptionsk{
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    margin: 5px;
+    background-color: hsl(200,20%,70%);
+}
+
+.AdDashNavsk{
+    height:50px;
+    display: flex;
+    align-items: center;
+    margin-top:10px;
+    animation: skeleton 1s ease infinite alternate; 
+}
+
+.searchsk {
+    display: flex;
+    align-items: center;
+    border-radius: 50px ;
+    border: 0.5px solid lightgray;
+    padding:3px;
+    width: 200px;
+    height: 30px;
+    background-color: hsl(200,20%,70%)
+}
+
+.navsk{
+    width: 70px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: hsl(200,20%,70%);
+}
+
+.itemsk{
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    position: relative;
+}
+.avatarsk{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: hsl(200,20%,70%);
+}
+
+.widgetsk{
+    display: flex;
+    width: 250px;
+    padding: 10px;
+    border-radius: 10px;
+    height: 100px;
+    background-color: hsl(200,20%,70%);
+    animation: skeleton 1s ease infinite alternate; 
+ }
+
+.calsk{
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    width: 250px;
+    height: 270px;
+    background-color: hsl(200,20%,70%);
+    animation: skeleton 1s ease infinite alternate; 
+}
+
+.clksk{
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    position: absolute;
+    top: 80%;
+    right: -30px;
+    transform: translate(-50%, -50%);
+    background-color: hsl(200,20%,70%);
+    animation: skeleton 1s ease infinite alternate;
+}

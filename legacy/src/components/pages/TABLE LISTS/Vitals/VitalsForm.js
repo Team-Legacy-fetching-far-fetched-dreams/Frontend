@@ -2,7 +2,7 @@ import React from 'react'
 import './VitalsForm.css';
 
 import { useState, useEffect } from "react";
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 
 
@@ -13,6 +13,7 @@ export const VitalsForm = () => {
   const [isSubmit, setIsSubmit] = useState(false);
   const [isloading, setIsLoading] = useState(false)
   const { id } = useParams()
+  const navigate = useNavigate()
 
   const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY')
 
@@ -45,6 +46,11 @@ export const VitalsForm = () => {
         .then(data=>{
             console.log(data)
             setIsLoading(false)
+            navigate(-1,{
+                state:{
+                    message:"Vitals Recorded Succesfully"            
+                }
+              })
         })
     }
     };

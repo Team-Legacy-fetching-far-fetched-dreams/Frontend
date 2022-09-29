@@ -6,7 +6,7 @@ import Admin3 from '../../../imgs/Admin3.png'
 import Admin4 from '../../../imgs/Admin4.png'
 import {motion} from 'framer-motion/dist/framer-motion'
 import Button from 'react-bootstrap/Button';
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 
 
 const className='hello' 
@@ -22,7 +22,7 @@ const AdminPage = () => {
   //     console.log(data)
   //   })
   // }
-
+  const navigate = useNavigate()
   const [openMefu, setOpenMefu] = useState(false)
   
   return (
@@ -36,6 +36,7 @@ const AdminPage = () => {
         <div className = "A-h">
             <img src={Logo} alt="" className = "A-logo"></img>  
         </div>
+     <Button as="sub" className="btn" id = "back-btn" onClick={() => navigate(-1)} >Back</Button>
         <div className='A-content'>
              <motion.h1
              initial=  'hidden' animate='visible' variants={{
@@ -53,7 +54,7 @@ const AdminPage = () => {
              }}
              >Hello Administrator,</motion.h1> 
              <p className="A-p">
-             The admin is responsible for organizing the health services and daily activities such as keeping records of an employee,communicate between departments to ensure adequate patient care.            
+            You can access various features after Login/SignUp. Some of the features include viewing list of patients,registers a patient and many more.
           </p>
           <img src={Admin4} alt="" className = "A-image4"></img>
           <img src={Admin2} alt="" className = "A-image2"></img>  

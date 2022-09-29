@@ -117,6 +117,7 @@ const validate = (values) => {
     <div className = "d-h">
      <img src={Logo} alt="" className = "D-logo"></img>  
   </div>
+  {location.state && <div>{location.state.message}</div>}
   <div className='dl-contents'>
   
       <div className='login-encase'>

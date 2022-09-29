@@ -12,10 +12,6 @@
     
 }
 
-.bnk{
-    border: 2px rgb(228, 223, 223);
-    background: rgb(213, 209, 209);
-}
 
  /* .Al-content h1{
     font-weight: bold;
@@ -50,34 +46,15 @@ input:focus{
     background-color: blue;
     border-radius: 15px;
     border: none;
-<<<<<<< HEAD
-=======
-}
-
-.text{
-    color:black;
-    text-align: center;
-    text-decoration: underline;
-    top: 80px;
-    
-}
-.Ad-img{
-    position: absolute;
-  left: 100px;
-  top: 200px;
-   height: 300px;   
-   margin: 50px;   
-}
->>>>>>> db48f9d1dda4cd47bc0230329bd6c981106cb2e7
     padding-left:6px;
 }
 */
 
 .login-encase{
-    height: 75vh;
+    height: 65vh;
     width: 70%;
     border-radius: 1rem;
-    margin: 2rem auto;
+    margin: 1rem auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -106,7 +83,7 @@ input:focus{
 }
 
 .img-class{
-    height: 6rem;
+    height: 4rem;
    
 }
 
@@ -125,7 +102,7 @@ input:focus{
 }
 
 .ll{
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 }
 
 .dd{
@@ -208,12 +185,12 @@ input:focus{
 }
 
 
-    h3{
+    /* h3{
         margin-left: 1rem;
         color: black;
         float: left;
         font-weight: bolder;
-    }
+    } */
   
   
 

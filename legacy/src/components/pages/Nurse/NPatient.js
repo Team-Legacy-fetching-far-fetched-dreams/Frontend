@@ -1,7 +1,6 @@
 import React, {Component, useEffect, useState} from 'react'
 import './NurseDashboard.css'
 import {motion} from 'framer-motion/dist/framer-motion'
-import Clock from '../Clock'
 import NSidebar from '../../../components/pages/Nurse/NSidebar'
 import NDashNav from "./NDashNav"
 import ListOfRegPatients from '../TABLE LISTS/Patient/ListOfRegPatients'
@@ -60,9 +59,6 @@ const NPatient = () => {
         <div className=''>
         {!isLoading? <ListOfRegPatients data={state} />:<div>loading</div>}
 
-        </div>
-        <div>
-          <Clock />
         </div>
         </div>
     </div> 

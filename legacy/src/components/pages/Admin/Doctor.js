@@ -8,6 +8,7 @@ import { logout } from '../../../auth'
 
 
 import Clock from '../Clock'
+// import {Link} from 'react-router-dom'
 import {motion} from 'framer-motion/dist/framer-motion'
 import {Link,useLocation} from 'react-router-dom'
 
@@ -31,7 +32,7 @@ const Doctor = () => {
       }
     }
     
-    fetch('/user/doctors', requestOptions)
+    fetch("/user/doctors", requestOptions)
     .then(res => {
       if(res.status===200){
         setLoading(true)
@@ -69,9 +70,6 @@ const Doctor = () => {
           {!isLoading? <ListOfSpecEmployee data={state} />:<div>loading</div>}
         
 
-        </div>
-        <div>
-          <Clock />
         </div>
         {/* <MainDash/> */}
       </div>

@@ -63,7 +63,7 @@ const AdminLogin = () => {
 
     if (Object.keys(formErrors).length === 0){
     setIsLoading(true)
-    fetch('/user/login', requestOptions)
+    fetch("/user/login", requestOptions)
       .then((res)=>{
         setIsLoading(false)
         if (res.status===200){
@@ -81,7 +81,7 @@ const AdminLogin = () => {
         // login(data.access_token)
         console.log(data)
         console.log("ljsnido")
-          
+            if (data){
             setData(data)
             setSubmit(false)
             login(data.access_token)
@@ -108,7 +108,7 @@ const AdminLogin = () => {
                 }
               })
           }
-        
+            }
       })
     }
 }
@@ -182,7 +182,7 @@ const validate = (values) => {
     exit={{opacity: 0}}
     
     >
-    <div className='bnk A-g'>
+    <div className='A-g'>
        <div  className = "A-h">
            <img src={Logo} alt="" className = "A-logo"></img>  
        </div>
