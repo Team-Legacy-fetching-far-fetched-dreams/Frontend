@@ -1,6 +1,6 @@
 import React from 'react'
 import './VitalsForm.css';
-
+import {Button} from 'react-bootstrap'
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from 'react-router-dom';
 
@@ -35,6 +35,7 @@ export const VitalsForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setIsLoading(true)
         setFormErrors(validate(formValues));
         setIsSubmit(true);
         if (Object.keys(formErrors).length === 0 && isSubmit) {
@@ -57,6 +58,7 @@ export const VitalsForm = () => {
 
     useEffect(() => {
         console.log(formErrors);
+        console.log("lkahd")
          if (Object.keys(formErrors).length === 0 && isSubmit) {
             console.log(formValues);
          }
@@ -96,9 +98,12 @@ export const VitalsForm = () => {
    
 
   return (
+    <div className="A-d-m">
+        <div className='V-f-g'>
+        <Button as="sub" className="btn" id = "back-btn" onClick={() => navigate(-1)} >Back</Button>
     <section>
         <div className="register">
-            <div className="col-1">
+            <div>
             
                 {/* <span>this form is under test!</span> */}
 
@@ -142,7 +147,7 @@ export const VitalsForm = () => {
                    
                     
                     
-                    {isloading && <div>...|Loading..</div>}
+                    {isloading && <div>LOADING..</div>}
                     
                     <button className='vbtn'>Submit</button>
                 </form>
@@ -151,6 +156,8 @@ export const VitalsForm = () => {
             
         </div>
     </section>
+    </div>
+    </div>
   )
 }
 export default VitalsForm;

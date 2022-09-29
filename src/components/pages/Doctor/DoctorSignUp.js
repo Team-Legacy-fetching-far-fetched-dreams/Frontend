@@ -210,7 +210,7 @@ const DoctorSignUp = () => {
          <input className='nm inputs'  type='text'  name='gender' placeholder='Male/Female' id='gender' onChange={handleChange} value= {formValues.gender} />
          </div>
          <p className='lon'>{formErrors.gender}</p>
-         {isloading && <div>...LAODING...</div>}
+         {isloading && <div>...LOADING...</div>}
        
         <input type='submit' onClick="validation();"  id='klo' className='submay' value='Submit' />
       

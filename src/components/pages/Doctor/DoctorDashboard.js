@@ -1,9 +1,9 @@
 import React, {useEffect, useState, Component} from 'react'
 import './DoctorDashboard.css'
 import {motion} from 'framer-motion/dist/framer-motion'
-import Sidebar from '../../../components/pages/Admin/Sidebar'
-import MainDash from '../../../components/pages/Admin/MainDash'
-import DcSidebar from '../../../components/pages/Doctor/DcSidebar'
+import Sidebar from '../Admin/Sidebar'
+import MainDash from '../Admin/MainDash'
+import DcSidebar from './DcSidebar'
 import Calendar from 'react-calendar';
 import DcDashNav from "./DcDashNav"
 import DcWidget from './DcWidget'
@@ -40,38 +40,46 @@ const DoctorDashboard=()=>{
     }
   
   
-   
-useEffect(()=>{
-
-  console.log(token)
-  if(location.state){
-  fetch(`/user/user/${location.state.id}`, requestOptions)
-    .then(res =>
-      {
-        setIsLoading(true)
-        if (res.status===200)
+   useEffect(()=>{
+    console.log(token)
+    if(location.state){
+    fetch(`/user/user/${location.state.id}`, requestOptions)
+      .then(res =>
         {
-          return res.json()
-        }
-        else if(res.status == 401){
-          logout(token)
-          navigate("/DoctorLogin")
-          console.log("Your token has expired, pleae login again")
-        }
-      return res.json()
-    })
-    .then(data=>{
-      console.log(data)
-      setData(data)
-      setIsLoading(false)
-    })
+          if (res.status===200)
+          {
   
-  }else{
-    setIsLoading(false)
-  }
+            return res.json()
+          }
+          else if(res.status == 401){
+            logout(token)
+            navigate("/DoctorLogin")
+            console.log("Your token has expired, pleae login again")
+          }
+          else if (res.status===402){
+          }
+        
+        res.json()
+      })
+      .then(data=>{
+        console.log(data)
+        setData(data)
+        setIsLoading(false)
+      })
+      
+    }else{
+      navigate('/DoctorLogin')
+    }
+      
+      // console.log(state)
     
-    // console.log(state)
-},[])
+    
+    
+   },[])
+
+
+
+    
 
 
   return (isloading?<Skeleton type="sidebar"/> :

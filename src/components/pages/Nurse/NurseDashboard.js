@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import './NurseDashboard.css'
 import {motion} from 'framer-motion/dist/framer-motion'
-import NSidebar from '../../../components/pages/Nurse/NSidebar'
+import NSidebar from './NSidebar'
 import NDashNav from "./NDashNav"
 import NWidget from './NWidget'
 import Calendar from 'react-calendar';
@@ -23,7 +23,9 @@ const NurseDashboard = () => {
   const [value, onChange] = useState(new Date());
   const [isloading, setIsLoading] = useState(true)
   const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY');
+  // const pid = location.state.id
    
+ 
    // const navigate = useNavigate()
    const requestOptions = {
      method: "GET",
@@ -43,11 +45,6 @@ const NurseDashboard = () => {
  
 
  
-   console.log(location)
-   // if(location.state.id===undefined){
-   //   setId(location.state.id)
-   //   console('hello')
-   // }
    if(location.state){
    fetch(`/user/user/${location.state.id}`, requestOptions)
      .then(res => 
@@ -72,7 +69,8 @@ const NurseDashboard = () => {
      })
  
    }else{
-     navigate('/NurseLogin')
+    //  navigate('/NurseLogin')
+    setIsLoading(false)
    }
    console.log(data)
 

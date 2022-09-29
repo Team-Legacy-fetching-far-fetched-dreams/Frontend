@@ -7,16 +7,30 @@
   text-align: center;
 } */
 
+.V-f-g{
+  display: flex;
+     height: 93vh;
+     width: 95vw;
+     border-radius: 2rem;
+     background-color: var(--glass);
+     backdrop-filter: blur(7px);
+     overflow: hidden;
+     justify-content: center;
+     align-items: center;
+ }
+
 .register{
   max-width: 600px;
-  height: 720px;
+  height: 600px;
   /* width: 80vw; */
   display:flex;
   border: 1px solid #f0f4f4;
   border-radius: 20px;
   /* box-shadow: 1px 3px 10px #e9ecef; */
   background-color: rgb(241, 241, 241);
-  margin-left: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   
 }
 
@@ -96,6 +110,8 @@
 .bp{
   display:flex;
   padding: 0.5em 0;
+  position: relative;
+  right: 60px;
 }
 .eachbp{
   max-width: 525px;

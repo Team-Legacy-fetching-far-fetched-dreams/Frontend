@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/esm/Button'
 import { set } from 'react-hook-form'
 import {useParams, Link} from 'react-router-dom'
 import Logo from '../../../../imgs/logo2.png'
-import NewProfile from "./NewProfile.png"
+import NewProfile from "../../../../imgs/NewProfile.png"
 import "./PatientInfo.css"
 const PatientInfo = () => {
     const { id } = useParams()

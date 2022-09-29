@@ -44,6 +44,7 @@ const requestOptionsV = {
     e.preventDefault();
     setIsSubmit(true);
     console.log(formValues)
+    setIsLoadingD(true)
 
     if (isSubmit && id){
       fetch(`/patients/diagnosis/${id}`,requestOptionsD)
@@ -87,17 +88,17 @@ const requestOptionsV = {
     {(data && isvitalAvail)?<div className='left-sides'>
     
     <ul className='op'>
-  <li className='opp'>ID: {data.patient_id}</li>
-  <li className='opp'>Temperature: {data.temperature}F</li>
-  <li className='opp'>Height: {data.height}cm</li>
-  <li className='opp'>Weight:{data.weight}kg</li>
-  <li className='opp'>BP: {data.bloodpressure_mm}/{data.bloodpressure_Hg} mmHg</li>
-  <li className='opp'>Keeper ID: {data.keeper_id}</li>
-  <li className='opp'>Date Recorded: {data.date}</li>
+  <li className='opp'>ID : {data.patient_id}</li>
+  <li className='opp'>Temperature : {data.temperature}F</li>
+  <li className='opp'>Height : {data.height}cm</li>
+  <li className='opp'>Weight :{data.weight}kg</li>
+  <li className='opp'>BP : {data.bloodpressure_mm}/{data.bloodpressure_Hg} mmHg</li>
+  <li className='opp'>Keeper ID : {data.keeper_id}</li>
+  <li className='opp'>Date Recorded : {data.date}</li>
 </ul>
     </div>:<div>No available vitals</div>}
      
-    </div>:<div>...Loading...</div>}
+    </div>:<div>LOADING...</div>}
     <div className='right-sides'>
     <div className='body-rights'>
       <div className='containerser'>
@@ -128,7 +129,7 @@ const requestOptionsV = {
          
          </form>
       </div>
-      {isLoadingD &&<div>...LOADIND...</div>}
+      {isLoadingD &&<div>LOADIND...</div>}
     </div>
     </div>
  

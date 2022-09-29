@@ -32,7 +32,7 @@ return(
  <tr>
  <td key={key}>
  {
-    Await.persion_id
+    Await.person_id
 
  }
   
@@ -73,7 +73,7 @@ return(
       </table> 
        
       </div>
-    </div>:<div>List EmpdWty</div>
+    </div>:<div>List Empty</div>
   )
 }
 

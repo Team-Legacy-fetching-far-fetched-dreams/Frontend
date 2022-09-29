@@ -31,11 +31,7 @@
   "proxy": "https://legacy-healthcare-services.herokuapp.com",
   "secure": "False",
   "scripts": {
-<<<<<<< HEAD:package.json
     "start": "react-scripts start",
-=======
-    "start": "react-Scripts start",
->>>>>>> de362fc0403c468583117f8c04ee80bf7890ca48:legacy/package.json
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

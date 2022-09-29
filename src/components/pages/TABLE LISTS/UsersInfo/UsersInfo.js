@@ -1,7 +1,7 @@
 import React,{ useState, useEffect } from 'react'
 import Button from 'react-bootstrap/esm/Button'
 import "./UsersInfo.css"
-import NewProfile from "./NewProfile.png"
+import NewProfile from "../../../../imgs/NewProfile.png"
 import Logo from '../../../../imgs/logo2.png'
 import { Link } from 'react-router-dom'
 

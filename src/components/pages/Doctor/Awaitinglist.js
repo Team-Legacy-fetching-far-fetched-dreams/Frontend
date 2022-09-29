@@ -38,7 +38,7 @@ const AwaitingList = (props) => {
   }
   ,[])
   return (
-    loading?<div>...loading...</div>:
+    loading?<div>LOADING...</div>:
     <motion.div className='D-d-m'
     initial={{opacity: 0}}
     animate={{opacity: 1}}
