@@ -80,7 +80,6 @@ const Diagnose = () => {
   return (
 
     <div className='d-m'>
-    
     <div className='d-g'>
          <div className='d-h'>
                     <img src={Logo} alt="" className = "D-logo"></img> 
@@ -89,34 +88,34 @@ const Diagnose = () => {
       <div className="row mx-auto">
        
         <div className="col-md-5 border-right">
-            <div className="p-3 py-5">
+        {!isLoadingV?<div className="p-3 py-5">
                 <div className="d-flex justify-content-between align-items-center mb-3">
                     <h3 className="ms-2">Vitals</h3>
                     
                 </div>
+                {(data && isvitalAvail)?<div>
                 <div className="row mt-2 ">
-                    <div className="col-md-6 align-items-center"><label className="labels">Patient Id</label><input type="text" className="form-control"   value="1" /></div>
-                    <div className="col-md-6"><label className="labels">Temperature</label><input type="text" className="form-control" value="43"/></div>
+                    <div className="col-md-6 align-items-center"><label className="labels">Patient Id: {data.patient_id}</label><input type="text" className="form-control"   value="1" /></div>
+                    <div className="col-md-6"><label className="labels">Temperature: {data.temperature}F </label><input type="text" className="form-control" value="43"/></div>
                 </div>
                 <div className='row mt-3'>
-                    <div className="col-md-6"><label className="labels">Height</label><input type="text" className="form-control" value="5.5"/></div>
-                    <div className="col-md-6"><label className="labels">Weight</label><input type="text" className="form-control"  value="47"/></div>
+                    <div className="col-md-6"><label className="labels">Height: {data.height}cm</label><input type="text" className="form-control" value="5.5"/></div>
+                    <div className="col-md-6"><label className="labels">Weight: {data.weight}kg</label><input type="text" className="form-control"  value="47"/></div>
                 </div>
                 <div className="row mt-3">
-                    <div className="col-md-6"><label className="labels">Keeper Id</label><input type="text" className="form-control"  value="2"/></div>
-                    <div className="col-md-6"><label className="labels">Date_Recorded</label><input type="text" className="form-control" value="12-02-22" /></div>
+                    <div className="col-md-6"><label className="labels">Keeper Id: {data.keeper_id}</label><input type="text" className="form-control"  value="2"/></div>
+                    <div className="col-md-6"><label className="labels">Date_Recorded: {data.date}</label><input type="text" className="form-control" value="12-02-22" /></div>
                 </div>
                 <div className="row mt-4">
-                    <div className="col-md-12"><label className="labels">Blood Pressure</label><input type="text" className="form-control" value="123/23"/></div>
+                    <div className="col-md-12"><label className="labels">Blood Pressure : {data.bloodpressure_mm}/{data.bloodpressure_Hg} mmHg</label><input type="text" className="form-control" value="123/23"/></div>
                 </div>
-            </div>
-        
-        </div>
+            </div>:<div>No available vitals</div>}
+        </div>:<div>LOADING...</div>}
             
                 <div className='col-md-5 '>
                 <div className='body-rights'>
                 <div className='containert'>
-                    <form className='form '>
+                    <form className='form ' onSubmit={sendDiagnosis}>
                     <div className="form-group">
                      <label for=""><h3>DIAGNOSE</h3></label>
                      <textarea className="form-control" id="" rows="3"></textarea>
@@ -139,6 +138,7 @@ const Diagnose = () => {
                         </div>
                     </form>
                 </div>
+                {isLoadingD &&<div>LOADING...</div>}
                 </div>
                 </div>
             </div>
@@ -148,7 +148,7 @@ const Diagnose = () => {
         </div>
 
     </div>
-
+</div>
     
   )
 }
