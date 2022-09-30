@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Verification.css'
 import Logo from '../../imgs/logo2.png'
 import Security from '../../imgs/security.png'
@@ -59,7 +59,7 @@ import {useForm} from 'react-hook-form'
 import {Link} from 'react-router-dom'
   
 const Verfication = () => {
-
+ const [access, setAccess] = useState(true)
   const showAlert= () =>{
     return(
     <Alert variant="primary">
@@ -101,7 +101,12 @@ const body={
     .then(data=>{
       console.log(data)
 
-      {(data.access==='granted')?navigate('/LandingPage') : navigate('/')}
+      if(data.access==='granted'){
+        navigate('/LandingPage')}
+        else{
+
+          setAccess(false)
+        } 
     })
     
 
@@ -170,6 +175,7 @@ const body={
                   
                 </div>
                 {errors.pin && <p style={{color:"red"}}><small>A 4 digit code is required</small></p> }
+                {!access && <p style={{color:"red"}}><small>Invalid Pin</small></p> }
                 {/* {errors.pin?.message && <p>{errors.pin?.message}</p>} */}
                 {/* {errors.pin?.type==="maxLength" && (<p style={{color:"red"}}>{errors.pin.message}</p>)} */}
                 </Form.Group>

@@ -1,23 +1,23 @@
 self.__precacheManifest = [
   {
-    "revision": "9d19414da9fc4a319998",
-    "url": "/static/css/main.bf87a8bb.chunk.css"
+    "revision": "ba674e92f062003746f4",
+    "url": "/static/css/main.e639cc5c.chunk.css"
   },
   {
-    "revision": "9d19414da9fc4a319998",
-    "url": "/static/js/main.fe92b1f1.chunk.js"
+    "revision": "ba674e92f062003746f4",
+    "url": "/static/js/main.4c294632.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
     "url": "/static/js/runtime~main.a8a9905a.js"
   },
   {
-    "revision": "d175514b2c16e606f75f",
+    "revision": "339c79b9424bb5de43d9",
     "url": "/static/css/2.db59f550.chunk.css"
   },
   {
-    "revision": "d175514b2c16e606f75f",
-    "url": "/static/js/2.bafcd5e5.chunk.js"
+    "revision": "339c79b9424bb5de43d9",
+    "url": "/static/js/2.13ae5ab0.chunk.js"
   },
   {
     "revision": "2b82802f37903c9b4fbdb990a5f5c732",
@@ -88,10 +88,6 @@ self.__precacheManifest = [
     "url": "/static/media/Artboard 1.14f115f0.png"
   },
   {
-    "revision": "c0cf517842480854f257efc5487bbeeb",
-    "url": "/static/media/patient image.c0cf5178.png"
-  },
-  {
     "revision": "01d6c66d97a36c7c115542a28dea492a",
     "url": "/static/media/doc1.01d6c66d.png"
   },
@@ -144,6 +140,10 @@ self.__precacheManifest = [
     "url": "/static/media/hellonurse.6adcdd78.jpg"
   },
   {
+    "revision": "c0cf517842480854f257efc5487bbeeb",
+    "url": "/static/media/patient image.c0cf5178.png"
+  },
+  {
     "revision": "0102ced612752a7b10706d50c1c66586",
     "url": "/static/media/loginpin.0102ced6.png"
   },
@@ -152,7 +152,7 @@ self.__precacheManifest = [
     "url": "/static/media/nursesignup.582ade8a.jpg"
   },
   {
-    "revision": "094e6e72115e346ff851bc5b537d5128",
+    "revision": "4ebab3d8a77ebdc62fc365ccf3a39d23",
     "url": "/index.html"
   }
 ];

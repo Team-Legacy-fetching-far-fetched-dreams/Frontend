@@ -68,28 +68,22 @@ export const VitalsForm = () => {
         const errors = {}
         if (!values.temperature) {
             errors.temperature = "temperature is required!"; 
-        }else if (values.temperature < 5){
-            errors.temperature = "value for temperature has exceeded maximum"
         }
+        
         if (!values.weight) {
             errors.weight = "weight is required!"; 
-        }else if (values.weight < 5){
-            errors.weight = "value for weight has exceeded maximum"
+        
         }
         if (!values.height) {
             errors.height = "height is required!"; 
-        }else if (values.height < 5){
-            errors.height = "value for height has exceeded maximum"
         }
         if (!values.bloodpressure_mm) {
             errors.bloodpressure_mm = "bloodpressure_mm is required!"; 
-        }else if (values.bloodpressure_mm < 5){
-            errors.bloodpressure_mm = "value for bloodpressure_mm has exceeded maximum"
         }
+        
         if (!values.bloodpressure_Hg) {
             errors.bloodpressure_Hg = "bloodpressure_hg is required!"; 
-        }else if (values.bloodpressure_Hg < 5){
-            errors.bloodpressure_Hg = "value for bloodpressure_hg has exceeded maximum"
+        
         }    
         return errors;
     }
