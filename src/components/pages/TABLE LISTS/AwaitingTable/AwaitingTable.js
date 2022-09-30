@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { Button } from 'react-bootstrap'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useLocation, useParams } from 'react-router-dom'
 import "./AwaitingTable.css"
 
 
@@ -8,6 +8,7 @@ import "./AwaitingTable.css"
 const AwaitingTable = ({data}) => {
 
    const { id } = useParams()
+   const location = useLocation()
 const diagnose =() =>{
 
 }
@@ -16,12 +17,13 @@ const diagnose =() =>{
         console.log("gkf")
     },[])
     
-  return (data.length?
+  return (
 
     <div className='N7-content'>
        <h1>List of Awaiting Patients</h1>
-       
+         {location.state && <div>{location.state.message}</div>}
          <div className='ListOfAwaiting'>
+            {data.length>0?
       <table className="table7">
 
        
@@ -76,10 +78,10 @@ return(
          )
       
       }
-      </table> 
+      </table> :<div className='emlist'>List Empty</div>}
        
       </div>
-    </div>:<div className='emlist'>List Empty</div>
+    </div>
   )
 }
 

@@ -36,8 +36,10 @@ const handleSubmit = (e) => {
   formValues["qualification"] = "Admin"
   console.log(formValues)
 
+}
+  useEffect(() => { 
      //console.log(formErrors);
-     if (Object.keys(formErrors).length === 0){
+     if (Object.keys(formErrors).length === 0 && isSubmit){
       setIsLoading(true)
       console.log(formValues);
 
@@ -86,7 +88,8 @@ const handleSubmit = (e) => {
       })
       }
     }
-}
+
+},[formErrors])
 
 const validate = (values) => {
   const errors = {};

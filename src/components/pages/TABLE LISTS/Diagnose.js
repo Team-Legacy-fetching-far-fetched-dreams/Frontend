@@ -45,20 +45,24 @@ const Diagnose = () => {
           console.log(formValues)
           setIsLoadingD(true)
       
-          if (isSubmit && id){
-            fetch(`/patients/diagnosis/${id}`,requestOptionsD)
+          if (id){
+            fetch(`https://legacy-healthcare-services.herokuapp.com/patients/diagnosis/${id}`,requestOptionsD)
             .then(res=>{
               setIsLoadingD(true)
               return res.json()})
             .then(data=>{
               setIsLoadingD(false)
               console.log(data)
+              navigate(`/DoctorDashboard/AwaitingList`,{
+                  state:{
+                    message:"Patient has been diagnosed" }
+              })
             })
           }
         }
         useEffect(()=>{
           if (id){
-          fetch(`/patients/vital/${id}`, requestOptionsV)
+          fetch(`https://legacy-healthcare-services.herokuapp.com/patients/vital/${id}`, requestOptionsV)
           .then(res=>{
             setIsLoadingV(true)
             if (res.status==200){

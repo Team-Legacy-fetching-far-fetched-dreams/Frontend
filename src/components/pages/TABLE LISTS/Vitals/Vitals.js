@@ -28,7 +28,9 @@ const Vitals = ({data}) => {
             <Link to =  {`/VitalsForm/${id}`}>
          <Button className="btn btn-primary btn-sm" type="submit"  role="button" onClick={Print}><span></span><span className=" p-2 ">Record Vitals</span></Button>
          </Link>
+         
          </div>
+         {location.state && <div>{location.state.message}</div>}
             {data.length>0?<div className='VitalsC'>
     
            <table className='table4'>
