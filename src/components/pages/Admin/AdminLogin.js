@@ -74,7 +74,7 @@ const AdminLogin = () => {
         }
         else {
           console.log("Incorect")
-          setFormErrors({incorrect: "Incorrect Passwword or Username"})
+          setFormErrors({incorrect: "Incorrect Password or Username"})
         }
       })
       .then(data=>{
@@ -204,7 +204,7 @@ const validate = (values) => {
                 <p className='err'>{formErrors.password}</p>
                 <input className='ii' placeholder='Enter your password...' type='password'  name='password'  onChange={handleChange} value={formValues.password} id='pwd1'></input>
                 <p className='err'>{formErrors.incorrect}</p>
-                {isloading && <div>...LAODING...</div>}
+                {isloading && <div>LOADING...</div>}
                 <button className='ll' type='submit' id='sub_butt'> Login </button>
               </form>
               

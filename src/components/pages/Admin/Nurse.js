@@ -57,7 +57,7 @@ const Nurse = () => {
         </div>
         {/* <MainDash/> */}
       </div>
-    </motion.div>:<div>...LOADING...</div>
+    </motion.div>:<div>LOADING</div>
   )
 
 }

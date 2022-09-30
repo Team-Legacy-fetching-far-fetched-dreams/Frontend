@@ -1,7 +1,7 @@
 import React, {Component, useEffect, useState} from 'react'
 import './NurseDashboard.css'
 import {motion} from 'framer-motion/dist/framer-motion'
-import NSidebar from '../../../components/pages/Nurse/NSidebar'
+import NSidebar from './NSidebar'
 import NDashNav from "./NDashNav"
 import ListOfRegPatients from '../TABLE LISTS/Patient/ListOfRegPatients'
 import { logout } from '../../../auth'

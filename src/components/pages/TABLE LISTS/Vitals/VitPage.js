@@ -12,7 +12,7 @@ const VitPage = () =>{
 
     const [isLoading, setIsLoading] = useState(true)
     const [data, setData] = useState()
-    const { id } = useParams
+    const { id } = useParams()
     const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY');
   const requestOptions = {
     method: "GET",
@@ -24,10 +24,10 @@ const VitPage = () =>{
 
   useEffect(()=>{
 
-    fetch(`/patients/vitals//${id}`, requestOptions)
+    fetch(`/patients/vital/${id}`, requestOptions)
     .then(res => {
         setIsLoading(true)
-        res.json()
+        return res.json()
     })
     .then((resJson)=>{
       setData(resJson)
@@ -49,7 +49,7 @@ const VitPage = () =>{
         <NDashNav/>
         <div className=''>
         <div>
-         {isLoading ? <div>...LOADING...</div>:<Vitals data = {data} id={id}/>}
+         {isLoading ? <div>...LOADING...</div>:<Vitals data = {data}/>}
       </div>
         </div>
         </div>

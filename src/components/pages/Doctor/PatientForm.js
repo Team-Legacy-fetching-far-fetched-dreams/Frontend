@@ -54,21 +54,17 @@ const PatientForm = () => {
           }
         })
         .then(data=>{
-          if(data){
           console.log(data)
-          navigate(-1,{
-            state:{
-                message:"Patient Registered Succesfully"            
-            }
-          })
+          navigate(-1)
         }
-      })
+      )
 
        
       }
 
      }
-}
+    }
+
 
 
 
@@ -147,12 +143,12 @@ const PatientForm = () => {
          <p className='lon'>{formErrors.surname}</p>
          <div className='loki'>
          <h5 className='hac'>Other Names</h5>
-         <input className='nm inputs' type='text' name='other_name' onChange={handleChange} value= {formValues.other_name}   id='oname'/>
+         <input className='nm inputs' type='text' name='other_names' onChange={handleChange} value= {formValues.other_names}   id='oname'/>
          </div>
-         <p className='lon'>{formErrors.other_name}</p>
+         <p className='lon'>{formErrors.other_names}</p>
          <div className='loki'>
          <h5 className='hac'>Date Of Birth</h5>
-         <input className='nm inputs'  type='date' id='birthday' name='birth_date' onChange={handleChange} value= {formValues.birth_date} />
+         <input className='nm inputs'  type='date' id='birthday' name='date_of_birth' onChange={handleChange} value= {formValues.date_of_birth} />
          </div>
          <p className='lon'>{formErrors.birth_date}</p>
          <div className='loki'>
@@ -179,14 +175,14 @@ const PatientForm = () => {
          <input className='nm inputs'  type='text'  name='gender' placeholder='Male/Female' id='gender' onChange={handleChange} value= {formValues.gender} />
          </div>
          <p className='lon'>{formErrors.gender}</p>
-         {isloading && <div>...LOADING...</div>}
+
        
-        <input type='submit' onClick="validation();"  id='klo' className='submay' value='Submit' />
+        <input type='submit'   id='klo' className='submay' value='Submit' />
       
         </form>
 
      </div>
-     
+     {isloading && <div>...LAODING...</div>}
    </div>
 
    </div>
@@ -195,7 +191,6 @@ const PatientForm = () => {
  
 
     </div>
-        
         
       
   )

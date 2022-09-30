@@ -1,10 +1,15 @@
 import React, {useEffect} from 'react'
 import './Vitals.css'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import Button from 'react-bootstrap/esm/Button'
 
-const Vitals = ({data}, id) => {
-
+const Vitals = ({data}) => {
+    
+    const Print =() =>{
+        console.log("knadosk")
+        console.log(id)
+    }
+    const { id } = useParams()
     useEffect(
         ()=>{
             console.log(data)
@@ -16,7 +21,7 @@ const Vitals = ({data}, id) => {
             <h1>List of Vitals</h1>
             <div className='New1'>
             <Link to =  {`/VitalsForm/${id}`}>
-         <Button className="btn btn-primary btn-sm" type="submit"  role="button"><span></span><span className=" p-2 ">Record Vitals</span></Button>
+         <Button className="btn btn-primary btn-sm" type="submit"  role="button" onClick={Print}><span></span><span className=" p-2 ">Record Vitals</span></Button>
          </Link>
          </div>
             {data?<div className='VitalsC'>
@@ -55,7 +60,7 @@ const Vitals = ({data}, id) => {
                                 vit.bloodpressure_mm
                             } /
                             {
-                                vit.bloodpressure_hg
+                                vit.bloodpressure_Hg
                             }
 
                         </td>

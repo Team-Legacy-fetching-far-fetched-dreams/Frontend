@@ -25,7 +25,7 @@ const Patient =()=> {
   
 
   
-    fetch("/patients", requestOptions)
+    fetch("/patients/", requestOptions)
     .then(res => {
       if(res.status===200){
         setLoading(true)
@@ -71,7 +71,7 @@ const Patient =()=> {
         {/* <MainDash/> */}
       </div>
        
-    </motion.div>:<div>...LOADING...</div>
+    </motion.div>:<div>LOADING...</div>
   )
 }
 

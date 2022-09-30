@@ -69,7 +69,8 @@ useState(() => {
 
   }
   else{
-    navigate('/AdminLogin')
+    setIsLoading(false)
+    // navigate('/AdminLogin')
   }
   console.log(data)
   console.log("ouh")
