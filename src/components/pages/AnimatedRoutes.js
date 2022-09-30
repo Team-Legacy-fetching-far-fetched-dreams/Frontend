@@ -49,6 +49,7 @@ import NPatient from './Nurse/NPatient';
 
 
 import {AnimatePresence} from 'framer-motion/dist/framer-motion'
+import Diagnose from './TABLE LISTS/Diagnose';
 
 // import ListOfRegPatients from './ListOfRegPatients';
 
@@ -65,8 +66,9 @@ const AnimatedRoutes = () => {
               <Route path ="/Home" element={<Home/>} />
               <Route path ="/ContactUs" element={<ContactUs/>} />
               <Route path ="/AboutUs" element={<AboutUs/>} />
-              <Route path ="/Patient/Diagnosis/:id" element={<Mefu/>} />
+              {/* <Route path ="/Patient/Diagnosis/:id" element={<Mefu/>} /> */}
               <Route path = "/Patient/Diagnosis/List/:id" element={<DiagnosisList/>}/>
+              <Route path ="/Patient/Diagnosis/:id" element={<Diagnose/>} />
             
 
            
@@ -84,9 +86,9 @@ const AnimatedRoutes = () => {
               {/* <Route path ="/ListOfRegPatients" element={<ListOfRegPatients/>} /> */}
               <Route path ="/AdminPage" element={<AdminPage/>} />
               <Route path ="/Modal" element={<Modal/>} />
-              {/* <Route path ="/Mafu" element={<Mafu/>} /> */}
+               <Route path ="/Mefu" element={<Mefu/>} /> 
               <Route path ="/AwaitingTable" element={<AwaitingTable/>}/>
-
+              {/* <Route path ="/Diagnose" element={<Diagnose/>}/> */}
           
              
 

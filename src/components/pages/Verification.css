@@ -32,7 +32,7 @@ align-items: center;
 .AusCusLink a{
   text-decoration: none;
   padding-left: 20px;
-  color: var(--blue)
+  color: whitesmoke;
 }
 
 
@@ -90,6 +90,9 @@ grid-template-columns: 400px 300px;
   padding-top: 10px;
 }
 
+.abn{
+background-color: whitesmoke;
+}
 
 #password{
   width:300px;

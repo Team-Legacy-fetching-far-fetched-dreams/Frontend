@@ -6,6 +6,7 @@ import {motion} from 'framer-motion/dist/framer-motion'
 import AwaitingTable from '../TABLE LISTS/AwaitingTable/AwaitingTable'
 import { useParams } from 'react-router-dom'
 import { propTypes } from 'react-bootstrap/esm/Image'
+import Cliploader from 'react-spinners/ClipLoader'
 
 const AwaitingList = (props) => {
   const [data,setData] = useState([])
@@ -38,7 +39,7 @@ const AwaitingList = (props) => {
   }
   ,[])
   return (
-    loading?<div>LOADING...</div>:
+    loading? <div><Cliploader size={30} color="blue" className='spinner'/></div>:
     <motion.div className='D-d-m'
     initial={{opacity: 0}}
     animate={{opacity: 1}}

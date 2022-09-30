@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 import {Link, useNavigate} from 'react-router-dom'
 import {useForm} from 'react-hook-form'
 import imgs from '../../../imgs/patient image.png'
+import Cliploader from 'react-spinners/ClipLoader'
 const PatientForm = () => {
 
   const initialValues = {surname: "", other_names: "", email: "", date_of_birth: "", address: "", contact1: "", contact2: "", gender: ""};
@@ -44,7 +45,7 @@ const PatientForm = () => {
       }
 
       if (Object.values(formErrors).length === 0){
-        fetch("https://legacy-healthcare-services.herokuapp.com/patients",requestOptions)
+        fetch("https://legacy-healthcare-services.herokuapp.com/patients/",requestOptions)
         .then((res)=>{
           setIsLoading(false)
           if (res.status===200){
@@ -125,8 +126,8 @@ const PatientForm = () => {
          </div>
    <div className='right-sides'>
    <div className='top-rights'>
-   <p>Already have an Account?
-   <Link id='Links-signin' to ="/AdminLogin">Sign In</Link>
+   <p>New Patient Registration
+   {/* <Link id='Links-signin' to ="/AdminLogin">Sign In</Link> */}
    </p>
    </div>
  
@@ -182,7 +183,7 @@ const PatientForm = () => {
         </form>
 
      </div>
-     {isloading && <div>...LAODING...</div>}
+     {isloading && <div><Cliploader size={30} color="blue"/></div>}
    </div>
 
    </div>

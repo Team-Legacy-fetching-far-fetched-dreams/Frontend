@@ -4,7 +4,10 @@ import Logo from '../../../imgs/logo2.png'
 // import Button from 'react-bootstrap/Button';
 import {Link, useLocation, useNavigate} from 'react-router-dom'
 // import {useForm} from 'react-hook-form'
-
+import Form from 'react-bootstrap/Form';
+import { Button } from 'react-bootstrap';
+import Signup from '../../../imgs/Signup.png'
+import Cliploader from 'react-spinners/ClipLoader'
 
 
 const AdminSignUp = () => {
@@ -174,7 +177,7 @@ const validate = (values) => {
           <input className='nm inputs'  type='text'  name='gender' placeholder='Male/Female' id='gender' onChange={handleChange} value= {formValues.gender} />
           </div>
           <p className='lon'>{formErrors.gender}</p>
-          {isloading && <div>...LAODING...</div>}
+          {isloading &&  <div><Cliploader size={30} color="blue"/></div>}
         {/* //  <input type='submit' onClick="validation();"  id='klo' className='submay' value='Submit' /> */}
          <input type='submit'  id='klo' name='xcz' className='submay' value='Submit' />
       
@@ -193,8 +196,7 @@ const validate = (values) => {
 
      </div>
 
-     
-      
+
      
   )
 }

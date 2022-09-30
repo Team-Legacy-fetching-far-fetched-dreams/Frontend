@@ -5,6 +5,7 @@ import NSidebar from './NSidebar'
 import NDashNav from "./NDashNav"
 import ListOfRegPatients from '../TABLE LISTS/Patient/ListOfRegPatients'
 import { logout } from '../../../auth'
+import Cliploader from 'react-spinners/ClipLoader'
 
 
 const NPatient = () => {
@@ -26,7 +27,7 @@ const NPatient = () => {
 
    console.log(token)
 
-  fetch('https://legacy-healthcare-services.herokuapp.com/patients', requestOptions)
+  fetch('https://legacy-healthcare-services.herokuapp.com/patients/', requestOptions)
   .then(res => {
     if(res.status===200){
       setLoading(true)
@@ -57,12 +58,12 @@ const NPatient = () => {
         <div className='Dashboardcontainer'>
         <NDashNav/>
         <div className=''>
-        {!isLoading? <ListOfRegPatients data={state} />:<div>loading</div>}
+        {!isLoading? <ListOfRegPatients data={state} />:<div><Cliploader size={30} color="blue" className='spinner'/></div>}
 
         </div>
         </div>
     </div> 
-</motion.div>:<div>...LOADING...</div>
+</motion.div>:<div><Cliploader size={30} color="blue" className='spinner'/></div>
   )
 }
 

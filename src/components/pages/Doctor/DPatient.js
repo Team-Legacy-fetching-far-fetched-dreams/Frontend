@@ -5,6 +5,7 @@ import DcDashNav from "./DcDashNav"
 import {motion} from 'framer-motion/dist/framer-motion'
 import ListOfRegPatients from '../TABLE LISTS/Patient/ListOfRegPatients'
 import { logout } from '../../../auth'
+import Cliploader from 'react-spinners/ClipLoader'
 
 const DPatient = () => {
     const  [state, setState] = useState()
@@ -56,7 +57,7 @@ const DPatient = () => {
 
    console.log(token)
 
-  fetch('https://legacy-healthcare-services.herokuapp.com/patients', requestOptions)
+  fetch('https://legacy-healthcare-services.herokuapp.com/patients/', requestOptions)
   .then(res => {
     if(res.status===200){
       setLoading(true)
@@ -90,7 +91,7 @@ const DPatient = () => {
         <DcDashNav/>
         <div className=''>
         <div>
-          {!isLoading ? <ListOfRegPatients data={state}/>:<div>loading</div>}
+          {!isLoading ? <ListOfRegPatients data={state}/>:<div><Cliploader size={30} color="blue" className='spinner'/></div>}
       </div>
         </div>
         </div>
@@ -98,7 +99,7 @@ const DPatient = () => {
         </div>
         {/* <MainDash/> */}
       </div>
-    </motion.div>:<div>...LOADING...</div>
+    </motion.div>:<div><Cliploader size={30} color="blue" className='spinner'/></div>
 
     
   );

@@ -4,6 +4,7 @@ import "./UsersInfo.css"
 import NewProfile from "../../../../imgs/NewProfile.png"
 import Logo from '../../../../imgs/logo2.png'
 import { Link } from 'react-router-dom'
+import Cliploader from 'react-spinners/ClipLoader'
 
 import {useParams} from 'react-router-dom'
 
@@ -48,9 +49,7 @@ const UsersInfo = () => {
                 <div className="col-md-4">
         <div className="p-3 py-4">
 
-        <Link to = {"/AdminDashboard/Patient"}>
-         <Button className="btn btn-primary  btn-sm" type="submit"  role="button"><span></span><span className="p-1">View Vitals</span></Button>
-         </Link> 
+        
            
         </div>
     </div>
@@ -89,7 +88,7 @@ const UsersInfo = () => {
     
 </div>
 </div>
-</div>:<div>LOADING</div>
+</div>: <div><Cliploader size={30} color="blue" className='spinner'/></div>
 
     
    

@@ -5,9 +5,10 @@ import { useState, useEffect } from "react";
 import { useNavigate, useParams } from 'react-router-dom';
 import VImg from '../../../../imgs/Vitalsformimg.png'
 import Cliploader from 'react-spinners/ClipLoader'
+import { useLocation }  from 'react-router-dom'
 
 
-export const VitalsForm = () => {
+const VitalsForm = () => {
   const initialValues = {temperature: "", weight: "", height:"", bloodpressure_mm:"", bloodpressure_Hg:"" };
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
@@ -15,6 +16,7 @@ export const VitalsForm = () => {
   const [isloading, setIsLoading] = useState(false)
   const { id } = useParams()
   const navigate = useNavigate()
+  const location = useLocation()
 
   const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY')
 
@@ -39,23 +41,22 @@ export const VitalsForm = () => {
         setIsLoading(true)
         setFormErrors(validate(formValues));
         setIsSubmit(true);
-        if (Object.keys(formErrors).length === 0 && isSubmit) {
+        if (Object.keys(formErrors).length === 0) {
         fetch(`https://legacy-healthcare-services.herokuapp.com/patients/vital/${id}`, requestOptions)
         .then(res=>{
             setIsLoading(true)
-            res.json()
+            return res.json()
         })
         .then(data=>{
             console.log(data)
             setIsLoading(false)
-            navigate(-1,{
-                state:{
-                    message:"Vitals Recorded Succesfully"            
-                }
-              })
+            if(location.state){
+                navigate(-1)
+            }
+              
         })
     }
-    };
+    }
 
     useEffect(() => {
         console.log(formErrors);

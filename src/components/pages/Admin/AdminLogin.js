@@ -74,7 +74,7 @@ const AdminLogin = () => {
         }
         else {
           console.log("Incorect")
-          setFormErrors({incorrect: "Incorrect Passwword or Username"})
+          setFormErrors({incorrect: "Incorrect Password or Username"})
         }
       })
       .then(data=>{

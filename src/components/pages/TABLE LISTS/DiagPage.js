@@ -7,10 +7,11 @@ import {motion} from 'framer-motion/dist/framer-motion'
 import DiagnosisList from './Diagnosis'
 import { useParams } from 'react-router-dom'
 import Cliploader from 'react-spinners/ClipLoader'
-
+import Button from 'react-bootstrap/Button';
+import {useNavigate} from 'react-router-dom'
 
 const DiagPage = () =>{
-
+  const navigate = useNavigate()
     const [isLoading, setIsLoading] = useState(true)
     const [data, setData] = useState()
     const { id } = useParams()
@@ -47,7 +48,8 @@ const DiagPage = () =>{
         <div className='Dashboardcontainer'>
         {/* <DcDashNav func = {this.setState({data: this.state.searchObj.data})}/> */}
         <NDashNav/>
-        <div className=''>
+        <Button as="sub" className="btn" id = "dback-btn" onClick={() => navigate(-1)}>Back</Button>
+        <div className='bod'>
         <div>
          {isLoading ? <div><Cliploader size={30} color="blue" className='spinner'/></div>:<DiagnosisList data = {data}/>}
       </div>

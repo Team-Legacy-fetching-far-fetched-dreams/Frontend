@@ -7,6 +7,7 @@ import {Link, useNavigate, useLocation} from 'react-router-dom'
 import welcomeimg from '../../../imgs/wel2.jpg' 
 import {useForm} from 'react-hook-form'
 import {login, useAuth} from '../../../auth'
+import Cliploader from 'react-spinners/ClipLoader'
 
   
 const DoctorLogin = () => {
@@ -134,7 +135,7 @@ const validate = (values) => {
                 <p className='err'>{formErrors.password}</p>
                 <input className='ii' placeholder='Enter your password...'  name='password' onChange={handleChange} value= {formValues.password} type='password'  id='pwd1' ></input>
                 <p className='err'>{formErrors.incorrect}</p>
-                {isloading && <div>LOADING...</div>}
+                {isloading &&<div><Cliploader size={30} color="blue"/></div>}
                 <button value='Submit' className='ll' type='submit' id='sub_butt'> 
                   Login </button>
                 

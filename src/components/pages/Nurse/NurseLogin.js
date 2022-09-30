@@ -8,6 +8,7 @@ import Nip from '../../../imgs/nipp.png'
 import {login, useAuth} from '../../../auth'
 import { FormSelect } from 'react-bootstrap';
 import {useForm} from 'react-hook-form'
+import Cliploader from 'react-spinners/ClipLoader'
 
 
 const NurseLogin = () => {
@@ -140,7 +141,7 @@ const NurseLogin = () => {
                      <p className='err'>{formErrors.password}</p>
                      <input className='ii' placeholder='Enter your password...'  name='password' value={formValues.password} onChange={handleChange} type='password' id='pwdd1'></input>
                      <p className='err'>{formErrors.incorrect}</p>
-                     {isloading && <div>LOADING...</div>} 
+                     {isloading &&<div><Cliploader size={30} color="blue"/></div>} 
                      <button className='ll' type='submit' id='sub_butt'> Login </button>
                   </form>
 

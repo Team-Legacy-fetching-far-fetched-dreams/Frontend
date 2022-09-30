@@ -6,6 +6,7 @@ import {useParams, Link} from 'react-router-dom'
 import Logo from '../../../../imgs/logo2.png'
 import NewProfile from "../../../../imgs/NewProfile.png"
 import "./PatientInfo.css"
+import Cliploader from 'react-spinners/ClipLoader'
 const PatientInfo = () => {
     const { id } = useParams()
     const [data,setData] = useState()
@@ -53,7 +54,7 @@ const PatientInfo = () => {
          <Button className="btn btn-primary  btn-sm " type="submit"  role="button"><span></span><span className="p-1 m-1">View Vitals</span></Button>
          </Link>
          <Link to = {`/Patient/Table/Diagnosis/${id}`}>
-         <Button className="btn btn-primary  btn-sm mt-2" type="submit"  role="button"><span></span><span className="p-7">View Diagnosis</span></Button>
+         <Button className="btn btn-primary  btn-sm mt-2" type="submit"  role="button" ><span></span><span className="p-7">View Diagnosis</span></Button>
          </Link>
          
             {/* <div className="col-md-12"><label className="labels">Experience in Designing</label></div> */}
@@ -101,7 +102,7 @@ const PatientInfo = () => {
 </div>
 
 </div>
-</div>:<div>LOADING</div>
+</div>:<div><Cliploader size={30} color="blue" className='spinner'/></div>
 
   )  
    
