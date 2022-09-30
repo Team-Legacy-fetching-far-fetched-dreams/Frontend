@@ -6,6 +6,7 @@ import {Link, useNavigate, useParams, useLocation} from 'react-router-dom'
 import {motion} from 'framer-motion/dist/framer-motion'
 // import {useForm} from 'react-hook-form'
 import {login} from '../../../auth'
+import Button from 'react-bootstrap/Button';
 // import welcomes from '../../../imgs/loginPic.png' 
 // import Nip from '../../../imgs/nipp.png'
 // import {Link} from 'react-router-dom'
@@ -186,6 +187,7 @@ const validate = (values) => {
        <div  className = "A-h">
            <img src={Logo} alt="" className = "A-logo"></img>  
        </div>
+       <Button as="sub" className="btn" id = "back-btn" onClick={() => navigate(-1)}>Back</Button>
        {location.state && <div>{location.state.message}</div>}
        <div className='Al-content'>
            <div  className='login-encase'>

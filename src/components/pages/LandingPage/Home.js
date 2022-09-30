@@ -42,7 +42,9 @@ const [openMefu, setOpenMefu] = useState(false)
           Health is the most important asset in our life. There is a saying that “healthy mind stays in healthy body”. So we have to take care of both physical and mental health. 
             
           </p>
-          <Button variant="success" className='main-btn' onclick={()=> scrollToSection(hero)} active>Get Started</Button>
+          <a href="#WAY">
+          <Button variant="success" className='main-btn' active>Get Started</Button>
+          </a>
           <div className='scroll'>
             <p className='scroll-p'>Scroll Down to the Who are you section </p>
             <motion.img src={Arrow} alt='' className='arrow'
@@ -80,7 +82,7 @@ const [openMefu, setOpenMefu] = useState(false)
 
 
 
-          <div className='Who-are-you' ref={hero}>
+          <div className='Who-are-you' id="WAY" ref={hero}>
 
  
             <div>

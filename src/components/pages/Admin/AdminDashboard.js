@@ -10,6 +10,7 @@ import {Link, useLocation, useNavigate} from 'react-router-dom'
 import { logout, useAuth} from '../../../auth'
 import Skeleton from '../../Skeleton'
 import AdminLogin from './AdminLogin'
+import Dash from '../../../imgs/Dash.png'
 
 
 const AdminDashboard=() => {
@@ -103,6 +104,7 @@ useState(() => {
           </Link>
         </div>
         <div>
+        <img src={Dash} alt='' className='dash'></img>
        <Calendar onChange={onChange} value={value} />
         <Clock />
         </div>
