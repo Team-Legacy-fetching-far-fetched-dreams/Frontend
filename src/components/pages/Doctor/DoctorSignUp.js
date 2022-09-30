@@ -65,7 +65,7 @@ const DoctorSignUp = () => {
     // setFormValues({...formValues, [name]: value});
     // console.log(formValues);
       //  console.log(formErrors);
-       if (Object.keys(formErrors).length === 0 ){
+       if (Object.keys(formErrors).length === 0  && isSubmit){
         setIsLoading(true)
         console.log(formValues);
        

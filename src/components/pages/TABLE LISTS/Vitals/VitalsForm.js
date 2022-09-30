@@ -50,9 +50,13 @@ const VitalsForm = () => {
         .then(data=>{
             console.log(data)
             setIsLoading(false)
-            if(location.state){
-                navigate(-1)
-            }
+           
+                navigate(`/Patient/Vitals/${id}`,{
+                    state:{
+                        message:"Vitals recorded succesfully"
+                    }
+                })
+            
               
         })
     }
