@@ -145,12 +145,6 @@ const [openMefu, setOpenMefu] = useState(false)
              >
              <UilTwitter />
              </motion.a>
-            <motion.a href='/'
-             whileHover={{scale:1.1, originX: 0, color: ''}}
-             transition={{ type: "spring" , stiffness: 300}}
-            >
-            <UilLinkedin/>
-            </motion.a>
               <motion.a href='https://youtube.com/channel/UC9HoilrWwiE8DxHoQOCmKjA'
                whileHover={{scale:1.1, originX: 0, color: ''}}
                transition={{ type: "spring" , stiffness: 300}}
