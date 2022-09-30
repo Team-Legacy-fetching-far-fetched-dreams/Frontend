@@ -5,6 +5,7 @@ import NSidebar from './NSidebar'
 import NDashNav from "./NDashNav"
 import ListOfSpecEmployee from '../TABLE LISTS/ListOfDoctors/ListOfSpecEmployee'
 import { logout } from '../../../auth'
+import Cliploader from 'react-spinners/ClipLoader'
 
 
 
@@ -28,7 +29,7 @@ const  [state, setState] = useState()
 
    console.log(token)
 
-  fetch('/user/doctors', requestOptions)
+  fetch('https://legacy-healthcare-services.herokuapp.com/user/doctors', requestOptions)
   .then(res => {
     if(res.status===200){
       setLoading(true)
@@ -58,11 +59,11 @@ const  [state, setState] = useState()
         <div className='Dashboardcontainer'>
         <NDashNav />
         <div className=''>
-        {!isLoading ? <ListOfSpecEmployee data={state}/>:<div>loading</div>}
+        {!isLoading ? <ListOfSpecEmployee data={state}/>:<div><Cliploader size={30} color="blue" className='spinner'/></div>}
         </div>
         </div>
     </div> 
-</motion.div>:<div>LOADING...</div>
+</motion.div>:<div><Cliploader size={30} color="blue" className='spinner'/></div>
   )
 }
 export default NDoctor

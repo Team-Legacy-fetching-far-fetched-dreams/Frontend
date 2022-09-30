@@ -3,6 +3,7 @@ import './DoctorSignUp.css'
 import Logo from '../../../imgs/logo2.png'
 import registerImg from '../../../imgs/415.jpg'
 import {Link, useLocation, useNavigate} from 'react-router-dom'
+import Cliploader from 'react-spinners/ClipLoader'
 
 const DoctorSignUp = () => {
  
@@ -56,9 +57,9 @@ const DoctorSignUp = () => {
     console.log(formValues)
     
     
-    
+  }
         
-      
+    useEffect(() => {  
     // console.log(e.target);
     // const {name, value} = e.target;
     // setFormValues({...formValues, [name]: value});
@@ -78,7 +79,7 @@ const DoctorSignUp = () => {
       }
 
       if (Object.values(formErrors).length === 0){
-        fetch("/user/signup", requestOptions)
+        fetch("https://legacy-healthcare-services.herokuapp.com/user/signup", requestOptions)
         .then((res)=>{
           setIsLoading(false)
           if (res.status===200){
@@ -95,6 +96,7 @@ const DoctorSignUp = () => {
         .then(data=>{
           console.log(data)
           console.log(location)
+          if (data){
           if (location.state){
             navigate(-1, {
               state:{
@@ -108,10 +110,11 @@ const DoctorSignUp = () => {
           }
         })
       }
+    }
         })
       }
     }
-  }
+  },[formErrors])
   // const [email,setemail]=useState('');
   // const[Fusername, setFusername]=useState('');
   // const [Susername,setSusername]=useState('');
@@ -210,9 +213,9 @@ const DoctorSignUp = () => {
          <input className='nm inputs'  type='text'  name='gender' placeholder='Male/Female' id='gender' onChange={handleChange} value= {formValues.gender} />
          </div>
          <p className='lon'>{formErrors.gender}</p>
-         {isloading && <div>...LOADING...</div>}
+         {isloading && <div><Cliploader size={30}/></div>}
        
-        <input type='submit' onClick="validation();"  id='klo' className='submay' value='Submit' />
+        <input type='submit' id='klo' className='submay' value='Submit' />
       
         </form>
 

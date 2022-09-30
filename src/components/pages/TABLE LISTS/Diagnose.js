@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import Logo from '../../../imgs/logo2.png'
 import { Button } from 'react-bootstrap'
 import {Link, useParams, useNavigate} from 'react-router-dom'
+import Cliploader from 'react-spinners/ClipLoader'
 
 
 const Diagnose = () => {
@@ -110,7 +111,7 @@ const Diagnose = () => {
                     <div className="col-md-12"><label className="labels">Blood Pressure : {data.bloodpressure_mm}/{data.bloodpressure_Hg} mmHg</label><input type="text" className="form-control" value="123/23"/></div>
                 </div>
             </div>:<div>No available vitals</div>}
-        </div>:<div>LOADING...</div>}
+        </div>: <div><Cliploader size={30} color="blue" className='spinner'/></div>}
             
                 <div className='col-md-5 '>
                 <div className='body-rights'>
@@ -138,7 +139,7 @@ const Diagnose = () => {
                         </div>
                     </form>
                 </div>
-                {isLoadingD &&<div>LOADING...</div>}
+                {isLoadingD &&<div><Cliploader size={30} color="blue"/></div>}
                 </div>
                 </div>
             </div>

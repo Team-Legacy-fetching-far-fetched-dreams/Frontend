@@ -4,9 +4,11 @@ import {Button} from 'react-bootstrap'
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from 'react-router-dom';
 import VImg from '../../../../imgs/Vitalsformimg.png'
+import Cliploader from 'react-spinners/ClipLoader'
+import { useLocation }  from 'react-router-dom'
 
 
-export const VitalsForm = () => {
+const VitalsForm = () => {
   const initialValues = {temperature: "", weight: "", height:"", bloodpressure_mm:"", bloodpressure_Hg:"" };
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
@@ -14,6 +16,7 @@ export const VitalsForm = () => {
   const [isloading, setIsLoading] = useState(false)
   const { id } = useParams()
   const navigate = useNavigate()
+  const location = useLocation()
 
   const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY')
 
@@ -38,23 +41,22 @@ export const VitalsForm = () => {
         setIsLoading(true)
         setFormErrors(validate(formValues));
         setIsSubmit(true);
-        if (Object.keys(formErrors).length === 0 && isSubmit) {
-        fetch(`/patients/vital/${id}`, requestOptions)
+        if (Object.keys(formErrors).length === 0) {
+        fetch(`https://legacy-healthcare-services.herokuapp.com/patients/vital/${id}`, requestOptions)
         .then(res=>{
             setIsLoading(true)
-            res.json()
+            return res.json()
         })
         .then(data=>{
             console.log(data)
             setIsLoading(false)
-            navigate(-1,{
-                state:{
-                    message:"Vitals Recorded Succesfully"            
-                }
-              })
+            if(location.state){
+                navigate(-1)
+            }
+              
         })
     }
-    };
+    }
 
     useEffect(() => {
         console.log(formErrors);
@@ -68,28 +70,22 @@ export const VitalsForm = () => {
         const errors = {}
         if (!values.temperature) {
             errors.temperature = "temperature is required!"; 
-        }else if (values.temperature < 5){
-            errors.temperature = "value for temperature has exceeded maximum"
         }
+        
         if (!values.weight) {
             errors.weight = "weight is required!"; 
-        }else if (values.weight < 5){
-            errors.weight = "value for weight has exceeded maximum"
+        
         }
         if (!values.height) {
             errors.height = "height is required!"; 
-        }else if (values.height < 5){
-            errors.height = "value for height has exceeded maximum"
         }
         if (!values.bloodpressure_mm) {
             errors.bloodpressure_mm = "bloodpressure_mm is required!"; 
-        }else if (values.bloodpressure_mm < 5){
-            errors.bloodpressure_mm = "value for bloodpressure_mm has exceeded maximum"
         }
+        
         if (!values.bloodpressure_Hg) {
             errors.bloodpressure_Hg = "bloodpressure_hg is required!"; 
-        }else if (values.bloodpressure_Hg < 5){
-            errors.bloodpressure_Hg = "value for bloodpressure_hg has exceeded maximum"
+        
         }    
         return errors;
     }
@@ -147,7 +143,7 @@ export const VitalsForm = () => {
                    
                     
                     
-                    {isloading && <div>LOADING..</div>}
+                    {isloading && <div><Cliploader size={30}/></div>}
                     
                     <button className='vbtn'>Submit</button>
                 </form>

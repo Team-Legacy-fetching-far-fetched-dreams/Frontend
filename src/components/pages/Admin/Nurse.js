@@ -23,7 +23,7 @@ const Nurse = () => {
       }
     }
 
-    fetch('/user/nurses', requestOptions)
+    fetch('https://legacy-healthcare-services.herokuapp.com/user/nurses', requestOptions)
     .then(res =>{
     if(res.status===200){
       setLoading(true)

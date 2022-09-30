@@ -1,15 +1,20 @@
 import React, {useEffect} from 'react'
 import './Vitals.css'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
 import Button from 'react-bootstrap/esm/Button'
 
 const Vitals = ({data}) => {
-    
+    const location = useLocation()
+    const { id } = useParams()
+    const navigate = useNavigate()
     const Print =() =>{
         console.log("knadosk")
         console.log(id)
+        navigate(`/VitalsForm/${id}`,{
+            state: location.pathname
+        })
     }
-    const { id } = useParams()
+    
     useEffect(
         ()=>{
             console.log(data)
@@ -24,7 +29,7 @@ const Vitals = ({data}) => {
          <Button className="btn btn-primary btn-sm" type="submit"  role="button" onClick={Print}><span></span><span className=" p-2 ">Record Vitals</span></Button>
          </Link>
          </div>
-            {data?<div className='VitalsC'>
+            {data.length>0?<div className='VitalsC'>
     
            <table className='table4'>
             <th>Patient_id</th>
@@ -87,7 +92,7 @@ const Vitals = ({data}) => {
                 )
             })}
             </table>
-        </div>:<div>List is Empty</div>}
+        </div>:<div className='emlist'>List is Empty</div>}
       
     </div>
   )

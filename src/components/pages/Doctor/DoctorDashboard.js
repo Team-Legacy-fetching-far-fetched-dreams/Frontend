@@ -43,7 +43,7 @@ const DoctorDashboard=()=>{
    useEffect(()=>{
     console.log(token)
     if(location.state){
-    fetch(`/user/user/${location.state.id}`, requestOptions)
+    fetch(`https://legacy-healthcare-services.herokuapp.com/user/user/${location.state.id}`, requestOptions)
       .then(res =>
         {
           if (res.status===200)

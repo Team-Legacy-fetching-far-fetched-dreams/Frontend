@@ -1,10 +1,16 @@
 import React, { useEffect } from 'react'
 import { Button } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import "./AwaitingTable.css"
+
+
 
 const AwaitingTable = ({data}) => {
 
+   const { id } = useParams()
+const diagnose =() =>{
+
+}
     useEffect(()=>{
         console.log(data)
         console.log("gkf")
@@ -14,7 +20,7 @@ const AwaitingTable = ({data}) => {
 
     <div className='N7-content'>
        <h1>List of Awaiting Patients</h1>
-         
+       
          <div className='ListOfAwaiting'>
       <table className="table7">
 
@@ -73,7 +79,7 @@ return(
       </table> 
        
       </div>
-    </div>:<div>List Empty</div>
+    </div>:<div className='emlist'>List Empty</div>
   )
 }
 

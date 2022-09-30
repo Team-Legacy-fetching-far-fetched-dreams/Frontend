@@ -3,6 +3,7 @@ import './NurseSignUp.css'
 import Logo from '../../../imgs/logo2.png'
 import {Link, useLocation, useNavigate} from 'react-router-dom'
 import registerImgs from '../../../imgs/nursesignup.jpg'
+import Cliploader from 'react-spinners/ClipLoader'
 
 const NurseSignUp = () => {
   const initialValues = {surname: "", other_name: "", email: "", birth_date: "", address: "", contact1: "", contact2: "", gender: ""};
@@ -27,11 +28,11 @@ const NurseSignUp = () => {
       setIsSubmit(true);
       formValues["qualification"] = "Nurse"
       console.log(formValues)
-    }
+    
 
-    useEffect(() => {
+   
       //  console.log(formErrors);
-       if (Object.keys(formErrors).length === 0 && isSubmit){
+       if (Object.keys(formErrors).length === 0){
         setIsLoading(true)
         console.log(formValues);
 
@@ -45,7 +46,8 @@ const NurseSignUp = () => {
         }
 
         if (Object.values(formErrors).length === 0){
-          fetch("/user/signup", requestOptions)
+          // setIsLoading(true)
+          fetch("https://legacy-healthcare-services.herokuapp.com/user/signup", requestOptions)
           .then((res)=>{
             setIsLoading(false)
             if (res.status===200){
@@ -62,23 +64,25 @@ const NurseSignUp = () => {
           .then(data=>{
             console.log(data)
             console.log(location)
+            if(data){
             if (location.state){
               navigate(-1, {
                 state:{
-                  message:"Doctor registered successfully"
+                  message:"Nurse registered successfully"
                 }
               })
             }else{
-            navigate("/DoctorLogin",{
+            navigate("/NurseLogin",{
               state:{
                 message:"Please Check your email for your login Credentials"
             }
           })
         }
+      }
           })
         }
-       }
-  },[formErrors])
+      }
+      }
   
     // const [email,setemail]=useState('');
     // const[Fusername, setFusername]=useState('');
@@ -184,7 +188,7 @@ const NurseSignUp = () => {
         </form>
 
      </div>
-     {isloading && <div>LOADING...</div>}
+     {isloading &&<div><Cliploader size={30}/></div>}
    </div>
    {isSuccess && <div>Please Chek your eamil for your login Credentials</div>}
    </div>

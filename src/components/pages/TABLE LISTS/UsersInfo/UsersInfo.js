@@ -4,6 +4,7 @@ import "./UsersInfo.css"
 import NewProfile from "../../../../imgs/NewProfile.png"
 import Logo from '../../../../imgs/logo2.png'
 import { Link } from 'react-router-dom'
+import Cliploader from 'react-spinners/ClipLoader'
 
 import {useParams} from 'react-router-dom'
 
@@ -21,7 +22,7 @@ const UsersInfo = () => {
             }
         }
 
-        fetch(`/user/user/${id}`,requestOptions)
+        fetch(`https://legacy-healthcare-services.herokuapp.com/user/user/${id}`,requestOptions)
         .then(res=>res.json())
         .then(data=>{
             console.log(data)
@@ -87,7 +88,7 @@ const UsersInfo = () => {
     
 </div>
 </div>
-</div>:<div>LOADING...</div>
+</div>: <div><Cliploader size={30} color="blue" className='spinner'/></div>
 
     
    

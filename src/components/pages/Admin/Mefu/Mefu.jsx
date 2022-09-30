@@ -47,7 +47,7 @@ const requestOptionsV = {
     setIsLoadingD(true)
 
     if (isSubmit && id){
-      fetch(`/patients/diagnosis/${id}`,requestOptionsD)
+      fetch(`https://legacy-healthcare-services.herokuapp.com/patients/diagnosis/${id}`,requestOptionsD)
       .then(res=>{
         setIsLoadingD(true)
         return res.json()})
@@ -59,7 +59,7 @@ const requestOptionsV = {
   }
   useEffect(()=>{
     if (id){
-    fetch(`/patients/vital/${id}`, requestOptionsV)
+    fetch(`https://legacy-healthcare-services.herokuapp.com/patients/vital/${id}`, requestOptionsV)
     .then(res=>{
       setIsLoadingV(true)
       if (res.status==200){

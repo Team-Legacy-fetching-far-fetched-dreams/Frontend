@@ -74,3 +74,14 @@
 .New1 :hover button{
         color: black;
 }
+
+
+.emlist{
+    color: #e9ecef;
+    top: 250px;
+    left: 550px;
+    position: absolute;
+    border-radius: 10px;
+    padding: 10px;
+    background: #151e73;
+}

@@ -67,9 +67,7 @@ const AdminPage = () => {
 
          <Link to ="/AdminSignUp" className='btn btn-success'>Signup</Link>
           <Link to ="/AdminLogin" className='btn btn-primary A-login'>Login</Link>
-          <Link to ="/Patient/Diagnosis/:id">
-             <Button className='A-login' active>Dia</Button>
-          </Link>
+          
         
       
         

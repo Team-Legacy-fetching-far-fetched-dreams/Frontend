@@ -18,6 +18,7 @@ const Doctor = () => {
 
   const  [state, setState] = useState()
   const [isLoading, setLoading]  = useState()
+  const location = useLocation()
  
 
   
@@ -32,7 +33,7 @@ const Doctor = () => {
       }
     }
     
-    fetch("/user/doctors", requestOptions)
+    fetch("https://legacy-healthcare-services.herokuapp.com/user/doctors", requestOptions)
     .then(res => {
       if(res.status===200){
         setLoading(true)
@@ -66,7 +67,7 @@ const Doctor = () => {
         <div className='Dashboardcontainer'>
         <AdDashNav/>
       
-          
+          {location.state && <div>{location.state.message}</div>}
           {!isLoading? <ListOfSpecEmployee data={state} />:<div><Cliploader size={30}/></div>}
         
 

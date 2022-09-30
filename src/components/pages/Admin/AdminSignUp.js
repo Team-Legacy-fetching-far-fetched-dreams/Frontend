@@ -7,6 +7,7 @@ import {Link, useLocation, useNavigate} from 'react-router-dom'
 import Form from 'react-bootstrap/Form';
 import { Button } from 'react-bootstrap';
 import Signup from '../../../imgs/Signup.png'
+import Cliploader from 'react-spinners/ClipLoader'
 
 
 const AdminSignUp = () => {
@@ -49,7 +50,7 @@ const handleSubmit = (e) => {
       }
 
       if (Object.values(formErrors).length === 0){
-        fetch("/user/signup", requestOptions)
+        fetch("https://legacy-healthcare-services.herokuapp.com/user/signup", requestOptions)
         .then((res)=>{
         setIsLoading(false)
         if (res.status===200){
@@ -64,15 +65,24 @@ const handleSubmit = (e) => {
         }
         })
         .then(data=>
-          {if(data){
-          console.log(data)
-          console.log(location)
+          {
+            console.log(data)
+            console.log(location)
+            if(data){
+            if(location.state){
+              navigate(-1, {
+                state:{
+                  message:"Nurse registered successfully"
+                }
+              })
+            }else{
           navigate("/AdminLogin",{
             state:{
               message:"Please Check your email for your login Credentials"
           }
         })
         }
+      }
       })
       }
     }
@@ -165,9 +175,13 @@ const validate = (values) => {
           <div className='loki'>
           <h5 className='hac'>Gender</h5>
           <input className='nm inputs'  type='text'  name='gender' placeholder='Male/Female' id='gender' onChange={handleChange} value= {formValues.gender} />
+         {/* <label>Male</label>
+         <input type="radio" label="Male" value="Male" name="Male"/>
+         <label>Female</label>
+         <input type="radio" label="Female" value="Female" name="Female"/> */}
           </div>
           <p className='lon'>{formErrors.gender}</p>
-          {isloading && <div>...LAODING...</div>}
+          {isloading &&  <div><Cliploader size={30} color="blue"/></div>}
         {/* //  <input type='submit' onClick="validation();"  id='klo' className='submay' value='Submit' /> */}
          <input type='submit'  id='klo' name='xcz' className='submay' value='Submit' />
       

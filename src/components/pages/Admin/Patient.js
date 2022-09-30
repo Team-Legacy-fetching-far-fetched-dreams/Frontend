@@ -6,6 +6,7 @@ import {motion} from 'framer-motion/dist/framer-motion'
 import ListOfRegPatients from '../TABLE LISTS/Patient/ListOfRegPatients'
 import {Link, useNavigate} from 'react-router-dom'
 import { logout } from '../../../auth'
+import Cliploader from 'react-spinners/ClipLoader'
 
 const Patient =()=> {
   const  [state, setState] = useState()
@@ -25,7 +26,7 @@ const Patient =()=> {
   
 
   
-    fetch("/patients/", requestOptions)
+    fetch("https://legacy-healthcare-services.herokuapp.com/patients/", requestOptions)
     .then(res => {
       if(res.status===200){
         setLoading(true)
@@ -62,7 +63,7 @@ const Patient =()=> {
 
         <div className='createButton'>
             </div>
-        {!isLoading ? <ListOfRegPatients data={state}/>:<div>loading</div>}
+        {!isLoading ? <ListOfRegPatients data={state}/>:<div><Cliploader/></div>}
          <div>
         </div>
         </div>
@@ -71,7 +72,7 @@ const Patient =()=> {
         {/* <MainDash/> */}
       </div>
        
-    </motion.div>:<div>LOADING...</div>
+    </motion.div>: <div><Cliploader size={30} color="blue" className='spinner'/></div>
   )
 }
 
