@@ -95,7 +95,7 @@ const body={
     console.log(data)
 
 
-    fetch('/hms/verification', requestOptions)
+    fetch('https://legacy-healthcare-services.herokuapp.com/hms/verification', requestOptions)
     .then((res)=>res.json())
     .then(data=>{
       console.log(data)
