@@ -175,6 +175,10 @@ const validate = (values) => {
           <div className='loki'>
           <h5 className='hac'>Gender</h5>
           <input className='nm inputs'  type='text'  name='gender' placeholder='Male/Female' id='gender' onChange={handleChange} value= {formValues.gender} />
+         {/* <label>Male</label>
+         <input type="radio" label="Male" value="Male" name="Male"/>
+         <label>Female</label>
+         <input type="radio" label="Female" value="Female" name="Female"/> */}
           </div>
           <p className='lon'>{formErrors.gender}</p>
           {isloading &&  <div><Cliploader size={30} color="blue"/></div>}
