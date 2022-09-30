@@ -50,10 +50,10 @@ const PatientInfo = () => {
         <div className="p-3 py-4">
             
         <Link to = {`/Patient/Vitals/${id}`}>
-         <Button className="btn btn-primary  btn-sm" type="submit"  role="button"><span></span><span className="p-1">View Vitals</span></Button>
+         <Button className="btn btn-primary  btn-sm " type="submit"  role="button"><span></span><span className="p-1 m-1">View Vitals</span></Button>
          </Link>
          <Link to = {`/Patient/Table/Diagnosis/${id}`}>
-         <Button className="btn btn-primary  btn-sm" type="submit"  role="button"><span></span><span className="p-1">View Diagnosis</span></Button>
+         <Button className="btn btn-primary  btn-sm mt-2" type="submit"  role="button"><span></span><span className="p-7">View Diagnosis</span></Button>
          </Link>
          
             {/* <div className="col-md-12"><label className="labels">Experience in Designing</label></div> */}

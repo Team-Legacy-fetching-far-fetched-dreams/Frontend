@@ -1,5 +1,6 @@
 import React, {useEffect, useState, Component} from 'react'
-import './Patient/ListOfRegPatients.css'
+// import './Patient/ListOfRegPatients.css'
+import "./DiagnosisTable.css"
 import {Link, useLocation, useNavigate, useParams} from 'react-router-dom'
 import Button from 'react-bootstrap/esm/Button'
 
@@ -62,14 +63,14 @@ const openProfile = (id) => {
   return (
    //  <div className='N-g'>
     
-    <div className='N2-content'>
+    <div className='N9-content'>
          <h1>List of Patient Diagnosis</h1>
-         <div className='New'>
+         <div className='New1'>
          {location.state && <div>{location.state.message}</div>}
          {isAuth &&<Link to = {`/Patient/Diagnosis/${id}`}><Button className="btn btn-primary btn-sm" type="submit"  role="button"><span></span><span className="  p-2 " onclick={handleSubmit}>Record New Diagnosis</span></Button> </Link> }
          </div>{data.length>0?
-         <div className='ListOfRegP'>
-      <table className="table3">
+         <div className='ListOfDiag'>
+      <table className="Diag-Table">
 
        
           <th>Patient_id</th>
@@ -125,9 +126,9 @@ const openProfile = (id) => {
 
 
 
- <td>
-    {isAuth && <input  type="submit" value="delete" onClick={DeleteUser(ListOf.patient_id)}/>}
-</td>
+ {isAuth &&<td>
+      <input  type="submit" value="delete" onClick={DeleteUser(ListOf.patient_id)}/>
+</td>}
   
   
   
