@@ -25,7 +25,7 @@ const DiagPage = () =>{
 
   useEffect(()=>{
 
-    fetch(`/patients/diagnosis/${id}`, requestOptions)
+    fetch(`https://legacy-healthcare-services.herokuapp.com/patients/diagnosis/${id}`, requestOptions)
     .then(res => {
         setIsLoading(true)
         return res.json()

@@ -44,7 +44,7 @@ useState(() => {
 
   console.log(location)
   if(location.state){
-  fetch(`/user/user/${location.state.id}`, requestOptions)
+  fetch(`https://legacy-healthcare-services.herokuapp.com/user/user/${location.state.id}`, requestOptions)
     .then(res => 
       {
         setIsLoading(true)

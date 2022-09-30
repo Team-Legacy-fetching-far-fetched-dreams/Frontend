@@ -47,7 +47,7 @@ const NurseSignUp = () => {
 
         if (Object.values(formErrors).length === 0){
           // setIsLoading(true)
-          fetch("/user/signup", requestOptions)
+          fetch("https://legacy-healthcare-services.herokuapp.com/user/signup", requestOptions)
           .then((res)=>{
             setIsLoading(false)
             if (res.status===200){

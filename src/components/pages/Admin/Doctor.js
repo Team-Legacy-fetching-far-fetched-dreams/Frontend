@@ -33,7 +33,7 @@ const Doctor = () => {
       }
     }
     
-    fetch("/user/doctors", requestOptions)
+    fetch("https://legacy-healthcare-services.herokuapp.com/user/doctors", requestOptions)
     .then(res => {
       if(res.status===200){
         setLoading(true)

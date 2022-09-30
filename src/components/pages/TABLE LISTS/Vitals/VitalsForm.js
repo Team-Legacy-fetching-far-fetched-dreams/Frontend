@@ -40,7 +40,7 @@ export const VitalsForm = () => {
         setFormErrors(validate(formValues));
         setIsSubmit(true);
         if (Object.keys(formErrors).length === 0 && isSubmit) {
-        fetch(`/patients/vital/${id}`, requestOptions)
+        fetch(`https://legacy-healthcare-services.herokuapp.com/patients/vital/${id}`, requestOptions)
         .then(res=>{
             setIsLoading(true)
             res.json()

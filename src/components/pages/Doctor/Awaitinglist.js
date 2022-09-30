@@ -24,7 +24,7 @@ const AwaitingList = (props) => {
 
     console.log(token)
   
-    fetch("/patients/appoint")
+    fetch("https://legacy-healthcare-services.herokuapp.com/patients/appoint")
       .then(res => {
         setLoading(true)
         return res.json()

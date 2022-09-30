@@ -19,7 +19,7 @@ const PatientInfo = () => {
             }
         }
 
-        fetch(`/patients/${id}`,requestOptions)
+        fetch(`https://legacy-healthcare-services.herokuapp.com/patients/${id}`,requestOptions)
         .then(res=>res.json())
         .then(data=>{
             console.log(data)

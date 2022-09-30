@@ -44,7 +44,7 @@ const PatientForm = () => {
       }
 
       if (Object.values(formErrors).length === 0){
-        fetch("/patients",requestOptions)
+        fetch("https://legacy-healthcare-services.herokuapp.com/patients",requestOptions)
         .then((res)=>{
           setIsLoading(false)
           if (res.status===200){

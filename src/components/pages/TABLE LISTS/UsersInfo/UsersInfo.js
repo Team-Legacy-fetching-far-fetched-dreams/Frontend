@@ -21,7 +21,7 @@ const UsersInfo = () => {
             }
         }
 
-        fetch(`/user/user/${id}`,requestOptions)
+        fetch(`https://legacy-healthcare-services.herokuapp.com/user/user/${id}`,requestOptions)
         .then(res=>res.json())
         .then(data=>{
             console.log(data)

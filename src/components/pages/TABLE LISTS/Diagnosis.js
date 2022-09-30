@@ -39,7 +39,7 @@ const StartSearch = (e) => {
 
 const handleSubmit = () =>{
 //    navigate("/Patient/")
-navigate(`/Patient/Diagnosis/${id}`)
+navigate(`https://legacy-healthcare-services.herokuapp.com/Patient/Diagnosis/${id}`)
 }
 
 const openProfile = (id) => {

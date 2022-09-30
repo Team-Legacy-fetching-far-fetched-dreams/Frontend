@@ -56,7 +56,7 @@ const DPatient = () => {
 
    console.log(token)
 
-  fetch('/patients', requestOptions)
+  fetch('https://legacy-healthcare-services.herokuapp.com/patients', requestOptions)
   .then(res => {
     if(res.status===200){
       setLoading(true)
