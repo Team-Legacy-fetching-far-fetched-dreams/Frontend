@@ -134,7 +134,7 @@ const PatientForm = () => {
    <div className='body-rights'>
      <div className='containersy'>
 
-       <h1 className='cvb'>Create Account!</h1>
+       <h1 className='cvb'>Patient Form</h1>
       
        <form onSubmit={handleSubmit}>
         <div className='loki'>
