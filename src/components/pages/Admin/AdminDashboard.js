@@ -10,7 +10,7 @@ import {Link, useLocation, useNavigate} from 'react-router-dom'
 import { logout, useAuth} from '../../../auth'
 import Skeleton from '../../Skeleton'
 import AdminLogin from './AdminLogin'
-import 'react-calendar/dist/Calendar.css'
+
 
 const AdminDashboard=() => {
  const  [data, setData] = useState()

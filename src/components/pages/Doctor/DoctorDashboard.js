@@ -14,7 +14,7 @@ import { logout, useAuth } from '../../../auth'
 // import { logout } from '../../../auth'
 import Skeleton from '../../Skeleton'
 import DoctorLogin from './DoctorLogin'
-import 'react-calendar/dist/Calendar.css'
+
 
 const DoctorDashboard=()=>{
   const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY');
