@@ -1,15 +1,18 @@
 import React, {useEffect} from 'react'
 import './Vitals.css'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import Button from 'react-bootstrap/esm/Button'
 
 const Vitals = ({data}) => {
-    
+
+    const { id } = useParams()
+    const navigate = useNavigate()
     const Print =() =>{
         console.log("knadosk")
         console.log(id)
+        navigate(`/VitalsForm/${id}`)
     }
-    const { id } = useParams()
+    
     useEffect(
         ()=>{
             console.log(data)

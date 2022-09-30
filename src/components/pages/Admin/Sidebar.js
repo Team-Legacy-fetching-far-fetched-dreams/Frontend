@@ -1,14 +1,16 @@
 import React,{useState} from 'react'
 import './Sidebar.css'
 import Logo from '../../../imgs/logo2.png'
-// import {SidebarData} from "../Data/Data";
+import {SidebarData} from "../Data/Data";
 import {UilSignOutAlt, UilEstate, UilUserNurse, UilUserMd , UilAccessibleIconAlt } from '@iconscout/react-unicons'
-import {Link, useNavigate} from 'react-router-dom'
+import {motion} from 'framer-motion/dist/framer-motion'
+import {Link, NavLink, useNavigate} from 'react-router-dom'
 import { logout } from '../../../auth'
 
 
 const Sidebar = () => {
   const navigate = useNavigate() 
+  const [selected, setSelected] = useState(0);
 const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY');
  const logOut =() =>{
 
@@ -17,47 +19,76 @@ const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY');
  }
 
 
-
   return (
     <div className='Sidebar'>
       <div className='l'>
         <img src={Logo} alt=''></img>
       </div>
       <div className='menu'>
-      
+      {/* {SidebarData.map((item, index) => {
+          return (
+            <div to = {item.link}
+              className={selected === index ? "menuItem active" : "menuItem"}
+              key={index}
+              onClick={() => setSelected(index)}
+            >
+              <item.icon />
+              <span>{item.heading}</span>
+            </div>
+          );
+        })}
+        {/* signoutIcon *
+        <Link to = '/LandingPage'>
+            <UilSignOutAlt className="icon"/>
+              <span>Logout</span>
+              </Link>
+       */}
           <ul>
-            <li className='active'
-            
+            <motion.li
+            whileHover={{scale:1.1, originX: 0, color: ''}}
+            transition={{ type: "spring" , stiffness: 300}}
             >
             <Link to ='/AdminDashBoard'>
               <UilEstate className="icon"/>
               <span>Dashboard</span>
               </Link>
-            </li>
-            <li>
+            </motion.li>
+            <motion.li
+            whileHover={{scale:1.1, originX: 0, color: ''}}
+            transition={{ type: "spring" , stiffness: 300}}
+            >
               <Link to ='/AdminDashboard/Doctor'>
             <UilUserMd className="icon"/>
               <span>Doctor</span>
               </Link>
-            </li>
-            <li>
+            </motion.li>
+            <motion.li
+            whileHover={{scale:1.1, originX: 0, color: ''}}
+            transition={{ type: "spring" , stiffness: 300}}
+            >
             <Link to ='/AdminDashboard/Nurse'>
             <UilUserNurse className="icon"/>
               <span>Nurse</span>
               </Link>
-            </li>
-            <li>
+            </motion.li>
+            <motion.li 
+            whileHover={{scale:1.1, originX: 0, color: ''}}
+            transition={{ type: "spring" , stiffness: 300}}
+            >
             <Link to ='/AdminDashboard/Patient'>
             <UilAccessibleIconAlt className="icon"/>
               <span>Patient</span>
             </Link>
-            </li> 
-            <li>
+            </motion.li> 
+            <motion.li 
+            whileHover={{scale:1.1, originX: 0, color: ''}}
+            transition={{ type: "spring" , stiffness: 300}}
+            >
               <Link to = '/LandingPage'>
             <UilSignOutAlt className="icon"/>
               <span>Logout</span>
               </Link>
-            </li>
+            </motion.li>
            
           </ul>
       </div>

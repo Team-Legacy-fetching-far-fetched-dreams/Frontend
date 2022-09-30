@@ -1,10 +1,7 @@
 import React, {useState, useEffect} from 'react'
 // import './Modal.css'
-import registerIm from '../../../../imgs/415.jpg'
-import Button from 'react-bootstrap/Button';
 import {Link, useParams} from 'react-router-dom'
 import {useForm} from 'react-hook-form'
-import Logo from '../../../../imgs/logo2.png'
 
 
 

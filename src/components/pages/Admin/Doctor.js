@@ -5,7 +5,7 @@ import AdDashNav from "./AdDashNav"
 import ListOfSpecEmployee from '../TABLE LISTS/ListOfDoctors/ListOfSpecEmployee'
 import AdminLogin from './AdminLogin'
 import { logout } from '../../../auth'
-
+import Cliploader from 'react-spinners/ClipLoader'
 
 import Clock from '../Clock'
 // import {Link} from 'react-router-dom'
@@ -18,6 +18,7 @@ const Doctor = () => {
 
   const  [state, setState] = useState()
   const [isLoading, setLoading]  = useState()
+  const location = useLocation()
  
 
   
@@ -66,14 +67,14 @@ const Doctor = () => {
         <div className='Dashboardcontainer'>
         <AdDashNav/>
       
-          
-          {!isLoading? <ListOfSpecEmployee data={state} />:<div>loading</div>}
+          {location.state && <div>{location.state.message}</div>}
+          {!isLoading? <ListOfSpecEmployee data={state} />:<div><Cliploader size={30}/></div>}
         
 
         </div>
         {/* <MainDash/> */}
       </div>
-    </motion.div>:<div>...LOADING...</div>
+    </motion.div>:<div><Cliploader size={30} color="blue" className='spinner'/></div>
   )
 }
 

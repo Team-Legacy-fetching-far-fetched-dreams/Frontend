@@ -1,9 +1,10 @@
 import React from 'react'
 import './VitalsForm.css';
-
+import {Button} from 'react-bootstrap'
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from 'react-router-dom';
-
+import VImg from '../../../../imgs/Vitalsformimg.png'
+import Cliploader from 'react-spinners/ClipLoader'
 
 
 export const VitalsForm = () => {
@@ -92,9 +93,12 @@ export const VitalsForm = () => {
    
 
   return (
+    <div className="A-d-m">
+        <div className='V-f-g'>
+        <Button as="sub" className="btn" id = "back-btn" onClick={() => navigate(-1)} >Back</Button>
     <section>
         <div className="register">
-            <div className="col-1">
+            <div>
             
                 {/* <span>this form is under test!</span> */}
 
@@ -138,15 +142,18 @@ export const VitalsForm = () => {
                    
                     
                     
-                    {isloading && <div>LOADING..</div>}
+                    {isloading && <div><Cliploader size={30}/></div>}
                     
-                    <button className='btn'>Submit</button>
+                    <button className='vbtn'>Submit</button>
                 </form>
 
             </div>
             
         </div>
     </section>
+    <img src={VImg} alt="0" className="vimg"></img>
+    </div>
+    </div>
   )
 }
 export default VitalsForm;

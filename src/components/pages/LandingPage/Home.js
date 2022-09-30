@@ -127,21 +127,36 @@ const [openMefu, setOpenMefu] = useState(false)
           </div>
           <div className='footer'>
             <div className='social'>
-              <a href = 'https://www.facebook.com/profile.php?id=100086105886864'>
+              <motion.a href = 'https://www.facebook.com/profile.php?id=100086105886864'
+               whileHover={{scale:1.1, originX: 0, color: ''}}
+               transition={{ type: "spring" , stiffness: 300}}
+              >
               <UilFacebookF/>
-              </a>
-              <a href= 'https://instagram.com/lega.cyhealthcare?igshid=NDRkN2NkYzU='>
+              </motion.a>
+              <motion.a href= 'https://instagram.com/lega.cyhealthcare?igshid=NDRkN2NkYzU='
+               whileHover={{scale:1.1, originX: 0, color: ''}}
+               transition={{ type: "spring" , stiffness: 300}}
+              >
              <UilInstagram/>
-              </a>
-             <a href = 'https://twitter.com/legacyhealthca2/status/1572236819491868674?s=46&t=M5aKCeFLNwB21SFljCsdHw'>
+              </motion.a>
+             <motion.a href = 'https://twitter.com/legacyhealthca2/status/1572236819491868674?s=46&t=M5aKCeFLNwB21SFljCsdHw'
+              whileHover={{scale:1.1, originX: 0, color: ''}}
+              transition={{ type: "spring" , stiffness: 300}}
+             >
              <UilTwitter />
-             </a>
-            <a href='/'>
+             </motion.a>
+            <motion.a href='/'
+             whileHover={{scale:1.1, originX: 0, color: ''}}
+             transition={{ type: "spring" , stiffness: 300}}
+            >
             <UilLinkedin/>
-            </a>
-              <a href='https://youtube.com/channel/UC9HoilrWwiE8DxHoQOCmKjA'>
+            </motion.a>
+              <motion.a href='https://youtube.com/channel/UC9HoilrWwiE8DxHoQOCmKjA'
+               whileHover={{scale:1.1, originX: 0, color: ''}}
+               transition={{ type: "spring" , stiffness: 300}}
+              >
               <UilYoutube/>
-              </a> 
+              </motion.a> 
            </div>
            <div>
           

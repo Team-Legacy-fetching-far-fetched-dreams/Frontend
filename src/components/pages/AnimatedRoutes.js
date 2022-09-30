@@ -1,46 +1,48 @@
 import React from 'react'
 import Demo from './Demo';
 import Verfication from './Verfication';
-import LandingPage from '../../components/pages/LandingPage/LandingPage';
-import Home from '../../components/pages/LandingPage/Home';
-import AboutUs from '../../components/pages/LandingPage/AboutUs';
-import ContactUs from '../../components/pages/LandingPage/ContactUs';
+import LandingPage from './LandingPage/LandingPage';
+import Home from './LandingPage/Home';
+import AboutUs from './LandingPage/AboutUs';
+import ContactUs from './LandingPage/ContactUs';
 
 import Hello from '../../Hello';
-import TrialPage from '../../components/pages/Doctor/trialpage.js';
+import TrialPage from './Doctor/trialpage.js';
 import PatientInfo from './TABLE LISTS/UsersInfo/PatientInfo';
 import UsersInfo from './TABLE LISTS/UsersInfo/UsersInfo';
 import PatientForm from './Doctor/PatientForm';
 import AwaitingTable from './TABLE LISTS/AwaitingTable/AwaitingTable';
 import VitPage from './TABLE LISTS/Vitals/VitPage';
+import DiagnosisList from './TABLE LISTS/Diagnosis';
+import DiagPage from './TABLE LISTS/DiagPage';
 
-import Modal from '../../components/pages/Admin/Model/Modal';
-import Mefu from '../../components/pages/Admin/Mefu/Mefu'
-import DoctorPage from '../../components/pages/Doctor/DoctorPage';
-import NursePage from '../../components/pages/Nurse/NursePage';
-import AdminPage from '../../components/pages/Admin/AdminPage';
-import AdminSignUp from '../../components/pages/Admin/AdminSignUp';
-import AdminLogin from '../../components/pages/Admin/AdminLogin';
-import DoctorSignUp from '../../components/pages/Doctor/DoctorSignUp'
-import DoctorLogin from '../../components/pages/Doctor/DoctorLogin';
-import NurseSignUp from '../../components/pages/Nurse/NurseSignUp'
-import NurseLogin from '../../components/pages/Nurse/NurseLogin'
+import Modal from './Admin/Model/Modal';
+import Mefu from './Admin/Mefu/Mefu'
+import DoctorPage from './Doctor/DoctorPage';
+import NursePage from './Nurse/NursePage';
+import AdminPage from './Admin/AdminPage';
+import AdminSignUp from './Admin/AdminSignUp';
+import AdminLogin from './Admin/AdminLogin';
+import DoctorSignUp from './Doctor/DoctorSignUp'
+import DoctorLogin from './Doctor/DoctorLogin';
+import NurseSignUp from './Nurse/NurseSignUp'
+import NurseLogin from './Nurse/NurseLogin'
 import {Routes, Route, useLocation} from 'react-router-dom'
 
 import InnerContent from './InnerContent'
-import AdminDashboard from '../../components/pages/Admin/AdminDashboard';
-import Doctor from '../../components/pages/Admin/Doctor';
-import Nurse from '../../components/pages/Admin/Nurse';
+import AdminDashboard from './Admin/AdminDashboard';
+import Doctor from './Admin/Doctor';
+import Nurse from './Admin/Nurse';
 import VitalsForm from './TABLE LISTS/Vitals/VitalsForm';
-import Patient from '../../components/pages/Admin/Patient';
+import Patient from './Admin/Patient';
 
-import DoctorDashboard from '../../components/pages/Doctor/DoctorDashboard';
+import DoctorDashboard from './Doctor/DoctorDashboard';
 import DPatient from './Doctor/DPatient'
 import AwaitingList from './Doctor/Awaitinglist'
 
-import NurseDashboard from '../../components/pages/Nurse/NurseDashboard';
-import NDoctor from '../../components/pages/Nurse/NDoctor';
-import NPatient from '../../components/pages/Nurse/NPatient';
+import NurseDashboard from './Nurse/NurseDashboard';
+import NDoctor from './Nurse/NDoctor';
+import NPatient from './Nurse/NPatient';
 // import VitalsForm from './Nurse/Vitals/VitalsForm';
 
 
@@ -64,6 +66,7 @@ const AnimatedRoutes = () => {
               <Route path ="/ContactUs" element={<ContactUs/>} />
               <Route path ="/AboutUs" element={<AboutUs/>} />
               <Route path ="/Patient/Diagnosis/:id" element={<Mefu/>} />
+              <Route path = "/Patient/Diagnosis/List/:id" element={<DiagnosisList/>}/>
             
 
            
@@ -73,6 +76,7 @@ const AnimatedRoutes = () => {
               <Route path = "/Profile/Users/:id" element={<UsersInfo/>}/>
               <Route path = "/Patient/Register" element={<PatientForm/>}/>
               <Route path = "Patient/Vitals/:id" element = {<VitPage/>}/>
+              <Route path = "Patient/Table/Diagnosis/:id" element = {<DiagPage/>}/>
 
               <Route path ="/DoctorPage" element={<DoctorPage/>} />
               <Route path ="/NursePage" element={<NursePage/>} />

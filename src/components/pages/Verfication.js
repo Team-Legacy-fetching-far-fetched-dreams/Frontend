@@ -56,7 +56,6 @@ import {useNavigate} from 'react-router-dom'
 import {motion} from 'framer-motion/dist/framer-motion'
 import {Button,Form} from 'react-bootstrap'
 import {useForm} from 'react-hook-form'
-import {Link} from 'react-router-dom'
   
 const Verfication = () => {
  const [access, setAccess] = useState(true)

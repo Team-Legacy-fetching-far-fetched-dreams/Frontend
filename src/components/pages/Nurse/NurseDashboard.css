@@ -18,4 +18,20 @@
       background-color: var(--glass);
       backdrop-filter: blur(7px);
       overflow: hidden;
+      
+
+  }
+
+
+
+  .Dashboardcontainer3{
+    flex: 6;
+  
+  }
+
+
+  .right23{
+    margin-left: 500px;
+
+    
   }

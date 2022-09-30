@@ -33,7 +33,7 @@ const ListOfAllEmployees = ({data}) => {
          <th>Gender</th>
          <th>Qualification</th>
          <th>Surname</th>
-         <th>Action</th>
+         <th>Action </th>
          {data.map((ofAll,key) =>{
 
            return( 

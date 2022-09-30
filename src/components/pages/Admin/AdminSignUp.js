@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import './AdminSignUp.css'
 import Logo from '../../../imgs/logo2.png'
-import registerImg from '../../../imgs/415.jpg'
 // import Button from 'react-bootstrap/Button';
 import {Link, useLocation, useNavigate} from 'react-router-dom'
 // import {useForm} from 'react-hook-form'
@@ -63,15 +62,24 @@ const handleSubmit = (e) => {
         }
         })
         .then(data=>
-          {if(data){
-          console.log(data)
-          console.log(location)
+          {
+            console.log(data)
+            console.log(location)
+            if(data){
+            if(location.state){
+              navigate(-1, {
+                state:{
+                  message:"Nurse registered successfully"
+                }
+              })
+            }else{
           navigate("/AdminLogin",{
             state:{
               message:"Please Check your email for your login Credentials"
           }
         })
         }
+      }
       })
       }
     }

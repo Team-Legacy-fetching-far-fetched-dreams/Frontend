@@ -95,16 +95,9 @@ align-items: center;
     justify-content: center;
 }
 
-.sl-btn .d-signup{
- background-color: #128A16;
- border: none;
- padding-left:6px;
-}
-
 
 .sl-btn .d-login{
     background-color: #151E73;
     border: none;
-    padding-left:6px;
 }
 

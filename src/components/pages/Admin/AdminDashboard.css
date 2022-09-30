@@ -156,3 +156,10 @@
       background-color: #e6e6e6;
     }
      */
+
+
+     .spinner{
+      position: absolute;
+      top: 50%;
+      right: 50%;
+     }

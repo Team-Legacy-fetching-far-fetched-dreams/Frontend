@@ -28,10 +28,18 @@ const ListOfSpecEmployee = ({data}) => {
          })
       }
       if (user=='NURSES'){
-         navigate("/NurseSignUp")
+         navigate("/NurseSignUp",{
+            state:{
+               prevLocation : location.pathname
+            }
+         })
       }
       if (user=='ADMINS'){
-         navigate("/AdminSignUp")
+         navigate("/AdminSignUp",{
+            state:{
+               prevLocation : location.pathname
+            }
+         })
       }
    }
    

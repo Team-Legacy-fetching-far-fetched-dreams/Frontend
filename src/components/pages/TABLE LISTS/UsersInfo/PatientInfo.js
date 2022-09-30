@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/esm/Button'
 import { set } from 'react-hook-form'
 import {useParams, Link} from 'react-router-dom'
 import Logo from '../../../../imgs/logo2.png'
-import NewProfile from "./NewProfile.png"
+import NewProfile from "../../../../imgs/NewProfile.png"
 import "./PatientInfo.css"
 const PatientInfo = () => {
     const { id } = useParams()
@@ -51,6 +51,9 @@ const PatientInfo = () => {
             
         <Link to = {`/Patient/Vitals/${id}`}>
          <Button className="btn btn-primary  btn-sm" type="submit"  role="button"><span></span><span className="p-1">View Vitals</span></Button>
+         </Link>
+         <Link to = {`/Patient/Table/Diagnosis/${id}`}>
+         <Button className="btn btn-primary  btn-sm" type="submit"  role="button"><span></span><span className="p-1">View Diagnosis</span></Button>
          </Link>
          
             {/* <div className="col-md-12"><label className="labels">Experience in Designing</label></div> */}

@@ -6,6 +6,7 @@ import Clock from '../../Clock'
 import {motion} from 'framer-motion/dist/framer-motion'
 import Vitals from './Vitals'
 import { useParams } from 'react-router-dom'
+import Cliploader from 'react-spinners/ClipLoader'
 
 
 const VitPage = () =>{
@@ -49,7 +50,7 @@ const VitPage = () =>{
         <NDashNav/>
         <div className=''>
         <div>
-         {isLoading ? <div>...LOADING...</div>:<Vitals data = {data}/>}
+         {isLoading ? <div><Cliploader size={30} color="blue" className='spinner'/></div>:<Vitals data = {data}/>}
       </div>
         </div>
         </div>
