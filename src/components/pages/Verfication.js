@@ -59,13 +59,6 @@ import {useForm} from 'react-hook-form'
   
 const Verfication = () => {
 
-  const showAlert= () =>{
-    return(
-    <Alert variant="primary">
-      This is a alert—check it out!
-    </Alert>
-    )
-  } 
 
   const goToAbout=()=>{
     navigate("/AboutUs")

@@ -48,9 +48,7 @@ const UsersInfo = () => {
                 <div className="col-md-4">
         <div className="p-3 py-4">
 
-        <Link to = {"/AdminDashboard/Patient"}>
-         <Button className="btn btn-primary  btn-sm" type="submit"  role="button"><span></span><span className="p-1">View Vitals</span></Button>
-         </Link> 
+        
            
         </div>
     </div>
@@ -89,7 +87,7 @@ const UsersInfo = () => {
     
 </div>
 </div>
-</div>:<div>LOADING</div>
+</div>:<div>LOADING...</div>
 
     
    

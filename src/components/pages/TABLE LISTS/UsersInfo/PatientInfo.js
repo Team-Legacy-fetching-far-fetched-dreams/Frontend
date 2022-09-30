@@ -98,7 +98,7 @@ const PatientInfo = () => {
 </div>
 
 </div>
-</div>:<div>LOADING</div>
+</div>:<div>LOADING...</div>
 
   )  
    

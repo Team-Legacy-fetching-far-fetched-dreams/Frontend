@@ -1,0 +1,17 @@
+
+.containert{
+    height: 10%;
+    width: 90%;
+    margin: -1rem auto;
+    margin-left: 11rem;
+    box-shadow: 0rem 0rem 2rem 0.1rem #48ea98;
+    border-radius: 0.5rem;
+  
+   padding-bottom: 30rem;
+  
+   
+}
+
+.button1 :hover button{
+    color: black;
+}
