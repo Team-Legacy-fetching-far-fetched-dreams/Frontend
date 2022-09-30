@@ -124,7 +124,7 @@ const body={
          <div className='pic_div'>
                <img align = "left" src= {Security} alt="" className ="Secure"></img>
             </div>
-           <Form>
+           <Form onkeypress="return event.keyCode != 13">
             <Form.Group>
                 <div className="mb-3">
                      <label htmlFor="password" className="form-label">Code</label>
@@ -168,6 +168,7 @@ const body={
                   {/* <Link to="/LandingPage"> */}
                    <Button as="sub" className="btn btn-primary" id = "btn" onClick={handleSubmit(submitForm)} >OK</Button>
                    {/* </Link> */}
+                
                 </Form.Group>
             </Form>
             </div>
