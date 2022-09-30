@@ -7,7 +7,7 @@ import {motion} from 'framer-motion/dist/framer-motion'
 import {Link} from 'react-router-dom'
 import { logout } from '../../../auth'
 import Cliploader from 'react-spinners/ClipLoader'
-
+import ListOfNurses from '../TABLE LISTS/ListOfDoctors/listofNurse'
 const Nurse = () => {
 
   const  [state, setState] = useState()
@@ -53,7 +53,7 @@ const Nurse = () => {
         <div className='Dashboardcontainer'>
         <AdDashNav/>
         
-        {!isLoading ? <ListOfSpecEmployee data={state} />:<div><Cliploader size={30} color="blue" className='spinner'/></div>}
+        {!isLoading ? <ListOfNurses data={state} />:<div><Cliploader size={30} color="blue" className='spinner'/></div>}
        
         </div>
         {/* <MainDash/> */}

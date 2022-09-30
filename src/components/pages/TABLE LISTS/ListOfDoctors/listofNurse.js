@@ -12,7 +12,7 @@ import Button from 'react-bootstrap/esm/Button'
 
 
 
-const ListOfSpecEmployee = ({data}) => {
+const ListOfNurses = ({data}) => {
  
    const location = useLocation()
    const [user,setUser] = useState()
@@ -115,7 +115,7 @@ const ListOfSpecEmployee = ({data}) => {
            {<h1>LIST OF {user}</h1>}
            <div className='New1'>
          {location.state && <div>{location.state.message}</div>}
-           <Link to ={"/DoctorSignUp"}>
+          <Link to = {"/NurseSignUp"}> 
          {isAuth &&<input className="btn btn-primary btn-sm" type="submit"  role="button" value="New Registration" onclick={handleSubmit}/> }
          </Link>
          </div>{data.length>0?
@@ -201,4 +201,4 @@ const ListOfSpecEmployee = ({data}) => {
   )
 }
 
-export default ListOfSpecEmployee;
+export default ListOfNurses;
