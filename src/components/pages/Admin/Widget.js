@@ -20,6 +20,11 @@ const Widget = ({type}) => {
     title : "PATIENT",
   icon: <UilAccessibleIconAlt className="icon"/>,
   link: 'See all Patients'
+},
+{
+  title : "AWAITING PATIENTS",
+icon: <UilAccessibleIconAlt className="icon"/>,
+link: 'See awaiting patients'
 }
   ];
   
@@ -43,7 +48,14 @@ const Widget = ({type}) => {
             title: "PATIENT",
             icon: <UilAccessibleIconAlt className="icon" style={{color:"var(--blue)" }}/>,
             link: "See all Patients"
-          }
+          };
+          break;
+          case "awaiting patient" :
+            data = {
+              title : "AWAITING PATIENTS",
+              icon: <UilAccessibleIconAlt className="icon"/>,
+              link: 'See awaiting patients'
+              };
   }
 
   return (

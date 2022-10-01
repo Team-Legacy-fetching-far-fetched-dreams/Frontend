@@ -43,7 +43,7 @@ const [openMefu, setOpenMefu] = useState(false)
             
           </p>
           <a href="#WAY">
-          <Button variant="success" className='main-btn' active>Get Started</Button>
+          <Button variant="success" className='main-btn'>Get Started</Button>
           </a>
           <div className='scroll'>
             <p className='scroll-p'>Scroll Down to the Who are you section </p>

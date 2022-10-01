@@ -3,7 +3,7 @@ import './NSidebar.css'
 import Logo from '../../../imgs/logo2.png'
 // import {SidebarData} from "../Data/Data";
 import {UilSignOutAlt, UilEstate, UilUserMd , UilAccessibleIconAlt } from '@iconscout/react-unicons'
-import {Link, useNavigate} from 'react-router-dom'
+import {NavLink,Link, useNavigate} from 'react-router-dom'
 import { logout } from '../../../auth'
 
 const NSidebar = (props) => {
@@ -24,22 +24,23 @@ const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY');
       
           <ul>
             <li>
-            <Link to ='/NurseDashBoard' onClick={()=>props.setUrl({url:"/NurseDashboard"})}>
+            <NavLink to ='/NurseDashBoard' className='tried'
+            onClick={()=>props.setUrl({url:"/NurseDashboard"})}>
               <UilEstate className="icon"/>
               <span>Dashboard</span>
-              </Link>
+              </NavLink>
             </li>
             <li>
-            <Link to ='/NurseDashboard/Patient'>
+            <NavLink to ='/NurseDashboard/Patient' activeClassName='active'>
             <UilAccessibleIconAlt className="icon"/>
               <span>Patient</span>
-            </Link>
+            </NavLink>
             </li> 
             <li>
-              <Link to ='/NurseDashboard/Doctor'>
+              <NavLink to ='/NurseDashboard/Doctor' activeClassName="active">
             <UilUserMd className="icon"/>
               <span>Doctor</span>
-              </Link>
+              </NavLink>
             </li>
             {/* <li>
             <Link to ='/NurseDashboard/Nurse'>

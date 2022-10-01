@@ -120,7 +120,7 @@ const PatientForm = () => {
   return (
    
     <div className='dss-contents'>
-   
+   <Button as="sub" className="btn" id = "back-btn" onClick={() => navigate(-1)}>Back</Button>
     <div className='hay'>
            <img cay src={Logo} id='logo-png' alt='' srcSet='' />
          </div>

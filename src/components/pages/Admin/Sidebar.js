@@ -48,37 +48,37 @@ const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY');
             whileHover={{scale:1.1, originX: 0, color: ''}}
             transition={{ type: "spring" , stiffness: 300}}
             >
-            <Link to ='/AdminDashBoard'>
+            <NavLink to ='/AdminDashBoard' className='tried'>
               <UilEstate className="icon"/>
               <span>Dashboard</span>
-              </Link>
+              </NavLink>
             </motion.li>
             <motion.li
             whileHover={{scale:1.1, originX: 0, color: ''}}
             transition={{ type: "spring" , stiffness: 300}}
             >
-              <Link to ='/AdminDashboard/Doctor'>
+              <NavLink to ='/AdminDashboard/Doctor' activeclassName="active">
             <UilUserMd className="icon"/>
               <span>Doctor</span>
-              </Link>
+              </NavLink>
             </motion.li>
             <motion.li
             whileHover={{scale:1.1, originX: 0, color: ''}}
             transition={{ type: "spring" , stiffness: 300}}
             >
-            <Link to ='/AdminDashboard/Nurse'>
+            <NavLink to ='/AdminDashboard/Nurse' activeclassName="active">
             <UilUserNurse className="icon"/>
               <span>Nurse</span>
-              </Link>
+              </NavLink>
             </motion.li>
             <motion.li 
             whileHover={{scale:1.1, originX: 0, color: ''}}
             transition={{ type: "spring" , stiffness: 300}}
             >
-            <Link to ='/AdminDashboard/Patient'>
+            <NavLink to ='/AdminDashboard/Patient' activeclassName="active">
             <UilAccessibleIconAlt className="icon"/>
               <span>Patient</span>
-            </Link>
+            </NavLink>
             </motion.li> 
             <motion.li 
             whileHover={{scale:1.1, originX: 0, color: ''}}
