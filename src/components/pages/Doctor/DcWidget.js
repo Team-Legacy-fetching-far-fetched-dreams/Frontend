@@ -1,25 +1,21 @@
 import React from 'react'
 import './DcWidget.css'
-import {UilUserMd, UilUserNurse, UilAccessibleIconAlt} from '@iconscout/react-unicons'
+import {UilUserMd, UilUserNurse, UilStethoscopeAlt, UilAccessibleIconAlt} from '@iconscout/react-unicons'
 
 
 const DcWidget = ({type}) => {
 
 
-  let data =[ {
-    title: "DOCTOR",
-    icon: <UilUserMd className="icon"/>,
-    link: 'See all Doctors'
-  },
-  {
-    title: "NURSE",
-    icon: <UilUserNurse className="icon"/>,
-    link: 'See all Nurses'
-  },
+  let data =[ 
   {
     title : "PATIENT",
   icon: <UilAccessibleIconAlt className="icon"/>,
   link: 'See all Patients'
+},
+{
+  title : "AWAITING PATIENTS",
+icon: <UilAccessibleIconAlt className="icon"/>,
+link: 'See awaiting patients'
 }
   ];
   
@@ -43,7 +39,14 @@ const DcWidget = ({type}) => {
             title: "PATIENT",
             icon: <UilAccessibleIconAlt className="icon" style={{color:"var(--blue)" }}/>,
             link: "See all Patients"
-          }
+          };
+          break;
+          case "awaiting patients" :
+            data = {
+              title : "AWAITING PATIENTS",
+              icon:  <UilStethoscopeAlt className="icon"/>,
+              link: 'See awaiting patients'
+              }
   }
 
   return (

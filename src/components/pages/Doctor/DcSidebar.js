@@ -3,7 +3,7 @@ import './DcSidebar.css'
 import Logo from '../../../imgs/logo2.png'
 // import {SidebarData} from "../Data/Data";
 import {UilSignOutAlt, UilEstate, UilAccessibleIconAlt, UilStethoscopeAlt } from '@iconscout/react-unicons'
-import {Link, useNavigate} from 'react-router-dom'
+import {NavLink,Link, useNavigate} from 'react-router-dom'
 import { logout } from '../../../auth'
 
 const DcSidebar = (data) => {
@@ -27,36 +27,36 @@ const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY');
       
           <ul>
             <li>
-            <Link to ={{
+            <NavLink to ={{
               pathname:'/DoctorDashBoard'
-            }}>
+            }} activeclassName="" className='tried'>
               <UilEstate className="icon"/>
               <span>Dashboard</span>
-              </Link>
+              </NavLink>
             </li>
             <li>
-            <Link to = {{
+            <NavLink to = {{
               pathname: '/DoctorDashboard/Patient',
               state: data
-            }}>
+            }} activeclassName="actife">
             <UilAccessibleIconAlt className="icon"/>
               <span>Patient</span>
-            </Link>
+            </NavLink>
             </li>
             <li>
-              <Link to = '/LandingPage' onClick={logOut}>
+              <NavLink to = '/LandingPage' onClick={logOut}>
             <UilSignOutAlt className="icon"/>
               <span>Logout</span>
-              </Link>
+              </NavLink>
             </li>
             <li>
-            <Link to ={{
+            <NavLink to ={{
               pathname:'/DoctorDashboard/AwaitingList',
               state:data
-            }}>
+            }} activeclassName="actife">
             <UilStethoscopeAlt className="icon"/>
               <span>Awaiting List</span>
-            </Link>
+            </NavLink>
             </li>
            
           </ul>

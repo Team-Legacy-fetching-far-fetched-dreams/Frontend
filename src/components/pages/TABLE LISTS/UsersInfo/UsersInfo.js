@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/esm/Button'
 import "./UsersInfo.css"
 import NewProfile from "../../../../imgs/NewProfile.png"
 import Logo from '../../../../imgs/logo2.png'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Cliploader from 'react-spinners/ClipLoader'
 
 import {useParams} from 'react-router-dom'
@@ -11,7 +11,7 @@ import {useParams} from 'react-router-dom'
 const UsersInfo = () => {
     const { id } = useParams()
     const [data,setData] = useState()
-
+    const navigate = useNavigate()
     useEffect(()=>{
         const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY')
         const requestOptions = {
@@ -37,7 +37,7 @@ const UsersInfo = () => {
              <img src={Logo} alt="" className = "D-logo"></img> 
                 </div>
             <img src={NewProfile} alt="" className='NewPro'></img> 
-    
+            <Button as="sub" className="btn" id = "back-btn" onClick={() => navigate(-1)}>Back</Button>
     <div className="row">
     <div className="col-md-3 border-right">
         <div className="d-flex flex-column align-items-center text-center p-3 py-5"><span className="font-weight-bold"><h4>{data.qualification} : {data.public_id}</h4></span><h7>{data.username}</h7><img className="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"/><span className="text-black-50">{data.email}</span><span> </span></div>

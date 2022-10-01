@@ -11,7 +11,6 @@ import Cliploader from 'react-spinners/ClipLoader'
 
   
 const DoctorLogin = () => {
-  const navigate = useNavigate()
   const initialValues = {username: "", password: "", incorrect:""};
   const [formValues,setFormValues] = useState( initialValues);
   const [formErrors,setFormErrors] = useState({});
@@ -20,7 +19,7 @@ const DoctorLogin = () => {
   const [isloading, setIsLoading] = useState(false);
   const [data, setData] = useState()
   const location = useLocation()
-
+  const navigate = useNavigate()
 
 
   const handleChange = (e) => {
@@ -118,6 +117,7 @@ const validate = (values) => {
     <div className = "d-h">
      <img src={Logo} alt="" className = "D-logo"></img>  
   </div>
+  <Button as="sub" className="btn" id = "back-btn" onClick={() => navigate(-1)}>Back</Button>
   {location.state && <div>{location.state.message}</div>}
   <div className='dl-contents'>
   

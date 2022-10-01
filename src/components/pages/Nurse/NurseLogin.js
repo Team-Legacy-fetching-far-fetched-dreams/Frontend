@@ -125,6 +125,7 @@ const NurseLogin = () => {
        <div className = "N-h lh">
            <img src={Logo} alt="" className = "N-logo"></img>  
        </div>
+       <Button as="sub" className="btn" id = "back-btn" onClick={() => navigate(-1)}>Back</Button>
        {location.state && <div>{location.state.message}</div>}
        <div className='Nl-content'>
             <div className='login-coverpage'>

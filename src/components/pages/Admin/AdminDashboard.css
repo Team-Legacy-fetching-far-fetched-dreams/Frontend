@@ -163,3 +163,9 @@
       top: 50%;
       right: 50%;
      }
+
+     .dash{
+       position: absolute;
+       top: 200px;
+       height: 500px;
+     }

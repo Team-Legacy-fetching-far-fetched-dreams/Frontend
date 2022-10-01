@@ -8,10 +8,8 @@ import Calendar from 'react-calendar';
 import Clock from '../Clock'
 import {Link, useNavigate, useLocation} from 'react-router-dom'
 import { logout, useAuth } from '../../../auth'
-
-
-import 'react-calendar/dist/Calendar.css'
 import Skeleton from '../../Skeleton'
+import Dash3 from '../../../imgs/Dash3.png'
 
 const NurseDashboard = () => {
   const  [data, setData] = useState()
@@ -103,6 +101,7 @@ const NurseDashboard = () => {
           </Link>
         </div>
         <div>
+        <img src={Dash3} alt='' className='dash3'></img>
           <Clock/>
           <Calendar onChange={onChange} value={value} />
         </div>

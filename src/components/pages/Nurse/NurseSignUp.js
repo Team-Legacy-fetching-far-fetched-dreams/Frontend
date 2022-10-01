@@ -4,6 +4,8 @@ import Logo from '../../../imgs/logo2.png'
 import {Link, useLocation, useNavigate} from 'react-router-dom'
 import registerImgs from '../../../imgs/nursesignup.jpg'
 import Cliploader from 'react-spinners/ClipLoader'
+import { Button } from 'react-bootstrap';
+
 
 const NurseSignUp = () => {
   const initialValues = {surname: "", other_name: "", email: "", birth_date: "", address: "", contact1: "", contact2: "", gender: ""};
@@ -125,7 +127,7 @@ const NurseSignUp = () => {
 
   return (
     <div className='dss-contents'>
-   
+   <Button as="sub" className="btn" id = "back-btn" onClick={() => navigate(-1)}>Back</Button>
     <div className='hay'>
            <img cay src={Logo} id='logo-png' alt='' srcSet='' />
          </div>

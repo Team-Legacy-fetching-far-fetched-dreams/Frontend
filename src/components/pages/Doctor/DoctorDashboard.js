@@ -14,7 +14,8 @@ import { logout, useAuth } from '../../../auth'
 // import { logout } from '../../../auth'
 import Skeleton from '../../Skeleton'
 import DoctorLogin from './DoctorLogin'
-import 'react-calendar/dist/Calendar.css'
+import Dash2 from '../../../imgs/Dash2.png'
+
 
 const DoctorDashboard=()=>{
   const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY');
@@ -54,7 +55,7 @@ const DoctorDashboard=()=>{
           else if(res.status == 401){
             logout(token)
             navigate("/DoctorLogin")
-            console.log("Your token has expired, pleae login again")
+            console.log("Your token has expired, please login again")
           }
           else if (res.status===402){
           }
@@ -68,7 +69,8 @@ const DoctorDashboard=()=>{
       })
       
     }else{
-      navigate('/DoctorLogin')
+      // navigate('/DoctorLogin')
+      setIsLoading(false)
     }
       
       // console.log(state)
@@ -100,9 +102,15 @@ const DoctorDashboard=()=>{
         }}>
           <DcWidget type = "patient"/>
           </Link>
-  
+          <Link to ={{
+              pathname:'/DoctorDashboard/AwaitingList',
+              state:data
+            }}>
+          <DcWidget type = "awaiting patients"/>
+          </Link>
         </div>
         <div>
+        <img src={Dash2} alt='' className='dash2'></img>
           <Clock />
           <Calendar onChange={onChange} value={value} />
         </div>
