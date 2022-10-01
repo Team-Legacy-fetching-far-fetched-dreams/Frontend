@@ -89,6 +89,7 @@ const Diagnose = () => {
          <div className='d-h'>
                     <img src={Logo} alt="" className = "D-logo"></img> 
                 </div>
+                <Button as="sub" className="btn" id = "back-btn" onClick={() => navigate(-1)}>Back</Button>
     <div className='row align-content-center'>
       <div className="row mx-auto">
        

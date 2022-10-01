@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import './DcSidebar.css'
 import Logo from '../../../imgs/logo2.png'
 // import {SidebarData} from "../Data/Data";
-import {UilSignOutAlt, UilEstate, UilAccessibleIconAlt, UilStethoscopeAlt } from '@iconscout/react-unicons'
+import {UilSignOutAlt, UilUserNurse, UilEstate, UilAccessibleIconAlt, UilStethoscopeAlt } from '@iconscout/react-unicons'
 import {NavLink,Link, useNavigate} from 'react-router-dom'
 import { logout } from '../../../auth'
 
@@ -35,6 +35,15 @@ const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY');
               </NavLink>
             </li>
             <li>
+            <NavLink to ={{
+              pathname:'/DoctorDashboard/Nurse',
+              state:data
+            }} activeclassName="actife">
+            <UilUserNurse className="icon"/>
+              <span>Nurse</span>
+            </NavLink>
+            </li>
+            <li>
             <NavLink to = {{
               pathname: '/DoctorDashboard/Patient',
               state: data
@@ -58,6 +67,7 @@ const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY');
               <span>Awaiting List</span>
             </NavLink>
             </li>
+           
            
           </ul>
       </div>

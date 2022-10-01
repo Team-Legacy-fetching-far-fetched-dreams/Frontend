@@ -37,6 +37,7 @@ import VitalsForm from './TABLE LISTS/Vitals/VitalsForm';
 import Patient from './Admin/Patient';
 
 import DoctorDashboard from './Doctor/DoctorDashboard';
+import DNurse from './Doctor/DNurse'
 import DPatient from './Doctor/DPatient'
 import AwaitingList from './Doctor/Awaitinglist'
 
@@ -113,6 +114,7 @@ const AnimatedRoutes = () => {
 
 
               <Route path ="/DoctorDashboard" element={<DoctorDashboard/>} />
+              <Route path = '/DoctorDashboard/Nurse' element={<DNurse/>} />
               <Route path = '/DoctorDashboard/Patient' element={<DPatient/>} />
               <Route path = '/DoctorDashboard/AwaitingList' element={<AwaitingList/>} />
               

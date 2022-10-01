@@ -96,6 +96,12 @@ const DoctorDashboard=()=>{
         <div className='Dashboardcontainer'>
         <DcDashNav/>
         <div className='widgets'>
+        <Link to ={{
+              pathname:'/DoctorDashboard/Nurse',
+              state:data
+            }}>
+          <DcWidget type = "nurse"/>
+          </Link>
         <Link to={{
           pathname:"/DoctorDashboard/Patient",
           state:data
@@ -108,6 +114,7 @@ const DoctorDashboard=()=>{
             }}>
           <DcWidget type = "awaiting patients"/>
           </Link>
+          
         </div>
         <div>
         <img src={Dash2} alt='' className='dash2'></img>
