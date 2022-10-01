@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react'
 // import user_2 from '../UsersInfo/user_2.png'
 import Button from 'react-bootstrap/esm/Button'
 import { set } from 'react-hook-form'
-import {useParams, Link} from 'react-router-dom'
+import {useParams, Link, useNavigate} from 'react-router-dom'
 import Logo from '../../../../imgs/logo2.png'
 import NewProfile from "../../../../imgs/NewProfile.png"
 import "./PatientInfo.css"
 import Cliploader from 'react-spinners/ClipLoader'
 const PatientInfo = () => {
     const { id } = useParams()
+    const navigate = useNavigate()
     const [data,setData] = useState()
     useEffect(()=>{
         const token = localStorage.getItem('REACT_TOKEN_AUTH_KEY')
@@ -34,7 +35,7 @@ const PatientInfo = () => {
                     <img src={Logo} alt="" className = "D-logo"></img> 
                 </div>
                 <img src={NewProfile} alt="" className='NewPro'></img> 
-
+                <Button as="sub" className="btn" id = "dback-btn" onClick={() => navigate(-1)}>Back</Button>
     <div className="row align-content-center ">
     <div className="row">
     <div className="col-md-3 border-right">

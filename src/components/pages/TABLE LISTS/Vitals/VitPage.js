@@ -5,12 +5,14 @@ import NDashNav from '../../Nurse/NDashNav'
 import Clock from '../../Clock'
 import {motion} from 'framer-motion/dist/framer-motion'
 import Vitals from './Vitals'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
+import Button from 'react-bootstrap/Button';
 import Cliploader from 'react-spinners/ClipLoader'
 
 
 const VitPage = () =>{
 
+  const navigate = useNavigate()
     const [isLoading, setIsLoading] = useState(true)
     const [data, setData] = useState()
     const { id } = useParams()
@@ -44,11 +46,12 @@ const VitPage = () =>{
 
     >
       <div className='D-d-g'>
-        <NSidebar />
+        {/* <NSidebar /> */}
         <div className='Dashboardcontainer'>
         {/* <DcDashNav func = {this.setState({data: this.state.searchObj.data})}/> */}
         <NDashNav/>
-        <div className=''>
+        <Button as="sub" className="btn" id = "dback-btn" onClick={() => navigate(-1)}>Back</Button>
+        <div className='bod'>
         <div>
          {isLoading ? <div><Cliploader size={30} color="blue" className='spinner'/></div>:<Vitals data = {data}/>}
       </div>
