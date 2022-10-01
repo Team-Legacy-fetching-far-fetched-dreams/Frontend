@@ -55,7 +55,7 @@ const Diagnose = () => {
               console.log(data)
               navigate(`/DoctorDashboard/AwaitingList`,{
                   state:{
-                    message:"Patient has been diagnosed" }
+                    message:`Patient with id: ${id} has been diagnosed` }
               })
             })
           }
@@ -101,19 +101,19 @@ const Diagnose = () => {
                 </div>
                 {(data && isvitalAvail)?<div>
                 <div className="row mt-2 ">
-                    <div className="col-md-6 align-items-center"><label className="labels">Patient Id: {data.patient_id}</label><input type="text" className="form-control"   value="1" /></div>
-                    <div className="col-md-6"><label className="labels">Temperature: {data.temperature}F </label><input type="text" className="form-control" value="43"/></div>
+                    <div className="col-md-6 align-items-center"><label className="labels">Patient Id: </label><input type="text" className="form-control"   value={data.patient_id} /></div>
+                    <div className="col-md-6"><label className="labels">Temperature: F </label><input type="text" className="form-control" value={data.temperature}/></div>
                 </div>
                 <div className='row mt-3'>
-                    <div className="col-md-6"><label className="labels">Height: {data.height}cm</label><input type="text" className="form-control" value="5.5"/></div>
-                    <div className="col-md-6"><label className="labels">Weight: {data.weight}kg</label><input type="text" className="form-control"  value="47"/></div>
+                    <div className="col-md-6"><label className="labels">Height:cm</label><input type="text" className="form-control" value={data.height}/></div>
+                    <div className="col-md-6"><label className="labels">Weight:kg</label><input type="text" className="form-control"  value= {data.weight}/></div>
                 </div>
                 <div className="row mt-3">
-                    <div className="col-md-6"><label className="labels">Keeper Id: {data.keeper_id}</label><input type="text" className="form-control"  value="2"/></div>
-                    <div className="col-md-6"><label className="labels">Date_Recorded: {data.date}</label><input type="text" className="form-control" value="12-02-22" /></div>
+                    <div className="col-md-6"><label className="labels">Keeper Id: </label><input type="text" className="form-control"  value={data.keeper_id}/></div>
+                    <div className="col-md-6"><label className="labels">Date_Recorded: </label><input type="text" className="form-control" value={data.date_recorded}/></div>
                 </div>
                 <div className="row mt-4">
-                    <div className="col-md-12"><label className="labels">Blood Pressure : {data.bloodpressure_mm}/{data.bloodpressure_Hg} mmHg</label><input type="text" className="form-control" value="123/23"/></div>
+                    <div className="col-md-12"><label className="labels">Blood Pressure :  mmHg</label><input type="text" className="form-control" value={`${data.bloodpressure_mm}/${data.bloodpressure_Hg}`}/></div>
                 </div>
             </div>:<div>No available vitals</div>}
         </div>: <div><Cliploader size={30} color="blue" className='spinner'/></div>}

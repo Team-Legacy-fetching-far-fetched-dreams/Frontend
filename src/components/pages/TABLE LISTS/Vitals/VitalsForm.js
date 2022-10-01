@@ -53,7 +53,7 @@ const VitalsForm = () => {
            
                 navigate(`/Patient/Vitals/${id}`,{
                     state:{
-                        message:"Vitals recorded succesfully"
+                        message:`Vitals for patient id:${id} has been recorded succesfully`
                     }
                 })
             
